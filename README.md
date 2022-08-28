@@ -1,4 +1,4 @@
- ![design-sem-nome-2022-01-26t131235627-1200x460](https://user-images.githubusercontent.com/105084941/172011940-4cdc7594-5d71-4823-95c6-1d3cec75fe7e.png)
+![design-sem-nome-2022-01-26t131235627-1200x460](https://user-images.githubusercontent.com/105084941/172011940-4cdc7594-5d71-4823-95c6-1d3cec75fe7e.png)
 <h1> <div align="center">
  Trabalho Final Entra21 👨‍💻
 </></h1>
@@ -13,18 +13,19 @@ Trabalho destinado para produção do trabalho final e experimental do Programa 
 
 <h2> Tecnologias🌐</h2>
 <div align="left">
- <b>C#</b>
+
+ <b>[C#]()</b>
  <br>
- <b>Visual Studio 2022 </b>(https://visualstudio.microsoft.com/pt-br/downloads/)
+ <b>[Visual Studio 2022](https://visualstudio.microsoft.com/pt-br/downloads)</b>
  <br>
- <b>.NET 6.0 </b>(https://dotnet.microsoft.com/en-us/download)
+ <b>[.NET 6.0](https://dotnet.microsoft.com/en-us/download)</b>
  <br>
- <b>GitHub</b>
+ <b>[GitHub](https://github.com/)</b>
  
  <br>
- <br>
  
- #<h2>Autores👥</h2>
+ <h2>Autores👥</h2>
+
  <b>[Alan Domingues Fernandes](https://github.com/AlanDominguesFernandes28)</b>
  <br>
  <b>[Cristyan Alexandrino](https://github.com/CristyanAlexandrino)</b>
@@ -36,8 +37,12 @@ Trabalho destinado para produção do trabalho final e experimental do Programa 
  <b>[Marina de Lima](https://github.com/marinalima2)</b>
 
 
+<h2> Contatos: </h2>
 
-
- 
- 
-
+<div>
+<a href="https://www.linkedin.com/in/alan-domingues-63b677219" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/cristyanalexandrino/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/felipeecorrea" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-altermann-martinelli/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/marina-de-lima" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<div>
