@@ -25,6 +25,8 @@ Trabalho destinado para produção do trabalho final e experimental do Programa 
  <br>
  
  #<h2>Autores👥</h2>
+ <b>[Alan Domingues Fernandes](https://github.com/AlanDominguesFernandes28)</b>
+ <br>
  <b>[Cristyan Alexandrino](https://github.com/CristyanAlexandrino)</b>
  <br>
  <b>[Felipe Evanilson Corrêa](https://github.com/FelipeECorrea)</b>
@@ -32,8 +34,7 @@ Trabalho destinado para produção do trabalho final e experimental do Programa 
  <b>[João Vitor Altermann Martinelli](https://github.com/joaomarti755)</b>
  <br>
  <b>[Marina de Lima](https://github.com/marinalima2)</b>
- <br>
- <b>[Alan Domingues Fernandes](https://github.com/AlanDominguesFernandes28)</b>
+
 
 
 
