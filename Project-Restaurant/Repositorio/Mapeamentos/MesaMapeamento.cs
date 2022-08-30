@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositorio.Entidades
+namespace Repositorio.Mapeamentos
 {
-    public class Mesa : EntidadeBase
+    public  class MesaMapeamento
     {
-        public int NumeroMesa { get; set; }
+
     }
 }
