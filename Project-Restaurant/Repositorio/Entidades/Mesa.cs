@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Repositorio.Entidades
 {
-    public class Mesa
+    public class Mesa : EntidadeBase
     {
-        public int id { get; set; }
-        public int NumeroMesa { get; set; }
+        public int numeroMesa { get; set; }
     }
 }
