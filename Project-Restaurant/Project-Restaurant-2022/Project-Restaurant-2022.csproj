@@ -7,4 +7,10 @@
     <RootNamespace>Project_Restaurant_2022</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="InjecoesDependencia\" />
+    <Folder Include="TagHelpers\" />
+  </ItemGroup>
+
 </Project>
