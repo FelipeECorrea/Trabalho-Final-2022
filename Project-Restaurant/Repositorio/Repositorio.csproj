@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Mapeamento\**" />
+    <EmbeddedResource Remove="Mapeamento\**" />
+    <None Remove="Mapeamento\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mapeamento\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="InjecoesDependencia\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 
 </Project>
