@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Repositorio.Entidades;
 
 namespace Repositorio.Mapeamentos
 {
-    public class PedidoMapeamento : IEntityTypeConfiguration<PedidoGerado>
+    public class PedidoMapeamento : IEntityTypeConfiguration<Pedido>
     {
-        public void Configure(EntityTypeBuilder<PedidoGerado> builder)
+        public void Configure(EntityTypeBuilder<Pedido> builder)
         {
 
         }
