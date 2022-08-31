@@ -24,40 +24,34 @@ namespace Repositorio.Mapeamentos
                 new Mesa
                 {
                     Id = 1,
-                    numeroMesa = 1
-                    
+                    numeroMesa = 1 
                 },
                 new Mesa
                 {
                     Id = 2,
-                    numeroMesa = 2
-                    
+                    numeroMesa = 2   
                 },
                 new Mesa
                 {
                     Id = 3,
                     numeroMesa = 3
-
                 }, 
                 new Mesa
                 {
                     Id = 4,
                     numeroMesa = 4
-
                 },
                 new Mesa
                 {
                     Id = 5,
                     numeroMesa = 5
-
                 },
 
                 new Mesa
                 {
                     Id = 2,
                     numeroMesa = 6
-                }
-               );
+                });
         }
 
     }
