@@ -15,27 +15,27 @@ namespace Repositorio.Mapeamentos
             builder.Property(x => x.NumeroMesa)
                .HasColumnType("TINYINT")
                .IsRequired()
-               .HasColumnName("numeroMesa"); // NOT NULL
+               .HasColumnName("NumeroMesa"); // NOT NULL
 
             builder.HasData(
                 new Mesa
                 {
                     Id = 1,
                     NumeroMesa = 1
-
+                    
                 },
                 new Mesa
                 {
                     Id = 2,
                     NumeroMesa = 2
-
+                    
                 },
                 new Mesa
                 {
                     Id = 3,
                     NumeroMesa = 3
 
-                },
+                }, 
                 new Mesa
                 {
                     Id = 4,
