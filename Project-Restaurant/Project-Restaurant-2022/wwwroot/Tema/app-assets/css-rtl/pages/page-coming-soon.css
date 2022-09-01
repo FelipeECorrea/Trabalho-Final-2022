@@ -1,0 +1,30 @@
+.card-coming-soon .getting-started
+{
+    font-size: 2.4rem;
+    font-weight: 500; 
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+@media (max-width: 576px)
+{
+    .card-coming-soon
+    {
+        top: -12px;
+    }
+    .card-coming-soon img
+    {
+        width: 150px;
+    }
+}

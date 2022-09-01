@@ -1,0 +1,240 @@
+.swiper-container .swiper-shadow
+{
+    box-shadow: -2px 8px 10px 0 rgba(25, 42, 70, .13) !important;
+}
+
+.swiper-centered-slides.swiper-container .swiper-slide
+{
+    font-weight: 500;
+
+    width: auto !important;
+    height: auto;
+    padding: 2rem 5.5rem;
+
+    cursor: pointer; 
+    text-align: center;
+
+    color: #342e49;
+    background-color: #fff;
+}
+.swiper-centered-slides.swiper-container .swiper-slide.swiper-slide-active
+{
+    border: 2px solid #975aff;
+}
+.swiper-centered-slides.swiper-container .swiper-slide.swiper-slide-active i
+{
+    color: #975aff;
+}
+
+.swiper-centered-slides .swiper-button-next:after,
+.swiper-centered-slides .swiper-button-prev:after
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    width: 2.35rem;
+    height: 2.35rem;
+
+    border-radius: 50%;
+    background-color: #975aff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5) !important; 
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.swiper-centered-slides-2.swiper-container .swiper-slide
+{
+    width: auto !important;
+    height: auto;
+
+    cursor: pointer; 
+
+    color: #342e49;
+    background-color: #dbdee5;
+}
+.swiper-centered-slides-2.swiper-container .swiper-slide.swiper-slide-active
+{
+    color: #fff;
+    background-color: #975aff;
+    box-shadow: 0 3px 6px 0 rgba(151, 90, 255, .5) !important;
+}
+
+.swiper-cube-effect.swiper-container
+{
+    right: 50%;
+
+    width: 300px;
+    margin-top: -12px; 
+    margin-right: -150px;
+}
+
+.swiper-coverflow.swiper-container .swiper-slide
+{
+    width: 300px;
+}
+
+.gallery-thumbs
+{
+    padding: 10px 0;
+
+    background: #000;
+}
+.gallery-thumbs .swiper-slide
+{
+    opacity: .4;
+}
+.gallery-thumbs .swiper-slide-thumb-active
+{
+    opacity: 1;
+}
+
+.swiper-parallax .swiper-slide
+{
+    padding: 2.67rem 4rem;
+
+    color: #1a051d;
+}
+.swiper-parallax .swiper-slide .title
+{
+    font-size: 1.25rem;
+
+    padding: .5rem 0;
+}
+.swiper-parallax .swiper-slide .text
+{
+    font-size: .875rem;
+}
+
+.swiper-parallax .parallax-bg
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 130%;
+}
+
+.swiper-virtual.swiper-container
+{
+    height: 300px;
+}
+.swiper-virtual.swiper-container .swiper-slide
+{
+    font-size: 1.75rem;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    color: #342e49;
+    background-color: #dbdee5;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+}
+.swiper-virtual.swiper-container .swiper-pagination.swiper-pagination-fraction
+{
+    color: #342e49;
+}
+
+.swiper-button-prev,
+.swiper-button-next
+{
+    font-size: 2.5rem; 
+
+    width: 35px;
+
+    color: #fff;
+    background-image: none;
+}
+.swiper-button-prev:focus,
+.swiper-button-next:focus
+{
+    outline: none;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after
+{
+    font-family: 'feather';
+    font-size: 25px;
+}
+
+.swiper-button-prev:after
+{
+    content: '\e843';
+}
+
+.swiper-button-next:after
+{
+    content: '\e844';
+}
+
+@media only screen and (max-width: 768px)
+{
+    .swiper-button-prev
+    {
+        font-size: 1.5rem;
+
+        top: 55%;
+    }
+    .swiper-button-next
+    {
+        font-size: 1.5rem;
+
+        top: 55%;
+    }
+    .swiper-parallax .swiper-slide
+    {
+        padding: 1rem 1.2rem;
+    }
+    .swiper-parallax .parallax-bg
+    {
+        width: 170%;
+    }
+    .swiper-parallax img
+    {
+        height: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 576px)
+{
+    .swiper-centered-slides.swiper-container .swiper-slide
+    {
+        padding: 1.6rem 2.5rem;
+    }
+    .swiper-centered-slides.swiper-container .swiper-slide i
+    {
+        font-size: 1.25rem !important;
+    }
+    .swiper-cube-effect.swiper-container
+    {
+        right: 70%; 
+
+        width: 150px;
+    }
+    .swiper-parallax .swiper-slide
+    {
+        padding: 1rem 1.3rem;
+    }
+    .swiper-virtual.swiper-container .swiper-slide
+    {
+        font-size: 1rem;
+    }
+}
