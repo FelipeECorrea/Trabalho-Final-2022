@@ -1,0 +1,16 @@
+.leaflet-pane
+{
+    z-index: 4;
+}
+
+.leaflet-top,
+.leaflet-bottom
+{
+    z-index: 5;
+}
+
+.leaflet-container .leaflet-control-zoom-in,
+.leaflet-container .leaflet-control-zoom-out
+{
+    color: #342e49;
+}

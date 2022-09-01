@@ -1,0 +1,109 @@
+body
+{
+    direction: rtl;
+}
+
+.app-sidebar .navigation li.has-sub > a:after
+{
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.app-sidebar .navigation li.has-sub.open > a:after
+{
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+}
+
+.context-menu-item > .context-menu-list
+{
+    right: 100%;
+}
+
+div.hopscotch-bubble .hopscotch-bubble-arrow-container.left
+{
+    left: -34px;
+}
+
+.tagging .tag
+{
+    padding: 7px 0 7px 24px;
+}
+
+.tagging .tag span
+{
+    border-radius: 0 2px 2px 0;
+}
+
+.tagging .tag .tag-i
+{
+    right: auto;
+    left: 8px;
+}
+
+.main-content .wizard > .steps > ul > li:before
+{
+    right: 0; 
+    left: auto;
+}
+
+.main-content .wizard > .steps > ul > li:after
+{
+    right: auto !important;
+    left: 0;
+}
+
+.cropper-container
+{
+    direction: ltr !important;
+}
+
+.swiper-button-next:after
+{
+    font-size: 25px; 
+
+    content: '\e844' !important;
+}
+
+.swiper-button-prev:after
+{
+    font-size: 25px; 
+
+    content: '\e843' !important;
+}
+
+.dataTables_filter
+{
+    text-align: left !important;
+}
+
+body .sidebar-content.ps--active-y
+{
+    right: 0 !important;
+}
+
+body .sidebar-content .ps__rail-y
+{
+    right: 96% !important; 
+    left: 0 !important;
+}
+
+.submenu-icon,
+.carousel-control-prev span[class*='icon'],
+.carousel-control-next span[class*='icon'],
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.dropdown-submenu .dropdown-item:after
+{
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.progress-bar-animated
+{
+    -webkit-animation: progress-bar-stripes 40s linear infinite;
+            animation: progress-bar-stripes 40s linear infinite;
+}
