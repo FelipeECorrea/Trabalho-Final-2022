@@ -1,6 +1,6 @@
 ﻿namespace Repositorio.Entidades
 {
-    public class Produto
+    public class Produto : EntidadeBase
     {
         public decimal Valor { get; set; }
         public string Nome { get; set; }
