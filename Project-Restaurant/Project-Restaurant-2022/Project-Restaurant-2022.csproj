@@ -36,6 +36,6 @@
 		<Folder Include="Controllers\" />
 		<Folder Include="InjecoesDependencia\" />
 		<Folder Include="TagHelpers\" />
-	</ItemGroup
+	</ItemGroup>
 
 </Project>

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Repositorio.Entidades
+﻿namespace Repositorio.Entidades
 {
-    internal class Cliente
+    internal class Cliente : EntidadeBase
     { 
         public string Nome { get; set; }
         public string Telefone { get; set; }
