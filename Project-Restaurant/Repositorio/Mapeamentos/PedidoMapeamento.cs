@@ -41,9 +41,10 @@ namespace Repositorio.Mapeamentos
 
 
             // INNER JOIN
-            //builder.HasOne(x => x.Responsavel)
-            //    .WithMany(x => x.Contatos)
-            //    .IsRequired();
+            builder.HasOne(x => x.Cliente)
+                .WithMany(x => x.Pedidos)
+                .HasForeignKey(x => x.ClienteId)
+                .IsRequired();
 
         }
     }
