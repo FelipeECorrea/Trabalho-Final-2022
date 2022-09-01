@@ -9,6 +9,42 @@ namespace Repositorio.Mapeamentos
         public void Configure(EntityTypeBuilder<Pedido> builder)
         {
 
+            builder.ToTable("pedidos");
+
+            builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.ClienteId)
+                .HasColumnType("TINYINT")
+                .IsRequired()
+                .HasColumnName("id_cliente"); // NOT NULL
+
+            builder.Property(x => x.MesaId)
+                .HasColumnType("TINYINT")
+                .IsRequired()
+                .HasColumnName("id_mesa"); // NOT NULL
+
+            builder.Property(x => x.Observacao)
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(150)
+                .IsRequired()
+                .HasColumnName("observacao"); // NOT NULL
+
+            builder.Property(x => x.ProdutoId)
+                .HasColumnType("TINYINT")
+                .IsRequired()
+                .HasColumnName("id_produto"); // NOT NULL
+
+            builder.Property(x => x.Quantidade)
+                .HasColumnType("TINYINT")
+                .IsRequired()
+                .HasColumnName("quantidade"); // NOT NULL
+
+
+            // INNER JOIN
+            //builder.HasOne(x => x.Responsavel)
+            //    .WithMany(x => x.Contatos)
+            //    .IsRequired();
+
         }
     }
 }
