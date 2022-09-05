@@ -7,6 +7,7 @@
         public string Categoria { get; set; }
         public string Descricao { get; set; }
         public IList<ProdutoPedido> ProdutosPedidos { get; set; }
+        public IList<Pedido> Pedidos { get; set; }
         public string ProdutoCaminho { get; set; }
     }
 }

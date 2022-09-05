@@ -13,7 +13,7 @@ namespace Repositorio.Mapeamentos
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Valor)
-               .HasColumnType("TINYINT")
+               .HasColumnType("DECIMAL")
                .IsRequired()
                .HasColumnName("valor");
 
