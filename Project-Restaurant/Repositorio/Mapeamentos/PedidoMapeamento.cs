@@ -14,7 +14,7 @@ namespace Repositorio.Mapeamentos
             builder.Property(x => x.ClienteId)
                 .HasColumnType("TINYINT")
                 .IsRequired()
-                .HasColumnName("id_cliente");//
+                .HasColumnName("id_cliente");
 
             builder.Property(x => x.MesaId)
                 .HasColumnType("TINYINT")
@@ -40,15 +40,15 @@ namespace Repositorio.Mapeamentos
             // INNER JOIN 
             builder.HasOne(x => x.Cliente)
                 .WithMany(x => x.Pedidos)
-                .HasForeignKey(x => x.ClienteId)
-                .IsRequired();
+                .HasForeignKey(x => x.ClienteId);
 
-            // INNER JOIN
-            //builder.HasOne(x => x.Cliente)
-            //    .WithMany(x => x.Mesas)
-            //    .HasForeignKey(x => x.MesaId)
-            //    .IsRequired();
+            builder.HasOne(x => x.Produto)
+                .WithMany(x => x.Pedidos)
+                .HasForeignKey(x => x.ProdutoId);
 
+            builder.HasOne(x => x.Mesa)
+                .WithMany(x => x.Pedidos)
+                .HasForeignKey(x => x.MesaId);
         }
     }
 }
