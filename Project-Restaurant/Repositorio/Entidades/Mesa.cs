@@ -8,6 +8,12 @@ namespace Repositorio.Entidades
 {
     public class Mesa : EntidadeBase
     {
-        public int numeroMesa { get; set; }
+        public int NumeroMesa { get; set; }
+       // feature/Mapeamento-Pedido
+
+        public IList<Cliente> Clientes { get; set; }
+
+        public string StatusMesa { get; set; }
+       // develop
     }
 }
