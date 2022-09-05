@@ -17,6 +17,11 @@ namespace Repositorio.Mapeamentos
                .IsRequired()
                .HasColumnName("NumeroMesa");
 
+            builder.Property(x => x.StatusMesa)
+            .HasColumnType("VARCHAR")
+            .IsRequired()
+            .HasColumnName("statusMesa");
+
             builder.HasData(
                 new Mesa
                 {
