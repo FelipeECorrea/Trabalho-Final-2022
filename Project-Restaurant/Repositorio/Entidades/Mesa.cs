@@ -8,6 +8,7 @@
         public List<Cliente> Clientes { get; set; }
 
         public string StatusMesa { get; set; }
-        develop
+
+        public IList<Pedido> Pedidos { get; set; }
     }
 }
