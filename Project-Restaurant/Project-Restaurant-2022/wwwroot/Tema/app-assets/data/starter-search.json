@@ -1,0 +1,7 @@
+{
+  "listItems": [
+    {"name":"2 Column", "url":"2-column.html","icon":"ft-sidebar"},
+    {"name":"1 Column", "url":"1-column.html","icon":"ft-square"},
+    {"name":"Change Log", "url":"change-log.html","icon":"ft-book-open"}
+  ]
+}

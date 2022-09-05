@@ -10,10 +10,8 @@
     <Folder Include="Extensions\" />
     <Folder Include="Helpers\" />
     <Folder Include="InjecoesDependencia\" />
-    <Folder Include="MapeamentoEntidades\" />
     <Folder Include="MapeamentoViewModels\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Servicos\" />
   </ItemGroup>
 
 </Project>

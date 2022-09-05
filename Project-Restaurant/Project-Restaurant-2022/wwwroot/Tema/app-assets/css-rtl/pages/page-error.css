@@ -1,0 +1,7 @@
+@media (max-width: 768px)
+{
+    #error .error-img
+    {
+        width: 250px;
+    }
+}
