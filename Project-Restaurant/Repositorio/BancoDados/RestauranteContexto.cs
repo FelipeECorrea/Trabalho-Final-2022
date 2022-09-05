@@ -13,6 +13,7 @@ namespace Repositorio.BancoDados
     {
 
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Mesa> Mesas { get; set; }
 
         public RestauranteContexto(
          DbContextOptions<RestauranteContexto> options)
@@ -24,6 +25,7 @@ namespace Repositorio.BancoDados
         {
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
 
+            modelBuilder.ApplyConfiguration(new MesaMapeamento());
         }
     }
 }
