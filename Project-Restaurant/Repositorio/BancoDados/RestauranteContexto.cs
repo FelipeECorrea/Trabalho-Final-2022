@@ -15,6 +15,7 @@ namespace Repositorio.BancoDados
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Mesa> Mesas { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<ProdutoPedido> ProdutosPedidos { get; set; }
 
         public RestauranteContexto(
          DbContextOptions<RestauranteContexto> options)

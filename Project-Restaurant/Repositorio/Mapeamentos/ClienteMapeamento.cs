@@ -23,7 +23,7 @@ namespace Repositorio.Mapeamentos
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(11)
                 .IsRequired()
-                .HasColumnType("telefone");
+                .HasColumnName("telefone");
 
             builder.Property(x => x.Cpf)
                 .HasColumnType("VARCHAR")

@@ -38,4 +38,8 @@
 		<Folder Include="TagHelpers\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Servico\Servico.csproj" />
+	</ItemGroup>
+
 </Project>
