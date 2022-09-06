@@ -13,6 +13,7 @@ namespace Repositorio.BancoDados
     {
 
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<ProdutoPedido> ProdutosPedidos { get; set; }
 
         public RestauranteContexto(
          DbContextOptions<RestauranteContexto> options)
@@ -23,6 +24,7 @@ namespace Repositorio.BancoDados
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
+            modelBuilder.ApplyConfiguration(new ProdutoPedidoMapeamento());
 
         }
     }
