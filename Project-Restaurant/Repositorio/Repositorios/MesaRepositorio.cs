@@ -1,12 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Repositorio.BancoDados;
+using Repositorio.Entidades;
 
 namespace Repositorio.Repositorios
 {
-    internal class MesaRepositorio
+    public class MesaRepositorio : IMesaRepositorio
     {
+        private readonly RestauranteContexto _contexto;
+
+        public MesaRepositorio(RestauranteContexto contexto)
+        {
+            _contexto = contexto;
+        }
+
+        public bool Apagar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Produto Cadastrar(Mesa mesa)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Editar(Mesa mesa)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Produto? ObterPodId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Produto> ObterTodos()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

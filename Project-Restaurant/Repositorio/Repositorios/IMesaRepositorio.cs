@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Repositorio.Entidades;
 
 namespace Repositorio.Repositorios
 {
-    internal class IMesaRepositorio
+    public interface IMesaRepositorio
     {
+        bool Apagar(int id);
+        Produto Cadastrar(Mesa mesa);
+        void Editar(Mesa mesa);
+        Produto? ObterPodId(int id);
+        IList<Produto> ObterTodos();
     }
 }
