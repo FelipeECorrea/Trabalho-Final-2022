@@ -26,7 +26,6 @@ namespace Repositorio.BancoDados
         {
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
             modelBuilder.ApplyConfiguration(new PedidoMapeamento());
-
             modelBuilder.ApplyConfiguration(new MesaMapeamento());
         }
     }
