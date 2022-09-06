@@ -13,6 +13,9 @@ namespace Repositorio.BancoDados
     {
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Mesa> Mesas { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<ProdutoPedido> ProdutosPedidos { get; set; }
 
         public RestauranteContexto(
          DbContextOptions<RestauranteContexto> options)
@@ -25,6 +28,8 @@ namespace Repositorio.BancoDados
             modelBuilder.ApplyConfiguration(new ClienteMapeamento());
         }
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
-
+            modelBuilder.ApplyConfiguration(new PedidoMapeamento());
+            modelBuilder.ApplyConfiguration(new MesaMapeamento());
+        }
     }
 }

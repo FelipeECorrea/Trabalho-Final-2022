@@ -17,23 +17,23 @@ namespace Repositorio.Mapeamentos
                 .IsRequired()
                 .HasColumnName("produto_id"); // NOT NULL
 
-            builder.Property(x => x.ClienteId)
+            builder.Property(x => x.PedidoId)
                 .HasColumnType("INT")
                 .IsRequired()
-                .HasColumnName("cliente_id"); // NOT NULL
+                .HasColumnName("pedido_id"); // NOT NULL
 
-            builder.Property(x => x.SomaTotal)
+            builder.Property(x => x.Valor)
                 .HasColumnType("DECIMAL")
                 .IsRequired()
-                .HasColumnName("soma_total"); // NOT NULL
+                .HasColumnName("valor"); // NOT NULL
 
             builder.HasOne(x => x.Produto)
                 .WithMany(x => x.ProdutosPedidos)
                 .HasForeignKey(x => x.ProdutoId);
 
-            builder.HasOne(x => x.Cliente)
+            builder.HasOne(x => x.Pedido)
                 .WithMany(x => x.ProdutosPedidos)
-                .HasForeignKey(x => x.ClienteId);
+                .HasForeignKey(x => x.PedidoId);
         }
     }
 }
