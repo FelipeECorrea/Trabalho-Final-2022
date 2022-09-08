@@ -23,7 +23,7 @@ namespace Repositorio.BancoDados
         {
 
             modelBuilder.Entity<Cliente>()
-           .HasIndex(p => new { p.Email, p.Senha })
+           .HasIndex(p => new { p.Email })
            .IsUnique(true);
             modelBuilder.ApplyConfiguration(new ClienteMapeamento());   
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
