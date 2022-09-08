@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Repositorio.Entidades;
+using System.Reflection.Emit;
 
 
 namespace Repositorio.Mapeamentos
@@ -41,12 +42,8 @@ namespace Repositorio.Mapeamentos
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(20)
                 .IsRequired()
-                .HasColumnName("senha");
-           
-
+            .HasColumnName("senha");
 
         }
-
-
     }
 }
