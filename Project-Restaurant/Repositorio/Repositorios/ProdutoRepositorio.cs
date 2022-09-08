@@ -45,10 +45,10 @@ namespace Repositorio.Repositorios
             _contexto.SaveChanges();
         }
 
-        public Produto? ObterPodId(int id) =>
+        public Produto? ObterPorId(int Id) =>
                _contexto.Produtos
             .Include(x => x.ProdutosPedidos)
-            .FirstOrDefault(x => x.Id == id);
+            .FirstOrDefault(x => x.Id == Id);
 
 
 

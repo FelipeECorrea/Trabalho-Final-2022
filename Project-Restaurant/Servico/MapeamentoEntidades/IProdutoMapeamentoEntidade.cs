@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Repositorio.Entidades;
+using Servico.ViewModels.Produto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace Servico.MapeamentoEntidades
 {
-    internal interface IProdutoMapeamentoEntidade
+    public interface IProdutoMapeamentoEntidade
     {
+        Produto ConstruirCom(ProdutoCadastrarViewModel viewModel);
+        Produto AtualizarCampos(Produto responsavel, ProdutoEditarViewModel viewModel);
     }
 }
