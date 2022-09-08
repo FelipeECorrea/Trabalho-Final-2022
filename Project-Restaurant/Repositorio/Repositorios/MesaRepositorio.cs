@@ -17,9 +17,12 @@ namespace Repositorio.Repositorios
             throw new NotImplementedException();
         }
 
-        public Produto Cadastrar(Mesa mesa)
+        public Mesa Cadastrar(Mesa mesa)
         {
-            throw new NotImplementedException();
+            _contexto.Mesas.Add(mesa);
+            _contexto.SaveChanges();
+
+            return mesa;
         }
 
         public void Editar(Mesa mesa)
@@ -27,14 +30,18 @@ namespace Repositorio.Repositorios
             throw new NotImplementedException();
         }
 
-        public Produto? ObterPodId(int id)
+        public Mesa? ObterPorId(int id)
         {
-            throw new NotImplementedException();
+            var mesa = _contexto.Mesas.Where(x => x.Id == id).FirstOrDefault();
+
+            return mesa;
         }
 
-        public IList<Produto> ObterTodos()
+        public IList<Mesa> ObterTodos()
         {
-            throw new NotImplementedException();
+            var mesas = _contexto.Mesas.ToList();
+
+            return mesas;
         }
     }
 }
