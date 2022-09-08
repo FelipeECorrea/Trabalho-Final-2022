@@ -5,9 +5,9 @@ namespace Repositorio.Repositorios
     public interface IMesaRepositorio
     {
         bool Apagar(int id);
-        Produto Cadastrar(Mesa mesa);
+        Mesa Cadastrar(Mesa mesa);
         void Editar(Mesa mesa);
-        Produto? ObterPodId(int id);
-        IList<Produto> ObterTodos();
+        Mesa? ObterPorId(int id);
+        IList<Mesa> ObterTodos();
     }
 }
