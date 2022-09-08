@@ -1,4 +1,5 @@
-﻿using Repositorio.BancoDados;
+﻿using Microsoft.EntityFrameworkCore;
+using Repositorio.BancoDados;
 using Repositorio.Entidades;
 
 namespace Repositorio.Repositorios
@@ -43,9 +44,10 @@ namespace Repositorio.Repositorios
         public Pedido? ObterPodId(int pedidoId) =>
             _contexto.Pedidos.FirstOrDefault(x => x.Id == pedidoId);
 
-        public IList<Pedido> ObterTodos()
-        {
-            throw new NotImplementedException();
-        }
+        public IList<Pedido> ObterTodos() =>
+            _contexto.Pedidos
+            .Include(x => x.Cliente)
+            .Include(x => x.Mesa)
+            .ToList();
     }
 }

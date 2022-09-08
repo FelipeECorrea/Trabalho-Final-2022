@@ -1,6 +1,6 @@
 ﻿namespace Servico.MapeamentoEntidades
 {
-    public class PedidoMapeamentoEntidade : IPedidoMapeamentoEntidade
+    public class PedidoMapeamentoEntidade // : IPedidoMapeamentoEntidade
     {
 
     }
