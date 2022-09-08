@@ -1,4 +1,6 @@
 ﻿using Repositorio.Entidades;
+using Servico.ViewModels;
+using Servico.ViewModels.Produto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,4 +19,4 @@ namespace Servico.Servicos
         IList<SelectViewModel> ObterTodosSelect2();
     }
 }
-}
+
