@@ -1,4 +1,5 @@
-﻿using Repositorio.BancoDados;
+﻿using Microsoft.EntityFrameworkCore;
+using Repositorio.BancoDados;
 using Repositorio.Entidades;
 using System;
 using System.Collections.Generic;
@@ -45,5 +46,10 @@ namespace Repositorio.Repositorios
             _contexto.SaveChanges();
         }
 
+        public void ObterPorId(int clienteId) =>
+          _contexto.Clientes.FirstOrDefault(x => x.Id == clienteId);
+
+        public IList<Cliente> ObterTodos() =>
+        _contexto.Clientes.ToList();
     }
 }
