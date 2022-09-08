@@ -11,7 +11,6 @@
     <Folder Include="Helpers\" />
     <Folder Include="InjecoesDependencia\" />
     <Folder Include="MapeamentoViewModels\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>

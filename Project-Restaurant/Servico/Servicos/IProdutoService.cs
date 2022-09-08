@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repositorio.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,14 @@ using System.Threading.Tasks;
 
 namespace Servico.Servicos
 {
-    internal interface IProdutoService
+    public interface IProdutoService
     {
+        bool Apagar(int id);
+        Produto Cadastrar(ProdutoCadastrarViewModel viewModel);
+        bool Editar(ProdutoEditarViewModel viewModel);
+        ProdutoEditarViewModel? ObterPorId(int id);
+        IList<Produto> ObterTodos();
+        IList<SelectViewModel> ObterTodosSelect2();
     }
+}
 }

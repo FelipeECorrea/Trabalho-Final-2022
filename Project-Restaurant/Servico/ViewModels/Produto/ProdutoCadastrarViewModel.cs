@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Servico.Servicos
+namespace Servico.ViewModels.Produto
 {
-    public class ProdutoService : IProdutoService
+    public class ProdutoCadastrarViewModel : ProdutoViewModel
     {
     }
 }
