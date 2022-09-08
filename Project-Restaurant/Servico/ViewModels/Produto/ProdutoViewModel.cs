@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Servico.ViewModels.Produto
 {
-    public abstract class ProdutoViewModel
+    public class ProdutoViewModel
     {
         [Display(Name = "Nome")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
@@ -19,7 +19,7 @@ namespace Servico.ViewModels.Produto
         [Display(Name = "Valor")]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
         [Range(0, int.MaxValue, ErrorMessage = "{0} deve conter no mínimo {1}")]
-        public int? Valor { get; set; }
+        public decimal? Valor { get; set; }
 
         [Display(Name = "Categoria")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
