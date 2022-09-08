@@ -9,10 +9,10 @@ namespace Repositorio.Repositorios
 {
     public interface IProdutoRepositorio
     {
-        bool Apagar(int id);
+        bool Apagar(int Id);
         Produto Cadastrar(Produto produto);
         void Editar(Produto produto);
-        Produto? ObterPodId(int id);
+        Produto? ObterPorId(int Id);
         IList<Produto> ObterTodos();
     }
 }
