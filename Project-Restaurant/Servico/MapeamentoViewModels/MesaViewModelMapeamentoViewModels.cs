@@ -13,10 +13,10 @@ namespace Servico.MapeamentoViewModels
         {
             return new MesaViewModelMapeamentoViewModels
             {
-               //verificarrrrrrrrrr issooo
-
-                
+                Status = mesa.Status,
+                NumeroMesa = mesa.NumeroMesa,
             };
         }
+
     }
 }
