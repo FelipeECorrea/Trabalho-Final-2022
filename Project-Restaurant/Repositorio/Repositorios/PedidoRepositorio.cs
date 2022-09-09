@@ -41,7 +41,7 @@ namespace Repositorio.Repositorios
             _contexto.SaveChanges();
         }
 
-        public Pedido? ObterPodId(int pedidoId) =>
+        public Pedido? ObterPorId(int pedidoId) =>
             _contexto.Pedidos.FirstOrDefault(x => x.Id == pedidoId);
 
         public IList<Pedido> ObterTodos() =>
