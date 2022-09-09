@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Repositorio.Entidades;
 using Repositorio.Mapeamentos;
+using System;
 
 namespace Repositorio.BancoDados
 {
@@ -20,7 +21,11 @@ namespace Repositorio.BancoDados
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ClienteMapeamento());
+
+            modelBuilder.Entity<Cliente>()
+           .HasIndex(p => new { p.Email })
+           .IsUnique(true);
+            modelBuilder.ApplyConfiguration(new ClienteMapeamento());   
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
             modelBuilder.ApplyConfiguration(new PedidoMapeamento());
             modelBuilder.ApplyConfiguration(new MesaMapeamento());
