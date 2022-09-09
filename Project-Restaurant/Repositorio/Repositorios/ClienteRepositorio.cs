@@ -18,18 +18,18 @@ namespace Repositorio.Repositorios
             _contexto = contexto;
         }
 
-        public Cliente Apagar(int id)
+        public bool Apagar(int id)
         {
             var clienteParaApagar = _contexto.Clientes
                 .FirstOrDefault(x => x.Id == id);
 
             if (clienteParaApagar == null)
-                return null;
+                return false;
 
             _contexto.Clientes.Remove(clienteParaApagar);
             _contexto.SaveChanges();
 
-            return clienteParaApagar;
+            return true;
         }
 
         public Cliente Cadastrar(Cliente cliente)
@@ -45,11 +45,11 @@ namespace Repositorio.Repositorios
             _contexto.Clientes.Update(cliente);
             _contexto.SaveChanges();
         }
-
-        public void ObterPorId(int clienteId) =>
-          _contexto.Clientes.FirstOrDefault(x => x.Id == clienteId);
+        Cliente? IClienteRepositorio.ObterPorId(int id) =>
+            _contexto.Clientes.FirstOrDefault(x => x.Id == id);
 
         public IList<Cliente> ObterTodos() =>
         _contexto.Clientes.ToList();
+
     }
 }
