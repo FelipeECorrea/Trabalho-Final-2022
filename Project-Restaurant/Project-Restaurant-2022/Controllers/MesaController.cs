@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Servico.Servicos;
+using Servico.ViewModels.Mesa;
 using Servico.ViewModels.Produto;
 
 namespace Project_Restaurant_2022.Controllers
@@ -20,6 +21,26 @@ namespace Project_Restaurant_2022.Controllers
         {
             var mesas = _mesaService.ObterTodos();
             return View(mesas);
+        }
+
+        [HttpGet("cadastrar")]
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
+
+        [HttpPost("cadastrar")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Cadastrar(MesaCadastrarViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            _mesaService.Cadastrar(viewModel);
+
+            return RedirectToAction("Index");
         }
 
 
