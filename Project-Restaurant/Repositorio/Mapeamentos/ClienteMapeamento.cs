@@ -6,7 +6,7 @@ using System.Reflection.Emit;
 
 namespace Repositorio.Mapeamentos
 {
-    internal class ClienteMapeamento : IEntityTypeConfiguration<Cliente>
+    public class ClienteMapeamento : IEntityTypeConfiguration<Cliente>
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {
@@ -44,18 +44,18 @@ namespace Repositorio.Mapeamentos
                 .IsRequired()
             .HasColumnName("senha");
 
-            builder.HasData(
-                new Cliente
-                {
-                    Id = 1,
-                    Nome = "Cristyan",
-                    Telefone = "47991392902",
-                    Cpf = "10437548902",
-                    Email = "cristyanalexandrino.od@gmail.com",
-                    Senha = "admin123"
+            //builder.HasData(
+            //    new Cliente
+            //    {
+            //        Id = 1,
+            //        Nome = "Cristyan",
+            //        Telefone = "47991392902",
+            //        Cpf = "10437548902",
+            //        Email = "cristyanalexandrino.od@gmail.com",
+            //        Senha = "admin123"
                     
 
-                }) ;
+            //    }) ;
         }
     }
 }

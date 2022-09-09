@@ -8,7 +8,7 @@
         public string Email { get; set; }
         public string Senha { get; set; }
         public IList<Pedido> Pedidos { get; set; }
-        public IList<ProdutoPedido> ProdutosPedidos { get; set; 
+        public IList<ProdutoPedido> ProdutosPedidos { get; set; }
 
     }
 }
