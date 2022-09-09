@@ -45,17 +45,17 @@ namespace Repositorio.Mapeamentos
             .HasColumnName("senha");
 
             //builder.HasData(
-              //  new Cliente
-             //   {
-             //       Id = 1,
-             //       Nome = "Cristyan",
-              //      Telefone = "47991392902",
-             //       Cpf = "10437548902",
-             //       Email = "cristyanalexandrino.od@gmail.com",
+            //    new Cliente
+            //    {
+            //        Id = 1,
+            //        Nome = "Cristyan",
+            //        Telefone = "47991392902",
+            //        Cpf = "10437548902",
+            //        Email = "cristyanalexandrino.od@gmail.com",
             //        Senha = "admin123"
-          //          
-          //
-           //     }) ;
+                    
+
+            //    }) ;
         }
     }
 }
