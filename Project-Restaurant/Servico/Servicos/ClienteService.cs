@@ -21,23 +21,23 @@ namespace Servico.Servicos
         public bool Apagar(int id) =>
             _clienteRepositorio.Apagar(id);
 
-        public Cliente Cadastrar(ClienteCadastrarViewModel viewModel, string caminhoArquivo)
+        public Cliente Cadastrar(ClienteCadastrarViewModel viewModel)
         {
-            var cliente = _mapeamentoEntidade.ConstruirCom(viewModel, caminhoArquivo);
+            var cliente = _mapeamentoEntidade.ConstruirCom(viewModel);
 
             _clienteRepositorio.Cadastrar(cliente);
 
             return cliente;
         }
 
-        public bool Editar(ClienteEditarViewModel viewModel, string caminhoArquivos)
+        public bool Editar(ClienteEditarViewModel viewModel)
         {
             var cliente = _clienteRepositorio.ObterPorId(viewModel.Id);
 
             if (cliente == null)
                 return false;
 
-           // _mapeamentoEntidade.AtualizarCom(cliente, viewModel);
+            _mapeamentoEntidade.AtualizarCom(cliente, viewModel);
 
             _clienteRepositorio.Editar(cliente);
 
