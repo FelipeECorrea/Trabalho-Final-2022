@@ -8,6 +8,6 @@ namespace Repositorio.Repositorios
         Pedido? Apagar(int id);
         Pedido? ObterPorId(int pedidoId);
         void Editar(Pedido pedido);
-        IList<Pedido> ObterTodos(); //TODO vERIFICAR COM QUERIA COMO SERA LISTADO OS PEDIDOS
+        IList<Pedido> ObterTodos();
     }
 }
