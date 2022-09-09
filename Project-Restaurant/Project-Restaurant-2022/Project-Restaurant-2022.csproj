@@ -8,7 +8,6 @@
   </PropertyGroup>
 	
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="InjecoesDependencia\" />
     <Folder Include="TagHelpers\" />
   </ItemGroup>
@@ -33,7 +32,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Controllers\" />
 		<Folder Include="InjecoesDependencia\" />
 		<Folder Include="TagHelpers\" />
 	</ItemGroup>
