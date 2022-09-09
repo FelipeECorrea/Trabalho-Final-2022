@@ -1,4 +1,5 @@
 ﻿using Repositorio.Entidades;
+using Servico.ViewModels.Mesa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Servico.MapeamentoViewModels
 {
     public class MesaViewModelMapeamentoViewModels : IMesaViewModelMapeamentoViewModels
     {
+      
         public IMesaViewModelMapeamentoViewModels ConstruirCom(Mesa mesa)
         {
             return new MesaViewModelMapeamentoViewModels
@@ -17,6 +19,15 @@ namespace Servico.MapeamentoViewModels
                 //NumeroMesa = mesa.NumeroMesa,
             };
         }
+
+        public MesaCadastrarViewModel ConstruirCom(Mesa mesa) =>
+             new MesaCadastrarViewModel
+             {
+                 NumeroMesa = mesa.NumeroMesa,
+
+             };
+       
+       
 
     }
 }

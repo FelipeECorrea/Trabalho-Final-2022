@@ -19,7 +19,11 @@ namespace Repositorio.Repositorios
 
         public Mesa Cadastrar(Mesa mesa)
         {
-            throw new NotImplementedException();
+
+            _contexto.Mesas.Add(mesa);
+            _contexto.SaveChanges();
+
+            return mesa;
         }
 
         public void Editar(Mesa mesa)
