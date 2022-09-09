@@ -21,6 +21,7 @@ namespace Repositorio.BancoDados
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new ClienteMapeamento());
 
             modelBuilder.Entity<Cliente>()
            .HasIndex(p => new { p.Email })
@@ -30,5 +31,5 @@ namespace Repositorio.BancoDados
             modelBuilder.ApplyConfiguration(new PedidoMapeamento());
             modelBuilder.ApplyConfiguration(new MesaMapeamento());
         }
+        }
     }
-}

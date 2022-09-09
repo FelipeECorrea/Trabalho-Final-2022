@@ -1,19 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Repositorio.BancoDados;
 using Repositorio.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositorio.Repositorios
 {
     public class ProdutoRepositorio : IProdutoRepositorio
     {
-
         private readonly RestauranteContexto _contexto;
 
+        public ProdutoRepositorio(RestauranteContexto contexto)
+        {
+            _contexto = contexto;
+        }
 
         public bool Apagar(int id)
         {

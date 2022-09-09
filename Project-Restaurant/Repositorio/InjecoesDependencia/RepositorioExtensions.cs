@@ -10,6 +10,7 @@ namespace Repositorio.InjecoesDependencia
     {
         public static IServiceCollection AdicionarRepositorios(this IServiceCollection services)
         {
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
             services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
             services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();

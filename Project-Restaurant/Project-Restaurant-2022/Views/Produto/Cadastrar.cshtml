@@ -1,0 +1,51 @@
+﻿@model ProdutoCadastrarViewModel
+
+<div class="col-lg-6 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Cadastro de Produtos</h4>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+                <p>This is the most basic and default form having inputs, labels and buttons.</p>
+                <form asp-action="Cadastrar" method="POST">
+                    <div class="form-row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Nome"></label>
+                                <input type="text" asp-for="Nome" class="form-control">
+                                <span asp-validation-for="Nome" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Valor"></label>
+                                <input type="text" asp-for="Valor" class="form-control">
+                                <span asp-validation-for="Valor" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Categoria"></label>
+                                <input type="text" asp-for="Categoria" class="form-control">
+                                <span asp-validation-for="Categoria" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Descricao"></label>
+                                <textarea id="basic-form-9" rows="4" asp-for="Descricao" class="form-control"></textarea>
+                                <span asp-validation-for="Descricao" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Save</button>
+                    <button type="button" class="btn btn-secondary"><i class="ft-x mr-1"></i>Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
