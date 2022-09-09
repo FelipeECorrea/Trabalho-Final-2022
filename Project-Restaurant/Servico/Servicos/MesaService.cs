@@ -8,5 +8,6 @@ namespace Servico.Servicos
 {
     public class MesaService
     {
+
     }
 }
