@@ -1,6 +1,8 @@
 ﻿using Repositorio.Entidades;
 using Repositorio.Repositorios;
+using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
+using Servico.ViewModels.Mesa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +14,25 @@ namespace Servico.Servicos
     public class MesaService : IMesaService
     {
         private readonly IMesaRepositorio _mesaRepositorio;
+        private readonly IMesaMapeamentoEntidade _mapeamentoEntidade;
         private readonly IMesaViewModelMapeamentoViewModels _mapeamentoViewModel;
 
         public MesaService(
             IMesaRepositorio mesaRepositorio,
+            IMesaMapeamentoEntidade mapeamentoEntidade,
             IMesaViewModelMapeamentoViewModels mapeamentoViewModel)
         {
             _mesaRepositorio = mesaRepositorio;
+            _mapeamentoEntidade = mapeamentoEntidade;
             _mapeamentoViewModel = mapeamentoViewModel;
+        }
+        public Mesa Cadastrar(MesaCadastrarViewModel viewModel)
+        {
+            var produto = _mapeamentoEntidade.ConstruirCom(viewModel);
+
+            _mesaRepositorio.Cadastrar(produto);
+
+            return produto;
         }
         public Mesa? ObterPorId(int id) =>
             _mesaRepositorio.ObterPorId(id);
