@@ -44,9 +44,7 @@ namespace Repositorio.Repositorios
         }
 
         public Produto? ObterPorId(int Id) =>
-               _contexto.Produtos
-            .Include(x => x.ProdutosPedidos)
-            .FirstOrDefault(x => x.Id == Id);
+               _contexto.Produtos.FirstOrDefault(x => x.Id == Id);
 
 
 
