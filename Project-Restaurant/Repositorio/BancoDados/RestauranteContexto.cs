@@ -26,10 +26,9 @@ namespace Repositorio.BancoDados
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ClienteMapeamento());
-        }
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
             modelBuilder.ApplyConfiguration(new PedidoMapeamento());
             modelBuilder.ApplyConfiguration(new MesaMapeamento());
         }
+        }
     }
-}

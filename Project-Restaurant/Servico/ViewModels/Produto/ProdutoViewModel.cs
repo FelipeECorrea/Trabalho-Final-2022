@@ -23,13 +23,11 @@ namespace Servico.ViewModels.Produto
 
         [Display(Name = "Categoria")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$", ErrorMessage = "{0} deve conter no mínimo 5 caracteres'")]
         public string Categoria { get; set; }
 
 
         [Display(Name = "Descricao")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$", ErrorMessage = "{0} deve conter no mínimo 5 caracteres'")]
         public string Descricao { get; set; }
     }
 }
