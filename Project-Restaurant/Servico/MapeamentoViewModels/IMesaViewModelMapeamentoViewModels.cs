@@ -1,4 +1,5 @@
 ﻿using Repositorio.Entidades;
+using Servico.ViewModels.Mesa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Servico.MapeamentoViewModels
 {
     public interface IMesaViewModelMapeamentoViewModels
     {
-        IMesaViewModelMapeamentoViewModels ConstruirCom(Mesa mesa);
+        MesaCadastrarViewModel ConstruirCom(Mesa mesa);
     }
 }
