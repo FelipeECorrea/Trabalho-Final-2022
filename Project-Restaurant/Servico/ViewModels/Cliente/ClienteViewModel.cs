@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Formatters;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using System.ComponentModel.DataAnnotations;
 
 namespace Servico.ViewModels.Cliente
@@ -28,5 +29,7 @@ namespace Servico.ViewModels.Cliente
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MaxLength(6, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
         public string? Senha { get; set; }
+
+        public IFormFile? Arquivo { get; set; }
     }
 }
