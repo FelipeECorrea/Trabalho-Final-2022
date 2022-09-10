@@ -11,6 +11,11 @@ namespace Servico.MapeamentoEntidades
 {
     public class MesaMapeamentoEntidade : IMesaMapeamentoEntidade
     {
+        public void AtualizarCampos(Mesa mesa, MesaEditarViewModel mesaEditarViewModel)
+        {
+            mesa.NumeroMesa = mesaEditarViewModel.NumeroMesa;
+            mesa.Status = (StatusMesa)mesaEditarViewModel.Status;
+        }
 
         public Mesa ConstruirCom(MesaCadastrarViewModel viewModel)
         {

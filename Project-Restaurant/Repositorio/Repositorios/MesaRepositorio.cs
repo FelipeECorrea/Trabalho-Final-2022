@@ -14,7 +14,17 @@ namespace Repositorio.Repositorios
 
         public bool Apagar(int id)
         {
-            throw new NotImplementedException();
+
+            var mesa = _contexto.Mesas
+                .FirstOrDefault(x => x.Id == id);
+
+            if ( mesa == null)
+                return false;
+
+            _contexto.Mesas.Remove(mesa);
+            _contexto.SaveChanges();
+
+            return true;
         }
 
         public Mesa Cadastrar(Mesa mesa)
@@ -28,7 +38,8 @@ namespace Repositorio.Repositorios
 
         public void Editar(Mesa mesa)
         {
-            throw new NotImplementedException();
+            _contexto.Mesas.Update(mesa);
+            _contexto.SaveChanges();
         }
 
         public Mesa? ObterPorId(int id)
