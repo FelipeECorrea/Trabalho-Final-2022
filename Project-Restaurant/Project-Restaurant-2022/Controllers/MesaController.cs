@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Mesa;
 using Servico.ViewModels.Produto;
@@ -65,7 +66,11 @@ namespace Project_Restaurant_2022.Controllers
 
         private object ObterMesa()
         {
-            throw new NotImplementedException();
+            return Enum
+              .GetNames<StatusMesa>()
+              .OrderBy(x => x)
+              .ToList();
         }
+
     }
 }   

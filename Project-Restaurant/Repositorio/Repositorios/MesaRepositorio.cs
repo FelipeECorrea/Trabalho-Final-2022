@@ -49,11 +49,7 @@ namespace Repositorio.Repositorios
             return mesa;
         }
 
-        public IList<Mesa> ObterTodos()
-        {
-            var mesas = _contexto.Mesas.ToList();
-
-            return mesas;
-        }
+        public IList<Mesa> ObterTodos() =>
+            _contexto.Mesas.ToList();
     }
 }
