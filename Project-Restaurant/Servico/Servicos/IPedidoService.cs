@@ -6,7 +6,7 @@ namespace Servico.Servicos
 {
     public interface IPedidoService
     {
-        void Cadastrar(PedidoCadastrarViewModel pedidoCadastrarViewModel);
+        Pedido Cadastrar(PedidoCadastrarViewModel pedidoCadastrarViewModel);
         IList<Pedido> ObterTodos();
         void Apagar(int id);
         Pedido ObterPorId(int id);

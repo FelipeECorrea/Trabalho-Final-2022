@@ -16,6 +16,9 @@ namespace Servico.InjecoesDependencia
             services.AddScoped<IProdutoMapeamentoEntidade, ProdutoMapeamentoEntidade>();
             services.AddScoped<IProdutoViewModelMapeamentoViewModels, ProdutoViewModelMapeamentoViewModels>();
 
+            services.AddScoped<IPedidoService, PedidoService>();
+            services.AddScoped<IPedidoMapeamentoEntidade, PedidoMapeamentoEntidade>();
+            services.AddScoped<IPedidoViewModelMapeamentoViewModels, PedidoViewModelMapeamentoViewModels>();
             return services;
         }
 

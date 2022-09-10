@@ -1,6 +1,8 @@
 ﻿using Repositorio.Entidades;
 using Repositorio.Mapeamentos;
 using Repositorio.Repositorios;
+using Servico.MapeamentoEntidades;
+using Servico.MapeamentoViewModels;
 using Servico.ViewModels;
 using Servico.ViewModels.Pedido;
 
@@ -9,15 +11,21 @@ namespace Servico.Servicos
     public class PedidoService : IPedidoService
     {
         private readonly IPedidoRepositorio _pedidoRepositorio;
+        private readonly IPedidoMapeamentoEntidade _mapeamentoEntidade;
+        private readonly IPedidoViewModelMapeamentoViewModels _mapeamentoViewModel;
 
         public void Apagar(int id)
         {
             _pedidoRepositorio.Apagar(id);
         }
 
-        public void Cadastrar(PedidoCadastrarViewModel pedidoCadastrarViewModel)
+        public Pedido Cadastrar(PedidoCadastrarViewModel viewModel)
         {
-            throw new NotImplementedException();
+            var pedido = _mapeamentoEntidade.ConstruirCom(viewModel);
+
+            _pedidoRepositorio.Cadastrar(pedido);
+
+            return pedido;
         }
 
         public Pedido ObterPorId(int pedidoId)

@@ -1,9 +1,10 @@
 ﻿using Repositorio.Entidades;
+using Servico.ViewModels.Pedido;
 
 namespace Servico.MapeamentoEntidades
 {
     public interface IPedidoMapeamentoEntidade
     {
-        PedidoMapeamentoEntidade AtualizarCom(Pedido pedido);
+        Pedido ConstruirCom(PedidoCadastrarViewModel viewModel);
     }
 }
