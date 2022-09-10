@@ -1,6 +1,6 @@
-﻿@model List<Produto>
+﻿@model List<Mesa>
 
-<p class="h3">Lista de Produtos</p>
+<p class="h3">Lista de Mesas</p>
 
 <div class="row mb-3">
     <div class="text-end">
@@ -15,24 +15,23 @@
     <!-- Cabeçalho da tabela-->
     <tr>
         <!-- Linha da tabela-->
-        <th>Nome</th> <!-- Coluna específica do cabeçalho-->
-        <th>Valor</th>
-        <th>Ação</th>
+        <th>Numero Mesa</th> <!-- Coluna específica do cabeçalho-->
+        <th>Status</th>
     </tr>
     </thead>
     <tbody>
     <!-- Lugar dos registros da tabela-->
-    @foreach (var produto in Model)
+    @foreach (var mesa in Model)
     {
         <tr>
             <!-- Linha-->
-            <td>@produto.Nome</td> <!-- Coluna específica para body-->
-            <td>@produto.Valor</td>
+            <td>@mesa.NumeroMesa</td> <!-- Coluna específica para body-->
+            <td>@mesa.Status</td>
             <td>
-                <a class="btn btn-primary" asp-action="editar" asp-route-id="@produto.Id">
+                <a class="btn btn-primary" asp-action="editar" asp-route-id="@mesa.Id">
                     <i class="fa-solid fa-pencil"></i> Editar
                 </a>
-                <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@produto.Id">
+                <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@mesa.Id">
                     <i class="fa-solid fa-trash"></i> Apagar
                 </a>
             </td>

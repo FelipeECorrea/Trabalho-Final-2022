@@ -5,7 +5,7 @@ namespace Servico.MapeamentoEntidades
 {
     public class ClienteMapeamentoEntidade : IClienteMapeamentoEntidade
     {
-        public void AtualizarCom(Cliente cliente, ClienteEditarViewModel clienteEditarViewModel, string caminho)
+        public void AtualizarCom(Cliente cliente, ClienteEditarViewModel clienteEditarViewModel)
         {
             cliente.Nome = clienteEditarViewModel.Nome;
             cliente.Telefone = clienteEditarViewModel.Telefone;
@@ -14,7 +14,7 @@ namespace Servico.MapeamentoEntidades
             cliente.Senha = clienteEditarViewModel.Senha;
         }
 
-        public Cliente ConstruirCom(ClienteCadastrarViewModel viewModel, string caminho) =>
+        public Cliente ConstruirCom(ClienteCadastrarViewModel viewModel) =>
             new Cliente
             {
                 Nome = viewModel.Nome,
