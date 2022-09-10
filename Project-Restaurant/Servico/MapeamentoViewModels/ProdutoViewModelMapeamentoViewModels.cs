@@ -20,7 +20,7 @@ namespace Servico.MapeamentoViewModels
                   Categoria = produto.Categoria,
                   Descricao = produto.Descricao
                   //Produtos = ConstruirContatosCom(produto.Produto),
-              };    
+              };
         private IList<ProdutoViewModel> ConstruirContatosCom(IList<Produto> produtos)
         {
             var viewModels = new List<ProdutoViewModel>();
