@@ -95,5 +95,14 @@ namespace Project_Restaurant_2022.Controllers
                 .OrderBy(x => x)
                 .ToList();
         }
+
+        [HttpGet("apagar")]
+        // http://local:host:portaapagar?id=4
+        public IActionResult Apagar([FromQuery] int id)
+        {
+            _produtoService.Apagar(id);
+
+            return RedirectToAction("Index");
+        }
     }
 }

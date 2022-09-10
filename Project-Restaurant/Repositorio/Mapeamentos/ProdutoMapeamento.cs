@@ -14,6 +14,7 @@ namespace Repositorio.Mapeamentos
 
             builder.Property(x => x.Valor)
                .HasColumnType("DECIMAL")
+               .HasPrecision(5,2)
                .IsRequired()
                .HasColumnName("valor");
 
