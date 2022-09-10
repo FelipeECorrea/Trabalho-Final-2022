@@ -12,7 +12,14 @@ namespace Servico.Servicos
     {
         private readonly IPedidoRepositorio _pedidoRepositorio;
         private readonly IPedidoMapeamentoEntidade _mapeamentoEntidade;
-        private readonly IPedidoViewModelMapeamentoViewModels _mapeamentoViewModel;
+
+        public PedidoService(
+             IPedidoRepositorio pedidoRepositorio,
+             IPedidoMapeamentoEntidade mapeamentoEntidade)
+        {
+            _pedidoRepositorio = pedidoRepositorio;
+            _mapeamentoEntidade = mapeamentoEntidade;
+        }
 
         public void Apagar(int id)
         {
