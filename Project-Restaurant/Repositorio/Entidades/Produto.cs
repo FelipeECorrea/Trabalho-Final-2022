@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.Data.SqlClient.Server;
+using System.ComponentModel.DataAnnotations;
 
 namespace Repositorio.Entidades
 {
     public class Produto : EntidadeBase
     {
-
-        [DisplayFormat(DataFormatString = "{0:0,0.000000}")]
-        public decimal Valor { get; set; }
+        public decimal Valor{ get; set; }
+        //string.Format("{0:0.##}", 123,583)
         public string Nome { get; set; }
         public string Categoria { get; set; }
         public string Descricao { get; set; }
