@@ -7,6 +7,7 @@ namespace Servico.Servicos
     {
         bool Apagar(int id);
         Mesa Cadastrar(MesaCadastrarViewModel viewModel);
+        bool Editar(MesaEditarViewModel viewModel);
         Mesa? ObterPorId(int id);
         IList<Mesa> ObterTodos();
     }
