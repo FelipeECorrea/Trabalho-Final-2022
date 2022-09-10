@@ -42,7 +42,30 @@ namespace Project_Restaurant_2022.Controllers
 
             return RedirectToAction("Index");
         }
+        [HttpGet("editar")]
+        public IActionResult Editar([FromQuery] int id)
+        {
+            var viewModel = _mesaService.ObterPorId(id);
 
+            return PartialView(viewModel);
+        }
 
-    }   
+        [HttpPost("editar")]
+        public IActionResult Editar([FromForm] MesaEditarViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return PartialView(viewModel);
+            }
+
+            var mesa = _mesaService.Editar(viewModel);
+
+            return RedirectToAction(nameof(Editar), new { id = viewModel.Id });
+        }
+
+        private object ObterMesa()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }   
