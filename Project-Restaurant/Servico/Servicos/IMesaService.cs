@@ -1,4 +1,5 @@
 ﻿using Repositorio.Entidades;
+using Servico.ViewModels;
 using Servico.ViewModels.Mesa;
 
 namespace Servico.Servicos
@@ -10,5 +11,6 @@ namespace Servico.Servicos
         bool Editar(MesaEditarViewModel viewModel);
         Mesa? ObterPorId(int id);
         IList<Mesa> ObterTodos();
+        IList<SelectViewModel> ObterTodosSelect2();
     }
 }

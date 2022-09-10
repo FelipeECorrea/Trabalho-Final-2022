@@ -2,6 +2,7 @@
 using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
+using Servico.ViewModels;
 using Servico.ViewModels.Mesa;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,19 @@ namespace Servico.Servicos
         public IList<Mesa> ObterTodos() =>
             _mesaRepositorio.ObterTodos();
 
+        public IList<SelectViewModel> ObterTodosSelect2()
+        {
+            var mesas = _mesaRepositorio.ObterTodos();
+
+            var selectViewModels = mesas
+                .Select(x => new SelectViewModel
+                {
+                    Id = x.Id,
+                })
+                .ToList();
+
+            return selectViewModels;
+        }
     }
 
 
