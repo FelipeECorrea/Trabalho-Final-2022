@@ -43,7 +43,7 @@ namespace Project_Restaurant_2022.Controllers
 
         // aqui
 
-        [HttpGet("obterTodosSelect2")]
+        [HttpGet("ObterTodosPedidos")]
         public IActionResult ObterTodosPedidos()
         {
             var selectViewModel = _pedidoService.ObterTodosPedidos();

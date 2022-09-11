@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Repositorio.BancoDados;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
 using Servico.Servicos;
@@ -15,6 +12,7 @@ namespace Servico.InjecoesDependencia
             services.AddScoped<IProdutoService, ProdutoService>();
             services.AddScoped<IProdutoMapeamentoEntidade, ProdutoMapeamentoEntidade>();
             services.AddScoped<IProdutoViewModelMapeamentoViewModels, ProdutoViewModelMapeamentoViewModels>();
+            
             services.AddScoped<IMesaService, MesaService>();
             services.AddScoped<IMesaMapeamentoEntidade, MesaMapeamentoEntidade>();
             services.AddScoped<IMesaViewModelMapeamentoViewModels, MesaViewModelMapeamentoViewModels>();
@@ -22,6 +20,7 @@ namespace Servico.InjecoesDependencia
             services.AddScoped<IPedidoService, PedidoService>();
             services.AddScoped<IPedidoMapeamentoEntidade, PedidoMapeamentoEntidade>();
             services.AddScoped<IPedidoViewModelMapeamentoViewModels, PedidoViewModelMapeamentoViewModels>();
+
             return services;
         }
 

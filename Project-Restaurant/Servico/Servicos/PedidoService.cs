@@ -35,9 +35,9 @@ namespace Servico.Servicos
             return pedido;
         }
 
-        public Pedido ObterPorId(int pedidoId)
+        public Pedido ObterPorId(int id)
         {
-            var BuscarPedidoPorId = _pedidoRepositorio.ObterPorId(pedidoId);
+            var BuscarPedidoPorId = _pedidoRepositorio.ObterPorId(id);
 
             return BuscarPedidoPorId;
         }

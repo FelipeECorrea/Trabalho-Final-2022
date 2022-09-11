@@ -11,6 +11,6 @@ namespace Servico.MapeamentoViewModels
 {
     public interface IPedidoViewModelMapeamentoViewModels
     {
-        //PedidoCadastrarViewModel ConstruirCom(Pedido pedido);
+        PedidoCadastrarViewModel ConstruirCom(Pedido pedido);
     }
 }
