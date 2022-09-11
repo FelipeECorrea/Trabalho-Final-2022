@@ -1,6 +1,7 @@
 ﻿using Repositorio.Entidades;
 using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
+using Servico.ViewModels;
 using Servico.ViewModels.Cliente;
 
 namespace Servico.Servicos
@@ -46,6 +47,21 @@ namespace Servico.Servicos
 
         public Cliente? ObterPorId(int id) =>
             _clienteRepositorio.ObterPorId(id);
+
+        public IList<SelectViewModel> ObterPorSelect2()
+        {
+            var clientes = _clienteRepositorio.ObterTodos();
+
+            var selectViewModels = clientes
+                .Select(x => new SelectViewModel
+                {
+                    Id = x.Id,
+                    Text = x.Nome
+                })
+                .ToList();
+
+            return selectViewModels;
+        }
 
         public IList<Cliente> ObterTodos() =>
             _clienteRepositorio.ObterTodos();
