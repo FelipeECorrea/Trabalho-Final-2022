@@ -12,35 +12,19 @@ namespace Project_Restaurant_2022.Controllers
     public class ClienteController : Controller
     {
         private readonly IClienteService _clienteService;
-        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ClienteController(IClienteService clienteService, IWebHostEnvironment webHostEnvironment)
+        public ClienteController(IClienteService clienteService)
         {
             _clienteService = clienteService;
-            _webHostEnvironment = webHostEnvironment;
         }
 
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        [HttpGet("obterTodos")]
-        public IActionResult ObterTodos()
+        public ActionResult Index()
         {
             var clientes = _clienteService.ObterTodos();
 
-            return Ok(clientes);
+            return View(clientes);
         }
 
-        [HttpGet("obterPorId")]
-        public IActionResult ObterPorId([FromQuery] int id)
-        {
-            var clientes = _clienteService.ObterPorId(id);
-
-            return Ok(clientes);
-        }
         [HttpGet("cadastrar")]
         public ActionResult Cadastrar()
         {
@@ -60,7 +44,8 @@ namespace Project_Restaurant_2022.Controllers
 
             return RedirectToAction("Index");
         }
-            [HttpGet("editar")]
+
+        [HttpGet("editar")]
         public IActionResult Editar([FromQuery] int id)
         {
             var cliente = _clienteService.ObterPorId(id);
@@ -72,13 +57,37 @@ namespace Project_Restaurant_2022.Controllers
                 Cpf = cliente.Cpf,
                 Email = cliente.Email,
                 Senha = cliente.Senha,
-
             };
 
             return View(clienteEditarViewModel);
         }
          [HttpGet("apagar")]
         // http://local:host:portaapagar?id=4
+        public IActionResult Apagar([FromQuery] int id)
+        {
+            _clienteService.Apagar(id);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost("editar")]
+        public IActionResult Editar([FromForm] ClienteEditarViewModel clienteEditarViewModel)
+        {
+            _clienteService.Editar(clienteEditarViewModel);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("obterTodosSelect2")]
+        public IActionResult ObterTodosSelect2()
+        {
+            var selectViewModel = _clienteService.ObterPorSelect2();
+
+            return Ok(selectViewModel);
+        }
+
+
+        [HttpGet("apagar")]
         public IActionResult Apagar([FromQuery] int id)
         {
             _clienteService.Apagar(id);
