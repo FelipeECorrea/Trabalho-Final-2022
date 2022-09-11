@@ -21,10 +21,10 @@ namespace Repositorio.Mapeamentos
                 .IsRequired()
                 .HasColumnName("id_mesa");
 
-            //builder.Property(x => x.ProdutoId)
-            //    .HasColumnType("INT")
-            //    .IsRequired()
-            //    .HasColumnName("id_produto");
+            builder.Property(x => x.ProdutoId)
+                .HasColumnType("INT")
+                .IsRequired()
+                .HasColumnName("id_produto");
 
             builder.Property(x => x.Observacao)
                 .HasColumnType("VARCHAR")
@@ -41,9 +41,27 @@ namespace Repositorio.Mapeamentos
                 .WithMany(x => x.Pedidos)
                 .HasForeignKey(x => x.MesaId);
 
-            //builder.HasOne(x => x.Produto)
-            //    .WithMany(x => x.ProdutoPedidos)
-            //    .HasForeignKey(x => x.ProdutoId);
+            builder.HasOne(x => x.Produto)
+                .WithMany(x => x.Pedidos)
+                .HasForeignKey(x => x.ProdutoId);
+
+            builder.HasData(
+               new Pedido
+               {
+                   Id = 1,
+                   ClienteId = 1,
+                   MesaId = 1,
+                   ProdutoId = 1,
+                   Observacao = "Bem quente"
+               },
+               new Pedido
+               {
+                   Id = 2,
+                   ClienteId = 2,
+                   MesaId = 2,
+                   ProdutoId = 1,
+                   Observacao = "Bem quente"
+               });
         }
     }
 }
