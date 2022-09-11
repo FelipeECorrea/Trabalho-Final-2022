@@ -45,9 +45,7 @@ namespace Repositorio.Repositorios
             _contexto.Pedidos.FirstOrDefault(x => x.Id == pedidoId);
 
         public IList<Pedido> ObterTodos() =>
-            _contexto.Pedidos
-            .Include(x => x.Cliente)
-            .Include(x => x.Mesa)
-            .ToList();
+            _contexto.Pedidos.ToList();
+
     }
 }
