@@ -15,8 +15,11 @@ namespace Servico.MapeamentoViewModels
              new MesaCadastrarViewModel
              {
                  NumeroMesa = mesa.NumeroMesa,
-
-             }; 
-
+             };
+        public MesaEditarViewModel AtualizarCampos(Mesa mesa) =>
+             new MesaEditarViewModel
+             {        
+                 NumeroMesa = mesa.NumeroMesa,
+             };
     }
 }
