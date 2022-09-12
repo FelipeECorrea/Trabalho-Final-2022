@@ -23,15 +23,15 @@ namespace Project_Restaurant_2022.Controllers
             return View(pedidos);
         }
 
-        [HttpGet("cadastrar")]
-        public ActionResult Cadastrar()
+        [HttpGet("abrir")]
+        public ActionResult Abrir()
         {
             return View();
         }
 
-        [HttpPost("cadastrar")]
+        [HttpPost("abrir")]
         [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar(PedidoCadastrarViewModel viewModel)
+        public ActionResult Abrir([FromForm]PedidoCadastrarViewModel viewModel)
         {
             if (!ModelState.IsValid)
                 return View(viewModel);
@@ -43,7 +43,7 @@ namespace Project_Restaurant_2022.Controllers
 
         // aqui
 
-        [HttpGet("obterTodosSelect2")]
+        [HttpGet("ObterTodosPedidos")]
         public IActionResult ObterTodosPedidos()
         {
             var selectViewModel = _pedidoService.ObterTodosPedidos();

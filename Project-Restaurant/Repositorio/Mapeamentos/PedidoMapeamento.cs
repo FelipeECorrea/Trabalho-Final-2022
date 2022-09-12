@@ -35,6 +35,22 @@ namespace Repositorio.Mapeamentos
             builder.HasOne(x => x.Mesa)
                 .WithMany(x => x.Pedidos)
                 .HasForeignKey(x => x.MesaId);
+
+            builder.HasData(
+               new Pedido
+               {
+                   Id = 1,
+                   ClienteId = 1,
+                   MesaId = 1,
+                   Observacao = "Bem quente"
+               },
+               new Pedido
+               {
+                   Id = 2,
+                   ClienteId = 2,
+                   MesaId = 2,
+                   Observacao = "Bem quente"
+               });
         }
     }
 }

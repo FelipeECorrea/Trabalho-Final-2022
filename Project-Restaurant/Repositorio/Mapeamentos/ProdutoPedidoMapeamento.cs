@@ -15,7 +15,7 @@ namespace Repositorio.Mapeamentos
             builder.Property(x => x.ProdutoId)
                 .HasColumnType("INT")
                 .IsRequired()
-                .HasColumnName("produto_id"); // NOT NULL
+                .HasColumnName("id_produto"); // NOT NULL
 
             builder.Property(x => x.PedidoId)
                 .HasColumnType("INT")
