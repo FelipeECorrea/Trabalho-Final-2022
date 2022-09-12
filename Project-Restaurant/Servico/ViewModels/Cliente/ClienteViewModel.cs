@@ -19,6 +19,7 @@ namespace Servico.ViewModels.Cliente
 
         [Display(Name = nameof(Cpf))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
+        [MaxLength(11, ErrorMessage = "{0} deve ser preenchido")]
         public string? Cpf { get; set; }
 
         [Display(Name = nameof(Email))]
@@ -27,7 +28,7 @@ namespace Servico.ViewModels.Cliente
 
         [Display(Name = nameof(Senha))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        [MaxLength(6, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+        [MinLength(6, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         public string? Senha { get; set; }
 
         public IFormFile? Arquivo { get; set; }
