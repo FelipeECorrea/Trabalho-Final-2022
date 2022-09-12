@@ -17,6 +17,7 @@ namespace Servico.MapeamentoEntidades
             produto.Valor = viewModel.Valor.GetValueOrDefault();
             produto.Categoria = viewModel.Categoria;
             produto.Descricao = viewModel.Descricao;
+            
 
             return produto;
         }
