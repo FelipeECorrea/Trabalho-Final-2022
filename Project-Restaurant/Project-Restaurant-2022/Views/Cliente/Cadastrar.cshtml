@@ -1,4 +1,28 @@
-﻿@model ClienteCadastrarViewModel
+﻿@{ Layout = null; }
+@model ClienteCadastrarViewModel
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/feather/style.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/simple-line-icons/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/switchery.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/chartist.min.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN APEX CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/themes/layout-dark.css">
+    <link rel="stylesheet" href="~/Tema/app-assets/css/plugins/switchery.css">
+    <!-- END APEX CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/pages/dashboard1.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/style.css">
+</head>
 
 <form asp-action="Cadastrar" method="POST">
     <section id="regestration" class="auth-height">
@@ -26,8 +50,8 @@
                     <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha">
                     <input type="password" class="form-control mb-2" placeholder="Confirmar Senha">
                     <div class="d-flex justify-content-between flex-sm-row flex-column">
-                      <button type="submit" class="btn btn-primary mr-2"></i>Voltar para Login</button>
-                      <button type="button" class="btn btn-secondary"></i>Registrar</button>
+                      <button type="button" class="btn btn-primary mr-2"></i>Voltar para Login</button>
+                      <button type="submit" class="btn btn-secondary"></i>Registrar</button>
                     </div>
                   </div>
                 </div>
