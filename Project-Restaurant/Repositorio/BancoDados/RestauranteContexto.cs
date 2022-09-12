@@ -36,13 +36,14 @@ namespace Repositorio.BancoDados
             *          dotnet ef database update --project Repositorio --startup-project .\Project-Restaurant-2022
             *   - executar a aplicação irá aplicar a migration */
 
-            modelBuilder.Entity<Cliente>()
-           .HasIndex(p => new { p.Email })
-           .IsUnique(true);
+           // modelBuilder.Entity<Cliente>()
+           //.HasIndex(p => new { p.Email })
+           //.IsUnique(true);
             modelBuilder.ApplyConfiguration(new ClienteMapeamento());
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
-            modelBuilder.ApplyConfiguration(new PedidoMapeamento());
             modelBuilder.ApplyConfiguration(new MesaMapeamento());
+            modelBuilder.ApplyConfiguration(new PedidoMapeamento());
+            modelBuilder.ApplyConfiguration(new ProdutoPedidoMapeamento());
         }
     }
 }

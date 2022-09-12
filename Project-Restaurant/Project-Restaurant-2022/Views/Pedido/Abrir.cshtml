@@ -8,7 +8,7 @@
         <div class="card-content">
             <div class="card-body">
                 <p>This is the most basic and default form having inputs, labels and buttons.</p>
-                <form asp-action="Cadastrar" method="POST">
+                <form asp-action="Abrir" method="POST">
                     <div class="form-row">
                         <div class="col-md-6 col-12">
                             <div class="form-group mb-2">
@@ -22,6 +22,20 @@
                                 <label asp-for="MesaId"></label>
                                 <input type="text" asp-for="MesaId" class="form-control">
                                 <span asp-validation-for="MesaId" class="text-danger"></span>
+                            </div>
+                        </div> 
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="ProdutoId"></label>
+                                <input type="text" asp-for="ProdutoId" class="form-control">
+                                <span asp-validation-for="ProdutoId" class="text-danger"></span>
+                            </div>
+                        </div> 
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Quantidade"></label>
+                                <input type="text" asp-for="Quantidade" class="form-control">
+                                <span asp-validation-for="Quantidade" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
