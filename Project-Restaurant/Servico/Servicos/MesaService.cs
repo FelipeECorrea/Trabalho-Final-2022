@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Servico.Servicos
 {
-    public class MesaService : IMesaService
+    public class MesaService /*: IMesaService*/
     {
         private readonly IMesaRepositorio _mesaRepositorio;
         private readonly IMesaMapeamentoEntidade _mapeamentoEntidade;

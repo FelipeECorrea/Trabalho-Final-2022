@@ -19,7 +19,7 @@ namespace Servico.MapeamentoViewModels
                   Valor = produto.Valor,
                   Categoria = produto.Categoria,
                   Descricao = produto.Descricao
-                  //Produtos = ConstruirContatosCom(produto.Produto),
+         
               };    
         private IList<ProdutoViewModel> ConstruirContatosCom(IList<Produto> produtos)
         {
@@ -31,7 +31,9 @@ namespace Servico.MapeamentoViewModels
                 {
                     Nome = produto.Nome,
                     Valor = produto.Valor,
-                    Categoria = produto.Categoria
+                    Categoria = produto.Categoria,
+                    Descricao = produto.Descricao
+                    
 
                 });
             }
