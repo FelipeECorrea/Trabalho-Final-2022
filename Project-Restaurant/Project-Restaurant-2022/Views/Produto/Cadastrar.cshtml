@@ -37,14 +37,13 @@
                             <div class="form-group mb-2">
                                 <label asp-for="Descricao"></label>
                                 <textarea id="basic-form-9" rows="4" asp-for="Descricao" class="form-control"></textarea>
-                                  <input type="text" asp-for="Descricao" class="form-control">
                                 <span asp-validation-for="Descricao" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
                    
-                    <button type="submit" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Save</button>
-                    <button type="button" class="btn btn-secondary"><i class="ft-x mr-1"></i>Cancel</button>
+                    <button type="submit" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Salvar</button>
+                    <button type="button" class="btn btn-secondary" asp-action="Index"><i class="ft-x mr-1"></i>Cancelar</button>
                 </form>
             </div>
         </div>

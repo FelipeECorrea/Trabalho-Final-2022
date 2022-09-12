@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Servico.ViewModels.ProdutoPedido
 {
-    internal class ProdutoCadasrarViewModel
+    internal class ProdutoCadastrarViewModel
     {
     }
 }

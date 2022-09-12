@@ -26,21 +26,29 @@ namespace Project_Restaurant_2022.Controllers
         }
 
         [HttpGet("cadastrar")]
-        public ActionResult Cadastrar()
+        public IActionResult Cadastrar()
         {
-            return View();
+            var produto = ObterProduto();
+
+            ViewBag.Especies = ObterProduto();
+
+            var produtoCadastrarViewModel = new ProdutoCadastrarViewModel();
+
+            return View(produtoCadastrarViewModel);
         }
 
         [HttpPost("cadastrar")]
         [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar(ProdutoCadastrarViewModel viewModel)
+        public IActionResult Cadastrar([FromForm] ProdutoCadastrarViewModel produtoCadastrarViewModel)
         {
             if (!ModelState.IsValid)
             {
-                return View(viewModel);
+                ViewBag.Produtos = ObterProduto();
+
+                return View(produtoCadastrarViewModel);
             }
 
-            _produtoService.Cadastrar(viewModel);
+            _produtoService.Cadastrar(produtoCadastrarViewModel);
 
             return RedirectToAction("Index");
         }
