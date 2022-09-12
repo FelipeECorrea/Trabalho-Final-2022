@@ -6,7 +6,7 @@ namespace Repositorio.Repositorios
     {
         Pedido Cadastrar(Pedido pedido);
         Pedido? Apagar(int id);
-        Pedido? ObterPorId(int pedidoId);
+        Pedido? ObterPorId(int id);
         void Editar(Pedido pedido);
         IList<Pedido> ObterTodos();
     }

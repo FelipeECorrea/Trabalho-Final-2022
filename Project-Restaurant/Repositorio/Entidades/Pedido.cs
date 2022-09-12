@@ -9,7 +9,6 @@
         public int MesaId { get; set; }
         public Mesa Mesa { get; set; }
         public string Observacao { get; set; }
-        
         public IList<ProdutoPedido> ProdutosPedidos { get; set; }
     }
 }

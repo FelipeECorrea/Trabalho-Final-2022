@@ -155,13 +155,37 @@ namespace Repositorio.Migrations
                         .HasColumnType("VARCHAR(150)")
                         .HasColumnName("observacao");
 
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("INT")
+                        .HasColumnName("id_produto");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ClienteId");
 
                     b.HasIndex("MesaId");
 
+                    b.HasIndex("ProdutoId");
+
                     b.ToTable("pedidos", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ClienteId = 1,
+                            MesaId = 1,
+                            Observacao = "Bem quente",
+                            ProdutoId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ClienteId = 2,
+                            MesaId = 2,
+                            Observacao = "Bem quente",
+                            ProdutoId = 1
+                        });
                 });
 
             modelBuilder.Entity("Repositorio.Entidades.Produto", b =>
@@ -281,9 +305,17 @@ namespace Repositorio.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Repositorio.Entidades.Produto", "Produto")
+                        .WithMany("Pedidos")
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Cliente");
 
                     b.Navigation("Mesa");
+
+                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("Repositorio.Entidades.ProdutoPedido", b =>
@@ -330,6 +362,8 @@ namespace Repositorio.Migrations
 
             modelBuilder.Entity("Repositorio.Entidades.Produto", b =>
                 {
+                    b.Navigation("Pedidos");
+
                     b.Navigation("ProdutosPedidos");
                 });
 #pragma warning restore 612, 618

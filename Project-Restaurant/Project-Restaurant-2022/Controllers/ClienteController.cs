@@ -61,14 +61,6 @@ namespace Project_Restaurant_2022.Controllers
 
             return View(clienteEditarViewModel);
         }
-         [HttpGet("apagar")]
-        // http://local:host:portaapagar?id=4
-        public IActionResult Apagar([FromQuery] int id)
-        {
-            _clienteService.Apagar(id);
-
-            return RedirectToAction("Index");
-        }
 
         [HttpPost("editar")]
         public IActionResult Editar([FromForm] ClienteEditarViewModel clienteEditarViewModel)
