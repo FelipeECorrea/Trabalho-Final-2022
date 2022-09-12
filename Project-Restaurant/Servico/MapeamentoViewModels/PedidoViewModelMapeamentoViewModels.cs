@@ -9,7 +9,6 @@ namespace Servico.MapeamentoViewModels
               new PedidoCadastrarViewModel
               {
                   ClienteId = Pedido.ClienteId,
-                  ProdutoId = Pedido.ProdutoId,
                   MesaId = Pedido.MesaId,
                   Observacao = Pedido.Observacao
               };

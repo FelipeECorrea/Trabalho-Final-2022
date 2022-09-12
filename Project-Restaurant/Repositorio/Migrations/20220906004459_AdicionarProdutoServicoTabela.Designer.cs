@@ -12,8 +12,8 @@ using Repositorio.BancoDados;
 namespace Repositorio.Migrations
 {
     [DbContext(typeof(RestauranteContexto))]
-    [Migration("20220911191532_AdicionarMigration")]
-    partial class AdicionarMigration
+    [Migration("20220906004459_AdicionarProdutoServicoTabela")]
+    partial class AdicionarProdutoServicoTabela
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,46 +34,32 @@ namespace Repositorio.Migrations
 
                     b.Property<string>("Cpf")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("VARCHAR(11)")
-                        .HasColumnName("cpf");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("VARCHAR(50)")
-                        .HasColumnName("email");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("MesaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("VARCHAR(40)")
-                        .HasColumnName("nome");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("VARCHAR(20)")
-                        .HasColumnName("senha");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("VARCHAR(11)")
-                        .HasColumnName("telefone");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id")
-                        .HasName("id");
-
-                    b.HasIndex("Email")
-                        .IsUnique();
+                    b.HasKey("Id");
 
                     b.HasIndex("MesaId");
 
-                    b.ToTable("clientes", (string)null);
+                    b.ToTable("Cliente");
                 });
 
             modelBuilder.Entity("Repositorio.Entidades.Mesa", b =>
@@ -84,55 +70,15 @@ namespace Repositorio.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<byte>("NumeroMesa")
-                        .HasColumnType("TINYINT")
-                        .HasColumnName("NumeroMesa");
+                    b.Property<int>("NumeroMesa")
+                        .HasColumnType("int");
 
-                    b.Property<byte>("Status")
-                        .HasColumnType("TINYINT")
-                        .HasColumnName("statusMesa");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("mesas", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            NumeroMesa = (byte)1,
-                            Status = (byte)1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            NumeroMesa = (byte)2,
-                            Status = (byte)1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            NumeroMesa = (byte)3,
-                            Status = (byte)1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            NumeroMesa = (byte)4,
-                            Status = (byte)1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            NumeroMesa = (byte)5,
-                            Status = (byte)1
-                        },
-                        new
-                        {
-                            Id = 6,
-                            NumeroMesa = (byte)6,
-                            Status = (byte)1
-                        });
+                    b.ToTable("Mesa");
                 });
 
             modelBuilder.Entity("Repositorio.Entidades.Pedido", b =>
@@ -144,22 +90,14 @@ namespace Repositorio.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("ClienteId")
-                        .HasColumnType("INT")
-                        .HasColumnName("id_cliente");
+                        .HasColumnType("int");
 
                     b.Property<int>("MesaId")
-                        .HasColumnType("INT")
-                        .HasColumnName("id_mesa");
+                        .HasColumnType("int");
 
                     b.Property<string>("Observacao")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("VARCHAR(150)")
-                        .HasColumnName("observacao");
-
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("INT")
-                        .HasColumnName("id_produto");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -167,27 +105,7 @@ namespace Repositorio.Migrations
 
                     b.HasIndex("MesaId");
 
-                    b.HasIndex("ProdutoId");
-
-                    b.ToTable("pedidos", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClienteId = 1,
-                            MesaId = 1,
-                            Observacao = "Bem quente",
-                            ProdutoId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClienteId = 2,
-                            MesaId = 2,
-                            Observacao = "Bem quente",
-                            ProdutoId = 1
-                        });
+                    b.ToTable("Pedido");
                 });
 
             modelBuilder.Entity("Repositorio.Entidades.Produto", b =>
@@ -223,8 +141,7 @@ namespace Repositorio.Migrations
                         .HasColumnName("produto_caminho");
 
                     b.Property<decimal>("Valor")
-                        .HasPrecision(5, 2)
-                        .HasColumnType("DECIMAL(5,2)")
+                        .HasColumnType("DECIMAL")
                         .HasColumnName("valor");
 
                     b.HasKey("Id");
@@ -264,16 +181,19 @@ namespace Repositorio.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("PedidoId")
-                        .HasColumnType("int");
+                        .HasColumnType("INT")
+                        .HasColumnName("pedido_id");
 
                     b.Property<int>("ProdutoId")
-                        .HasColumnType("int");
+                        .HasColumnType("INT")
+                        .HasColumnName("produto_id");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Valor")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("DECIMAL")
+                        .HasColumnName("valor");
 
                     b.HasKey("Id");
 
@@ -283,7 +203,7 @@ namespace Repositorio.Migrations
 
                     b.HasIndex("ProdutoId");
 
-                    b.ToTable("ProdutosPedidos");
+                    b.ToTable("produtos_pedidos", (string)null);
                 });
 
             modelBuilder.Entity("Repositorio.Entidades.Cliente", b =>
@@ -307,17 +227,9 @@ namespace Repositorio.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Repositorio.Entidades.Produto", "Produto")
-                        .WithMany("Pedidos")
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Cliente");
 
                     b.Navigation("Mesa");
-
-                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("Repositorio.Entidades.ProdutoPedido", b =>
@@ -364,8 +276,6 @@ namespace Repositorio.Migrations
 
             modelBuilder.Entity("Repositorio.Entidades.Produto", b =>
                 {
-                    b.Navigation("Pedidos");
-
                     b.Navigation("ProdutosPedidos");
                 });
 #pragma warning restore 612, 618
