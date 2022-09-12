@@ -1,0 +1,35 @@
+﻿@model PedidoCadastrarViewModel
+
+<div class="col-lg-6 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Cadastro de Pedido</h4>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+                <p>This is the most basic and default form having inputs, labels and buttons.</p>
+                <form asp-action="Cadastrar" method="POST">
+                    <div class="form-row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="ProdutoId"></label>
+                                <input type="text" asp-for="ProdutoId" class="form-control">
+                                <span asp-validation-for="ProdutoId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Observacao"></label>
+                                <textarea id="basic-form-9" rows="4" asp-for="Observacao" class="form-control"></textarea>
+                                <span asp-validation-for="Observacao" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Confirmar</button>
+                    <button type="button" class="btn btn-secondary"><i class="ft-x mr-1"></i>Ver </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

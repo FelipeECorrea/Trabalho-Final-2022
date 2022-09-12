@@ -2,6 +2,7 @@
 using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
+using Servico.ViewModels;
 using Servico.ViewModels.Mesa;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,12 @@ namespace Servico.Servicos
             _mapeamentoEntidade = mapeamentoEntidade;
             _mapeamentoViewModel = mapeamentoViewModel;
         }
+
+        public bool Apagar(int id)
+        {
+            return _mesaRepositorio.Apagar(id);
+        }
+
         public Mesa Cadastrar(MesaCadastrarViewModel viewModel)
         {
             var produto = _mapeamentoEntidade.ConstruirCom(viewModel);
@@ -34,12 +41,40 @@ namespace Servico.Servicos
 
             return produto;
         }
+
+        public bool Editar(MesaEditarViewModel viewModel)
+        {
+            var mesa = _mesaRepositorio.ObterPorId(viewModel.Id);
+
+            if (mesa == null)
+                return false;
+
+            _mapeamentoEntidade.AtualizarCampos(mesa, viewModel);
+
+            _mesaRepositorio.Editar(mesa);
+
+            return true;
+        }
+
         public Mesa? ObterPorId(int id) =>
             _mesaRepositorio.ObterPorId(id);
 
         public IList<Mesa> ObterTodos() =>
             _mesaRepositorio.ObterTodos();
 
+        public IList<SelectViewModel> ObterTodosSelect2()
+        {
+            var mesas = _mesaRepositorio.ObterTodos();
+
+            var selectViewModels = mesas
+                .Select(x => new SelectViewModel
+                {
+                    Id = x.Id,
+                })
+                .ToList();
+
+            return selectViewModels;
+        }
     }
 
 

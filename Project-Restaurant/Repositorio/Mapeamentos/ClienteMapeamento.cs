@@ -44,7 +44,7 @@ namespace Repositorio.Mapeamentos
                 .IsRequired()
             .HasColumnName("senha");
 
-            //builder.HasData(
+            // builder.HasData(
             //   new Cliente
             //   {
             //       Nome = "Cristyan",
