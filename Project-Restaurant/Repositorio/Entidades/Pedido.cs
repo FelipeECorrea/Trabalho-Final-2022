@@ -4,8 +4,6 @@
     {
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
-        public int ProdutoId { get; set; }
-        public Produto Produto { get; set; }
         public int MesaId { get; set; }
         public Mesa Mesa { get; set; }
         public string Observacao { get; set; }
