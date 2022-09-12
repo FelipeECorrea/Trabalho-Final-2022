@@ -1,0 +1,36 @@
+﻿@model ClienteEditarViewModel
+   <form asp-action="Editar" method="POST">
+    <section id="regestration" class="auth-height">
+      <div class="row full-height-vh m-0">
+        <div class="col-12 d-flex align-items-center justify-content-center">
+          <div class="card overflow-hidden">
+            <div class="card-content">
+              <div class="card-body auth-img">
+                <div class="row m-0">
+                  <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center text-center auth-img-bg py-2">
+                    <img src="../app-assets/img/gallery/register.png" alt="" class="img-fluid" width="350" height="230">
+                  </div>
+                  <div class="col-lg-6 col-md-12 px-4 py-3">
+                    <h4 class="card-title mb-2">Create Account</h4>
+                    <p>Fill the below form to create a new account.</p>
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                    <input type="text" asp-for="Nome" class="form-control mb-2" placeholder="Nome">
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                    <input type="tel" asp-for="Telefone" class="form-control mb-2" placeholder="Telefone">
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                    <input type="tel" asp-for="Cpf" class="form-control mb-2" placeholder="Cpf">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <input type="email" asp-for="Email" class="form-control mb-2" placeholder="Email">
+                    <div class="d-flex justify-content-between flex-sm-row flex-column">
+                      <button type="submit" class="btn btn-primary mr-2"></i>Registrar</button>
+                      <button type="button" class="btn btn-secondary"></i>Cancelar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</form>

@@ -15,7 +15,7 @@
     <!-- Cabeçalho da tabela-->
     <tr>
         <!-- Linha da tabela-->
-        <th>Produto</th> <!-- Coluna específica do cabeçalho-->
+        <th>Cliente</th> <!-- Coluna específica do cabeçalho-->
         <th>Observação</th>
         <th>Ação</th>
     </tr>
@@ -26,8 +26,8 @@
     {
         <tr>
             <!-- Linha-->
-            <td>@pedido.Id</td> <!-- Coluna específica para body-->
-            <td>@pedido.ProdutosPedidos</td> <!-- Coluna específica para body-->
+            <td>@pedido.Cliente</td> <!-- Coluna específica para body-->
+            <td>@pedido.Observacao</td> <!-- Coluna específica para body-->
             <td>
                 <a class="btn btn-primary" asp-action="editar" asp-route-id="@pedido.Id">
                     <i class="fa-solid fa-pencil"></i> Editar

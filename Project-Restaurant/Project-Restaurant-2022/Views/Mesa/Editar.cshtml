@@ -1,0 +1,41 @@
+﻿@model MesaEditarViewModel
+@{
+    var mesas = ViewBag.Mesas as List<string>;
+    mesas.Add(string.Empty);
+    
+    var selectDasMesas = new SelectList(mesas, string.Empty);
+}
+
+<div class="col-lg-6 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Edição das Mesas - @Model.NumeroMesa</h4>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+                <form asp-action="Editar" method="POST">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="NumeroMesa"></label>
+                                <input type="text" asp-for="NumeroMesa" class="form-control">
+                                <span asp-validation-for="NumeroMesa" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Status"></label>
+                                <input type="text" asp-for="Status" class="form-control">
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Save</button>
+                    <button type="button" class="btn btn-secondary"><i class="ft-x mr-1"></i>Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

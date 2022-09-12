@@ -61,8 +61,6 @@ namespace Project_Restaurant_2022.Controllers
 
             return View(clienteEditarViewModel);
         }
-         [HttpGet("apagar")]
-       
 
         [HttpPost("editar")]
         public IActionResult Editar([FromForm] ClienteEditarViewModel clienteEditarViewModel)

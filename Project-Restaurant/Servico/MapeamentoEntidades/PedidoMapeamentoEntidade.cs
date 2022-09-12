@@ -9,10 +9,17 @@ namespace Servico.MapeamentoEntidades
         public Pedido ConstruirCom(PedidoCadastrarViewModel viewModel) =>
       new Pedido
       {
-          ProdutoId = viewModel.ProdutoId,
           ClienteId = viewModel.ClienteId,
           MesaId = viewModel.MesaId,
           Observacao = viewModel.Observacao,
+          ProdutosPedidos = new List<ProdutoPedido>
+          {
+          new ProdutoPedido
+          {
+              ProdutoId = viewModel.ProdutoId,
+              Quantidade = viewModel.Quantidade,
+          }
+          }
       };
     }
 }
