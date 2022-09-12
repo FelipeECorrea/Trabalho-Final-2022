@@ -8,15 +8,18 @@ using System.Threading.Tasks;
 
 namespace Servico.MapeamentoViewModels
 {
-    public class MesaViewModelMapeamentoViewModels : IMesaViewModelMapeamentoViewModels
+    public class MesaViewModelMapeamentoViewModels /*:*/ /*IMesaViewModelMapeamentoViewModels*/
     {
       
         public MesaCadastrarViewModel ConstruirCom(Mesa mesa) =>
              new MesaCadastrarViewModel
              {
                  NumeroMesa = mesa.NumeroMesa,
-
-             }; 
-
+             };
+        public MesaEditarViewModel AtualizarCampos(Mesa mesa) =>
+             new MesaEditarViewModel
+             {        
+                 NumeroMesa = mesa.NumeroMesa,
+             };
     }
 }
