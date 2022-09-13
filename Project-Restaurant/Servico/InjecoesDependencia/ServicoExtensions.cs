@@ -13,9 +13,9 @@ namespace Servico.InjecoesDependencia
             services.AddScoped<IProdutoMapeamentoEntidade, ProdutoMapeamentoEntidade>();
             services.AddScoped<IProdutoViewModelMapeamentoViewModels, ProdutoViewModelMapeamentoViewModels>();
             
-            services.AddScoped<IMesaService, MesaService>();
+            //services.AddScoped<IMesaService, MesaService>();
             services.AddScoped<IMesaMapeamentoEntidade, MesaMapeamentoEntidade>();
-            services.AddScoped<IMesaViewModelMapeamentoViewModels, MesaViewModelMapeamentoViewModels>();
+            //services.AddScoped<IMesaViewModelMapeamentoViewModels, MesaViewModelMapeamentoViewModels>();
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IClienteMapeamentoEntidade, ClienteMapeamentoEntidade>();
             services.AddScoped<IClienteViewModelMapeamentoViewModel, ClienteViewModelMapeamentoViewModel>();
