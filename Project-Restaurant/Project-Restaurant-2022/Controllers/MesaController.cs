@@ -43,12 +43,20 @@ namespace Project_Restaurant_2022.Controllers
 
             return RedirectToAction("Index");
         }
+
         [HttpGet("editar")]
         public IActionResult Editar([FromQuery] int id)
         {
-            var viewModel = _mesaService.ObterPorId(id);
+            var mesa = _mesaService.ObterPorId(id);
+            var mesas = ObterMesa();
 
-            return PartialView(viewModel);
+            var MesaEditarViewModel = new MesaEditarViewModel
+            {
+                Id = mesa.Id,
+                NumeroMesa = mesa.NumeroMesa
+            };
+
+            return PartialView(MesaEditarViewModel);
         }
 
         [HttpPost("editar")]
@@ -56,15 +64,25 @@ namespace Project_Restaurant_2022.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return PartialView(viewModel);
+                ViewBag.Mesas = ObterMesa();
+
+                return View(viewModel);         
             }
 
-            var mesa = _mesaService.Editar(viewModel);
+            _mesaService.Editar(viewModel);
 
-            return RedirectToAction(nameof(Editar), new { id = viewModel.Id });
+            return RedirectToAction("Index");
         }
 
-        private object ObterMesa()
+        [HttpGet("obterTodosSelect2")]
+        public IActionResult ObterTodosSelect2()
+        {
+            var selectViewModel = _mesaService.ObterTodosSelect2();
+
+            return Ok(selectViewModel);
+        }
+
+        private List<string> ObterMesa()
         {
             return Enum
               .GetNames<StatusMesa>()
@@ -72,5 +90,13 @@ namespace Project_Restaurant_2022.Controllers
               .ToList();
         }
 
+        [HttpGet("apagar")]
+        // http://local:host:portaapagar?id=4
+        public IActionResult Apagar([FromQuery] int id)
+        {
+            _mesaService.Apagar(id);
+
+            return RedirectToAction("Index");
+        }
     }
 }   
