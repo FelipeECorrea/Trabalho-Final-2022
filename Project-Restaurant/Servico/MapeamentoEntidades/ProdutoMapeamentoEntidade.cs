@@ -29,7 +29,7 @@ namespace Servico.MapeamentoEntidades
           Valor = viewModel.Valor.GetValueOrDefault(),
           Categoria = viewModel.Categoria,
           Descricao = viewModel.Descricao,
-          ProdutoCaminho = string.Empty
+          ProdutoCaminho = viewModel.Arquivo.ToString()
       };
     }
 }
