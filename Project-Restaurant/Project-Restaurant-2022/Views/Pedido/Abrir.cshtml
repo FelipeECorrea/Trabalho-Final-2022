@@ -8,47 +8,53 @@
         <div class="card-content">
             <div class="card-body">
                 <p>This is the most basic and default form having inputs, labels and buttons.</p>
+
                 <form asp-action="Abrir" method="POST">
                     <div class="form-row">
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="ClienteId"></label>
-                                <input type="text" asp-for="ClienteId" class="form-control">
-                                <span asp-validation-for="ClienteId" class="text-danger"></span>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="col-6">
+                                    <label for="cadastroClienteId" class="form-label">Cliente <span class="text-danger">*</span></label>
+                                    <select id="cadastroClienteId" class="form-select"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-12">
+                                <div class="col-6">
+                                    <label for="cadastroMesaId" class="form-label">Mesa <span class="text-danger">*</span></label>
+                                    <select id="cadastroMesaId" class="form-select"></select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="MesaId"></label>
-                                <input type="text" asp-for="MesaId" class="form-control">
-                                <span asp-validation-for="MesaId" class="text-danger"></span>
+
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label asp-for="ProdutoId"></label>
+                                    <input type="text" asp-for="ProdutoId" class="form-control">
+                                    <span asp-validation-for="ProdutoId" class="text-danger"></span>
+                                </div>
                             </div>
-                        </div> 
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="ProdutoId"></label>
-                                <input type="text" asp-for="ProdutoId" class="form-control">
-                                <span asp-validation-for="ProdutoId" class="text-danger"></span>
+
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label asp-for="Quantidade"></label>
+                                    <input type="text" asp-for="Quantidade" class="form-control">
+                                    <span asp-validation-for="Quantidade" class="text-danger"></span>
+                                </div>
                             </div>
-                        </div> 
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="Quantidade"></label>
-                                <input type="text" asp-for="Quantidade" class="form-control">
-                                <span asp-validation-for="Quantidade" class="text-danger"></span>
+
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label asp-for="Observacao"></label>
+                                    <textarea id="basic-form-9" rows="4" asp-for="Observacao" class="form-control"></textarea>
+                                    <span asp-validation-for="Observacao" class="text-danger"></span>
+                                </div>
                             </div>
+
                         </div>
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="Observacao"></label>
-                                <textarea id="basic-form-9" rows="4" asp-for="Observacao" class="form-control"></textarea>
-                                <span asp-validation-for="Observacao" class="text-danger"></span>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <button type="submit" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Confirmar</button>
-                    <button type="button" class="btn btn-secondary"><i class="ft-x mr-1"></i>Adicionar Produto</button>
+
+                        <button type="submit" class="btn btn-primary mr-2"><i class="ft-check-square mr-1"></i>Confirmar</button>
+                        <button type="button" class="btn btn-secondary"><i class="ft-x mr-1"></i>Adicionar Produto</button>
                 </form>
             </div>
         </div>
