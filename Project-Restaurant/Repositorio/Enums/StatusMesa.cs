@@ -2,7 +2,7 @@
 {
     public enum StatusMesa
     {
-        Ocupado,
-        Desocupado
+        Desocupado,
+        Ocupado
     }
 }
