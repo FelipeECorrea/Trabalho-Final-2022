@@ -1,5 +1,6 @@
 ﻿using Repositorio.Entidades;
 using Repositorio.Repositorios;
+using Servico.Helpers;
 using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
 using Servico.ViewModels;
@@ -52,6 +53,40 @@ namespace Servico.Servicos
             return true;
         }
 
+        private string SalvarArquivo(ProdutoViewModel viewModel, string caminhoArquivos, string? arquivoAntigo = "")
+        {
+            if (viewModel.Arquivo == null)
+                return string.Empty;
+
+            var caminhoPastaImagens = Path.Combine(caminhoArquivos, ArquivoHelper.ObterCaminhoPastas());
+
+            if (!Directory.Exists(caminhoPastaImagens))
+                Directory.CreateDirectory(caminhoPastaImagens);
+
+            if (!string.IsNullOrEmpty(arquivoAntigo))
+                ApagarArquivoAntigo(caminhoPastaImagens, arquivoAntigo);
+
+            var informacaoDoArquivo = new FileInfo(viewModel.Arquivo.FileName);
+            var nomeArquivo = Guid.NewGuid() + informacaoDoArquivo.Extension;
+
+            var caminhoArquivo = Path.Combine(caminhoPastaImagens, nomeArquivo);
+
+            using (var stream = new FileStream(caminhoArquivo, FileMode.Create))
+            {
+                viewModel.Arquivo.CopyTo(stream);
+
+                return nomeArquivo;
+            }
+        }
+
+        private void ApagarArquivoAntigo(string caminhoPastaImagens, string arquivoAntigo)
+        {
+            var caminhoArquivoAntigo = Path.Join(caminhoPastaImagens, arquivoAntigo);
+
+            if (File.Exists(caminhoArquivoAntigo))
+                File.Delete(caminhoArquivoAntigo);
+        }
+
         public ProdutoEditarViewModel? ObterPorId(int id)
         {
             var produto = _produtoRepositorio.ObterPorId(id);
@@ -64,8 +99,8 @@ namespace Servico.Servicos
             return viewModel;
         }
 
-        public IList<Produto> ObterTodos()=>
-        
+        public IList<Produto> ObterTodos() =>
+
             _produtoRepositorio.ObterTodos();
         
 

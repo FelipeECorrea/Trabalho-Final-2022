@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -29,5 +30,7 @@ namespace Servico.ViewModels.Produto
         [Display(Name = "Descricao")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string Descricao { get; set; }
+
+        public IFormFile? Arquivo { get; set; }
     }
 }
