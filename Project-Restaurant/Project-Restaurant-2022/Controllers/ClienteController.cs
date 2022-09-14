@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Repositorio.Entidades;
-using Servico.Servicos;
-using Servico.ViewModels.Produto;
+﻿using Microsoft.AspNetCore.Mvc;
 using Repositorio.Enums;
+using Servico.Servicos;
 using Servico.ViewModels.Cliente;
 
 namespace Project_Restaurant_2022.Controllers
@@ -49,6 +46,7 @@ namespace Project_Restaurant_2022.Controllers
         public IActionResult Editar([FromQuery] int id)
         {
             var cliente = _clienteService.ObterPorId(id);
+            var clientes = ObterCliente();
 
             var clienteEditarViewModel = new ClienteEditarViewModel
             {
@@ -56,8 +54,9 @@ namespace Project_Restaurant_2022.Controllers
                 Telefone = cliente.Telefone,
                 Cpf = cliente.Cpf,
                 Email = cliente.Email,
-                Senha = cliente.Senha,
             };
+
+            ViewBag.Clientes = cliente;
 
             return View(clienteEditarViewModel);
         }
@@ -65,9 +64,22 @@ namespace Project_Restaurant_2022.Controllers
         [HttpPost("editar")]
         public IActionResult Editar([FromForm] ClienteEditarViewModel clienteEditarViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Clientes = ObterCliente();
+                return View(clienteEditarViewModel);
+            }
             _clienteService.Editar(clienteEditarViewModel);
 
             return RedirectToAction("Index");
+        }
+
+        private List<string> ObterCliente()
+        {
+            return Enum
+               .GetNames<ClienteEmMesa>()
+               .OrderBy(x => x)
+               .ToList();
         }
 
         [HttpGet("obterTodosSelect2")]

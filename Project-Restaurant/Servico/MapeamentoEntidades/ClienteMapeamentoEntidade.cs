@@ -11,7 +11,6 @@ namespace Servico.MapeamentoEntidades
             cliente.Telefone = clienteEditarViewModel.Telefone;
             cliente.Cpf = clienteEditarViewModel.Cpf;
             cliente.Email = clienteEditarViewModel.Email;
-            cliente.Senha = clienteEditarViewModel.Senha;
         }
 
         public Cliente ConstruirCom(ClienteCadastrarViewModel viewModel) =>

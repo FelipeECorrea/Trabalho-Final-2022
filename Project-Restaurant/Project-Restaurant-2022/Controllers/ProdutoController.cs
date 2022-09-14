@@ -78,7 +78,7 @@ namespace Project_Restaurant_2022.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Produtos = ObterProduto();
+                  ViewBag.Produtos = ObterProduto();
 
                 return View(produtoEditarViewModel);
             }

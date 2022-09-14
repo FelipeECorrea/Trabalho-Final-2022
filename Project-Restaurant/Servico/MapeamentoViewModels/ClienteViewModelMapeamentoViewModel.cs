@@ -13,7 +13,6 @@ namespace Servico.MapeamentoViewModels
                 Telefone = cliente.Telefone,
                 Cpf = cliente.Cpf,
                 Email = cliente.Email,
-                Senha = cliente.Senha
             };
         private IList<ClienteViewModel> ConstruirContatoCom(IList<Cliente> clientes)
         {
@@ -27,7 +26,6 @@ namespace Servico.MapeamentoViewModels
                     Telefone = cliente.Telefone,
                     Cpf = cliente.Cpf,
                     Email = cliente.Email,
-                    Senha = cliente.Senha
                 });
             }
             return viewModels;

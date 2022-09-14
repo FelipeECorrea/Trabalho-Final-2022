@@ -45,7 +45,7 @@ namespace Servico.Servicos
             return true;
         }
 
-        public Cliente? ObterPorId(int id) =>
+        public Cliente ObterPorId(int id) =>
             _clienteRepositorio.ObterPorId(id);
 
         public IList<SelectViewModel> ObterPorSelect2()
