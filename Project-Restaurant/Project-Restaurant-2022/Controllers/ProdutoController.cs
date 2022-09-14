@@ -30,7 +30,7 @@ namespace Project_Restaurant_2022.Controllers
         {
             var produto = ObterProduto();
 
-            ViewBag.Especies = ObterProduto();
+            ViewBag.Produtos = ObterProduto();
 
             var produtoCadastrarViewModel = new ProdutoCadastrarViewModel();
 

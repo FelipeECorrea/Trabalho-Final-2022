@@ -17,6 +17,10 @@ namespace Repositorio.Repositorios
         {
             _contexto = contexto;
         }
+        public Cliente ObterPorEmail(string Email)
+        {
+            return _contexto.Clientes.FirstOrDefault(x => x.Email.ToUpper() == Email.ToUpper());
+        }
 
         public bool Apagar(int id)
         {

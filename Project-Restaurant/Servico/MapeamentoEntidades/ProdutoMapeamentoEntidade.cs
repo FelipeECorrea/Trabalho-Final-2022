@@ -19,8 +19,8 @@ namespace Servico.MapeamentoEntidades
             produto.Descricao = viewModel.Descricao;
 
             return produto;
-        }
 
+        }
         
         public Produto ConstruirCom(ProdutoCadastrarViewModel viewModel) =>
       new Produto
@@ -29,6 +29,7 @@ namespace Servico.MapeamentoEntidades
           Valor = viewModel.Valor.GetValueOrDefault(),
           Categoria = viewModel.Categoria,
           Descricao = viewModel.Descricao,
+          ProdutoCaminho = viewModel.Arquivo.ToString()
       };
     }
 }
