@@ -17,7 +17,7 @@ namespace Project_Restaurant_2022.Controllers
             _mesaService = mesaService;
         }
 
-       
+
         public ActionResult Index()
         {
             var mesas = _mesaService.ObterTodos();
@@ -27,7 +27,13 @@ namespace Project_Restaurant_2022.Controllers
         [HttpGet("cadastrar")]
         public ActionResult Cadastrar()
         {
-            return View();
+            var mesa = ObterMesa();
+
+            ViewBag.Mesas = ObterMesa();
+
+            var mesaCadastrarViewModel = new MesaCadastrarViewModel();
+
+            return View(mesaCadastrarViewModel);
         }
 
         [HttpPost("cadastrar")]
@@ -36,6 +42,8 @@ namespace Project_Restaurant_2022.Controllers
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.Mesas = ObterMesa();
+
                 return View(viewModel);
             }
 
@@ -50,13 +58,15 @@ namespace Project_Restaurant_2022.Controllers
             var mesa = _mesaService.ObterPorId(id);
             var mesas = ObterMesa();
 
-            var MesaEditarViewModel = new MesaEditarViewModel
+            var mesaEditarViewModel = new MesaEditarViewModel
             {
                 Id = mesa.Id,
-                NumeroMesa = mesa.NumeroMesa
+                NumeroMesa = mesa.NumeroMesa,
+                
             };
+            ViewBag.Mesas = mesas;
 
-            return PartialView(MesaEditarViewModel);
+            return View(mesaEditarViewModel);
         }
 
         [HttpPost("editar")]
@@ -66,7 +76,7 @@ namespace Project_Restaurant_2022.Controllers
             {
                 ViewBag.Mesas = ObterMesa();
 
-                return View(viewModel);         
+                return View(viewModel);
             }
 
             _mesaService.Editar(viewModel);
@@ -99,4 +109,4 @@ namespace Project_Restaurant_2022.Controllers
             return RedirectToAction("Index");
         }
     }
-}   
+}
