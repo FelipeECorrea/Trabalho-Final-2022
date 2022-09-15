@@ -2,7 +2,6 @@
 using Servico.ViewModels;
 using Servico.ViewModels.Mesa;
 
-
 namespace Servico.Servicos
 {
     public interface IMesaService
