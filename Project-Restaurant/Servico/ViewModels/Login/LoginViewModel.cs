@@ -4,9 +4,12 @@ namespace Servico.ViewModels.Login
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Digite o Email")]
+        [Display(Name = nameof(Email))]
+        [Required(ErrorMessage = "Digite o {0}")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Digite a Senha")]
+
+        [Display(Name = nameof(Senha))]
+        [Required(ErrorMessage = "Digite a {0}")]
         public string Senha { get; set; }
     }
 }

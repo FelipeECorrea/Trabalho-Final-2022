@@ -22,6 +22,13 @@ namespace Repositorio.Repositorios
             return _contexto.Clientes.FirstOrDefault(x => x.Email.ToUpper() == Email.ToUpper());
         }
 
+        public bool SenhaValida(string senha)
+        {
+            Cliente cliente = new Cliente();
+
+            return cliente.Senha == senha;
+        }
+
         public bool Apagar(int id)
         {
             var clienteParaApagar = _contexto.Clientes

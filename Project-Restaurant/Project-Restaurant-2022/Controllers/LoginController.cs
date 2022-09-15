@@ -24,13 +24,19 @@ namespace Project_Restaurant_2022.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
-                    Cliente cliente _clienteRepositorio
+                    Cliente cliente = _clienteRepositorio.ObterPorEmail(loginViewModel.Email);
+                    var senhaCliente = _clienteRepositorio;
 
-                    if ()
+                    if (cliente != null)
                     {
-                        return RedirectToAction("Index", "Home");
+                        if (senhaCliente.SenhaValida(loginViewModel.Senha))
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+
+                        TempData["MensageErro"] = $"senha inválida. Por favor, tente novamente.";
                     }
 
                     TempData["MensageErro"] = $"Usuário e/ou senha inválido(s). Por favor, tente novamente.";

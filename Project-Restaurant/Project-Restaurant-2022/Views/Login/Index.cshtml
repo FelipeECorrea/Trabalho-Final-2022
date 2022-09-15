@@ -1,4 +1,6 @@
-﻿@model LoginViewModel
+﻿@using Servico.ViewModels.Login
+@model LoginViewModel
+
 @{
     Layout = null;
     ViewData["Title"] = "Login";
@@ -27,64 +29,65 @@
     <!-- END Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/style.css">
-  </head>
+</head>
 
-  <body class="vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
+<body class="vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
+
+    @if (TempData["MensageErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensageErro"]
+        </div>
+    }
     
-      @if (tempData["MensagemErro"] != null)
-        {
-            <div class="alert alert-danger" role="alert">
-                <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
-                @TempData["MensagemErro"]
-            </div>
-        }
-
     <div class="wrapper">
-      <div class="main-panel">
-        <div class="main-content">
-          <div class="content-overlay"></div>
-          <div class="content-wrapper">
-  <form asp-controller="Login" asp-actiom="Entrar" method="Post">
-<section id="login" class="auth-height">
-  <div class="row full-height-vh m-0">
-    <div class="col-12 d-flex align-items-center justify-content-center">
-      <div class="card overflow-hidden">
-        <div class="card-content">
-          <div class="card-body auth-img">
-            <div class="row m-0">
-              <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
-                <img src="..~/Tema/app-assets/img/gallery/login.png" alt="" class="img-fluid" width="300" height="230">
-              </div>
-              <div class="col-lg-6 col-12 px-4 py-3">
-                <h4 class="mb-2 card-title">Login</h4>
-                <p>Bem Vindo, Por favor Faça o Login.</p>
-                <input type="email" asp-for="Email" class="form-control mb-3" placeholder="Email">
-                @Html.ValidationMessageForm(x => x.Email)
-                <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha">
-                @Html.ValidationMessageForm(x => x.Senha)
-                <div class="d-flex justify-content-between flex-sm-row flex-column">
-                  <a href="auth-register.html" class="btn bg-light-primary mb-2 mb-sm-0">Registrar</a>
-                  <button href="dashboard1.html" class="btn btn-primary">Logar</a>
+        <div class="main-panel">
+            <div class="main-content">
+                <div class="content-overlay"></div>
+                <div class="content-wrapper">
+                    <form asp-controller="Login" asp-action="Entrar" method="Post">
+                        <section id="login" class="auth-height">
+                            <div class="row full-height-vh m-0">
+                                <div class="col-12 d-flex align-items-center justify-content-center">
+                                    <div class="card overflow-hidden">
+                                        <div class="card-content">
+                                            <div class="card-body auth-img">
+                                                <div class="row m-0">
+                                                    <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
+                                                        <img src="..~/Tema/app-assets/img/gallery/login.png" alt="" class="img-fluid" width="300" height="230">
+                                                    </div>
+                                                    <div class="col-lg-6 col-12 px-4 py-3">
+                                                        <h4 class="mb-2 card-title">Login</h4>
+                                                        <p>Bem Vindo, Por favor Faça o Login.</p>
+                                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                                        <input type="email" asp-for="Email" class="form-control mb-3" placeholder="Email" id="email">
+                                                        <span asp-validation-for="Senha" class="text-danger"></span>
+                                                        <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha" id="senha">
+                                                        <div class="d-flex justify-content-between flex-sm-row flex-column">
+                                                            <a href="auth-register.html" class="btn bg-light-primary mb-2 mb-sm-0">Registrar</a>
+                                                            <button type="submit" class="btn btn-primary">Logar</a>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h6 class="text-primary m-0">Or Login With</h6>
+                                                            <div class="login-options">
+                                                                <a class="btn btn-sm btn-social-icon btn-facebook mr-1"><span class="fa fa-facebook"></span></a>
+                                                                <a class="btn btn-sm btn-social-icon btn-twitter mr-1"><span class="fa fa-twitter"></span></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
                 </div>
-                <hr>
-                <div class="d-flex justify-content-between align-items-center">
-                  <h6 class="text-primary m-0">Or Login With</h6>
-                  <div class="login-options">
-                    <a class="btn btn-sm btn-social-icon btn-facebook mr-1"><span class="fa fa-facebook"></span></a>
-                    <a class="btn btn-sm btn-social-icon btn-twitter mr-1"><span class="fa fa-twitter"></span></a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</section>
-    </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+
+</body>
