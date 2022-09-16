@@ -70,10 +70,15 @@ namespace Project_Restaurant_2022.Controllers
                 ViewBag.Clientes = ObterCliente();
                 return View(clienteEditarViewModel);
             }
+
+                return View(clienteEditarViewModel);
+
+
             _clienteService.Editar(clienteEditarViewModel);
 
             return RedirectToAction("Index");
-        }
+
+            }
 
         private List<string> ObterCliente()
         {
@@ -100,5 +105,5 @@ namespace Project_Restaurant_2022.Controllers
             return RedirectToAction("Index");
         }
 
+        }
     }
-}

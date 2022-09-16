@@ -1,0 +1,36 @@
+.bootstraptreeview .list-group .list-group-item.node-node-override-treeview:last-child .badge,
+.bootstraptreeview .list-group .list-group-item.node-node-override-treeview.node-selected .badge
+{
+    color: #f77e17; 
+    background-color: #fff;
+}
+
+.bootstraptreeview .list-group .list-group-item.node-node-override-treeview .badge
+{
+    color: #fff; 
+    background-color: #f77e17;
+}
+
+.bootstraptreeview .list-group .list-group-item .icon
+{
+    margin-left: .5rem; 
+
+    vertical-align: middle;
+}
+
+.bootstraptreeview .list-group .node-selected .badge
+{
+    color: #975aff; 
+    background-color: #fff;
+}
+
+.bootstraptreeview .colorful-treeview .list-group-item .badge
+{
+    color: #975aff; 
+    background-color: #fff;
+}
+
+.bootstraptreeview .override-treeview .badge
+{
+    margin-right: .8rem;
+}

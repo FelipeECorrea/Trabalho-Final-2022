@@ -1,0 +1,187 @@
+.noUi-target
+{
+    border: none;
+    border-radius: 1rem; 
+    background-color: #e9e9ec;
+    box-shadow: none;
+}
+
+.noUi-horizontal
+{
+    height: 10px;
+    margin: .5rem 0 3.5rem; 
+    padding-left: 1.2rem;
+}
+.noUi-horizontal .noUi-handle
+{
+    top: -5px;
+    right: auto; 
+
+    width: 20px;
+    height: 20px;
+}
+.noUi-horizontal .noUi-pips-horizontal
+{
+    right: 7px;
+
+    width: calc(100% - 1rem);
+}
+.noUi-horizontal.slider-xl
+{
+    height: 14px;
+}
+.noUi-horizontal.slider-xl .noUi-handle
+{
+    top: -7px; 
+
+    width: 28px;
+    height: 28px;
+}
+.noUi-horizontal.slider-lg
+{
+    height: 12px;
+}
+.noUi-horizontal.slider-lg .noUi-handle
+{
+    top: -6px; 
+
+    width: 24px;
+    height: 24px;
+}
+.noUi-horizontal.slider-sm
+{
+    height: 6px;
+}
+.noUi-horizontal.slider-sm .noUi-handle
+{
+    top: -7px;
+}
+.noUi-horizontal.slider-xs
+{
+    height: 3px;
+}
+.noUi-horizontal.slider-xs .noUi-handle
+{
+    top: -8px;
+}
+
+.noUi-handle
+{
+    cursor: pointer;
+
+    border: none;
+    border: 5px solid #975aff !important; 
+    border-radius: 50%;
+    box-shadow: none;
+}
+.noUi-handle:after,
+.noUi-handle:before
+{
+    display: none;
+}
+
+.circle-filled .noUi-handle
+{
+    background: #975aff;
+}
+
+.square .noUi-handle
+{
+    border-radius: 3px; 
+    background: #975aff;
+}
+.square .noUi-handle:before
+{
+    top: 0; 
+    right: 2px;
+
+    display: block;
+
+    width: 2px;
+    height: 10px;
+}
+.square .noUi-handle:after
+{
+    top: 0; 
+    right: 7px;
+
+    display: block;
+
+    width: 2px;
+    height: 10px;
+}
+
+.square.slider-xl .noUi-handle:before
+{
+    top: 4px; 
+    right: 5px;
+}
+
+.square.slider-xl .noUi-handle:after
+{
+    top: 4px; 
+    right: 10px;
+}
+
+.square.slider-lg .noUi-handle:before
+{
+    top: 2px; 
+    right: 3px;
+}
+
+.square.slider-lg .noUi-handle:after
+{
+    top: 2px; 
+    right: 8px;
+}
+
+.noUi-connect
+{
+    border-radius: 1rem; 
+    background: #975aff;
+    box-shadow: none;
+}
+
+.noUi-vertical
+{
+    display: inline-block;
+
+    width: 8px;
+    height: 150px;
+}
+.noUi-vertical .noUi-handle
+{
+    top: -5px; 
+
+    width: 20px;
+    height: 20px;
+}
+.noUi-vertical .noUi-tooltip
+{
+    margin-left: .2rem;
+}
+.noUi-vertical.square .noUi-handle
+{
+    border-radius: 3px; 
+    background: #975aff;
+}
+.noUi-vertical.square .noUi-handle:before
+{
+    top: 2px; 
+    right: -1px;
+
+    display: block;
+
+    width: 12px;
+    height: 2px;
+}
+.noUi-vertical.square .noUi-handle:after
+{
+    top: 7px; 
+    right: -1px;
+
+    display: block;
+
+    width: 12px;
+    height: 2px;
+}

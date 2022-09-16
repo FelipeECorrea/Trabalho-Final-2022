@@ -1,128 +1,84 @@
-﻿
-<!DOCTYPE html>
+﻿@using Servico.ViewModels.Login
+@model LoginViewModel
 
--->
-<html class="loading" lang="en">
-  <!-- BEGIN : Head-->
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="Apex admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Apex admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
-    <title>Login Page - Apex responsive bootstrap 4 admin template</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../app-assets/img/ico/favicon.ico">
-    <link rel="shortcut icon" type="image/png" href="../app-assets/img/ico/favicon-32.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
-    <!-- BEGIN VENDOR CSS-->
-    <!-- font icons-->
-    <link rel="stylesheet" type="text/css" href="../app-assets/fonts/feather/style.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/fonts/simple-line-icons/style.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/perfect-scrollbar.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/switchery.min.css">
+@{
+    Layout = null;
+    ViewData["Title"] = "Login Cliente";
+}
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/feather/style.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/simple-line-icons/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/switchery.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/chartist.min.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN APEX CSS-->
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap-extended.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/colors.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/components.min.css">
-    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/layout-dark.min.css">
-    <link rel="stylesheet" href="../app-assets/css/plugins/switchery.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/themes/layout-dark.css">
+    <link rel="stylesheet" href="~/Tema/app-assets/css/plugins/switchery.css">
     <!-- END APEX CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" href="../app-assets/css/pages/authentication.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/pages/dashboard1.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    <!-- END: Custom CSS-->
-  </head>
-  <!-- END : Head-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/style.css">
+</head>
 
-  <!-- BEGIN : Body-->
-  <body class="vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
-    <!-- ////////////////////////////////////////////////////////////////////////////-->
+<body class="vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
+
+    @if (TempData["MensageErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensageErro"]
+        </div>
+    }
+    
     <div class="wrapper">
-      <div class="main-panel">
-        <!-- BEGIN : Main Content-->
-        <div class="main-content">
-          <div class="content-overlay"></div>
-          <div class="content-wrapper"><!--Login Page Starts-->
-<section id="login" class="auth-height">
-  <div class="row full-height-vh m-0">
-    <div class="col-12 d-flex align-items-center justify-content-center">
-      <div class="card overflow-hidden">
-        <div class="card-content">
-          <div class="card-body auth-img">
-            <div class="row m-0">
-              <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
-                <img src="../app-assets/img/gallery/login.png" alt="" class="img-fluid" width="300" height="230">
-              </div>
-              <div class="col-lg-6 col-12 px-4 py-3">
-                <h4 class="mb-2 card-title">Login</h4>
-                <p>Welcome back, please login to your account.</p>
-                <input type="text" class="form-control mb-3" placeholder="Username">
-                <input type="password" class="form-control mb-2" placeholder="Password">
-                <div class="d-sm-flex justify-content-between mb-3 font-small-2">
-                  <div class="remember-me mb-2 mb-sm-0">
-                    <div class="checkbox auth-checkbox">
-                      <input type="checkbox" id="auth-ligin">
-                      <label for="auth-ligin"><span>Remember Me</span></label>
-                    </div>
-                  </div>
-                  <a href="auth-forgot-password.html">Forgot Password?</a>
+        <div class="main-panel">
+            <div class="main-content">
+                <div class="content-overlay"></div>
+                <div class="content-wrapper">
+                    <form asp-controller="Login" asp-action="Entrar" method="Post">
+                        <section id="login" class="auth-height">
+                            <div class="row full-height-vh m-0">
+                                <div class="col-12 d-flex align-items-center justify-content-center">
+                                    <div class="card overflow-hidden">
+                                        <div class="card-content">
+                                            <div class="card-body auth-img">
+                                                <div class="row m-0">
+                                                    <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
+                                                        <img src="~/Tema/app-assets/img/LogoDevLanches.png" alt="" class="img-fluid" width="300" height="230">
+                                                    </div>
+                                                    <div class="col-lg-6 col-12 px-4 py-3">
+                                                        <h4 class="mb-2 card-title">Login</h4>
+                                                        <p>Bem Vindo, Por favor Faça o Login.</p>
+                                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                                        <input type="email" asp-for="Email" class="form-control mb-3" placeholder="Email" id="email">
+                                                        <span asp-validation-for="Senha" class="text-danger"></span>
+                                                        <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha" id="senha">
+                                                        <div class="d-flex justify-content-between flex-sm-row flex-column">
+                                                            <button type="submit" class="btn btn-danger btn-block"><i class="ft-log-in"></i>  Logar</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
                 </div>
-                <div class="d-flex justify-content-between flex-sm-row flex-column">
-                  <a href="auth-register.html" class="btn bg-light-primary mb-2 mb-sm-0">Register</a>
-                  <a href="dashboard1.html" class="btn btn-primary">Login</a>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-between align-items-center">
-                  <h6 class="text-primary m-0">Or Login With</h6>
-                  <div class="login-options">
-                    <a class="btn btn-sm btn-social-icon btn-facebook mr-1"><span class="fa fa-facebook"></span></a>
-                    <a class="btn btn-sm btn-social-icon btn-twitter mr-1"><span class="fa fa-twitter"></span></a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</section>
-<!--Login Page Ends-->
-          </div>
-        </div>
-        <!-- END : End Main Content-->
-      </div>
-    </div>
-    <!-- ////////////////////////////////////////////////////////////////////////////-->
 
-    <!-- BEGIN VENDOR JS-->
-    <script src="../app-assets/vendors/js/vendors.min.js"></script>
-    <script src="../app-assets/vendors/js/switchery.min.js"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN APEX JS-->
-    <script src="../app-assets/js/core/app-menu.min.js"></script>
-    <script src="../app-assets/js/core/app.min.js"></script>
-    <script src="../app-assets/js/notification-sidebar.min.js"></script>
-    <script src="../app-assets/js/customizer.min.js"></script>
-    <script src="../app-assets/js/scroll-top.min.js"></script>
-    <!-- END APEX JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
-    <!-- END PAGE LEVEL JS-->
-    <!-- BEGIN: Custom CSS-->
-    <script src="../assets/js/scripts.js"></script>
-    <!-- END: Custom CSS-->
-  </body>
-  <!-- END : Body-->
-</html>
+</body>

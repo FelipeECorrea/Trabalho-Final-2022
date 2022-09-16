@@ -1,7 +1,15 @@
+using Repositorio.InjecoesDependencia;
+using Servico.InjecoesDependencia;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AdicionarServicos();
+builder.Services.AdicionarRepositorios();
+builder.Services.AddRazorPages();
+builder.Services.AdicionarEntityFramework(builder.Configuration);
 
 var app = builder.Build();
 
@@ -21,5 +29,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.UseEndpoints(endpoint =>
+{
+    endpoint.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=LoginCliente}/{action=Index}/{id?}");
+});
 
 app.Run();
