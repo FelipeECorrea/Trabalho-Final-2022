@@ -55,6 +55,7 @@ namespace Project_Restaurant_2022.Controllers
                 Cpf = cliente.Cpf,
                 Email = cliente.Email,
             };
+            ViewBag.Clientes = cliente;
 
             ViewBag.Clientes = cliente;
 
@@ -66,14 +67,21 @@ namespace Project_Restaurant_2022.Controllers
         {
             if (!ModelState.IsValid)
             {
+<<<<<<< HEAD
                 ViewBag.Clientes = ObterCliente();
                 return View(clienteEditarViewModel);
             }
+=======
+                return View(clienteEditarViewModel);
+            }
+
+>>>>>>> 0ca1cbed1c1fe52546d13cdc0021c942e62a1eaf
             _clienteService.Editar(clienteEditarViewModel);
 
             return RedirectToAction("Index");
         }
 
+<<<<<<< HEAD
         private List<string> ObterCliente()
         {
             return Enum
@@ -81,6 +89,8 @@ namespace Project_Restaurant_2022.Controllers
                .OrderBy(x => x)
                .ToList();
         }
+=======
+>>>>>>> 0ca1cbed1c1fe52546d13cdc0021c942e62a1eaf
 
         [HttpGet("obterTodosSelect2")]
         public IActionResult ObterTodosSelect2()

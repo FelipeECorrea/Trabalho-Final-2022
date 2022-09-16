@@ -1,0 +1,378 @@
+.email-application
+{
+    position: relative;
+
+    height: calc(var(--vh, 1vh)*100 - 7.55rem); 
+
+    border-radius: .35rem;
+}
+.horizontal-layout .email-application
+{
+    margin-top: 1rem;
+}
+.horizontal-layout .email-application,
+.horizontal-layout .email-application .email-app-sidebar
+{
+    height: calc(var(--vh, 1vh)*100 - 12rem);
+}
+.horizontal-layout .email-application .email-app-list-mails,
+.horizontal-layout .email-application .email-app-mail-content,
+.horizontal-layout .email-application .email-app-mail-content-detail
+{
+    height: calc(var(--vh, 1vh)*100 - 14.4rem);
+}
+.horizontal-layout .email-application .email-app-list-mails .email-app-list
+{
+    height: calc(var(--vh, 1vh) * 100 - 18rem);
+}
+.email-application .ps__rail-x
+{
+    display: none !important;
+}
+.email-application .wrapper
+{
+    height: calc(var(--vh, 1vh) * 100 - 8rem);
+}
+.email-application.navbar-sticky .wrapper
+{
+    height: calc(var(--vh, 1vh) * 100);
+}
+.email-application.horizontal-layout .wrapper
+{
+    height: calc(var(--vh, 1vh) * 100 - 4rem);
+}
+.email-application.horizontal-layout.navbar-sticky .footer
+{
+    margin-top: 0;
+}
+.email-application .app-content-overlay
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    visibility: visible; 
+
+    width: 100%;
+    height: 100% !important;
+
+    cursor: pointer;
+
+    opacity: 0;
+    border-radius: .35rem;
+    background-color: rgba(0, 0, 0, .6);
+}
+.email-application .app-content-overlay.show
+{
+    z-index: 3; 
+
+    opacity: 1;
+}
+.email-application .email-app-sidebar
+{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+
+    width: 16rem;
+    height: calc(var(--vh, 1vh)*100 - 7.55rem);
+
+    border-left: 1px solid #e0e0e0; 
+    background: #fff;
+}
+.email-application .email-app-sidebar .sidebar-close-icon
+{
+    font-size: 1.25rem;
+
+    position: absolute;
+    z-index: 1; 
+    top: .25rem;
+    left: .5rem;
+
+    cursor: pointer;
+}
+.email-application .email-app-sidebar .email-app-sidebar-content
+{
+    position: relative;
+
+    height: 100%;
+    padding: 20px;
+}
+.email-application .email-app-sidebar .email-app-sidebar-content .list-group-messages a
+{
+    font-size: 1.1rem; 
+
+    margin-bottom: .3rem;
+    padding: .5rem 1rem;
+}
+.email-application .email-app-sidebar .email-app-sidebar-content .list-group-messages a.list-group-item
+{
+    border-radius: .35rem;
+}
+.email-application .email-app-sidebar .email-app-sidebar-content .list-group-messages a.list-group-item.active
+{
+    color: #fff !important; 
+    background-color: #975aff !important;
+}
+.email-application .compose-new-mail-sidebar
+{
+    position: absolute;
+    z-index: 8;
+    bottom: 0;
+    left: 0;
+
+    width: 23rem;
+    height: calc(100vh - 7.5rem);
+
+    -webkit-transition: all .4s ease-in-out;
+       -moz-transition: all .4s ease-in-out;
+        -ms-transition: all .4s ease-in-out; 
+         -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+
+    border-radius: 0;
+    background-color: #fff;
+}
+.email-application .compose-new-mail-sidebar.show
+{
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+}
+.email-application .compose-new-mail-sidebar .compose-sidebar-close-icon
+{
+    font-size: 1.25rem;
+
+    position: absolute;
+    z-index: 1; 
+    top: .6rem;
+    left: 1rem;
+
+    cursor: pointer;
+}
+.email-application .compose-new-mail-sidebar .ql-editor
+{
+    min-height: 5rem;
+}
+.email-application .compose-new-mail-sidebar [class*='ql']
+{
+    border: 0;
+}
+@media (max-width: 575.98px)
+{
+    .email-application .compose-new-mail-sidebar
+    {
+        width: 18rem;
+    }
+}
+.email-application .email-app-content
+{
+    height: 100%; 
+    padding-left: 1rem;
+}
+.email-application .email-app-content .email-search-box
+{
+    background-color: #fff;
+}
+.email-application .email-app-list-mails
+{
+    position: relative;
+
+    overflow-y: hidden;
+
+    width: 100%;
+    height: calc(var(--vh, 1vh)*100 - 13.5rem); 
+    padding: 0;
+
+    background-color: #fff;
+}
+.email-application .email-app-list-mails .email-app-list
+{
+    position: relative;
+
+    height: 100%;
+}
+.email-application .email-app-list-mails .email-app-list p
+{
+    margin-bottom: .2rem;
+}
+.email-application .email-app-list-mails .email-app-list .ps__rail-x,
+.email-application .email-app-list-mails .email-app-list .ps__rail-y
+{
+    z-index: 2;
+}
+.email-application .email-app-mail-content
+{
+    position: relative;
+    z-index: 1;
+
+    float: right;
+
+    width: calc(100% - 320px);
+    height: calc(var(--vh, 1vh)*100 - 13.5rem);
+    padding: 0;
+
+    -webkit-transition: all .4s ease-in-out;
+       -moz-transition: all .4s ease-in-out;
+        -ms-transition: all .4s ease-in-out; 
+         -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+
+    background-color: #fff;
+}
+.email-application .email-app-mail-content-detail
+{
+    position: relative;
+
+    overflow-y: auto; 
+
+    height: calc(var(--vh, 1vh)*100 - 13.5rem);
+}
+.email-application .email-app-mail-content-detail .opened-email
+{
+    background: #f7f7f8;
+}
+.email-application .email-app-content-wrapper
+{
+    overflow-y: scroll;
+
+    height: calc(100% - 30px);
+}
+.email-application .email-app-content-wrapper .email-app-options,
+.email-application .email-app-content-wrapper .email-app-title
+{
+    border-bottom: 1px solid #e0e0e0;
+}
+.email-application .users-list-padding .list-group-item-text .float-right i.ft-star
+{
+    color: #bdbdbd;
+}
+.email-application .users-list-padding .email-list-text
+{
+    color: #616161;
+}
+.email-application .users-list-padding .selected-email
+{
+    border: none;
+    border-left: 3px solid #975aff !important; 
+    background-color: #eee;
+}
+.email-application .users-list-padding .selected-email:first-child,
+.email-application .users-list-padding .selected-email:last-child
+{
+    border-radius: 0;
+}
+
+@media (max-width: 1199.98px)
+{
+    .horizontal-layout .email-application,
+    .horizontal-layout .email-application .email-app-sidebar,
+    .horizontal-layout .email-application .compose-new-mail-sidebar
+    {
+        height: calc(var(--vh, 1vh)*100 - 8.5rem);
+    }
+    .email-app-sidebar
+    {
+        -webkit-transition: -webkit-transform .4s;
+                transition: -webkit-transform .4s;
+                transition:         transform .4s;
+                transition:         transform .4s, -webkit-transform .4s; 
+        -webkit-transform: translateX(110%);
+            -ms-transform: translateX(110%);
+                transform: translateX(110%);
+    }
+    .email-app-sidebar.show
+    {
+        z-index: 3; 
+
+        -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
+                transform: translateX(0%);
+    }
+    .email-app-content
+    {
+        padding-right: 1rem;
+    }
+}
+
+@media (min-width: 768px)
+{
+    .email-application .email-app-sidebar
+    {
+        right: 0;
+    }
+    .email-application .email-app-list-mails
+    {
+        float: right; 
+
+        width: 319px;
+
+        border-left: 1px solid #e0e0e0;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    .email-application .email-app-content
+    {
+        margin-right: 16rem;
+    }
+    .horizontal-layout .email-application .email-app-sidebar,
+    .horizontal-layout .email-application .compose-new-mail-sidebar
+    {
+        height: calc(var(--vh, 1vh)*100 - 11.98rem);
+    }
+    .horizontal-layout .email-application .email-app-list-mails,
+    .horizontal-layout .email-application .email-app-mail-content,
+    .horizontal-layout .email-application .email-app-mail-content-detail
+    {
+        height: calc(var(--vh, 1vh)*100 - 13.5rem) !important;
+    }
+    .email-application.horizontal-layout.navbar-sticky .wrapper
+    {
+        height: calc(var(--vh, 1vh) * 100);
+    }
+    .email-application.horizontal-layout.navbar-static .wrapper
+    {
+        height: calc(var(--vh, 1vh) * 100 - 4rem);
+    }
+}
+
+@media (max-width: 767.98px)
+{
+    .email-application .email-app-mail-content
+    {
+        position: absolute !important;
+        top: 0 !important;
+        right: 110% !important;
+
+        width: 100% !important;
+        height: calc((var(--vh, 1vh) * 100) - 7.5rem) !important;
+
+        -webkit-transition: all .4s ease-in-out;
+           -moz-transition: all .4s ease-in-out;
+            -ms-transition: all .4s ease-in-out; 
+             -o-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+    }
+    .email-application .email-app-mail-content .email-app-mail-content-detail
+    {
+        height: calc(var(--vh, 1vh)*100 - 7.5rem) !important;
+    }
+    .email-application .show-email-content
+    {
+        right: 0 !important;
+    }
+    .horizontal-layout .email-application .email-app-mail-content,
+    .horizontal-layout .email-application .email-app-mail-content-detail
+    {
+        height: calc(var(--vh, 1vh)*100 - 8.5rem) !important;
+    }
+}

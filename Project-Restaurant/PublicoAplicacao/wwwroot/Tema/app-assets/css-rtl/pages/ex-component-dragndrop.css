@@ -1,0 +1,39 @@
+.draggable
+{
+    cursor: -webkit-grab;
+    cursor:         grab;
+}
+.gu-unselectable .draggable
+{
+    cursor: -webkit-grabbing;
+    cursor:         grabbing;
+}
+
+.draggable-move
+{
+    cursor: move;
+}
+.gu-unselectable .draggable-move
+{
+    cursor: move;
+}
+
+#multiple-list-group-a,
+#multiple-list-group-b
+{
+    min-height: 5.714rem;
+}
+
+#dd-with-handle .list-group
+{
+    min-height: 5.714rem;
+}
+#dd-with-handle .list-group .handle
+{
+    font-size: 1.2rem; 
+
+    margin-left: 10px;
+    padding: 2px 6px 0;
+
+    background-color: #eee;
+}

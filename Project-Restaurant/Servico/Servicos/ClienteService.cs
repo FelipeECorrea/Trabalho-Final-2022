@@ -1,4 +1,5 @@
-﻿using Repositorio.Entidades;
+﻿using Repositorio.BancoDados;
+using Repositorio.Entidades;
 using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
 using Servico.ViewModels;
@@ -10,6 +11,7 @@ namespace Servico.Servicos
     {
         private readonly IClienteRepositorio _clienteRepositorio;
         private readonly IClienteMapeamentoEntidade _mapeamentoEntidade;
+        private readonly RestauranteContexto _contexto;
 
         public ClienteService(
             IClienteRepositorio clienteRepositorio,
@@ -45,7 +47,18 @@ namespace Servico.Servicos
             return true;
         }
 
+<<<<<<< HEAD
         public Cliente ObterPorId(int id) =>
+=======
+        public Cliente ObterPorEmail(string Email)
+        {
+            Cliente cliente = _clienteRepositorio.ObterPorEmail(Email);
+
+            return cliente;
+        }
+
+        public Cliente? ObterPorId(int id) =>
+>>>>>>> 0ca1cbed1c1fe52546d13cdc0021c942e62a1eaf
             _clienteRepositorio.ObterPorId(id);
 
         public IList<SelectViewModel> ObterPorSelect2()
@@ -65,5 +78,12 @@ namespace Servico.Servicos
 
         public IList<Cliente> ObterTodos() =>
             _clienteRepositorio.ObterTodos();
+
+        public bool SenhaValida(string senha)
+        {
+            Cliente cliente = new Cliente();
+
+            return cliente.Senha == senha;
+        }
     }
 }

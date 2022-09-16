@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ViewModels\NewFolder\**" />
+    <EmbeddedResource Remove="ViewModels\NewFolder\**" />
+    <None Remove="ViewModels\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Helpers\" />
   </ItemGroup>

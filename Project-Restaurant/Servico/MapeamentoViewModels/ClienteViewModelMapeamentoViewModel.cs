@@ -14,6 +14,7 @@ namespace Servico.MapeamentoViewModels
                 Cpf = cliente.Cpf,
                 Email = cliente.Email,
             };
+<<<<<<< HEAD
         private IList<ClienteViewModel> ConstruirContatoCom(IList<Cliente> clientes)
         {
             var viewModels = new List<ClienteViewModel>();
@@ -30,5 +31,7 @@ namespace Servico.MapeamentoViewModels
             }
             return viewModels;
         }
+=======
+>>>>>>> 0ca1cbed1c1fe52546d13cdc0021c942e62a1eaf
     }
 }
