@@ -55,6 +55,7 @@ namespace Project_Restaurant_2022.Controllers
                 Cpf = cliente.Cpf,
                 Email = cliente.Email,
             };
+            ViewBag.Clientes = cliente;
 
             ViewBag.Clientes = cliente;
 

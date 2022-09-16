@@ -23,6 +23,15 @@ namespace Servico.MapeamentoEntidades
                 Senha = viewModel.Senha
             };
 
+        public void AtualizarCom(Cliente cliente, ClienteEditarViewModel clienteEditarViewModel)
+        {
+            cliente.Nome = clienteEditarViewModel.Nome;
+            cliente.Telefone = clienteEditarViewModel.Telefone;
+            cliente.Cpf = clienteEditarViewModel.Cpf;
+            cliente.Email = clienteEditarViewModel.Email;
+            cliente.Senha = clienteEditarViewModel.Senha;
+        }
+
 
     }
 }

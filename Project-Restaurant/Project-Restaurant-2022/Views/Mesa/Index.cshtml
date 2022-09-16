@@ -4,8 +4,8 @@
 
 <div class="row mb-3">
     <div class="text-end">
-        <a asp-action="cadastrar" class="btn btn-primary">
-            <i class="fa-solid fa-plus"></i> Cadastrar
+        <a asp-action="cadastrar" class="btn btn-danger">
+            <i class="ft-plus-square"></i> Cadastrar
         </a>
     </div>
 </div>
@@ -17,6 +17,8 @@
         <!-- Linha da tabela-->
         <th>Numero Mesa</th> <!-- Coluna específica do cabeçalho-->
         <th>Status</th>
+        <th>Ação</th>
+
     </tr>
     </thead>
     <tbody>
@@ -26,13 +28,22 @@
         <tr>
             <!-- Linha-->
             <td>@mesa.NumeroMesa</td> <!-- Coluna específica para body-->
-            <td>@mesa.Status</td>
-            <td>
-                <a class="btn btn-primary" asp-action="editar" asp-route-id="@mesa.Id">
-                    <i class="fa-solid fa-pencil"></i> Editar
+                @if(mesa.Status == Repositorio.Enums.StatusMesa.Desocupado)
+                {
+                    <td><span class="badge badge-success">@mesa.Status</span></td>
+
+                }
+                else
+                {
+                    <td><span class="badge badge-danger">@mesa.Status</span></td>
+                }
+
+                <td>
+                <a class="btn btn-warning" asp-action="editar" asp-route-id="@mesa.Id">
+                    <i class="ft-edit"></i> Editar
                 </a>
                 <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@mesa.Id">
-                    <i class="fa-solid fa-trash"></i> Apagar
+                    <i class="ft-trash-2"></i> Apagar
                 </a>
             </td>
         </tr>
