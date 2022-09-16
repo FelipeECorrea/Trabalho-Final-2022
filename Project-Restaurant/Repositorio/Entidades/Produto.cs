@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient.Server;
+using Repositorio.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace Repositorio.Entidades
@@ -12,5 +13,6 @@ namespace Repositorio.Entidades
         public string Descricao { get; set; }
         public string ProdutoCaminho { get; set; }
         public IList<ProdutoPedido> ProdutosPedidos { get; set; }
+        public StatusProduto Status { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Servico.ViewModels.Produto
 {
     public class ProdutoCadastrarViewModel : ProdutoViewModel
     {
+        public IFormFile? File { get; set; }
     }
 }

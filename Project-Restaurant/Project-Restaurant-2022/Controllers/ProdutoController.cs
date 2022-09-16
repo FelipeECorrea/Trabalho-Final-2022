@@ -49,7 +49,7 @@ namespace Project_Restaurant_2022.Controllers
             }
 
             _produtoService.Cadastrar(produtoCadastrarViewModel);
-
+            
             return RedirectToAction("Index");
         }
 
