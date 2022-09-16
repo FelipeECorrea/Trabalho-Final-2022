@@ -58,6 +58,7 @@ namespace Project_Restaurant_2022.Controllers
                 Email = cliente.Email,
                 Senha = cliente.Senha,
             };
+            ViewBag.Clientes = cliente;
 
             return View(clienteEditarViewModel);
         }
@@ -65,10 +66,16 @@ namespace Project_Restaurant_2022.Controllers
         [HttpPost("editar")]
         public IActionResult Editar([FromForm] ClienteEditarViewModel clienteEditarViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(clienteEditarViewModel);
+            }
+
             _clienteService.Editar(clienteEditarViewModel);
 
             return RedirectToAction("Index");
         }
+
 
         [HttpGet("obterTodosSelect2")]
         public IActionResult ObterTodosSelect2()
