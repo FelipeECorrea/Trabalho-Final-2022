@@ -1,17 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repositorio.Entidades;
 using Repositorio.Repositorios;
+using Servico.Servicos;
 using Servico.ViewModels.Login;
 
 namespace Project_Restaurant_2022.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly IClienteRepositorio _clienteRepositorio;
+        private readonly IClienteService _clienteService;
 
-        public LoginController(IClienteRepositorio clienteRepositorio)
+        public LoginController(IClienteService clienteService)
         {
-            _clienteRepositorio = clienteRepositorio;
+            _clienteService = clienteService;
         }
 
         public IActionResult Index()
@@ -26,12 +27,11 @@ namespace Project_Restaurant_2022.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Cliente cliente = _clienteRepositorio.ObterPorEmail(loginViewModel.Email);
-                    var senhaCliente = _clienteRepositorio;
+                    Cliente cliente = _clienteService.ObterPorEmail(loginViewModel.Email);
 
                     if (cliente != null)
                     {
-                        if (senhaCliente.SenhaValida(loginViewModel.Senha))
+                        if (cliente.Senha == loginViewModel.Senha)
                         {
                             return RedirectToAction("Index", "Home");
                         }

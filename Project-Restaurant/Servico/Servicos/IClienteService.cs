@@ -13,5 +13,6 @@ namespace Servico.Servicos
         IList<Cliente> ObterTodos();
         IList<SelectViewModel> ObterPorSelect2();
         public Cliente ObterPorEmail(string Email);
+        bool SenhaValida(string senha);
     }
 }
