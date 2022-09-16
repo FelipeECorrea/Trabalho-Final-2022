@@ -4,8 +4,8 @@
 
 <div class="row mb-3">
     <div class="text-end">
-        <a asp-action="cadastrar" class="btn btn-primary">
-            <i class="fa-solid fa-plus"></i> Cadastrar
+        <a asp-action="cadastrar" class="btn btn-danger">
+            <i class="ft-plus-square"></i> Cadastrar
         </a>
     </div>
 </div>
@@ -31,11 +31,11 @@
             <td>@produto.Valor</td>
             <td>@produto.Descricao</td>
             <td>
-                <a class="btn btn-primary" asp-action="editar" asp-route-id="@produto.Id">
-                    <i class="fa-solid fa-pencil"></i> Editar
+                <a class="btn btn-warning" asp-action="editar" asp-route-id="@produto.Id">
+                    <i class="fa-solid ft-edit"></i> Editar
                 </a>
                 <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@produto.Id">
-                    <i class="fa-solid fa-trash"></i> Apagar
+                    <i class="fa-solid ft-trash"></i> Apagar
                 </a>
             </td>
         </tr>

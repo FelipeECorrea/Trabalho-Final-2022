@@ -11,6 +11,8 @@ namespace Servico.ViewModels.Produto
 {
     public class ProdutoViewModel
     {
+        public byte Status { get; set; }
+
         [Display(Name = "Nome")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(4, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
