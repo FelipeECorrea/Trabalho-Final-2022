@@ -2,7 +2,8 @@
 {
     public enum StatusProduto
     {
-        disponivel,
-        indisponivel
+        
+        Indisponivel,
+        Disponivel
     }
 }
