@@ -37,7 +37,6 @@ namespace Repositorio.Mapeamentos
              .IsRequired()
              .HasColumnName("descricao");
 
-
             builder.Property(x => x.ProdutoCaminho)
                .HasColumnType("VARCHAR")
                .HasMaxLength(1000)

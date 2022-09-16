@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repositorio.BancoDados;
 
@@ -10,9 +11,10 @@ using Repositorio.BancoDados;
 namespace Repositorio.Migrations
 {
     [DbContext(typeof(RestauranteContexto))]
-    partial class RestauranteContextoModelSnapshot : ModelSnapshot
+    [Migration("20220916213100_CorrigindoProdutoImagem")]
+    partial class CorrigindoProdutoImagem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,37 +115,37 @@ namespace Repositorio.Migrations
                         {
                             Id = 1,
                             NumeroMesa = (byte)1,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 2,
                             NumeroMesa = (byte)2,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 3,
                             NumeroMesa = (byte)3,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 4,
                             NumeroMesa = (byte)4,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 5,
                             NumeroMesa = (byte)5,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 6,
                             NumeroMesa = (byte)6,
-                            Status = (byte)1
+                            Status = (byte)0
                         });
                 });
 
@@ -226,6 +228,10 @@ namespace Repositorio.Migrations
                         .HasColumnType("VARCHAR(1000)")
                         .HasColumnName("produto_caminho");
 
+                    b.Property<byte>("Status")
+                        .HasColumnType("TINYINT")
+                        .HasColumnName("statusProduto");
+
                     b.Property<decimal>("Valor")
                         .HasPrecision(5, 2)
                         .HasColumnType("DECIMAL(5,2)")
@@ -243,6 +249,7 @@ namespace Repositorio.Migrations
                             Descricao = "Yakissoba de frango e legumes",
                             Nome = "Yakissoba",
                             ProdutoCaminho = "favicon.ico",
+                            Status = (byte)1,
                             Valor = 20m
                         },
                         new
@@ -252,6 +259,7 @@ namespace Repositorio.Migrations
                             Descricao = "Coca-cola 600ml",
                             Nome = "Coca-cola 600ml",
                             ProdutoCaminho = "favicon.ico",
+                            Status = (byte)1,
                             Valor = 6m
                         });
                 });

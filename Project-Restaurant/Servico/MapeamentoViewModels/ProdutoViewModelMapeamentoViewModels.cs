@@ -1,11 +1,5 @@
 ﻿using Repositorio.Entidades;
-using Servico.Servicos;
 using Servico.ViewModels.Produto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servico.MapeamentoViewModels
 {
@@ -19,7 +13,6 @@ namespace Servico.MapeamentoViewModels
                   Valor = produto.Valor,
                   Categoria = produto.Categoria,
                   Descricao = produto.Descricao
-
               };    
         private IList<ProdutoViewModel> ConstruirContatosCom(IList<Produto> produtos)
         {
@@ -33,8 +26,6 @@ namespace Servico.MapeamentoViewModels
                     Valor = produto.Valor,
                     Categoria = produto.Categoria,
                     Descricao = produto.Descricao
-                    
-
                 });
             }
             return viewModels;
