@@ -12,5 +12,7 @@ namespace Servico.Servicos
         Cliente? ObterPorId(int id);
         IList<Cliente> ObterTodos();
         IList<SelectViewModel> ObterPorSelect2();
+        public Cliente ObterPorEmail(string Email);
+        bool SenhaValida(string senha);
     }
 }

@@ -1,0 +1,84 @@
+﻿@using Servico.ViewModels.Login
+@model LoginViewModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/feather/style.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/simple-line-icons/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/switchery.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/chartist.min.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN APEX CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/themes/layout-dark.css">
+    <link rel="stylesheet" href="~/Tema/app-assets/css/plugins/switchery.css">
+    <!-- END APEX CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/pages/dashboard1.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/style.css">
+</head>
+
+<body class="vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
+
+    @if (TempData["MensageErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensageErro"]
+        </div>
+    }
+    
+    <div class="wrapper">
+        <div class="main-panel">
+            <div class="main-content">
+                <div class="content-overlay"></div>
+                <div class="content-wrapper">
+                    <form asp-controller="Login" asp-action="Entrar" method="Post">
+                        <section id="login" class="auth-height">
+                            <div class="row full-height-vh m-0">
+                                <div class="col-12 d-flex align-items-center justify-content-center">
+                                    <div class="card overflow-hidden">
+                                        <div class="card-content">
+                                            <div class="card-body auth-img">
+                                                <div class="row m-0">
+                                                    <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
+                                                        <img src="~/Tema/app-assets/img/LogoDevLanches.png" alt="" class="img-fluid" width="300" height="230">
+                                                    </div>
+                                                    <div class="col-lg-6 col-12 px-4 py-3">
+                                                        <h4 class="mb-2 card-title">Login</h4>
+                                                        <p>Bem Vindo, Por favor Faça o Login.</p>
+                                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                                        <input type="email" asp-for="Email" class="form-control mb-3" placeholder="Email" id="email">
+                                                        <span asp-validation-for="Senha" class="text-danger"></span>
+                                                        <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha" id="senha">
+                                                        <div class="d-flex justify-content-between flex-sm-row flex-column">
+                                                            <button type="submit" class="btn btn-danger btn-block"><i class="ft-log-in"></i>  Logar</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
