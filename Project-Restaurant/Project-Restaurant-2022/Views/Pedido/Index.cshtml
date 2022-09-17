@@ -4,40 +4,40 @@
 
 <div class="row mb-3">
     <div class="text-end">
-        <a asp-action="abrir" class="btn btn-primary">
-            <i class="fa-solid fa-plus"></i> Cadastrar
+        <a asp-action="abrir" class="btn btn-danger">
+            <i class="ft-plus-square"></i> Cadastrar
         </a>
     </div>
 </div>
 
 <table class="table table-striped table-bordered">
     <thead>
-    <!-- Cabeçalho da tabela-->
-    <tr>
-        <!-- Linha da tabela-->
-        <th>Cliente</th> <!-- Coluna específica do cabeçalho-->
-        <th>Observação</th>
-        <th>Ação</th>
-    </tr>
+        <!-- Cabeçalho da tabela-->
+        <tr>
+            <!-- Linha da tabela-->
+            <th>Cliente</th> <!-- Coluna específica do cabeçalho-->
+            <th>Observação</th>
+            <th>Ação</th>
+        </tr>
     </thead>
     <tbody>
-    <!-- Lugar dos registros da tabela-->
-    @foreach (var pedido in Model)
-    {
-        <tr>
-            <!-- Linha-->
-            <td>@pedido.ClienteId</td> <!-- Coluna específica para body-->
-            <td>@pedido.Observacao</td> <!-- Coluna específica para body-->
-            <td>
-                <a class="btn btn-primary" asp-action="editar" asp-route-id="@pedido.Id">
-                    <i class="fa-solid fa-pencil"></i> Editar
-                </a>
-                <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@pedido.Id">
-                    <i class="fa-solid fa-trash"></i> Apagar
-                </a>
-            </td>
-        </tr>
-    }
+        <!-- Lugar dos registros da tabela-->
+        @foreach (var pedido in Model)
+        {
+            <tr>
+                <!-- Linha-->
+                <td>@pedido.Cliente</td> <!-- Coluna específica para body-->
+                <td>@pedido.Observacao</td> <!-- Coluna específica para body-->
+                <td>
+                    <a class="btn btn-warning" asp-action="editar" asp-route-id="@pedido.Id">
+                        <i class="fa-solid ft-edit"></i> Editar
+                    </a>
+                    <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@pedido.Id">
+                        <i class="fa-solid ft-trash"></i> Apagar
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
