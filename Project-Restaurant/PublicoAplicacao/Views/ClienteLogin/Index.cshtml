@@ -1,5 +1,4 @@
-﻿@using Servico.ViewModels.LoginCliente
-@model LoginClienteViewModel
+﻿@model LoginClienteViewModel
 
 @{
     Layout = null;
@@ -65,7 +64,8 @@
                                                         <span asp-validation-for="Senha" class="text-danger"></span>
                                                         <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha" id="senha">
                                                         <div class="d-flex justify-content-between flex-sm-row flex-column">
-                                                            <button type="submit" class="btn btn-danger btn-block"><i class="ft-log-in"></i>  Logar</button>
+                                                            <a asp-action="cadastrar" class="btn bg-light-warning mb-2 mb-sm-0">  Registrar</a>
+                                                            <button type="submit" class="btn btn-danger"><i class="ft-log-in"></i>  Logar</button>
                                                         </div>
                                                     </div>
                                                 </div>

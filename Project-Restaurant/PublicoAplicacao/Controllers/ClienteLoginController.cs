@@ -2,6 +2,7 @@
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Cliente;
+using Servico.ViewModels.LoginCliente;
 
 namespace PublicoAplicacao.Controllers
 {
@@ -17,9 +18,9 @@ namespace PublicoAplicacao.Controllers
 
         public ActionResult Index()
         {
-            var clientesCadastrar = _clienteService.Cadastrar();
+            var viewModel = new LoginClienteViewModel();
 
-            return View(clientesCadastrar);
+            return View(viewModel);
         }
 
         [HttpGet("cadastrar")]
