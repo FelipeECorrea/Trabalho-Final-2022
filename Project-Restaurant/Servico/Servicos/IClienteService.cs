@@ -10,7 +10,7 @@ namespace Servico.Servicos
         Cliente Cadastrar(ClienteCadastrarViewModel viewModel);
         bool Editar(ClienteEditarViewModel viewModel);
         Cliente? ObterPorId(int id);
-        IList<Cliente> ObterTodos();
+        IList<Cliente> Cadastrar();
         IList<SelectViewModel> ObterPorSelect2();
         public Cliente ObterPorEmail(string Email);
         bool SenhaValida(string senha);

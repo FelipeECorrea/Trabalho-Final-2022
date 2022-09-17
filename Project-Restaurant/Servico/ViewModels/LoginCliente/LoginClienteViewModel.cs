@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Servico.ViewModels.Login_Cliente
+namespace Servico.ViewModels.LoginCliente
 {
     public class LoginClienteViewModel
     {

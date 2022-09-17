@@ -72,7 +72,7 @@ namespace Servico.Servicos
             return selectViewModels;
         }
 
-        public IList<Cliente> ObterTodos() =>
+        public IList<Cliente> Cadastrar() =>
             _clienteRepositorio.ObterTodos();
 
         public bool SenhaValida(string senha)
