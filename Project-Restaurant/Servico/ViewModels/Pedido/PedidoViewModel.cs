@@ -23,11 +23,11 @@ namespace Servico.ViewModels.Pedido
         //[MaxLength(1, ErrorMessage = "{0} deve conter no máximo {1} mesa")]
         public int ProdutoId { get; set; }
 
-        [Display(Name = "Quantidade")]
+        [Display(Name = nameof(Quantidade))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public int Quantidade { get; set; }
 
-        [Display(Name = "Observacao")]
+        [Display(Name = nameof(Observacao))]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string Observacao { get; set; }
     }

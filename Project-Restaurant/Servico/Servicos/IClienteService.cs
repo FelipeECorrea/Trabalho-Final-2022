@@ -11,7 +11,7 @@ namespace Servico.Servicos
         bool Editar(ClienteEditarViewModel viewModel);
         Cliente? ObterPorId(int id);
         IList<Cliente> ObterTodos();
-        IList<SelectViewModel> ObterPorSelect2();
+        IList<SelectViewModel> ObterTodosSelect2();
         public Cliente ObterPorEmail(string Email);
         bool SenhaValida(string senha);
     }
