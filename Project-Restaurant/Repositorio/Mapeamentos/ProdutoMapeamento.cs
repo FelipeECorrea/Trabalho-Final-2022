@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Repositorio.Entidades;
+using Repositorio.Enums;
 
 namespace Repositorio.Mapeamentos
 {
@@ -36,12 +37,16 @@ namespace Repositorio.Mapeamentos
              .IsRequired()
              .HasColumnName("descricao");
 
-
             builder.Property(x => x.ProdutoCaminho)
                .HasColumnType("VARCHAR")
                .HasMaxLength(1000)
                .IsRequired()
                .HasColumnName("produto_caminho");
+
+            builder.Property(x => x.Status)
+            .HasColumnType("TINYINT")
+            .IsRequired()
+            .HasColumnName("statusProduto");
 
             builder.HasData(
                new Produto
@@ -51,7 +56,8 @@ namespace Repositorio.Mapeamentos
                    Nome = "Yakissoba",
                    Categoria = "Massas",
                    Descricao = "Yakissoba de frango e legumes",
-                   ProdutoCaminho = "favicon.ico"
+                   ProdutoCaminho = "favicon.ico",
+                   Status = StatusProduto.Disponivel
                },
                new Produto
                {
@@ -60,7 +66,8 @@ namespace Repositorio.Mapeamentos
                    Nome = "Coca-cola 600ml",
                    Categoria = "Bebidas",
                    Descricao = "Coca-cola 600ml",
-                   ProdutoCaminho = "favicon.ico"
+                   ProdutoCaminho = "favicon.ico",
+                   Status = StatusProduto.Disponivel
 
                });
         }

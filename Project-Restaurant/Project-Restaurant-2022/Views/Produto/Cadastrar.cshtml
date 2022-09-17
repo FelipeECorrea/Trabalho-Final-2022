@@ -8,7 +8,7 @@
         <div class="card-content">
             <div class="card-body">
 
-                <form asp-action="Cadastrar" method="POST">
+                <form asp-action="Cadastrar" method="POST" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="col-md-6 col-12">
                             <div class="form-group mb-2">
@@ -33,9 +33,11 @@
                                 <span asp-validation-for="Categoria" class="text-danger"></span>
                             </div>
                         </div>
-                        <div class="form-group mb-2">
-                            <label for="basic-form-8">Selecione uma imagem</label>
-                            <input type="file" class="form-control-file" id="basic-form-8">
+                        <div class="row">
+                            <div class="col-12">
+                                  <label asp-for="Arquivo" class="form-label">Selecione uma imagem</label>
+                                   <input class="form-control" asp-for="Arquivo">
+                            </div>
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group mb-2">
