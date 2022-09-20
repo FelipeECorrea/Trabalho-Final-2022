@@ -2,24 +2,25 @@
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Cliente;
+using Servico.ViewModels.LoginCliente;
 
-namespace Project_Restaurant_2022.Controllers
+namespace PublicoAplicacao.Controllers
 {
     [Route("cliente")]
-    public class ClienteController : Controller
+    public class ClienteLoginController : Controller
     {
         private readonly IClienteService _clienteService;
 
-        public ClienteController(IClienteService clienteService)
+        public ClienteLoginController(IClienteService clienteService)
         {
             _clienteService = clienteService;
         }
 
         public ActionResult Index()
         {
-            var clientes = _clienteService.Cadastrar();
+            var viewModel = new LoginClienteViewModel();
 
-            return View(clientes);
+            return View(viewModel);
         }
 
         [HttpGet("cadastrar")]
@@ -71,14 +72,14 @@ namespace Project_Restaurant_2022.Controllers
                 return View(clienteEditarViewModel);
             }
 
-                return View(clienteEditarViewModel);
+            return View(clienteEditarViewModel);
 
 
             _clienteService.Editar(clienteEditarViewModel);
 
             return RedirectToAction("Index");
 
-            }
+        }
 
         private List<string> ObterCliente()
         {
@@ -88,22 +89,6 @@ namespace Project_Restaurant_2022.Controllers
                .ToList();
         }
 
-        [HttpGet("obterTodosSelect2")]
-        public IActionResult ObterTodosSelect2()
-        {
-            var selectViewModel = _clienteService.ObterTodosSelect2();
-
-            return Ok(selectViewModel);
-        }
-
-
-        [HttpGet("apagar")]
-        public IActionResult Apagar([FromQuery] int id)
-        {
-            _clienteService.Apagar(id);
-
-            return RedirectToAction("Index");
-        }
-
-        }
     }
+}
+        

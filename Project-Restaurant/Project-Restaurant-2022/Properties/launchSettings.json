@@ -5,7 +5,7 @@
     "iisExpress": {
       "applicationUrl": "http://localhost:10745",
       "sslPort": 44314
-    }
+    
   },
   "profiles": {
     "Project_Restaurant_2022": {

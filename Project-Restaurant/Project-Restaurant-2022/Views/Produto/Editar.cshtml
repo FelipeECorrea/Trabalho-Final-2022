@@ -40,18 +40,24 @@
                             </div>
                         </div>
 
-@*                        <div class="col-md-6 col-12">
-                           <label asp-for="Status">Status</label>
-                                <div class="form-check">
-                                    <input type="radio" id="EdiçãoProdutoStatusIndisponivel" name="Status" class="form-check-input" value="0" checked="checked" />
-                                    <label class="form-check-label" for="EdiçãoProdutoStatusIndisponivel">Indisponivel</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="radio" id="EdiçãoProdutoStatusDisponivel" name="Status" class="form-check-input" value="1"/>
-                                    <label class="form-check-label" for="EdiçãoProdutoStatusDisponivel">Disponivel</label>
-                                </div>
+                        <div class="col-md-6 col-12">
+                            <label asp-for="Status">Status</label>
+                            <div class="form-check">
+                                <input type="radio" id="ediçãoprodutostatusindisponivel" name="status" class="form-check-input" value="0" checked="checked" />
+                                <label class="form-check-label" for="ediçãoprodutostatusindisponivel">indisponivel</label>
                             </div>
-                        </div>*@
+                            <div class="form-check">
+                                <input type="radio" id="ediçãoprodutostatusdisponivel" name="status" class="form-check-input" value="1" />
+                                <label class="form-check-label" for="ediçãoprodutostatusdisponivel">disponivel</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label asp-for="Arquivo" class="form-label">Selecione uma imagem</label>
+                                <input class="form-control" asp-for="Arquivo">
+                            </div>
+                        </div>
 
                         <div class="col-md-6 col-12">
                             <div class="form-group mb-2">

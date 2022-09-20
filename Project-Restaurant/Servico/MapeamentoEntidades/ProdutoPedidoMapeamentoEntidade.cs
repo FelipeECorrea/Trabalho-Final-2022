@@ -10,6 +10,7 @@ namespace Servico.MapeamentoEntidades
             {
                 PedidoId = viewModel.PedidoId,
                 Valor = viewModel.Valor
+
             };
     }
 }

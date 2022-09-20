@@ -1,51 +1,411 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html class="loading" lang="pt-br">
+<!-- BEGIN : Head-->
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PublicoAplicacao</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/PublicoAplicacao.styles.css" asp-append-version="true" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="Apex admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Apex admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Dev Lanches</title>
+    <partial name="~/Views/_ViewImports.cshtml"/>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Tema/app-assets/img/ico/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="~/Tema/app-assets/img/ico/favicon-32.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <!-- font icons-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/feather/style.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/simple-line-icons/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/switchery.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/vendors/css/chartist.min.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN APEX CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/themes/layout-dark.css">
+    <link rel="stylesheet" href="~/Tema/app-assets/css/plugins/switchery.css">
+    <!-- END APEX CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/pages/dashboard1.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/style.css">
+    <!-- END: Custom CSS-->
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">PublicoAplicacao</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+<!-- END : Head-->
+<!-- BEGIN : Body-->
+
+<body class="vertical-layout vertical-menu 2-columns  navbar-sticky" data-menu="vertical-menu" data-col="2-columns">
+
+    <nav class="navbar navbar-expand-lg navbar-light header-navbar navbar-fixed">
+        <div class="container-fluid navbar-wrapper">
+            <div class="navbar-header d-flex">
+                <div class="navbar-toggle menu-toggle d-xl-none d-block float-left align-items-center justify-content-center" data-toggle="collapse"><i class="ft-menu font-medium-3"></i></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item mr-2 d-none d-lg-block"><a class="nav-link apptogglefullscreen" id="navbar-fullscreen" href="javascript:;"><i class="ft-maximize font-medium-3"></i></a></li>
+                    <li class="nav-item nav-search">
+                        <a class="nav-link nav-link-search" href="javascript:"><i class="ft-search font-medium-3"></i></a>
+                        <div class="search-input">
+                            <div class="search-input-icon"><i class="ft-search font-medium-3"></i></div>
+                            <input class="input" type="text" placeholder="Explore Apex..." tabindex="0" data-search="template-search">
+                            <div class="search-input-close"><i class="ft-x font-medium-3"></i></div>
+                            <ul class="search-list"></ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-container">
+                <div class="collapse navbar-collapse d-block" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="dropdown nav-item mr-1">
+                            <a class="nav-link dropdown-toggle user-dropdown d-flex align-items-end" id="dropdownBasic2" href="javascript:;" data-toggle="dropdown">
+                                <div class="user d-md-flex d-none mr-2"><span class="text-right">John Doe</span><span class="text-right text-muted font-small-3">Available</span></div><img class="avatar" src="~/Tema/app-assets/img/portrait/small/avatar-s-1.png" alt="avatar" height="35" width="35">
+                            </a>
+                            <div class="dropdown-menu text-left dropdown-menu-right m-0 pb-0" aria-labelledby="dropdownBasic2">
+                                <a class="dropdown-item" href="app-chat.html">
+                                    <div class="d-flex align-items-center"><i class="ft-message-square mr-2"></i><span>Chat</span></div>
+                                </a><a class="dropdown-item" href="page-user-profile.html">
+                                    <div class="d-flex align-items-center"><i class="ft-edit mr-2"></i><span>Edit Profile</span></div>
+                                </a><a class="dropdown-item" href="app-email.html">
+                                    <div class="d-flex align-items-center"><i class="ft-mail mr-2"></i><span>My Inbox</span></div>
+                                </a>
+                                <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login.html">
+                                    <div class="d-flex align-items-center"><i class="ft-power mr-2"></i><span>Logout</span></div>
+                                </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - PublicoAplicacao - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
-    </footer>
+    </nav>
+    <!-- Navbar (Header) Ends-->
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <div class="wrapper">
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 
+        <!-- main menu-->
+        <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
+        <div class="app-sidebar menu-fixed" data-background-color="ibiza-sunset" data-image="../../../app-assets/img/sidebar-bg/01.jpg" data-scroll-to-active="true">
+            <!-- main menu header-->
+            <!-- Sidebar Header starts-->
+            <div class="sidebar-header">
+                <div class="logo clearfix">
+                    <a class="logo-text float-left" href="index.html">
+                        <div ><img src="~/Tema/app-assets/img/LogoDevLanches.png" class="img-fluid" alt="Dev Lanches Logo" /></div><!--<span class="text">APEX</span>-->
+                    </a><a class="nav-toggle d-none d-lg-none d-xl-block" id="sidebarToggle" href="javascript:;"><i class="toggle-icon ft-toggle-right" data-toggle="expanded"></i></a><a class="nav-close d-block d-lg-block d-xl-none" id="sidebarClose" href="javascript:;"><i class="ft-x"></i></a>
+                </div>
+            </div>
+            <!-- Sidebar Header Ends-->
+            <!-- / main menu header-->
+            <!-- main menu content-->
+            <div class="sidebar-content main-menu-content">
+                <div class="nav-container">
+                    <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                        <li class=" nav-item">
+                            <a asp-controller="Produto" asp-action="Index"><i class="ft-book-open"></i><span class="menu-title" data-i18n="Produto">Produtos</span></a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="Mesa" asp-action="Index"><i class="ft-square"></i><span class="menu-title" data-i18n="Mesa">Mesas</span></a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="Pedido" asp-action="Index"><i class="ft-clipboard"></i><span class="menu-title" data-i18n="Pedido">Pedidos</span></a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="Cliente" asp-action="Index"><i class="ft-user"></i><span class="menu-title" data-i18n="Cliente">Cliente</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- main menu content-->
+            <div class="sidebar-background"></div>
+            <!-- main menu footer-->
+            <!-- include includes/menu-footer-->
+            <!-- main menu footer-->
+            <!-- / main menu-->
+        </div>
+
+        <div class="main-panel">
+            <!-- BEGIN : Main Content-->
+            <div class="main-content">
+                <div class="content-overlay"></div>
+                <div class="content-wrapper">
+                    @RenderBody()
+                    <!--Statistics cards Starts-->
+                    <div class="row">
+                    </div>
+                    <!--Statistics cards Ends-->
+                    <!--Line with Area Chart 1 Starts-->
+                    <!--Line with Area Chart 1 Ends-->
+
+                    <div class="row match-height">
+                    </div>
+
+                </div>
+            </div5
+            <!-- END : End Main Content-->
+            <!-- BEGIN : Footer-->
+            <!-- End : Footer-->
+            <!-- Scroll to top button -->
+            <button class="btn btn-primary scroll-top" type="button"><i class="ft-arrow-up"></i></button>
+
+        </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <!-- START Notification Sidebar-->
+    <aside class="notification-sidebar d-none d-sm-none d-md-block" id="notification-sidebar">
+        <a class="notification-sidebar-close"><i class="ft-x font-medium-3 grey darken-1"></i></a>
+        <div class="side-nav notification-sidebar-content">
+            <div class="row">
+                <div class="col-12 notification-nav-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" id="base-tab1" data-toggle="tab" aria-controls="activity-tab" href="#activity-tab" aria-expanded="true">Activity</a></li>
+                        <li class="nav-item"><a class="nav-link" id="base-tab2" data-toggle="tab" aria-controls="settings-tab" href="#settings-tab" aria-expanded="false">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 notification-tab-content">
+                    <div class="tab-content">
+                        <div class="row tab-pane active" id="activity-tab" role="tabpanel" aria-expanded="true" aria-labelledby="base-tab1">
+                            <div class="col-12" id="activity">
+                                <h5 class="my-2 text-bold-500">System Logs</h5>
+                                <div class="timeline-left timeline-wrapper mb-3" id="timeline-1">
+                                    <ul class="timeline">
+                                        <li class="timeline-line mt-4"></li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-download primary"></i></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>New Update Available</span><span class="float-right grey font-italic font-small-2">1 min ago</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">Android Pie 9.0.0_r52v availabe (658MB).</p>
+                                                <div class="notification-note">
+                                                    <div class="p-1 pl-2"><span class="text-bold-500">Download Now!</span></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="~/Tema/app-assets/img/portrait/small/avatar-s-15.png" alt="avatar" width="40"></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>Reminder!</span><span class="float-right grey font-italic font-small-2">52 min ago</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">Your meeting is scheduled with Mr. Derrick Walters at 16:00.</p>
+                                                <div class="notification-note">
+                                                    <div class="p-1 pl-2"><span class="text-bold-500">Snooze</span></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="~/Tema/app-assets/img/portrait/small/avatar-s-16.png" alt="avatar" width="40"></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>Recieved a File</span><span class="float-right grey font-italic font-small-2">4 hours ago</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">Christina Rogers sent you a file for the next conference.</p>
+                                                <div class="notification-note">
+                                                    <div class="p-1 pl-2"><img src="~/Tema/app-assets/img/icons/sketch-mac-icon.png" alt="icon" width="20"><span class="text-bold-500 ml-2">Diamond.sketch</span></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-mic primary"></i></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>Voice Message</span><span class="float-right grey font-italic font-small-2">10 hours ago</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">Natalya Parker sent you a voice message.</p>
+                                                <div class="notification-note">
+                                                    <div class="p-1 pl-2"><span class="text-bold-500">Listen</span></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-cloud-drizzle primary"></i></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>Weather Update</span><span class="float-right grey font-italic font-small-2">Yesterday</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">Hi John! It is a rainy day with 16&deg;C.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h5 class="my-2 text-bold-500">Applications Logs</h5>
+                                <div class="timeline-left timeline-wrapper" id="timeline-2">
+                                    <ul class="timeline">
+                                        <li class="timeline-line mt-4"></li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="~/Tema/app-assets/img/portrait/small/avatar-s-26.png" alt="avatar" width="40"></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>Gmail</span><span class="float-right grey font-italic font-small-2">Just now</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">Victoria Hampton sent you a mail and has a file attachment with it.</p>
+                                                <div class="notification-note">
+                                                    <div class="p-1 pl-2"><img src="~/Tema/app-assets/img/icons/pdf.png" alt="pdf icon" width="20"><span class="text-bold-500 ml-2">Register.pdf</span></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-droplet primary"></i></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>MakeMyTrip</span><span class="float-right grey font-italic font-small-2">7 hours ago</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">Your next flight for San Francisco will be on 24th March.</p>
+                                                <div class="notification-note">
+                                                    <div class="p-1 pl-2"><span class="text-bold-500">Important</span></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><img class="avatar" src="~/Tema/app-assets/img/portrait/small/avatar-s-23.png" alt="avatar" width="40"></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>CNN</span><span class="float-right grey font-italic font-small-2">16 hours ago</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">U.S. investigating report says email account linked to CIA Director was hacked.</p>
+                                                <div class="notification-note">
+                                                    <div class="p-1 pl-2"><span class="text-bold-500">Read full article</span></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-map primary"></i></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>Maps</span><span class="float-right grey font-italic font-small-2">Yesterday</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">You visited Walmart Supercenter in Chicago.</p>
+                                                <div class="notification-note">
+                                                    <div class="p-1 pl-2"><span class="text-bold-500">Write a Review!</span></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <div class="timeline-badge"><span class="bg-primary bg-lighten-4" data-toggle="tooltip" data-placement="right" title="Portfolio project work"><i class="ft-package primary"></i></span></div>
+                                            <div class="activity-list-text">
+                                                <h6 class="mb-1"><span>Updates Available</span><span class="float-right grey font-italic font-small-2">2 days ago</span></h6>
+                                                <p class="mt-0 mb-2 font-small-3">19 app updates found.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row tab-pane" id="settings-tab" aria-labelledby="base-tab2">
+                            <div class="col-12" id="settings">
+                                <h5 class="mt-2 mb-3">General Settings</h5>
+                                <ul class="list-unstyled mb-0 mx-2">
+                                    <li class="mb-3">
+                                        <div class="mb-1">
+                                            <span class="text-bold-500">Notifications</span>
+                                            <div class="float-right">
+                                                <div class="custom-switch">
+                                                    <input class="custom-control-input" id="noti-s-switch-1" type="checkbox">
+                                                    <label class="custom-control-label" for="noti-s-switch-1"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="font-small-3 m-0">Use switches when looking for yes or no answers.</p>
+                                    </li>
+                                    <li class="mb-3">
+                                        <div class="mb-1">
+                                            <span class="text-bold-500">Show recent activity</span>
+                                            <div class="float-right">
+                                                <div class="checkbox">
+                                                    <input id="noti-s-checkbox-1" type="checkbox" checked>
+                                                    <label for="noti-s-checkbox-1"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="font-small-3 m-0">The "for" attribute is necessary to bind checkbox with the input.</p>
+                                    </li>
+                                    <li class="mb-3">
+                                        <div class="mb-1">
+                                            <span class="text-bold-500">Product Update</span>
+                                            <div class="float-right">
+                                                <div class="custom-switch">
+                                                    <input class="custom-control-input" id="noti-s-switch-4" type="checkbox" checked>
+                                                    <label class="custom-control-label" for="noti-s-switch-4"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="font-small-3 m-0">Message and mail me on weekly product updates.</p>
+                                    </li>
+                                    <li class="mb-3">
+                                        <div class="mb-1">
+                                            <span class="text-bold-500">Email on Follow</span>
+                                            <div class="float-right">
+                                                <div class="custom-switch">
+                                                    <input class="custom-control-input" id="noti-s-switch-3" type="checkbox">
+                                                    <label class="custom-control-label" for="noti-s-switch-3"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="font-small-3 m-0">Mail me when someone follows me.</p>
+                                    </li>
+                                    <li class="mb-3">
+                                        <div class="mb-1">
+                                            <span class="text-bold-500">Announcements</span>
+                                            <div class="float-right">
+                                                <div class="checkbox">
+                                                    <input id="noti-s-checkbox-2" type="checkbox" checked>
+                                                    <label for="noti-s-checkbox-2"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="font-small-3 m-0">Receive all the news and announcements from my clients.</p>
+                                    </li>
+                                    <li class="mb-3">
+                                        <div class="mb-1">
+                                            <span class="text-bold-500">Date and Time</span>
+                                            <div class="float-right">
+                                                <div class="checkbox">
+                                                    <input id="noti-s-checkbox-3" type="checkbox">
+                                                    <label for="noti-s-checkbox-3"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="font-small-3 m-0">Show date and time on top of every page.</p>
+                                    </li>
+                                    <li>
+                                        <div class="mb-1">
+                                            <span class="text-bold-500">Email on Comments</span>
+                                            <div class="float-right">
+                                                <div class="custom-switch">
+                                                    <input class="custom-control-input" id="noti-s-switch-2" type="checkbox" checked>
+                                                    <label class="custom-control-label" for="noti-s-switch-2"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="font-small-3 m-0">Mail me when someone comments on my article.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- END Notification Sidebar-->
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <!-- BEGIN VENDOR JS-->
+    <script src="~/Tema/app-assets/vendors/js/vendors.min.js"></script>
+    <script src="~/Tema/app-assets/vendors/js/switchery.min.js"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="~/Tema/app-assets/vendors/js/chartist.min.js"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN APEX JS-->
+    <script src="~/Tema/app-assets/js/core/app-menu.js"></script>
+    <script src="~/Tema/app-assets/js/core/app.js"></script>
+    <script src="~/Tema/app-assets/js/notification-sidebar.js"></script>
+    <script src="~/Tema/app-assets/js/customizer.js"></script>
+    <script src="~/Tema/app-assets/js/scroll-top.js"></script>
+    <!-- END APEX JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="~/Tema/app-assets/js/dashboard1.js"></script>
+    <!-- END PAGE LEVEL JS-->
+    <!-- BEGIN: Custom CSS-->
+    <script src="~/Tema/assets/js/scripts.js"></script>
+    <!-- END: Custom CSS-->
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+<!-- END : Body-->
+
 </html>
