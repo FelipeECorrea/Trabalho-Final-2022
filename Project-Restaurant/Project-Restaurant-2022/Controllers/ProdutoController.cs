@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Repositorio.Entidades;
+﻿using Microsoft.AspNetCore.Mvc;
+using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Produto;
-using Repositorio.Enums;
 
 namespace Project_Restaurant_2022.Controllers
 {

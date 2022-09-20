@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Servico.Servicos;
 
 namespace Project_Restaurant_2022.Controllers
 {
-    //[Route("produtoPedido")]
+    [Route("ProdutoPedido")]
     public class ProdutoPedidoController : Controller
     {
         private readonly IProdutoPedidoService _produtoPedidoService;
