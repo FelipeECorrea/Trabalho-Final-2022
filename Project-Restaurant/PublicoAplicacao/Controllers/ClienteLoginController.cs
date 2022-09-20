@@ -88,7 +88,6 @@ namespace PublicoAplicacao.Controllers
                .OrderBy(x => x)
                .ToList();
         }
-
     }
 }
         
