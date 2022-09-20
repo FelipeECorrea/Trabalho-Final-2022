@@ -12,8 +12,8 @@ namespace Servico.Servicos
     public interface IProdutoService
     {
         bool Apagar(int id);
-        Produto Cadastrar(ProdutoCadastrarViewModel viewModel);
-        bool Editar(ProdutoEditarViewModel viewModel);
+        Produto Cadastrar(ProdutoCadastrarViewModel viewModel, string caminhoArquivos);
+        bool Editar(ProdutoEditarViewModel viewModel, string caminhoArquivos);
         ProdutoEditarViewModel? ObterPorId(int id);
         IList<Produto> ObterTodos();
         IList<SelectViewModel> ObterTodosSelect2();
