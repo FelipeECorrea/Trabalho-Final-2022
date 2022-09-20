@@ -11,42 +11,69 @@
 </div>
 
 <table class="table table-striped table-bordered">
-    <thead>
-    <!-- Cabeçalho da tabela-->
-    <tr>
-        <!-- Linha da tabela-->
-        <th>Numero Mesa</th> <!-- Coluna específica do cabeçalho-->
-        <th>Status</th>
-        <th>Ação</th>
+    <section>
+        <div class="row">
 
-    </tr>
-    </thead>
-    <tbody>
-    <!-- Lugar dos registros da tabela-->
-    @foreach (var mesa in Model)
-    {
-        <tr>
-            <!-- Linha-->
-            <td>@mesa.NumeroMesa</td> <!-- Coluna específica para body-->
-                @if(mesa.Status == Repositorio.Enums.StatusMesa.Desocupado)
+            <!-- Lugar dos registros da tabela-->
+            @foreach (var mesa in Model)
+            {
+                @if (mesa.Status == Repositorio.Enums.StatusMesa.Desocupado)
                 {
-                    <td><span class="badge badge-success">@mesa.Status</span></td>
-
+            <div class="p-3">
+                <div>
+                    <div class="card card-inverse bg-success">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media">
+                                    <div class="media-body text-left">
+                                        <h3 class="card-text">@mesa.NumeroMesa</h3>
+                                        <span>@mesa.Status</span>
+                                    </div>
+                                    <div class="media-right align-self-center">
+                                        <i class="icon-cup font-large-2 float-right"></i>
+                                    </div>
+                                </div>
+                                <a class="badge badge-pill badge-info mb-1 mr-2" asp-action="editar" asp-route-id="@mesa.Id">
+                                    <i class="fa-solid ft-edit"></i> Editar
+                                </a>
+                                <a class="badge badge-pill badge-dark mb-1 mr-2" asp-action="apagar" asp-route-id="@mesa.Id">
+                                    <i class="fa-solid ft-trash"></i> Apagar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 }
                 else
                 {
-                    <td><span class="badge badge-danger">@mesa.Status</span></td>
+            <div class="p-3">
+                <div>
+                    <div class="card card-inverse bg-danger">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media">
+                                    <div class="media-body text-left">
+                                        <h3 class="card-text">@mesa.NumeroMesa</h3>
+                                        <span>@mesa.Status</span>
+                                    </div>
+                                    <div class="media-right align-self-center">
+                                        <i class="icon-cup font-large-2 float-right"></i>
+                                    </div>
+                                </div>
+                                <a class="badge badge-pill badge-info mb-1 mr-2" asp-action="editar" asp-route-id="@mesa.Id">
+                                    <i class="fa-solid ft-edit"></i> Editar
+                                </a>
+                                <a class="badge badge-pill badge-dark mb-1 mr-2" asp-action="apagar" asp-route-id="@mesa.Id">
+                                    <i class="fa-solid ft-trash"></i> Apagar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 }
-
-                <td>
-                <a class="btn btn-warning" asp-action="editar" asp-route-id="@mesa.Id">
-                    <i class="fa-solid ft-edit"></i> Editar
-                </a>
-                <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@mesa.Id">
-                    <i class="fa-solid ft-trash"></i> Apagar
-                </a>
-            </td>
-        </tr>
-    }
-    </tbody>
+            }
+    </div>
+    </section>
 </table>
