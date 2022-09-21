@@ -15,7 +15,7 @@ namespace Project_Restaurant_2022.Controllers
 
         public ActionResult Index()
         {
-            var produtosPedidos = _produtoPedidoService.ObterTodosProdutosPedidos();
+            var produtosPedidos = _produtoPedidoService.ObterTodos();
 
             return View(produtosPedidos);
         }
