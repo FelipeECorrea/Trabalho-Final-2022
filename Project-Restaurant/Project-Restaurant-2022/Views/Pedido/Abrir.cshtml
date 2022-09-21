@@ -10,21 +10,20 @@
                 <form asp-action="Abrir" method="POST">
                     <div class="form-row">
 
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="ClienteId"></label>
-                                <input type="text" asp-for="ClienteId" class="form-control">
-                                <span asp-validation-for="ClienteId" class="text-danger"></span>
+                        @*INICIO DO SELECT*@
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group mb-2">
+                                    <label for="cadastroClientePedido" class="form-label">Cliente <span class="text-danger">*</span></label>
+                                    <select id="cadastroClientePedido" class="form-select"></select>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label for="cadastroMesaPedido" class="form-label">Mesa <span class="text-danger">*</span></label>
+                                    <select id="cadastroMesaPedido" class="form-select"></select>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="MesaId"></label>
-                                <input type="text" asp-for="MesaId" class="form-control">
-                                <span asp-validation-for="MesaId" class="text-danger"></span>
-                            </div>
-                        </div>
+                        @*FIM DO SELECT*@
 
                         <div class="col-md-6 col-12">
                             <div class="form-group mb-2">
@@ -32,15 +31,9 @@
                                 <input type="text" asp-for="Quantidade" class="form-control">
                                 <span asp-validation-for="Quantidade" class="text-danger"></span>
                             </div>
-
-@*                            <div class="btn-group ml-1">
-                                <button type="button" class="btn btn-danger px-1 py-1 font-medium-5" onclick="totalClick(-1)">-</button>
-                                <span class="btn btn-danger px-1 py-1" id="totalClicks">0</span>
-                                <button type="button" class="btn btn-danger px-1 py-1 font-medium-5" onclick="totalClick(1)">+</button>
-                            </div>*@
                         </div>
 
-                        <div class="col-md-6 col-12">
+                        <div class="col-md-12 col-12">
                             <div class="form-group mb-2">
                                 <label asp-for="Observacao"></label>
                                 <textarea id="basic-form-9" rows="4" asp-for="Observacao" class="form-control"></textarea>
@@ -48,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <button type="submit" class="btn btn-danger mr-2"><i class="ft-plus-square"></i>Confirmar</button>
                     <button type="button" class="btn btn-warning"><i class="ft-x mr-1"></i>Adicionar Produto</button>
                 </form>
@@ -56,5 +49,3 @@
         </div>
     </div>
 </div>
-
-<script src="~/js/pedido/select2.js"></script>

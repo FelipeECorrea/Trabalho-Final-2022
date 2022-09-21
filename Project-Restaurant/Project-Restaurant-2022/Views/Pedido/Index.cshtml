@@ -26,7 +26,7 @@
         {
             <tr>
                 <!-- Linha-->
-                <td>@pedido.Cliente</td> <!-- Coluna específica para body-->
+                <td>@pedido.ClienteId</td> <!-- Coluna específica para body-->
                 <td>@pedido.Observacao</td> <!-- Coluna específica para body-->
                 <td>
                     <a class="btn btn-warning" asp-action="editar" asp-route-id="@pedido.Id">
@@ -40,3 +40,8 @@
         }
     </tbody>
 </table>
+
+@section Scripts{
+    <script src="~/js/pedido/pedido-select2.js"></script>
+}
+
