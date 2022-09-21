@@ -91,7 +91,7 @@ namespace Project_Restaurant_2022.Controllers
         [HttpGet("obterTodosSelect2")]
         public IActionResult ObterTodosSelect2()
         {
-            var selectViewModel = _clienteService.ObterTodosSelect2();
+            var selectViewModel = _clienteService.ObterPorSelect2();
 
             return Ok(selectViewModel);
         }
