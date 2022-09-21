@@ -2,6 +2,11 @@
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Produto;
+<<<<<<< HEAD
+=======
+using Repositorio.Enums;
+using Microsoft.AspNetCore.Hosting;
+>>>>>>> 4285efdc0b4d9f7cb1279980abad231721e5f512
 
 namespace Project_Restaurant_2022.Controllers
 {
@@ -9,10 +14,11 @@ namespace Project_Restaurant_2022.Controllers
     public class ProdutoController : Controller
     {
         private readonly IProdutoService _produtoService;
-
-        public ProdutoController(IProdutoService produtoService)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public ProdutoController(IProdutoService produtoService, IWebHostEnvironment webHostEnvironment)
         {
             _produtoService = produtoService;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         // GET: ProdutoController
@@ -46,7 +52,7 @@ namespace Project_Restaurant_2022.Controllers
                 return View(produtoCadastrarViewModel);
             }
 
-            _produtoService.Cadastrar(produtoCadastrarViewModel);
+            _produtoService.Cadastrar(produtoCadastrarViewModel, _webHostEnvironment.WebRootPath);
             
             return RedirectToAction("Index");
         }
@@ -64,7 +70,8 @@ namespace Project_Restaurant_2022.Controllers
                 Nome = produto.Nome,
                 Valor = produto.Valor,
                 Categoria = produto.Categoria,
-                Descricao = produto.Descricao
+                Descricao = produto.Descricao,
+                ProdutoCaminho = produto.Arquivo
             };
             ViewBag.Produtos = produtos;
 
@@ -81,7 +88,7 @@ namespace Project_Restaurant_2022.Controllers
                 return View(produtoEditarViewModel);
             }
 
-            _produtoService.Editar(produtoEditarViewModel);
+            _produtoService.Editar(produtoEditarViewModel, _webHostEnvironment.WebRootPath);
 
             return RedirectToAction("Index");
         }

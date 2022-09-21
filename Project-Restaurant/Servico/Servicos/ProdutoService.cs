@@ -13,7 +13,7 @@ namespace Servico.Servicos
         private readonly IProdutoRepositorio _produtoRepositorio;
         private readonly IProdutoMapeamentoEntidade _mapeamentoEntidade;
         private readonly IProdutoViewModelMapeamentoViewModels _mapeamentoViewModel;
-
+        private const string PastaImagens = "pets";
 
         public ProdutoService(
             IProdutoRepositorio produtoRepositorio,
@@ -30,23 +30,26 @@ namespace Servico.Servicos
             return _produtoRepositorio.Apagar(id);
         }
 
-        public Produto Cadastrar(ProdutoCadastrarViewModel viewModel)
+        public Produto Cadastrar(ProdutoCadastrarViewModel viewModel, string caminhoArquivos)
         {
-            var produto = _mapeamentoEntidade.ConstruirCom(viewModel);
+            var caminho = SalvarArquivo(viewModel, caminhoArquivos);
+            var produto = _mapeamentoEntidade.ConstruirCom(viewModel, caminho);
 
             _produtoRepositorio.Cadastrar(produto);
 
             return produto;
         }
 
-        public bool Editar(ProdutoEditarViewModel viewModel)
+        public bool Editar(ProdutoEditarViewModel viewModel, string caminhoArquivos)
         {
             var produto = _produtoRepositorio.ObterPorId(viewModel.Id);
-
+            
             if (produto == null)
                 return false;
 
-            produto = _mapeamentoEntidade.AtualizarCampos(produto, viewModel);
+            var caminho = SalvarArquivo(viewModel, caminhoArquivos, produto.ProdutoCaminho);
+
+            _mapeamentoEntidade.AtualizarCampos(produto, viewModel, caminho);
 
             _produtoRepositorio.Editar(produto);
 

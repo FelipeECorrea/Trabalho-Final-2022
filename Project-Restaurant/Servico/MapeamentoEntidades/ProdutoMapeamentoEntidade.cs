@@ -12,7 +12,7 @@ namespace Servico.MapeamentoEntidades
     public class ProdutoMapeamentoEntidade : IProdutoMapeamentoEntidade
     {
        
-        public Produto AtualizarCampos(Produto produto, ProdutoEditarViewModel produtoEditarViewModel)
+        public Produto AtualizarCampos(Produto produto, ProdutoEditarViewModel produtoEditarViewModel, string caminho)
         {
             produto.Nome = produtoEditarViewModel.Nome;
             produto.Valor = produtoEditarViewModel.Valor.GetValueOrDefault();
@@ -20,21 +20,22 @@ namespace Servico.MapeamentoEntidades
             produto.Descricao = produtoEditarViewModel.Descricao;
             produto.Status = (StatusProduto)produtoEditarViewModel.Status;
 
+            if(string.IsNullOrEmpty(caminho))
+                produto.ProdutoCaminho = caminho;
+
             return produto;
         }
 
-        public Produto ConstruirCom(ProdutoCadastrarViewModel produtoEditarViewModel) =>
+        public Produto ConstruirCom(ProdutoCadastrarViewModel produtoEditarViewModel, string caminho) =>
       new Produto
       {
+
           Nome = produtoEditarViewModel.Nome,
           Valor = produtoEditarViewModel.Valor.GetValueOrDefault(),
           Categoria = produtoEditarViewModel.Categoria,
           Descricao = produtoEditarViewModel.Descricao,
-          ProdutoCaminho = produtoEditarViewModel.Arquivo.ToString(),
+          ProdutoCaminho = caminho,
           Status = (StatusProduto)produtoEditarViewModel.Status
-
-
-
 
       };
     }

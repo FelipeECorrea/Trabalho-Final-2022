@@ -5,7 +5,7 @@ namespace Servico.MapeamentoEntidades
 {
     public interface IProdutoMapeamentoEntidade
     {
-        Produto ConstruirCom(ProdutoCadastrarViewModel viewModel);
-        Produto AtualizarCampos(Produto produto, ProdutoEditarViewModel viewModel);
+        Produto ConstruirCom(ProdutoCadastrarViewModel viewModel, string caminho);
+        Produto AtualizarCampos(Produto produto, ProdutoEditarViewModel viewModel, string caminho);
     }
 }
