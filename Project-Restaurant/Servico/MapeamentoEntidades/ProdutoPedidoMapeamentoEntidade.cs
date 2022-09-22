@@ -9,6 +9,8 @@ namespace Servico.MapeamentoEntidades
             new ProdutoPedido
             {
                 PedidoId = viewModel.PedidoId,
+                ProdutoId = viewModel.ProdutoId,
+                Quantidade = viewModel.Quantidade,
                 Valor = viewModel.Valor
 
             };

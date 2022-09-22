@@ -22,6 +22,7 @@
                             <thead>
                                 <tr>
                                     <th>Imagen</th>
+                                    <th>Pedido</th>
                                     <th>Produto</th>
                                     <th>Quantidade</th>
                                     <th>Valor</th>
@@ -32,21 +33,13 @@
                                 <!-- Lugar dos registros da tabela-->
                                 @foreach (var produtoPedido in Model)
                                 {
-                                <td><img src="../app-assets/img/elements/01.png" alt="product" style="height: 75px;"></td>
-                                <td>@produtoPedido.Pedido</td>
-                                <td>@produtoPedido.Produto</td>
-                                <td>
-                                    <div class="btn-group ml-1">
-                                        <a class="btn btn-warning px-1 py-1 font-medium-5" href="javascript:void(0)">-</a>
-                                        <a class="btn btn-warning px-1 py-1" href="javascript:void(0)">@produtoPedido.Quantidade</a>
-                                        <a class="btn btn-warning px-1 py-1 font-medium-5" href="javascript:void(0)">+</a>
-                                    </div>
-                                </td>
+                                <td><img src="~/Uploads\Produtos\efda260b-2001-4b2d-831e-4c7e1ff33d2c.jpg" alt="product" style="height: 75px;"></td>
+                                <td>@produtoPedido.PedidoId</td>
+                                <td>@produtoPedido.Produto.Nome</td>
+                                <td>@produtoPedido.Quantidade</td>
                                 <td>@produtoPedido.Valor</td>
                                 <td>
-                                    <a href="javascript:;" class="danger" asp-action="apagar" asp-route-id="@produtoPedido.Id">
-                                        <i class="ft-trash font-medium-3"></i>
-                                    </a>
+                                    <a asp-action="apagar" asp-route-id="@produtoPedido.Id" class="btn btn-danger"><i class="ft-trash font-medium-3"></i></a>
                                 </td>
                                 }
                             </tbody>
