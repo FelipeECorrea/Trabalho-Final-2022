@@ -97,12 +97,11 @@ namespace PublicoAplicacao.Controllers
                 if (ModelState.IsValid)
                 {
                     Cliente cliente = _clienteService.ObterPorEmail(loginViewModel.Email);
-                    var clientesenha = _clienteService.SenhaValida();
                    
 
                     if (cliente != null)
                     {
-                        if ( == loginViewModel.Senha)
+                        if (cliente.Senha == loginViewModel.Senha)
                         {
                             return RedirectToAction("obterTodosProdutos", "Cardapio");
                         }
