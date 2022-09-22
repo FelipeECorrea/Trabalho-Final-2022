@@ -1,7 +1,7 @@
 ﻿// PARTE DE LISTAGEM DE CLIENTE E MESA
 $('#ClienteId').select2({
     ajax: {
-        url: '/cliente/obterTodosSelect2',
+        url: '/admin/cliente/obterTodosSelect2',
         dataType: 'json',
         processResults: (data) => ({ results: data })
     }
@@ -9,8 +9,8 @@ $('#ClienteId').select2({
 
 $('#MesaId').select2({
     ajax: {
-        url: '/mesa/obterTodosSelect2',
+        url: '/admin/mesa/obterTodosSelect2',
         dataType: 'json',
         processResults: (data) => ({ results: data })
     }
-});
+}); 

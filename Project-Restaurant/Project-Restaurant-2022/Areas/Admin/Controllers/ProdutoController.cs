@@ -5,9 +5,10 @@ using Servico.ViewModels.Produto;
 using Repositorio.Enums;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Project_Restaurant_2022.Controllers
+namespace Project_Restaurant_2022.Areas.Admin.Controllers
 {
-    [Route("produto")]
+    [Area("Admin")]
+    [Route("/admin/produto")]
     public class ProdutoController : Controller
     {
         private readonly IProdutoService _produtoService;

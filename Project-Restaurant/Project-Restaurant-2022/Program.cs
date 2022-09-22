@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Repositorio.BancoDados;
 using Repositorio.InjecoesDependencia;
@@ -7,13 +8,22 @@ using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
 // Add services to the container.
 
 builder.Services.AdicionarServicos();
 builder.Services.AdicionarRepositorios();
-builder.Services.AddRazorPages();
 builder.Services.AdicionarEntityFramework(builder.Configuration);
+
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    options.AreaViewLocationFormats.Clear();
+    options.AreaViewLocationFormats.Add("/Areas/{2}/Views/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Areas/{2}/Views/{1}/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Areas/{2}/Views/Shared/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Views/{0}.cshtml");
+});
 
 var app = builder.Build();
 
@@ -50,17 +60,33 @@ using (var scopo = app.Services.CreateScope())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
+app.UseSession();
+
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
-
 
 app.UseEndpoints(endpoint =>
 {
+    endpoint.MapAreaControllerRoute(
+        name: "AreaCliente",
+        areaName: "Cliente",
+        pattern: "client/{controller=Home}/{action=Index}/{id?}");
+
+    endpoint.MapAreaControllerRoute(
+        name: "AreaAdmin",
+        areaName: "Admin",
+        pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
+
+    endpoint.MapAreaControllerRoute(
+        name: "AreaPublic",
+        areaName: "Public",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
     endpoint.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");

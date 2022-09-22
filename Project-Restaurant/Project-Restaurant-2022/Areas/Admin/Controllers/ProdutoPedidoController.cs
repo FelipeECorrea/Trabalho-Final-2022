@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Servico.Servicos;
 
-namespace Project_Restaurant_2022.Controllers
+namespace Project_Restaurant_2022.Areas.Admin.Controllers
 {
-    [Route("ProdutoPedido")]
+    [Area("Admin")]
+    [Route("/admin/ProdutoPedido")]
     public class ProdutoPedidoController : Controller
     {
         private readonly IProdutoPedidoService _produtoPedidoService;

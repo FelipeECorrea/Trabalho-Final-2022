@@ -5,9 +5,10 @@ using Servico.Servicos;
 using Servico.ViewModels.Mesa;
 using Servico.ViewModels.Produto;
 
-namespace Project_Restaurant_2022.Controllers
+namespace Project_Restaurant_2022.Areas.Admin.Controllers
 {
-    [Route("mesa")]
+    [Area("Admin")]
+    [Route("/admin/mesa")]
     public class MesaController : Controller
     {
         private readonly IMesaService _mesaService;
@@ -62,7 +63,7 @@ namespace Project_Restaurant_2022.Controllers
             {
                 Id = mesa.Id,
                 NumeroMesa = mesa.NumeroMesa,
-                
+
             };
             ViewBag.Mesas = mesas;
 

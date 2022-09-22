@@ -5,8 +5,10 @@ using Repositorio.Repositorios;
 using Servico.Servicos;
 using Servico.ViewModels.Login;
 
-namespace Project_Restaurant_2022.Controllers
+namespace Project_Restaurant_2022.Areas.Public.Controllers
 {
+    [Area("Public")]
+    [Route("/login")]
     public class LoginController : Controller
     {
         private readonly IClienteService _clienteService;
@@ -38,7 +40,7 @@ namespace Project_Restaurant_2022.Controllers
                     {
                         if (cliente.Senha == loginViewModel.Senha)
                         {
-                            _sessao.CriarSessaoDoUsiario(cliente);
+                            _sessao.CriarSessaoDoUsuario(cliente);
                             return RedirectToAction("Index", "Home");
                         }
 

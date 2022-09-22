@@ -5,9 +5,10 @@ using Servico.Servicos;
 using Servico.ViewModels.Pedido;
 using Servico.ViewModels.Produto;
 
-namespace Project_Restaurant_2022.Controllers
+namespace Project_Restaurant_2022.Areas.Admin.Controllers
 {
-    [Route("pedido")]
+    [Area("Admin")]
+    [Route("/admin/pedido")]
     public class PedidoController : Controller
     {
         private readonly IPedidoService _pedidoService;
@@ -32,7 +33,7 @@ namespace Project_Restaurant_2022.Controllers
 
         [HttpPost("abrir")]
         [ValidateAntiForgeryToken]
-        public ActionResult Abrir([FromForm]PedidoCadastrarViewModel viewModel)
+        public ActionResult Abrir([FromForm] PedidoCadastrarViewModel viewModel)
         {
             if (!ModelState.IsValid)
                 return View(viewModel);

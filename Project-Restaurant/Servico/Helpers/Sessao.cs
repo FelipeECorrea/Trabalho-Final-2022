@@ -17,12 +17,13 @@ namespace Project_Restaurant_2022.Helpers
         {
             string sessaoUsuario = _httpContext.HttpContext.Session.GetString("sessaoUsuarioLogado");
 
-            if (string.IsNullOrEmpty(sessaoUsuario)) return null;
+            if (string.IsNullOrEmpty(sessaoUsuario)) 
+                return null;
 
             return JsonConvert.DeserializeObject<Cliente>(sessaoUsuario);
         }
 
-        public void CriarSessaoDoUsiario(Cliente cliente)
+        public void CriarSessaoDoUsuario(Cliente cliente)
         {
             string valor = JsonConvert.SerializeObject(cliente);
 

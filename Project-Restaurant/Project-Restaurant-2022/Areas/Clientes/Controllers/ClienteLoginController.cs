@@ -1,25 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repositorio.Entidades;
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Cliente;
+using Servico.ViewModels.LoginCliente;
 
-namespace Project_Restaurant_2022.Controllers
+namespace PublicoAplicacao.Controllers
 {
-    [Route("cliente")]
-    public class ClienteController : Controller
+    [Area("Clientes")]
+    [Route("/client/ClienteLogin")]
+    public class ClienteLoginController : Controller
     {
         private readonly IClienteService _clienteService;
 
-        public ClienteController(IClienteService clienteService)
+        public ClienteLoginController(IClienteService clienteService)
         {
             _clienteService = clienteService;
         }
 
         public ActionResult Index()
         {
-            var clientes = _clienteService.Cadastrar();
+            var viewModel = new LoginClienteViewModel();
 
-            return View(clientes);
+            return View(viewModel);
         }
 
         [HttpGet("cadastrar")]
@@ -71,14 +74,14 @@ namespace Project_Restaurant_2022.Controllers
                 return View(clienteEditarViewModel);
             }
 
-                return View(clienteEditarViewModel);
+            return View(clienteEditarViewModel);
 
 
             _clienteService.Editar(clienteEditarViewModel);
 
             return RedirectToAction("Index");
 
-            }
+        }
 
         private List<string> ObterCliente()
         {
@@ -87,23 +90,37 @@ namespace Project_Restaurant_2022.Controllers
                .OrderBy(x => x)
                .ToList();
         }
-
-        [HttpGet("obterTodosSelect2")]
-        public IActionResult ObterTodosSelect2()
+        [HttpPost]
+        public IActionResult EntrarCardapio(LoginClienteViewModel loginViewModel)
         {
-            var selectViewModel = _clienteService.ObterPorSelect2();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Cliente cliente = _clienteService.ObterPorEmail(loginViewModel.Email);
+                   
 
-            return Ok(selectViewModel);
+                    if (cliente != null)
+                    {
+                        if (cliente.Senha == loginViewModel.Senha)
+                        {
+                            return RedirectToAction("obterTodosProdutos", "Cardapio");
+                        }
+
+                        TempData["MensageErro"] = $"senha inválida. Por favor, tente novamente.";
+                    }
+
+                    TempData["MensageErro"] = $"Usuário e/ou senha inválido(s). Por favor, tente novamente.";
+                }
+                return View("Index");
+            }
+            catch (Exception erro)
+            {
+                TempData["MensageErro"] = $"Ops, não conseguimos realizar seu login, tente novamente, detalhe do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
 
-
-        [HttpGet("apagar")]
-        public IActionResult Apagar([FromQuery] int id)
-        {
-            _clienteService.Apagar(id);
-
-            return RedirectToAction("Index");
-        }
-
-        }
     }
+}
+        

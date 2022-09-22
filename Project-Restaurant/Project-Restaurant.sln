@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servico", "Servico\Servico.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositorio", "Repositorio\Repositorio.csproj", "{4DE6BC82-E93B-43C5-AD89-5138D408C372}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicoAplicacao", "PublicoAplicacao\PublicoAplicacao.csproj", "{00DE3C1C-416D-4481-A3F6-449EA7704661}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{4DE6BC82-E93B-43C5-AD89-5138D408C372}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DE6BC82-E93B-43C5-AD89-5138D408C372}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DE6BC82-E93B-43C5-AD89-5138D408C372}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00DE3C1C-416D-4481-A3F6-449EA7704661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00DE3C1C-416D-4481-A3F6-449EA7704661}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00DE3C1C-416D-4481-A3F6-449EA7704661}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00DE3C1C-416D-4481-A3F6-449EA7704661}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,7 +41,6 @@ Global
 		{5B73154F-33DE-442B-BE2B-ADF71DC39358} = {4005534F-858C-4037-88F7-F516C1C2AA70}
 		{A69298AE-CE6A-47F0-91E3-2465069BBCF0} = {EF3F5F90-9A88-4B00-A62C-3137E57D2DA8}
 		{4DE6BC82-E93B-43C5-AD89-5138D408C372} = {EC46C7F5-6D95-40E3-88CE-BC2E143CDC72}
-		{00DE3C1C-416D-4481-A3F6-449EA7704661} = {4005534F-858C-4037-88F7-F516C1C2AA70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {86E7024F-A502-4E87-B8DC-736A4C33B30A}
