@@ -1,10 +1,15 @@
-﻿@model ProdutoEditarViewModel
-@{
+﻿@using Servico.Helpers
+@using Produto
+@model ProdutoEditarViewModel
+{
     var produtos = ViewBag.Produtos as List<string>;
     produtos.Add(string.Empty);
     
     var selectDosProdutos = new SelectList(produtos, string.Empty);
+   
+                    
 }
+
 
 <div class="col-lg-6 col-12">
     <div class="card">
@@ -13,7 +18,7 @@
         </div>
         <div class="card-content">
             <div class="card-body">
-                <form asp-action="Editar" method="POST">
+                    <form asp-action="Editar" method="POST" enctype='multipart/form-data'>
                     <input type="hidden" asp-for="Id" />
                     <div class="form-row">
                         <div class="col-md-6 col-12">
@@ -57,8 +62,8 @@
                                 <label asp-for="Arquivo" class="form-label">Selecione uma imagem</label>
                                 <input class="form-control" asp-for="Arquivo">
                             </div>
-                        </div>
-
+                      
+                          
                         <div class="col-md-6 col-12">
                             <div class="form-group mb-2">
                                 <label asp-for="Descricao"></label>

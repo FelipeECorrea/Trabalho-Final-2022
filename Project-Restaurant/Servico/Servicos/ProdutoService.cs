@@ -32,12 +32,14 @@ namespace Servico.Servicos
 
         public Produto Cadastrar(ProdutoCadastrarViewModel viewModel, string caminhoArquivos)
         {
+
             var caminho = SalvarArquivo(viewModel, caminhoArquivos);
             var produto = _mapeamentoEntidade.ConstruirCom(viewModel, caminho);
 
             _produtoRepositorio.Cadastrar(produto);
 
             return produto;
+
         }
 
         public bool Editar(ProdutoEditarViewModel viewModel, string caminhoArquivos)

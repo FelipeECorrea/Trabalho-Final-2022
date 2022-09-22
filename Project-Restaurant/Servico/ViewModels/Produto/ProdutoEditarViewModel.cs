@@ -15,6 +15,5 @@ namespace Servico.ViewModels.Produto
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public int Id { get; set; }
         public IList<ProdutoViewModel> Produtos { get; set; } = new List<ProdutoViewModel>();
-        public IFormFile? ProdutoCaminho { get; set; }
     }
 }

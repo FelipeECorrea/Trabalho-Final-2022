@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Project_Restaurant_2022.Helpers;
 using Repositorio.Entidades;
 using Repositorio.Repositorios;
 using Servico.Servicos;
@@ -9,14 +10,18 @@ namespace Project_Restaurant_2022.Controllers
     public class LoginController : Controller
     {
         private readonly IClienteService _clienteService;
+        private readonly ISessao _sessao;
 
-        public LoginController(IClienteService clienteService)
+        public LoginController(IClienteService clienteService, ISessao sessao)
         {
             _clienteService = clienteService;
+            _sessao = sessao;
         }
 
         public IActionResult Index()
         {
+            if (_sessao.BuscarSessaoDoUsuario() != null) return RedirectToAction("Index", "Home");
+
             return View();
         }
 
@@ -33,6 +38,7 @@ namespace Project_Restaurant_2022.Controllers
                     {
                         if (cliente.Senha == loginViewModel.Senha)
                         {
+                            _sessao.CriarSessaoDoUsiario(cliente);
                             return RedirectToAction("Index", "Home");
                         }
 
