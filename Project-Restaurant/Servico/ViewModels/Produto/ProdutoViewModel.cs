@@ -28,7 +28,6 @@ namespace Servico.ViewModels.Produto
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string Categoria { get; set; }
 
-
         [Display(Name = "Descricao")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string Descricao { get; set; }
@@ -37,3 +36,4 @@ namespace Servico.ViewModels.Produto
 
     }
 }
+
