@@ -15,6 +15,7 @@
     <!-- Cabeçalho da tabela-->
     <tr>
         <!-- Linha da tabela-->
+        <th>Imagens</th> <!-- Coluna específica do cabeçalho-->
         <th>Nome</th> <!-- Coluna específica do cabeçalho-->
         <th>Valor</th>
         <th>Status</th>
@@ -28,6 +29,11 @@
     {
         <tr>
             <!-- Linha-->
+            <td>
+
+                <img class="produto-imagem" src="~/Uploads/Produtos/@produto.ProdutoCaminho">
+
+            </td> <!-- Coluna específica para body-->
             <td>@produto.Nome</td> <!-- Coluna específica para body-->
             <td>@produto.Valor</td>
                 @if (produto.Status == Repositorio.Enums.StatusProduto.Disponivel)
@@ -43,10 +49,11 @@
             <td>@produto.Descricao</td>
             <td>
                 <a class="btn btn-warning" asp-action="editar" asp-route-id="@produto.Id">
-                    <i class="fa-solid ft-edit"></i> Editar
+                    <i class="fa-solid ft-edit"></i>
                 </a>
-                <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@produto.Id">
-                    <i class="fa-solid ft-trash"></i> Apagar
+                <br></br>
+                <a class="btn btn-danger" asp-action="apagar" asp-route-id="@produto.Id">
+                    <i class="fa-solid ft-trash"></i>
                 </a>
             </td>
         </tr>

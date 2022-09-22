@@ -15,7 +15,6 @@ namespace Repositorio.Repositorios
 
         public bool Apagar(int id)
         {
-
             var produto = _contexto.Produtos
                 .FirstOrDefault(x => x.Id == id);
 
@@ -26,6 +25,7 @@ namespace Repositorio.Repositorios
             _contexto.SaveChanges();
 
             return true;
+
         }
 
         public Produto Cadastrar(Produto produto)
@@ -34,19 +34,17 @@ namespace Repositorio.Repositorios
             _contexto.SaveChanges();
 
             return produto;
+
         }
 
         public void Editar(Produto produto)
         {
-
             _contexto.Produtos.Update(produto);
             _contexto.SaveChanges();
         }
 
         public Produto? ObterPorId(int Id) =>
                _contexto.Produtos.FirstOrDefault(x => x.Id == Id);
-
-
 
         public IList<Produto> ObterTodos() =>
         

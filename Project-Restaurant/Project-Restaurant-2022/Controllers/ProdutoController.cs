@@ -18,6 +18,7 @@ namespace Project_Restaurant_2022.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
+
         // GET: ProdutoController
         public ActionResult Index()
         {
@@ -50,26 +51,27 @@ namespace Project_Restaurant_2022.Controllers
             }
 
             _produtoService.Cadastrar(produtoCadastrarViewModel, _webHostEnvironment.WebRootPath);
-            
+
             return RedirectToAction("Index");
         }
 
 
+        [HttpGet("galeria")]
+        public IActionResult Galeria()
+        {
+            var produtos = _produtoService.ObterTodos();
+
+            ViewBag.CaminhoServidor = _webHostEnvironment.WebRootPath;
+
+            return View(produtos);
+        }
+
         [HttpGet("editar")]
         public IActionResult Editar([FromQuery] int id)
         {
-            var produto = _produtoService.ObterPorId(id);
+            var produtoEditarViewModel = _produtoService.ObterPorId(id);
             var produtos = ObterProduto();
 
-            var produtoEditarViewModel = new ProdutoEditarViewModel
-            {
-                Id = produto.Id,
-                Nome = produto.Nome,
-                Valor = produto.Valor,
-                Categoria = produto.Categoria,
-                Descricao = produto.Descricao,
-                ProdutoCaminho = produto.Arquivo
-            };
             ViewBag.Produtos = produtos;
 
             return View(produtoEditarViewModel);
@@ -80,7 +82,7 @@ namespace Project_Restaurant_2022.Controllers
         {
             if (!ModelState.IsValid)
             {
-                  ViewBag.Produtos = ObterProduto();
+                ViewBag.Produtos = ObterProduto();
 
                 return View(produtoEditarViewModel);
             }

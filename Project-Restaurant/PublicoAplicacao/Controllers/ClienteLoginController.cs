@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repositorio.Entidades;
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Cliente;
@@ -87,6 +88,37 @@ namespace PublicoAplicacao.Controllers
                .GetNames<ClienteEmMesa>()
                .OrderBy(x => x)
                .ToList();
+        }
+        [HttpPost]
+        public IActionResult EntrarCardapio(LoginClienteViewModel loginViewModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Cliente cliente = _clienteService.ObterPorEmail(loginViewModel.Email);
+                    var clientesenha = _clienteService.SenhaValida();
+                   
+
+                    if (cliente != null)
+                    {
+                        if ( == loginViewModel.Senha)
+                        {
+                            return RedirectToAction("obterTodosProdutos", "Cardapio");
+                        }
+
+                        TempData["MensageErro"] = $"senha inválida. Por favor, tente novamente.";
+                    }
+
+                    TempData["MensageErro"] = $"Usuário e/ou senha inválido(s). Por favor, tente novamente.";
+                }
+                return View("Index");
+            }
+            catch (Exception erro)
+            {
+                TempData["MensageErro"] = $"Ops, não conseguimos realizar seu login, tente novamente, detalhe do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
 
     }

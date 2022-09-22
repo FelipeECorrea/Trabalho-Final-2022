@@ -10,6 +10,7 @@
   <ItemGroup>
     <Folder Include="InjecoesDependencia\" />
     <Folder Include="TagHelpers\" />
+    <Folder Include="wwwroot\Uploads\Produtos\" />
   </ItemGroup>
   
 	<PropertyGroup>
