@@ -2,11 +2,6 @@
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Produto;
-<<<<<<< HEAD
-=======
-using Repositorio.Enums;
-using Microsoft.AspNetCore.Hosting;
->>>>>>> 4285efdc0b4d9f7cb1279980abad231721e5f512
 
 namespace Project_Restaurant_2022.Controllers
 {
@@ -53,7 +48,7 @@ namespace Project_Restaurant_2022.Controllers
             }
 
             _produtoService.Cadastrar(produtoCadastrarViewModel, _webHostEnvironment.WebRootPath);
-            
+
             return RedirectToAction("Index");
         }
 
@@ -83,7 +78,7 @@ namespace Project_Restaurant_2022.Controllers
         {
             if (!ModelState.IsValid)
             {
-                  ViewBag.Produtos = ObterProduto();
+                ViewBag.Produtos = ObterProduto();
 
                 return View(produtoEditarViewModel);
             }
