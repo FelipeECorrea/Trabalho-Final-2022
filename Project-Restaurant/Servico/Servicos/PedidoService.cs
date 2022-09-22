@@ -1,8 +1,6 @@
 ﻿using Repositorio.Entidades;
-using Repositorio.Mapeamentos;
 using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
-using Servico.MapeamentoViewModels;
 using Servico.ViewModels;
 using Servico.ViewModels.Pedido;
 

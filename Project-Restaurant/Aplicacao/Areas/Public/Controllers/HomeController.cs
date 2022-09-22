@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Project_Restaurant_2022.Areas.Public.Controllers
+namespace Aplicacao.Areas.Public.Controllers
 {
     [Area("Public")]
     [Route("/")]

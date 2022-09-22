@@ -8,7 +8,7 @@
     
   },
   "profiles": {
-    "Project_Restaurant_2022": {
+    "Aplicacao": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,

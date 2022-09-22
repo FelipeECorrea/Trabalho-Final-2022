@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Repositorio.Entidades;
 
-namespace Project_Restaurant_2022.Helpers
+namespace Aplicacao.Helpers
 {
     public class Sessao : ISessao
     {

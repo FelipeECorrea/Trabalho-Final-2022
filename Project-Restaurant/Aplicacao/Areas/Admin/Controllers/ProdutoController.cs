@@ -2,10 +2,8 @@
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Produto;
-using Repositorio.Enums;
-using Microsoft.AspNetCore.Hosting;
 
-namespace Project_Restaurant_2022.Areas.Admin.Controllers
+namespace Aplicacao.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("/admin/produto")]

@@ -1,6 +1,4 @@
-﻿using Repositorio.Enums;
-
-namespace Repositorio.Entidades
+﻿namespace Repositorio.Entidades
 {
     public class Cliente : EntidadeBase
     {

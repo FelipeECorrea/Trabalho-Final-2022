@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Pedido;
-using Servico.ViewModels.Produto;
 
-namespace Project_Restaurant_2022.Areas.Admin.Controllers
+namespace Aplicacao.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("/admin/pedido")]

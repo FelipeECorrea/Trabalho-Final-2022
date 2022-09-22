@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Servico.Servicos;
 
-namespace Project_Restaurant_2022.Areas.Admin.Controllers
+namespace Aplicacao.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("/admin/ProdutoPedido")]

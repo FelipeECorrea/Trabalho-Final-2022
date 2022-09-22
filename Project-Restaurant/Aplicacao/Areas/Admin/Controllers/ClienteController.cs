@@ -1,28 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Repositorio.Entidades;
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.Cliente;
-using Servico.ViewModels.LoginCliente;
 
-namespace PublicoAplicacao.Controllers
+namespace Aplicacao.Areas.Admin.Controllers
 {
-    [Area("Clientes")]
-    [Route("/client/ClienteLogin")]
-    public class ClienteLoginController : Controller
+    [Area("Admin")]
+    [Route("/admin/cliente")]
+    public class ClienteController : Controller
     {
         private readonly IClienteService _clienteService;
 
-        public ClienteLoginController(IClienteService clienteService)
+        public ClienteController(IClienteService clienteService)
         {
             _clienteService = clienteService;
         }
 
         public ActionResult Index()
         {
-            var viewModel = new LoginClienteViewModel();
+            var clientes = _clienteService.Cadastrar();
 
-            return View(viewModel);
+            return View(clientes);
         }
 
         [HttpGet("cadastrar")]
@@ -90,37 +88,23 @@ namespace PublicoAplicacao.Controllers
                .OrderBy(x => x)
                .ToList();
         }
-        [HttpPost]
-        public IActionResult EntrarCardapio(LoginClienteViewModel loginViewModel)
+
+        [HttpGet("obterTodosSelect2")]
+        public IActionResult ObterTodosSelect2()
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    Cliente cliente = _clienteService.ObterPorEmail(loginViewModel.Email);
-                   
+            var selectViewModel = _clienteService.ObterPorSelect2();
 
-                    if (cliente != null)
-                    {
-                        if (cliente.Senha == loginViewModel.Senha)
-                        {
-                            return RedirectToAction("obterTodosProdutos", "Cardapio");
-                        }
+            return Ok(selectViewModel);
+        }
 
-                        TempData["MensageErro"] = $"senha inválida. Por favor, tente novamente.";
-                    }
 
-                    TempData["MensageErro"] = $"Usuário e/ou senha inválido(s). Por favor, tente novamente.";
-                }
-                return View("Index");
-            }
-            catch (Exception erro)
-            {
-                TempData["MensageErro"] = $"Ops, não conseguimos realizar seu login, tente novamente, detalhe do erro: {erro.Message}";
-                return RedirectToAction("Index");
-            }
+        [HttpGet("apagar")]
+        public IActionResult Apagar([FromQuery] int id)
+        {
+            _clienteService.Apagar(id);
+
+            return RedirectToAction("Index");
         }
 
     }
 }
-        

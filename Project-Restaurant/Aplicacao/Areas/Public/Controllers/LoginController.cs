@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Project_Restaurant_2022.Helpers;
+using Aplicacao.Helpers;
 using Repositorio.Entidades;
-using Repositorio.Repositorios;
 using Servico.Servicos;
 using Servico.ViewModels.Login;
 
-namespace Project_Restaurant_2022.Areas.Public.Controllers
+namespace Aplicacao.Areas.Public.Controllers
 {
     [Area("Public")]
     [Route("/login")]
@@ -22,7 +21,8 @@ namespace Project_Restaurant_2022.Areas.Public.Controllers
 
         public IActionResult Index()
         {
-            if (_sessao.BuscarSessaoDoUsuario() != null) return RedirectToAction("Index", "Home");
+            if (_sessao.BuscarSessaoDoUsuario() != null) 
+                return RedirectToAction("Index", "Home");
 
             return View();
         }

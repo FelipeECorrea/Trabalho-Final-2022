@@ -1,6 +1,4 @@
-﻿using Microsoft.Data.SqlClient.Server;
-using Repositorio.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿using Repositorio.Enums;
 
 namespace Repositorio.Entidades
 {

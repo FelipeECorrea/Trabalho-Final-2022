@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Project_Restaurant_2022</RootNamespace>
+    <RootNamespace>Aplicacao</RootNamespace>
   </PropertyGroup>
 	
   <ItemGroup>
@@ -17,7 +17,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<RootNamespace>Project_Restaurant_2022</RootNamespace>
+		<RootNamespace>Aplicacao</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

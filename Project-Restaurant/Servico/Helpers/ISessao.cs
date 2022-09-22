@@ -1,7 +1,6 @@
 ﻿using Repositorio.Entidades;
-using Servico.ViewModels.Cliente;
 
-namespace Project_Restaurant_2022.Helpers
+namespace Aplicacao.Helpers
 {
     public interface ISessao
     {

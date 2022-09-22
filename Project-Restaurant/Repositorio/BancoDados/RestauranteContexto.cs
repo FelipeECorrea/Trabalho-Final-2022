@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Repositorio.Entidades;
 using Repositorio.Mapeamentos;
-using System;
 
 namespace Repositorio.BancoDados
 {
@@ -12,7 +11,7 @@ namespace Repositorio.BancoDados
         public DbSet<Mesa> Mesas { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<ProdutoPedido> ProdutosPedidos { get; set; }
-        //dotnet ef migrations add ModificarPrecisaoColunaValorTabelaProduto --project Repositorio --startup-project Project-Restaurant-2022
+        //dotnet ef migrations add ModificarPrecisaoColunaValorTabelaProduto --project Repositorio --startup-project Aplicacao
         public RestauranteContexto(
          DbContextOptions<RestauranteContexto> options)
          : base(options)
@@ -29,11 +28,11 @@ namespace Repositorio.BancoDados
             * 2ª etapa - Criar o mapemanto da entidade para tabela RacaMapeamento.cs
             * 3ª etapa - Registrar o mapeamento no próprio Contexto
             * 4ª etapa - Gerar a migration
-            *      dotnet ef migrations add AdicionarMigration --project .\Repositorio --startup-project .\Project-Restaurant-2022
+            *      dotnet ef migrations add AdicionarMigration --project .\Repositorio --startup-project .\Aplicacao
             * 5ª etapa - A migration poderá ser aplicada de duas formas:
             *   - executar comando para aplicar a migration sem a
             *          necessidade de executar a aplicação
-            *          dotnet ef database update --project Repositorio --startup-project .\Project-Restaurant-2022
+            *          dotnet ef database update --project Repositorio --startup-project .\Aplicacao
             *   - executar a aplicação irá aplicar a migration */
 
            // modelBuilder.Entity<Cliente>()

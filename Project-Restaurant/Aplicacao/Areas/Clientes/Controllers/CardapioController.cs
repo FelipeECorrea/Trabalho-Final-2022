@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Project_Restaurant_2022.Helpers;
+using Aplicacao.Helpers;
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.PedidoDoCliente;
 
-namespace PublicoAplicacao.Controllers
+namespace Aplicacao.Areas.Clientes.Controllers
 {
     [Area("Clientes")]
     [Route("/client/pedido")]

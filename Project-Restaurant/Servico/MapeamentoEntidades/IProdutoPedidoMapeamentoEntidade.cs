@@ -1,5 +1,4 @@
 ﻿using Repositorio.Entidades;
-using Servico.ViewModels.Produto;
 using Servico.ViewModels.ProdutoPedido;
 
 namespace Servico.MapeamentoEntidades
