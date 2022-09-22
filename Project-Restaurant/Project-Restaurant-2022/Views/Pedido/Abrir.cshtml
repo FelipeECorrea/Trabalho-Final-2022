@@ -8,36 +8,43 @@
         <div class="card-content">
             <div class="card-body">
                 <form asp-action="Abrir" method="POST">
-                    <div class="form-row">
+                    <div>
 
                         @*INICIO DO SELECT*@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group mb-2">
-                                    <label for="cadastroClientePedido" class="form-label">Cliente <span class="text-danger">*</span></label>
-                                    <select id="cadastroClientePedido" class="form-select"></select>
+                                    <label asp-for="ClienteId" class="form-label"></label>
+                                    <select asp-for="ClienteId" class="form-select" ></select>
                                 </div>
+                            </div>
+
+                            <div class="col-6">
                                 <div class="form-group mb-2">
-                                    <label for="cadastroMesaPedido" class="form-label">Mesa <span class="text-danger">*</span></label>
-                                    <select id="cadastroMesaPedido" class="form-select"></select>
+                                    <label asp-for="MesaId" class="form-label"></label>
+                                    <select asp-for="MesaId" class="form-select"></select>
                                 </div>
                             </div>
                         </div>
                         @*FIM DO SELECT*@
 
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="Quantidade"></label>
-                                <input type="text" asp-for="Quantidade" class="form-control">
-                                <span asp-validation-for="Quantidade" class="text-danger"></span>
+@*                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label asp-for="Quantidade"></label>
+                                    <input type="text" asp-for="Quantidade" class="form-control">
+                                    <span asp-validation-for="Quantidade" class="text-danger"></span>
+                                </div>
                             </div>
-                        </div>
+                        </div>*@
 
-                        <div class="col-md-12 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="Observacao"></label>
-                                <textarea id="basic-form-9" rows="4" asp-for="Observacao" class="form-control"></textarea>
-                                <span asp-validation-for="Observacao" class="text-danger"></span>
+                        <div class="col-6">
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label asp-for="Observacao"></label>
+                                    <textarea id="basic-form-9" rows="4" asp-for="Observacao" class="form-control"></textarea>
+                                    <span asp-validation-for="Observacao" class="text-danger"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -49,3 +56,7 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="~/js/pedido/pedido-select2.js"></script>
+}

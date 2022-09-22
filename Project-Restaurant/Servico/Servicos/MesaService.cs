@@ -70,6 +70,7 @@ namespace Servico.Servicos
                 .Select(x => new SelectViewModel
                 {
                     Id = x.Id,
+                    Text = x.NumeroMesa.ToString()
                 })
                 .ToList();
 

@@ -1,5 +1,5 @@
 ﻿// PARTE DE LISTAGEM DE CLIENTE E MESA
-$('#cadastroClientePedido').select2({
+$('#ClienteId').select2({
     ajax: {
         url: '/cliente/obterTodosSelect2',
         dataType: 'json',
@@ -7,7 +7,7 @@ $('#cadastroClientePedido').select2({
     }
 });
 
-$('#cadastroMesaPedido').select2({
+$('#MesaId').select2({
     ajax: {
         url: '/mesa/obterTodosSelect2',
         dataType: 'json',
