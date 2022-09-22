@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Project_Restaurant_2022.Helpers;
 using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
 using Servico.Servicos;
@@ -27,6 +29,16 @@ namespace Servico.InjecoesDependencia
             services.AddScoped<IProdutoPedidoService, ProdutoPedidoService>();
             services.AddScoped<IProdutoPedidoMapeamentoEntidade, ProdutoPedidoMapeamentoEntidade>();
             services.AddScoped<IProdutoPedidoViewModelMapeamentoViewModels, ProdutoPedidoViewModelMapeamentoViewModels>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddScoped<ISessao, Sessao>();
+
+            services.AddSession(o =>
+            {
+                o.Cookie.HttpOnly = true;
+                o.Cookie.IsEssential = true;
+            });
 
             return services;
         }

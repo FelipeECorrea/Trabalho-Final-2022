@@ -42,6 +42,8 @@
     <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="~/css/site.css">
     <!-- END: Custom CSS-->
+    <link rel="stylesheet" href="~/css/site.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <!-- END : Head-->
 <!-- BEGIN : Body-->
@@ -124,6 +126,9 @@
                         </li>
                         <li class=" nav-item">
                             <a asp-controller="Cliente" asp-action="Index"><i class="ft-user"></i><span class="menu-title" data-i18n="Cliente">Cliente</span></a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="ProdutoPedido" asp-action="Index"><i class="ft-shopping-cart"></i><span class="menu-title" data-i18n="ProdutoPedido">Produtos Pedidos</span></a>
                         </li>
                     </ul>
                 </div>
@@ -405,6 +410,8 @@
     <!-- BEGIN: Custom CSS-->
     <script src="~/Tema/assets/js/scripts.js"></script>
     <!-- END: Custom CSS-->
+    <partial name="~/Views/_ViewImportsJavascripts.cshtml" />
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 <!-- END : Body-->

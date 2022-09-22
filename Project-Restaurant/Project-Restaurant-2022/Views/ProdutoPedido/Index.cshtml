@@ -1,0 +1,53 @@
+﻿@model List<ProdutoPedido>
+
+<p class="h3">Lista de Carrinho</p>
+
+<div class="row mb-3">
+    <div class="text-end">
+        <a asp-action="cadastrar" class="btn btn-danger">
+            <i class="ft-plus-square"></i> Cadastrar
+        </a>
+    </div>
+</div>
+<section id="shopping-cart">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Produtos Pedidos</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body table-responsive">
+                        <table class="table text-center m-0">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Produto</th>
+                                    <th>Quantidade</th>
+                                    <th>Valor</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Lugar dos registros da tabela-->
+                                @foreach (var produtoPedido in Model)
+                                {
+                                <td><img src="../app-assets/img/elements/01.png" alt="product" style="height: 75px;"></td>
+                                <td>@produtoPedido.Pedido</td>
+                                <td>@produtoPedido.Produto</td>
+                                <td>
+                                    <div class="btn-group ml-1">
+                                        <a class="btn btn-warning px-1 py-1 font-medium-5" href="javascript:void(0)">-</a>
+                                        <a class="btn btn-warning px-1 py-1" href="javascript:void(0)">@produtoPedido.Quantidade</a>
+                                        <a class="btn btn-warning px-1 py-1 font-medium-5" href="javascript:void(0)">+</a>
+                                    </div>
+                                </td>
+                                <td>@produtoPedido.Valor</td>
+                                <td>
+                                    <a href="javascript:;" class="danger" asp-action="apagar" asp-route-id="@produtoPedido.Id">
+                                        <i class="ft-trash font-medium-3"></i>
+                                    </a>
+                                </td>
+                                }
+                            </tbody>
+                        </table>
