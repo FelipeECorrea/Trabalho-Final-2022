@@ -20,7 +20,7 @@ namespace Servico.MapeamentoEntidades
             produto.Descricao = produtoEditarViewModel.Descricao;
             produto.Status = (StatusProduto)produtoEditarViewModel.Status;
 
-            if(string.IsNullOrEmpty(caminho))
+            if(!string.IsNullOrEmpty(caminho))
                 produto.ProdutoCaminho = caminho;
 
             return produto;

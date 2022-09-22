@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servico", "Servico\Servico.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositorio", "Repositorio\Repositorio.csproj", "{4DE6BC82-E93B-43C5-AD89-5138D408C372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicoAplicacao", "PublicoAplicacao\PublicoAplicacao.csproj", "{00DE3C1C-416D-4481-A3F6-449EA7704661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicoAplicacao", "PublicoAplicacao\PublicoAplicacao.csproj", "{00DE3C1C-416D-4481-A3F6-449EA7704661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
