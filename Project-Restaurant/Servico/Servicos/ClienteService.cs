@@ -77,7 +77,7 @@ namespace Servico.Servicos
 
         public bool SenhaValida(string senha)
         {
-            Cliente cliente = _clienteRepositorio
+            Cliente cliente = new Cliente();
 
             return cliente.Senha == senha;
         }
