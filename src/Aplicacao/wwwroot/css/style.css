@@ -1,0 +1,25 @@
+﻿@keyframes flutuar {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.item-flutuando {
+    animation: flutuar 2s ease-in-out infinite;
+}
+
+.inicio-dev-lanches {
+    width: 50%;
+    height: 700px;
+    border-radius: 5%;
+    margin: auto;
+    box-shadow: 5px 10px 18px black;
+}
