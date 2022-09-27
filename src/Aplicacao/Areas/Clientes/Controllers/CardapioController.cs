@@ -3,14 +3,17 @@ using Aplicacao.Helpers;
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.PedidoDoCliente;
+using Servico.ViewModels.Mesa;
+using Aplicacao.Areas.Admin.Views.Mesa;
 
 namespace Aplicacao.Areas.Clientes.Controllers
 {
     [Area("Clientes")]
-    [Route("/client/pedido")]
+    [Route("/client/Cardapio")]
     public class PedidoController : Controller
     {
         private readonly IProdutoService _produtoService;
+        private readonly IMesaService _mesaService;
         private readonly ISessao _sessao;
 
         public PedidoController(IProdutoService produtoService, ISessao sessao)
@@ -57,6 +60,14 @@ namespace Aplicacao.Areas.Clientes.Controllers
                 .GetNames<StatusProduto>()
                 .OrderBy(x => x)
                 .ToList();
+        }
+        [HttpGet("Escolher-Mesa")]
+        public IActionResult EscolherMesa()
+        {
+            var mesas = _mesaService.ObterTodosSelect2();
+
+            return View(mesas);
+
         }
     }
 }
