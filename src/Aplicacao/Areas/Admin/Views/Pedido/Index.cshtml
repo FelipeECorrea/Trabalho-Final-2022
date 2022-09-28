@@ -29,9 +29,6 @@
                 <td>@pedido.ClienteId</td> <!-- Coluna específica para body-->
                 <td>@pedido.Observacao</td> <!-- Coluna específica para body-->
                 <td>
-                    <a class="btn btn-warning" asp-action="editar" asp-route-id="@pedido.Id">
-                        <i class="fa-solid ft-edit"></i> Editar
-                    </a>
                     <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@pedido.Id">
                         <i class="fa-solid ft-trash"></i> Apagar
                     </a>
