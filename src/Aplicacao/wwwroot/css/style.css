@@ -47,3 +47,15 @@
 .body-color-home {
     background-color: #8A2BE2;
 }
+
+.body-login {
+    background-image: linear-gradient(to bottom right, black, purple, DeepPink);
+}
+
+.sombra {
+    box-shadow: 0px 10px 10px 8px #1C1C1C;
+}
+
+.sombra-login {
+    box-shadow: 20px 20px 50px black;
+}
