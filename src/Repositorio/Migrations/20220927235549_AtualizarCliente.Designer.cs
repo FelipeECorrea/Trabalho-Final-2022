@@ -11,8 +11,8 @@ using Repositorio.BancoDados;
 namespace Repositorio.Migrations
 {
     [DbContext(typeof(RestauranteContexto))]
-    [Migration("20220912223131_CorrigirBancoDados")]
-    partial class CorrigirBancoDados
+    [Migration("20220927235549_AtualizarCliente")]
+    partial class AtualizarCliente
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,10 @@ namespace Repositorio.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte>("Autorizacao")
+                        .HasColumnType("TINYINT")
+                        .HasColumnName("autorizacao");
 
                     b.Property<string>("Cpf")
                         .IsRequired()
@@ -55,6 +59,10 @@ namespace Repositorio.Migrations
                         .HasColumnType("VARCHAR(20)")
                         .HasColumnName("senha");
 
+                    b.Property<byte>("Status")
+                        .HasColumnType("TINYINT")
+                        .HasColumnName("statusCliente");
+
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasMaxLength(11)
@@ -73,20 +81,24 @@ namespace Repositorio.Migrations
                         new
                         {
                             Id = 1,
+                            Autorizacao = (byte)0,
                             Cpf = "10437548902",
                             Email = "cristyanalexandrino.od@gmail.com",
                             Nome = "Cristyan",
                             Senha = "admin123",
+                            Status = (byte)2,
                             Telefone = "47991392902"
                         },
                         new
                         {
                             Id = 2,
-                            Cpf = "20437548902",
-                            Email = "joao@gmail.com",
-                            Nome = "João",
+                            Autorizacao = (byte)1,
+                            Cpf = "10639142990",
+                            Email = "pessoal@gmail.com",
+                            Nome = "Felipe",
                             Senha = "admin123",
-                            Telefone = "47981392902"
+                            Status = (byte)3,
+                            Telefone = "47988278800"
                         });
                 });
 
@@ -115,37 +127,37 @@ namespace Repositorio.Migrations
                         {
                             Id = 1,
                             NumeroMesa = (byte)1,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 2,
                             NumeroMesa = (byte)2,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 3,
                             NumeroMesa = (byte)3,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 4,
                             NumeroMesa = (byte)4,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 5,
                             NumeroMesa = (byte)5,
-                            Status = (byte)1
+                            Status = (byte)0
                         },
                         new
                         {
                             Id = 6,
                             NumeroMesa = (byte)6,
-                            Status = (byte)1
+                            Status = (byte)0
                         });
                 });
 
@@ -228,6 +240,10 @@ namespace Repositorio.Migrations
                         .HasColumnType("VARCHAR(1000)")
                         .HasColumnName("produto_caminho");
 
+                    b.Property<byte>("Status")
+                        .HasColumnType("TINYINT")
+                        .HasColumnName("statusProduto");
+
                     b.Property<decimal>("Valor")
                         .HasPrecision(5, 2)
                         .HasColumnType("DECIMAL(5,2)")
@@ -245,7 +261,8 @@ namespace Repositorio.Migrations
                             Descricao = "Yakissoba de frango e legumes",
                             Nome = "Yakissoba",
                             ProdutoCaminho = "favicon.ico",
-                            Valor = 20m
+                            Status = (byte)1,
+                            Valor = 20.00m
                         },
                         new
                         {
@@ -254,7 +271,8 @@ namespace Repositorio.Migrations
                             Descricao = "Coca-cola 600ml",
                             Nome = "Coca-cola 600ml",
                             ProdutoCaminho = "favicon.ico",
-                            Valor = 6m
+                            Status = (byte)1,
+                            Valor = 6.00m
                         });
                 });
 
