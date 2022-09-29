@@ -15,7 +15,7 @@
                             <div class="col-6">
                                 <div class="form-group mb-2">
                                     <label asp-for="ClienteId" class="form-label"></label>
-                                    <select asp-for="ClienteId" class="form-select" ></select>
+                                    <select asp-for="ClienteId" class="form-select"></select>
                                 </div>
                             </div>
 
@@ -28,23 +28,11 @@
                         </div>
                         @*FIM DO SELECT*@
 
-@*                        <div class="row">
-                            <div class="col-md-6 col-12">
-                                <div class="form-group mb-2">
-                                    <label asp-for="Quantidade"></label>
-                                    <input type="text" asp-for="Quantidade" class="form-control">
-                                    <span asp-validation-for="Quantidade" class="text-danger"></span>
-                                </div>
-                            </div>
-                        </div>*@
-
-                        <div class="col-6">
-                            <div class="col-md-6 col-12">
-                                <div class="form-group mb-2">
-                                    <label asp-for="Observacao"></label>
-                                    <textarea id="basic-form-9" rows="4" asp-for="Observacao" class="form-control"></textarea>
-                                    <span asp-validation-for="Observacao" class="text-danger"></span>
-                                </div>
+                        <div class="col-md-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Observacao"></label>
+                                <textarea id="basic-form-9" rows="4" asp-for="Observacao" class="form-control"></textarea>
+                                <span asp-validation-for="Observacao" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
