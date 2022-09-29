@@ -4,7 +4,7 @@
 
 namespace Repositorio.Migrations
 {
-    public partial class CorrigirBancoDados : Migration
+    public partial class AtualizarCliente : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,9 @@ namespace Repositorio.Migrations
                     telefone = table.Column<string>(type: "VARCHAR(11)", maxLength: 11, nullable: false),
                     cpf = table.Column<string>(type: "VARCHAR(11)", maxLength: 11, nullable: false),
                     email = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
-                    senha = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false)
+                    senha = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false),
+                    statusCliente = table.Column<byte>(type: "TINYINT", nullable: false),
+                    autorizacao = table.Column<byte>(type: "TINYINT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,7 +51,8 @@ namespace Repositorio.Migrations
                     nome = table.Column<string>(type: "VARCHAR(40)", maxLength: 40, nullable: false),
                     categoria = table.Column<string>(type: "VARCHAR(1000)", maxLength: 1000, nullable: false),
                     descricao = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false),
-                    produto_caminho = table.Column<string>(type: "VARCHAR(1000)", maxLength: 1000, nullable: false)
+                    produto_caminho = table.Column<string>(type: "VARCHAR(1000)", maxLength: 1000, nullable: false),
+                    statusProduto = table.Column<byte>(type: "TINYINT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -113,11 +116,11 @@ namespace Repositorio.Migrations
 
             migrationBuilder.InsertData(
                 table: "clientes",
-                columns: new[] { "Id", "cpf", "email", "nome", "senha", "telefone" },
+                columns: new[] { "Id", "autorizacao", "cpf", "email", "nome", "senha", "statusCliente", "telefone" },
                 values: new object[,]
                 {
-                    { 1, "10437548902", "cristyanalexandrino.od@gmail.com", "Cristyan", "admin123", "47991392902" },
-                    { 2, "20437548902", "joao@gmail.com", "João", "admin123", "47981392902" }
+                    { 1, (byte)0, "10437548902", "cristyanalexandrino.od@gmail.com", "Cristyan", "admin123", (byte)2, "47991392902" },
+                    { 2, (byte)1, "10639142990", "pessoal@gmail.com", "Felipe", "admin123", (byte)3, "47988278800" }
                 });
 
             migrationBuilder.InsertData(
@@ -125,21 +128,21 @@ namespace Repositorio.Migrations
                 columns: new[] { "Id", "NumeroMesa", "statusMesa" },
                 values: new object[,]
                 {
-                    { 1, (byte)1, (byte)1 },
-                    { 2, (byte)2, (byte)1 },
-                    { 3, (byte)3, (byte)1 },
-                    { 4, (byte)4, (byte)1 },
-                    { 5, (byte)5, (byte)1 },
-                    { 6, (byte)6, (byte)1 }
+                    { 1, (byte)1, (byte)0 },
+                    { 2, (byte)2, (byte)0 },
+                    { 3, (byte)3, (byte)0 },
+                    { 4, (byte)4, (byte)0 },
+                    { 5, (byte)5, (byte)0 },
+                    { 6, (byte)6, (byte)0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "produtos",
-                columns: new[] { "Id", "categoria", "descricao", "nome", "produto_caminho", "valor" },
+                columns: new[] { "Id", "categoria", "descricao", "nome", "produto_caminho", "statusProduto", "valor" },
                 values: new object[,]
                 {
-                    { 1, "Massas", "Yakissoba de frango e legumes", "Yakissoba", "favicon.ico", 20m },
-                    { 2, "Bebidas", "Coca-cola 600ml", "Coca-cola 600ml", "favicon.ico", 6m }
+                    { 1, "Massas", "Yakissoba de frango e legumes", "Yakissoba", "favicon.ico", (byte)1, 20.00m },
+                    { 2, "Bebidas", "Coca-cola 600ml", "Coca-cola 600ml", "favicon.ico", (byte)1, 6.00m }
                 });
 
             migrationBuilder.InsertData(

@@ -1,10 +1,12 @@
 ﻿@model List<Mesa>
 
+<link rel="stylesheet" type="text/css" href="~/css/style.css" />
+
 <p class="h3">Lista de Mesas</p>
 
 <div class="row mb-3">
     <div class="text-end">
-        <a asp-action="cadastrar" class="btn btn-danger">
+        <a asp-action="cadastrar" class="btn btn-primary">
             <i class="ft-plus-square"></i> Cadastrar
         </a>
     </div>
@@ -33,10 +35,10 @@
                                         <i class="icon-cup font-large-2 float-right"></i>
                                     </div>
                                 </div>
-                                <a class="badge badge-pill badge-info mb-1 mr-2" asp-action="editar" asp-route-id="@mesa.Id">
+                                        <a class="badge badge-pill btn btn-primary mb-1 mr-2" asp-action="editar" asp-route-id="@mesa.Id">
                                     <i class="fa-solid ft-edit"></i> Editar
                                 </a>
-                                <a class="badge badge-pill badge-dark mb-1 mr-2" asp-action="apagar" asp-route-id="@mesa.Id">
+                                        <a class="badge badge-pill badge-dark mb-1 mr-2" asp-action="apagar" asp-route-id="@mesa.Id">
                                     <i class="fa-solid ft-trash"></i> Apagar
                                 </a>
                             </div>
@@ -61,7 +63,7 @@
                                         <i class="icon-cup font-large-2 float-right"></i>
                                     </div>
                                 </div>
-                                <a class="badge badge-pill badge-info mb-1 mr-2" asp-action="editar" asp-route-id="@mesa.Id">
+                                <a class="badge badge-pill badge-primary mb-1 mr-2" asp-action="editar" asp-route-id="@mesa.Id">
                                     <i class="fa-solid ft-edit"></i> Editar
                                 </a>
                                 <a class="badge badge-pill badge-dark mb-1 mr-2" asp-action="apagar" asp-route-id="@mesa.Id">

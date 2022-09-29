@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace Servico.ViewModels.Produto
 {
     public class ProdutoViewModel
