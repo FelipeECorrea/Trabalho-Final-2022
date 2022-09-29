@@ -45,11 +45,11 @@
 }
 
 .body-color-home {
-    background-color: #8A2BE2;
+    background-image: linear-gradient(to bottom , black, purple, DeepPink);
 }
 
 .body-login {
-    background-image: linear-gradient(to bottom right, black, purple, DeepPink);
+    background-image: url("/Tema/app-assets/img/fundo-comida.jpg");
 }
 
 .sombra {
