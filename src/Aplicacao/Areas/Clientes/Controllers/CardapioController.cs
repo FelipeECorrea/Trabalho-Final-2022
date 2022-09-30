@@ -9,7 +9,7 @@ using Aplicacao.Areas.Admin.Views.Mesa;
 namespace Aplicacao.Areas.Clientes.Controllers
 {
     [Area("Clientes")]
-    [Route("/client/Cardapio")]
+    [Route("cardapio")]
     public class PedidoController : Controller
     {
         private readonly IProdutoService _produtoService;
@@ -60,14 +60,6 @@ namespace Aplicacao.Areas.Clientes.Controllers
                 .GetNames<StatusProduto>()
                 .OrderBy(x => x)
                 .ToList();
-        }
-        [HttpGet("Escolher-Mesa")]
-        public IActionResult EscolherMesa()
-        {
-            var mesas = _mesaService.ObterTodosSelect2();
-
-            return View(mesas);
-
         }
     }
 }

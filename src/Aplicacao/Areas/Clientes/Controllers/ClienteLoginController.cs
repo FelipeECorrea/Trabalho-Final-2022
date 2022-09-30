@@ -99,7 +99,8 @@ namespace Aplicacao.Areas.Clientes.Controllers
                 {
                     Cliente cliente = _clienteService.ObterPorEmail(loginViewModel.Email);
                    
-
+                    var clienteId = cliente.Id;
+                   
                     if (cliente != null)
                     {
                         if (cliente.Senha == loginViewModel.Senha)
@@ -120,6 +121,8 @@ namespace Aplicacao.Areas.Clientes.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+
 
     }
 }

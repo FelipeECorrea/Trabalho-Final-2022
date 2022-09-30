@@ -51,6 +51,8 @@ namespace Servico.Servicos
         {
             Cliente cliente = _clienteRepositorio.ObterPorEmail(Email);
 
+            
+
             return cliente;
         }
 
@@ -81,5 +83,7 @@ namespace Servico.Servicos
 
             return cliente.Senha == senha;
         }
+
+
     }
 }

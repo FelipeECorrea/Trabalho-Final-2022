@@ -10,6 +10,8 @@ namespace Servico.Servicos
     {
         private readonly IPedidoRepositorio _pedidoRepositorio;
         private readonly IPedidoMapeamentoEntidade _mapeamentoEntidade;
+        private readonly IMesaService _mesaService;
+        private readonly IClienteService _clienteService;
 
         public PedidoService(
              IPedidoRepositorio pedidoRepositorio,
@@ -60,5 +62,7 @@ namespace Servico.Servicos
 
             return selectViewModel;
         }
+            
+
     }
 }

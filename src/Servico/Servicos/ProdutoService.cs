@@ -1,4 +1,5 @@
-﻿using Repositorio.Entidades;
+﻿using Aplicacao.Helpers;
+using Repositorio.Entidades;
 using Repositorio.Repositorios;
 using Servico.Helpers;
 using Servico.MapeamentoEntidades;
@@ -13,6 +14,8 @@ namespace Servico.Servicos
         private readonly IProdutoRepositorio _produtoRepositorio;
         private readonly IProdutoMapeamentoEntidade _mapeamentoEntidade;
         private readonly IProdutoViewModelMapeamentoViewModels _mapeamentoViewModel;
+        private readonly ISessao _sessao;
+        private readonly IMesaService _mesaService;
         private const string PastaImagens = "pets";
 
         public ProdutoService(
@@ -123,6 +126,7 @@ namespace Servico.Servicos
 
             return selectViewModels;
         }
+
     }
 }
 
