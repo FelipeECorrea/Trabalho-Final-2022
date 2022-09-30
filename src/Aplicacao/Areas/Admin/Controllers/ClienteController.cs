@@ -37,7 +37,6 @@ namespace Aplicacao.Areas.Admin.Controllers
             {
                 return View(viewModel);
             }
-            viewModel.Type = ClienteEmMesa.Admin;
 
             _clienteService.Cadastrar(viewModel);
 

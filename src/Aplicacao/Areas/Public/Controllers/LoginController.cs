@@ -43,8 +43,6 @@ namespace Aplicacao.Areas.Public.Controllers
             {
                 return View(viewModel);
             }
-            viewModel.Type = ClienteEmMesa.Usuario;
-            viewModel.Status = ClienteEmMesa.Ativo;
             _clienteService.Cadastrar(viewModel);
 
             return RedirectToAction("Index", "Home");
