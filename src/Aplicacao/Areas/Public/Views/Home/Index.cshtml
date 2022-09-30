@@ -14,15 +14,16 @@
 <link rel="stylesheet" type="text/css" href="~/Tema/app-assets/css/pages/dashboard1.css">
 <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/style.css">
 <link rel="stylesheet" type="text/css" href="~/css/style.css">
+
 <body class="body-color-home">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 fundo-preto">
+    <header class="sombra d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 fundo-preto">
         <div class="conteiner-texto-header">
             <h1 class="texto-header">Dev Lanches</h1>
         </div>
 
         <div class="col-md-3 text-end">
-            <a type="button" class="btn btn-outline-primary text-light">Login</a>
-            <a type="button" class="btn btn-primary">Cadastre-se</a>
+            <a asp-controller="ClienteLogin" type="button" class="btn btn-outline-primary text-light">Login</a>
+            <a asp-controller="ClienteLogin" asp-action="Cadastrar" type="button" class="btn btn-primary">Cadastre-se</a>
         </div>
     </header>
 
