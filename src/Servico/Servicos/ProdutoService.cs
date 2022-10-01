@@ -124,10 +124,10 @@ namespace Servico.Servicos
             return selectViewModels;
         }
 
-        //public bool ProdutoEscolhido(int idProduto)
-        //{
-        //    var produto = _produtoRepositorio.ObterProdutoDisponivelPorId(idProduto)
-        //}
+        public bool ProdutoEscolhido(int idProduto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
