@@ -10,7 +10,7 @@
 
 }
 
-
+<script type="text/javascript" src="@Url.Content("~/js/Produto/AjustarValorProduto.js")"></script>
 <div class="col-lg-6 col-12">
     <div class="card">
         <div class="card-header">
@@ -76,11 +76,13 @@
 
                         <button type="submit" class="btn btn-danger mr-2"><i class="ft-check-square mr-1"></i>Salvar</button>
                         <a class="btn btn-warning" asp-action="Index"><i class="ft-x mr-1"></i>Cancelar</a>
-                        <script src="@Url.Content("~/js/Produto/AjustarValorProduto.js")"></script>
                 </form>
             </div>
         </div>
     </div>
     </div>
+@section Scripts{
+    <script src="~/js/Produto/AjusteValorProduto.js"></script>
+}
    
  
