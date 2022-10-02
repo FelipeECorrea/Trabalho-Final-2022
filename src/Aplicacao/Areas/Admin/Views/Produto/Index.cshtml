@@ -1,7 +1,6 @@
 ﻿@model List<Produto>
 
 <p class="h3">Lista de Produtos</p>
-
 <div class="row mb-3">
     <div class="text-end">
         <a asp-action="cadastrar" class="btn btn-primary">
@@ -60,3 +59,6 @@
     }
     </tbody>
 </table>
+@section Scripts{
+    <script src="~/js/Produto/AjusteValorProduto.js"></script>
+}
