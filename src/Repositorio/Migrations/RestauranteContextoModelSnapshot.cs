@@ -29,7 +29,7 @@ namespace Repositorio.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<byte>("Autorizacao")
+                    b.Property<byte?>("Autorizacao")
                         .HasColumnType("TINYINT")
                         .HasColumnName("autorizacao");
 
@@ -57,7 +57,7 @@ namespace Repositorio.Migrations
                         .HasColumnType("VARCHAR(20)")
                         .HasColumnName("senha");
 
-                    b.Property<byte>("Status")
+                    b.Property<byte?>("Status")
                         .HasColumnType("TINYINT")
                         .HasColumnName("statusCliente");
 
@@ -260,7 +260,7 @@ namespace Repositorio.Migrations
                             Nome = "Yakissoba",
                             ProdutoCaminho = "favicon.ico",
                             Status = (byte)1,
-                            Valor = 20.00m
+                            Valor = 20m
                         },
                         new
                         {
@@ -270,7 +270,7 @@ namespace Repositorio.Migrations
                             Nome = "Coca-cola 600ml",
                             ProdutoCaminho = "favicon.ico",
                             Status = (byte)1,
-                            Valor = 6.00m
+                            Valor = 6m
                         });
                 });
 
