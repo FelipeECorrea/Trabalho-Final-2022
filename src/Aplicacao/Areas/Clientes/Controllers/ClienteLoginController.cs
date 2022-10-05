@@ -25,26 +25,6 @@ namespace Aplicacao.Areas.Clientes.Controllers
             return View(viewModel);
         }
 
-        [HttpGet("cadastrar")]
-        public ActionResult Cadastrar()
-        {
-            return View();
-        }
-
-        [HttpPost("cadastrar")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar(ClienteCadastrarViewModel viewModel)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(viewModel);
-            }
-
-            _clienteService.Cadastrar(viewModel);
-
-            return RedirectToAction("Index");
-        }
-
         [HttpGet("editar")]
         public IActionResult Editar([FromQuery] int id)
         {

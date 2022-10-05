@@ -48,12 +48,10 @@ namespace Repositorio.Mapeamentos
 
             builder.Property(x => x.Status)
                 .HasColumnType("TINYINT")
-                .IsRequired()
             .HasColumnName("statusCliente");
 
             builder.Property(x => x.Autorizacao)
                 .HasColumnType("TINYINT")
-                .IsRequired()
             .HasColumnName("autorizacao");
 
 

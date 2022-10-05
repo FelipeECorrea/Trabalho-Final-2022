@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repositorio.Enums;
 using Servico.Servicos;
 
 namespace Aplicacao.Areas.Admin.Controllers
@@ -8,6 +9,8 @@ namespace Aplicacao.Areas.Admin.Controllers
     public class ProdutoPedidoController : Controller
     {
         private readonly IProdutoPedidoService _produtoPedidoService;
+        private readonly IProdutoService _produtoService;
+        private readonly IPedidoService _pedidoService;
 
         public ProdutoPedidoController(IProdutoPedidoService produtoPedidoService)
         {
@@ -42,5 +45,19 @@ namespace Aplicacao.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        //[HttpGet("obterPorId")]
+        //public IActionResult ObterPorId([FromQuery] int id)
+        //{
+        //    var produtos = _produtoService.ObterPorId(id);
+        //    if (produtos.Status != StatusProduto.Disponivel)
+        //    {
+        //        return Ok(produtos);
+        //    }
+
+        //    var pedidos = _pedidoService.ObterPorId(id);
+
+        //    return View();
+        //}
     }
 }

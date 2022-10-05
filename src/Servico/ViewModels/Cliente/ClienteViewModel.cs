@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Repositorio.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace Servico.ViewModels.Cliente
@@ -25,8 +26,8 @@ namespace Servico.ViewModels.Cliente
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public string? Email { get; set; }
 
-     
 
         public IFormFile? Arquivo { get; set; }
+
     }
 }

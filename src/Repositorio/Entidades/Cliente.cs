@@ -10,8 +10,8 @@ namespace Repositorio.Entidades
         public string Email { get; set; }
         public string Senha { get; set; }
         public IList<Pedido> Pedidos { get; set; }
-        public ClienteEmMesa Status { get; set; }
-        public ClienteEmMesa Autorizacao { get; set; }
+        public ClienteEmMesa? Status { get; set; }
+        public ClienteEmMesa? Autorizacao { get; set; }
       
     }
 }

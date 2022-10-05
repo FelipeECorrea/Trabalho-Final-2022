@@ -48,7 +48,7 @@ namespace Servico.Servicos
         public bool Editar(ProdutoEditarViewModel viewModel, string caminhoArquivos)
         {
             var produto = _produtoRepositorio.ObterPorId(viewModel.Id);
-            
+
             if (produto == null)
                 return false;
 
@@ -110,7 +110,7 @@ namespace Servico.Servicos
         public IList<Produto> ObterTodos() =>
 
             _produtoRepositorio.ObterTodos();
-        
+
 
         public IList<SelectViewModel> ObterTodosSelect2()
         {
@@ -127,6 +127,10 @@ namespace Servico.Servicos
             return selectViewModels;
         }
 
+        public bool ProdutoEscolhido(int idProduto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
