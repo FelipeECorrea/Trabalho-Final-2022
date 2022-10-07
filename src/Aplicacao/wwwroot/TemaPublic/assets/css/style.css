@@ -957,6 +957,8 @@ section {
   border-radius: 50%;
   float: left;
   border: 5px solid rgba(255, 255, 255, 0.2);
+  width: 80px;
+  height: 80px;
 }
 
 .menu .menu-content {
