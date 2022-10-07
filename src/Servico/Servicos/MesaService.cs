@@ -51,6 +51,16 @@ namespace Servico.Servicos
             return true;
         }
 
+        public bool MesaEscolhida(int idMesa)
+        {
+          var mesaEscolhida =  _mesaRepositorio.ObterMesaEscolhida(idMesa);
+            if (mesaEscolhida == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public Mesa? ObterPorId(int id) =>
             _mesaRepositorio.ObterPorId(id);
 
@@ -71,6 +81,7 @@ namespace Servico.Servicos
 
             return selectViewModels;
         }
+
     }
 
 

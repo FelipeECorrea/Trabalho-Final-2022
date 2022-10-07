@@ -9,5 +9,7 @@ namespace Repositorio.Repositorios
         void Editar(Mesa mesa);
         Mesa? ObterPorId(int id);
         IList<Mesa> ObterTodos();
+        Mesa? ObterMesaEscolhida(int idMesa);
+        
     }
 }

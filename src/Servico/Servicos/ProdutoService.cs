@@ -126,7 +126,13 @@ namespace Servico.Servicos
 
         public bool ProdutoEscolhido(int idProduto)
         {
-            throw new NotImplementedException();
+            var produtoEscolhido = _produtoRepositorio.ObterPorId(idProduto);
+            if (idProduto == null)
+            {
+                return false;
+            }
+            return true;
+
         }
     }
 }

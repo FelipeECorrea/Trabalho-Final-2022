@@ -1,5 +1,6 @@
 ﻿using Repositorio.BancoDados;
 using Repositorio.Entidades;
+using Repositorio.Enums;
 
 namespace Repositorio.Repositorios
 {
@@ -51,5 +52,15 @@ namespace Repositorio.Repositorios
 
         public IList<Mesa> ObterTodos() =>
             _contexto.Mesas.ToList();
+
+        public Mesa? ObterMesaEscolhida(int idMesa)
+        {
+            var mesa = _contexto.Mesas
+                  .FirstOrDefault(x => x.Id == idMesa &&
+                  x.Status == StatusMesa.Desocupado);
+
+            return mesa;
+        }
+        
     }
 }
