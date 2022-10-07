@@ -1,0 +1,41 @@
+﻿@using Repositorio.Entidades
+@model List<Produto>
+
+<section id="menu" class="menu section-bg">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Cardapio</h2>
+        </div>
+
+        <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="menu-flters">
+                    <li data-filter="*" class="filter-active">Todos</li>
+                    <li data-filter=".filter-Tradicionais">Tradicionais</li>
+                    <li data-filter=".filter-Massas">Massas</li>
+                    <li data-filter=".filter-Bebidas">Bebidas</li>
+                    <li data-filter=".filter-Sobremesas">Sobremesas</li>
+                    <li data-filter=".filter-Extras">Extras</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row menu-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" style="position: relative; height: 600px;">
+
+        @foreach (var produto in Model)
+        {
+            <div class="col-lg-6 menu-item filter-@produto.Categoria" style="position: absolute; left: 0px; top: 0px;">
+                    <img src="~/Uploads/Produtos/@produto.ProdutoCaminho" class="img-fluid menu-img" alt="">
+                <div class="menu-content">
+                    <a href="#">@produto.Nome</a><span>R$: @produto.Valor</span>
+                </div>
+                <div class="menu-ingredients">
+                    @produto.Descricao
+                </div>
+            </div>
+        }
+        </div>
+
+    </div>
+</section>

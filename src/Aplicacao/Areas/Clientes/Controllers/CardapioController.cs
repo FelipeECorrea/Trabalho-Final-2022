@@ -7,21 +7,23 @@ using Servico.ViewModels.PedidoDoCliente;
 namespace Aplicacao.Areas.Clientes.Controllers
 {
     [Area("Clientes")]
-    [Route("/client/pedido")]
-    public class PedidoController : Controller
+    [Route("/client/cardapio")]
+    public class CardapioController : Controller
     {
         private readonly IProdutoService _produtoService;
         private readonly ISessao _sessao;
 
-        public PedidoController(IProdutoService produtoService, ISessao sessao)
+        public CardapioController(IProdutoService produtoService, ISessao sessao)
         {
             _produtoService = produtoService;
             _sessao = sessao;
         }
 
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            return View();
+            var produtos = _produtoService.ObterTodos();
+
+            return View(produtos);
         }
 
         [HttpGet("abrir")]
