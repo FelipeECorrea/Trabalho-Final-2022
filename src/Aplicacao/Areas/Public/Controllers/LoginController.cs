@@ -24,7 +24,7 @@ namespace Aplicacao.Areas.Public.Controllers
         public IActionResult Index()
         {
             if (_sessao.BuscarSessaoDoUsuario() != null) 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home", "Clientes");
 
             return View();
         }
