@@ -16,7 +16,7 @@ namespace Servico.ViewModels.Produto
 
         [Display(Name = "Valor")]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        [Range(0, int.MaxValue, ErrorMessage = "{0} deve conter no mínimo {1}")]
+        [Range(0, int.MaxValue , ErrorMessage = "{0} deve conter no mínimo {1}")]
         public decimal? Valor { get; set; }
 
         [Display(Name = "Categoria")]

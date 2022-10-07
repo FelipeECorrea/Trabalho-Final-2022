@@ -49,7 +49,6 @@
 <!-- BEGIN : Body-->
 
 <body class="vertical-layout vertical-menu 2-columns  navbar-sticky sidebar-sm" data-menu="vertical-menu" data-col="2-columns">
-
     <nav class="navbar navbar-expand-lg navbar-light header-navbar navbar-fixed">
         <div class="container-fluid navbar-wrapper">
             <div class="navbar-header d-flex">
@@ -401,9 +400,16 @@
     <!-- BEGIN: Custom CSS-->
     <script src="~/Tema/assets/js/scripts.js"></script>
     <!-- END: Custom CSS-->
+    @section Scripts{
+        <script src="~/js/Produto/AjustarValorProduto.js"></script>
+    }
     <partial name="~/Views/_ViewImportsJavascripts.cshtml" />
 
     @await RenderSectionAsync("Scripts", required: false)
+
+
+       
+ }
 </body>
 <!-- END : Body-->
 

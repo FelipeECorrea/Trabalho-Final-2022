@@ -1,16 +1,16 @@
 ﻿@using Servico.Helpers
 @using Produto
 @model ProdutoEditarViewModel
-{
+@{
     var produtos = ViewBag.Produtos as List<string>;
     produtos.Add(string.Empty);
-    
+
     var selectDosProdutos = new SelectList(produtos, string.Empty);
-   
-                    
+
+
 }
 
-
+<script type="text/javascript" src="@Url.Content("~/js/Produto/AjustarValorProduto.js")"></script>
 <div class="col-lg-6 col-12">
     <div class="card">
         <div class="card-header">
@@ -18,7 +18,7 @@
         </div>
         <div class="card-content">
             <div class="card-body">
-                    <form asp-action="Editar" method="POST" enctype='multipart/form-data'>
+                <form asp-action="Editar" method="POST" enctype='multipart/form-data'>
                     <input type="hidden" asp-for="Id" />
                     <div class="form-row">
                         <div class="col-md-6 col-12">
@@ -33,6 +33,7 @@
                                 <label asp-for="Valor"></label>
                                 <input type="text" asp-for="Valor" class="form-control">
                                 <span asp-validation-for="Valor" class="text-danger"></span>
+
                             </div>
                         </div>
                     </div>
@@ -62,21 +63,26 @@
                                 <label asp-for="Arquivo" class="form-label">Selecione uma imagem</label>
                                 <input class="form-control" asp-for="Arquivo">
                             </div>
-                      
-                          
-                        <div class="col-md-6 col-12">
-                            <div class="form-group mb-2">
-                                <label asp-for="Descricao"></label>
-                                <textarea id="basic-form-9" rows="4" asp-for="Descricao" class="form-control"></textarea>
-                                <span asp-validation-for="Descricao" class="text-danger"></span>
+
+
+                            <div class="col-md-6 col-12">
+                                <div class="form-group mb-2">
+                                    <label asp-for="Descricao"></label>
+                                    <textarea id="basic-form-9" rows="4" asp-for="Descricao" class="form-control"></textarea>
+                                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <button type="submit" class="btn btn-danger mr-2"><i class="ft-check-square mr-1"></i>Salvar</button>
-                    <a class="btn btn-warning"asp-action="Index"><i class="ft-x mr-1"></i>Cancelar</a>
+                        <button type="submit" class="btn btn-danger mr-2"><i class="ft-check-square mr-1"></i>Salvar</button>
+                        <a class="btn btn-warning" asp-action="Index"><i class="ft-x mr-1"></i>Cancelar</a>
                 </form>
             </div>
         </div>
     </div>
-</div>
+    </div>
+@section Scripts{
+    <script src="~/js/Produto/AjusteValorProduto.js"></script>
+}
+   
+ 

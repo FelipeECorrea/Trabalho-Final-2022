@@ -12,6 +12,7 @@ namespace Servico.Servicos
         ProdutoEditarViewModel? ObterPorId(int id);
         IList<Produto> ObterTodos();
         IList<SelectViewModel> ObterTodosSelect2();
+        bool ProdutoEscolhido(int idProduto);
     }
 }
 
