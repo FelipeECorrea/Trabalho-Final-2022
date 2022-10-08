@@ -8,5 +8,11 @@ namespace Servico.ViewModels.Produto
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         public int Id { get; set; }
         public IList<ProdutoViewModel> Produtos { get; set; } = new List<ProdutoViewModel>();
+
+        public decimal Valor { get; set; }
+        public string Categoria { get; set; }
+        public string Descricao { get; set; }
+        public string Nome { get; set; }
+        public Enum Status { get; set; }
     }
 }
