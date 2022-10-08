@@ -28,10 +28,11 @@
             <div class="col-lg-6 menu-item filter-@produto.Categoria" style="position: absolute; left: 0px; top: 0px;">
                     <img src="~/Uploads/Produtos/@produto.ProdutoCaminho" class="img-fluid menu-img" alt="">
                 <div class="menu-content">
-                    <a href="#">@produto.Nome</a><span>R$: @produto.Valor</span>
+                    <a>@produto.Nome</a><span>R$: @produto.Valor</span>
                 </div>
                 <div class="menu-ingredients">
                     @produto.Descricao
+                    <button class="position-absolute end-0 bt btn-danger">+</button>
                 </div>
             </div>
         }

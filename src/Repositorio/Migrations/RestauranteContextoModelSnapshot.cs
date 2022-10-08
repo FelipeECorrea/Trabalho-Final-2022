@@ -255,22 +255,52 @@ namespace Repositorio.Migrations
                         new
                         {
                             Id = 1,
-                            Categoria = "Massas",
-                            Descricao = "Yakissoba de frango e legumes",
-                            Nome = "Yakissoba",
-                            ProdutoCaminho = "favicon.ico",
+                            Categoria = "Tradicionais",
+                            Descricao = "X-Salada Tradicional da Casa",
+                            Nome = "X-Salada Tradicional",
+                            ProdutoCaminho = "X-Burguer.png",
                             Status = (byte)1,
-                            Valor = 20m
+                            Valor = 19.50m
                         },
                         new
                         {
                             Id = 2,
-                            Categoria = "Bebidas",
-                            Descricao = "Coca-cola 600ml",
-                            Nome = "Coca-cola 600ml",
-                            ProdutoCaminho = "favicon.ico",
+                            Categoria = "Massas",
+                            Descricao = "Yakissoba Tradicional",
+                            Nome = "Yakissoba",
+                            ProdutoCaminho = "yakisoba.jpg",
                             Status = (byte)1,
-                            Valor = 6m
+                            Valor = 21.63m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Categoria = "Bebidas",
+                            Descricao = "Coca-Cola 600ml",
+                            Nome = "Coca-Cola 600ml",
+                            ProdutoCaminho = "Coca-Cola600ml.jpg",
+                            Status = (byte)1,
+                            Valor = 6.99m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Categoria = "Sobremesas",
+                            Descricao = "Pudim de Leite 400g",
+                            Nome = "Pudim de Leite",
+                            ProdutoCaminho = "pudim.jpg",
+                            Status = (byte)1,
+                            Valor = 8.60m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Categoria = "Extras",
+                            Descricao = "Batata Rústica com Alecrim",
+                            Nome = "Batata Rústica com Alecrim",
+                            ProdutoCaminho = "batata-rustica.jpg",
+                            Status = (byte)1,
+                            Valor = 14.80m
                         });
                 });
 
