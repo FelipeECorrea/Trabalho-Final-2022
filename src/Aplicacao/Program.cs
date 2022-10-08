@@ -1,3 +1,4 @@
+using Aplicacao.Middlewares;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
@@ -62,7 +63,7 @@ app.UseStaticFiles();
 
 
 app.UseSession();
-
+app.UseMiddleware<UserMiddleware>();
 app.UseRouting();
 
 app.UseAuthorization();

@@ -50,8 +50,6 @@ namespace Repositorio.Repositorios
             return mesa;
         }
 
-        public IList<Mesa> ObterTodos() =>
-            _contexto.Mesas.ToList();
 
         public Mesa? ObterMesaEscolhida(int idMesa)
         {
@@ -61,6 +59,8 @@ namespace Repositorio.Repositorios
 
             return mesa;
         }
-        
+
+        public IList<Mesa> ObterTodos() =>
+            _contexto.Mesas.ToList();
     }
 }
