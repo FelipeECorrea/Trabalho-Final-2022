@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Repositorio.Entidades;
 using Servico.MapeamentoEntidades;
 using Servico.ViewModels.Mesa;
 using Servico.ViewModels.Pedido;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Testes.Unit.Servico.MapeamentoEntidades
 {
-    internal class MesaMapeamentoEntidadeTests
+    public class MesaMapeamentoEntidadeTests
     {
         private readonly IMesaMapeamentoEntidade _mesaMapeamentoEntidade;
 
@@ -24,7 +25,7 @@ namespace Testes.Unit.Servico.MapeamentoEntidades
             var viewModel = new MesaCadastrarViewModel
             {
                 Status = 1,
-                NumeroMesa = 2
+                NumeroMesa = 1
             };
 
             // Act
@@ -35,6 +36,29 @@ namespace Testes.Unit.Servico.MapeamentoEntidades
             viewModel.NumeroMesa.Should().Be(viewModel.NumeroMesa);
             
 
+        }
+        public void Test_AtualizarCampos()
+        {
+            // Arrange
+            var mesa = new Mesa
+            {
+                NumeroMesa = 1,
+                
+                
+            };
+
+            var viewModelEditar = new MesaEditarViewModel
+            {
+                NumeroMesa = 1,
+                Status =1,
+            };
+
+            // Act
+            _mesaMapeamentoEntidade.AtualizarCampos(mesa, viewModelEditar);
+
+            // Assert
+            mesa.NumeroMesa.Should().Be(viewModelEditar.NumeroMesa);
+            
         }
     }
 }
