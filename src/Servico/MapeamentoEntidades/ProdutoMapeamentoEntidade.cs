@@ -10,7 +10,7 @@ namespace Servico.MapeamentoEntidades
         public Produto AtualizarCampos(Produto produto, ProdutoEditarViewModel produtoEditarViewModel, string caminho)
         {
             produto.Nome = produtoEditarViewModel.Nome;
-            //produto.Valor = produtoEditarViewModel.Valor.GetValueOrDefault();
+            produto.Valor = produtoEditarViewModel.Valor;
             produto.Categoria = produtoEditarViewModel.Categoria;
             produto.Descricao = produtoEditarViewModel.Descricao;
             produto.Status = (StatusProduto)produtoEditarViewModel.Status;

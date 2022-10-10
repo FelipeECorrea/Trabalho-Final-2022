@@ -50,26 +50,56 @@ namespace Repositorio.Mapeamentos
 
             builder.HasData(
                new Produto
-               {
-                   Id = 1,
-                   Valor = 20,
-                   Nome = "Yakissoba",
-                   Categoria = "Massas",
-                   Descricao = "Yakissoba de frango e legumes",
-                   ProdutoCaminho = "favicon.ico",
-                   Status = StatusProduto.Disponivel
+                {
+                    Id = 1,
+                    Valor = 19.50m,
+                    Nome = "X-Salada Tradicional",
+                    Categoria = "Tradicionais",
+                    Descricao = "X-Salada Tradicional da Casa",
+                    ProdutoCaminho = "X-Burguer.png",
+                    Status = StatusProduto.Disponivel
                },
                new Produto
                {
                    Id = 2,
-                   Valor = 6,
-                   Nome = "Coca-cola 600ml",
-                   Categoria = "Bebidas",
-                   Descricao = "Coca-cola 600ml",
-                   ProdutoCaminho = "favicon.ico",
+                   Valor = 21.63m,
+                   Nome = "Yakissoba",
+                   Categoria = "Massas",
+                   Descricao = "Yakissoba Tradicional",
+                   ProdutoCaminho = "yakisoba.jpg",
                    Status = StatusProduto.Disponivel
-
-               });
+               },
+               new Produto
+               {
+                   Id = 3,
+                   Valor = 6.99m,
+                   Nome = "Coca-Cola 600ml",
+                   Categoria = "Bebidas",
+                   Descricao = "Coca-Cola 600ml",
+                   ProdutoCaminho = "Coca-Cola600ml.jpg",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 4,
+                   Valor = 8.60m,
+                   Nome = "Pudim de Leite",
+                   Categoria = "Sobremesas",
+                   Descricao = "Pudim de Leite 400g",
+                   ProdutoCaminho = "pudim.jpg",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 5,
+                   Valor = 14.80m,
+                   Nome = "Batata Rústica com Alecrim",
+                   Categoria = "Extras",
+                   Descricao = "Batata Rústica com Alecrim",
+                   ProdutoCaminho = "batata-rustica.jpg",
+                   Status = StatusProduto.Disponivel
+               }
+               );
         }
     }
 }
