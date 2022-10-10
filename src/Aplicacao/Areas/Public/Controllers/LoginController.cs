@@ -62,7 +62,7 @@ namespace Aplicacao.Areas.Public.Controllers
                         if (cliente.Senha == loginViewModel.Senha)
                         {
                             _sessao.CriarSessaoDoUsuario(cliente);
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "EscolhaMesa", new {Area="Clientes"});
                         }
 
                         TempData["MensageErro"] = $"senha inválida. Por favor, tente novamente.";
