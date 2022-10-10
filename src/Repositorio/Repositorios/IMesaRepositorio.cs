@@ -9,5 +9,7 @@ namespace Repositorio.Repositorios
         void Editar(Mesa mesa);
         bool Apagar(int id);
         Mesa? ObterPorId(int id);
+        Mesa? ObterMesaEscolhida(int idMesa);
+        
     }
 }
