@@ -48,25 +48,25 @@
         {
             @if (mesa.Status == Repositorio.Enums.StatusMesa.Desocupado)
             {
-                    <div class="col-lg-3 p-3 menu-item filter-starters">
-                    <a>
-                        <div>
-                            <div class="card card-inverse bg-success">
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <div class="media">
-                                            <div class="media-body text-left">
-                                                <h3 class="card-text">@mesa.NumeroMesa</h3>
-                                                <span>@mesa.Status</span>
-                                            </div>
-                                        </div>
+                <div class="col-lg-3 p-3 menu-item filter-starters">
+                    <div>
+                        <a class="btn btn-success" asp-controller="Cardapio" asp-action="MesaEscolhida" asp-route-id="@mesa.Id">
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                            <div class="card card-inverse bg-success">
+                                                    <div class="card-content">
+                                              <div class="card-body">
+                                         <div class="media">
+                                             <div class="media-body text-left">
+                                                 <h3 class="card-text">@mesa.NumeroMesa</h3>
+                                                 <span>@mesa.Status</span>
+                                             </div>
+                                         </div>
+                                     </div>
+                                  </div>
+                               </div>
+                        </a>
                     </div>
+                </div>
             }
             else
             {

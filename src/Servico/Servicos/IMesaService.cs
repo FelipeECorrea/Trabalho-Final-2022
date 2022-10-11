@@ -12,6 +12,6 @@ namespace Servico.Servicos
         Mesa? ObterPorId(int id);
         IList<Mesa> ObterTodos();
         IList<SelectViewModel> ObterTodosSelect2();
-        public bool MesaEscolhida(int idMesa);
+        public bool MesaEscolhida(int idMesa, int id);
     }
 }

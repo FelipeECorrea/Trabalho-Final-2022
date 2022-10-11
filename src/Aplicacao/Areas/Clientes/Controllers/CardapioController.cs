@@ -3,6 +3,7 @@ using Aplicacao.Helpers;
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.PedidoDoCliente;
+using Aplicacao.Areas.Admin.Views.Shared;
 
 namespace Aplicacao.Areas.Clientes.Controllers
 {
@@ -12,11 +13,13 @@ namespace Aplicacao.Areas.Clientes.Controllers
     {
         private readonly IProdutoService _produtoService;
         private readonly ISessao _sessao;
+        private readonly IMesaService _mesaService;
 
-        public CardapioController(IProdutoService produtoService, ISessao sessao)
+        public CardapioController(IProdutoService produtoService, ISessao sessao, IMesaService mesaService)
         {
             _produtoService = produtoService;
             _sessao = sessao;
+            _mesaService = mesaService;
         }
 
         public ActionResult Index()
@@ -59,6 +62,14 @@ namespace Aplicacao.Areas.Clientes.Controllers
                 .GetNames<StatusProduto>()
                 .OrderBy(x => x)
                 .ToList();
+        }
+        [HttpGet("mesaEscolhida")]
+        public IActionResult MesaEscolhida([FromQuery]int id)
+        {
+            var usuarioLogado = _sessao.BuscarSessaoDoUsuario();
+            _mesaService.MesaEscolhida(id, usuarioLogado.Id);
+
+            return RedirectToAction("client", "cardapio");
         }
     }
 }
