@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using Repositorio.Entidades;
+using Repositorio.Enums;
 using Servico.MapeamentoEntidades;
 using Servico.ViewModels.Mesa;
 using Servico.ViewModels.Pedido;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace Testes.Unit.Servico.MapeamentoEntidades
 {
@@ -19,6 +21,8 @@ namespace Testes.Unit.Servico.MapeamentoEntidades
         {
             _mesaMapeamentoEntidade = new MesaMapeamentoEntidade();
         }
+
+        [Fact]
         public void Test_ConstruirCom_()
         {
             // Arrange
@@ -29,28 +33,28 @@ namespace Testes.Unit.Servico.MapeamentoEntidades
             };
 
             // Act
-            _mesaMapeamentoEntidade.ConstruirCom(viewModel);
+            var mesa = _mesaMapeamentoEntidade.ConstruirCom(viewModel);
 
             // Assert
-            viewModel.Status.Should().Be(viewModel.Status);
-            viewModel.NumeroMesa.Should().Be(viewModel.NumeroMesa);
-            
-
+            mesa.Status.Should().Be((StatusMesa)viewModel.Status);
+            mesa.NumeroMesa.Should().Be(viewModel.NumeroMesa);
         }
+
+        [Fact]
         public void Test_AtualizarCampos()
         {
             // Arrange
             var mesa = new Mesa
             {
                 NumeroMesa = 1,
-                
-                
+                Status = StatusMesa.Ocupado
+
             };
 
             var viewModelEditar = new MesaEditarViewModel
             {
-                NumeroMesa = 1,
-                Status =1,
+                NumeroMesa = 10,
+                Status = 0,
             };
 
             // Act
@@ -58,7 +62,8 @@ namespace Testes.Unit.Servico.MapeamentoEntidades
 
             // Assert
             mesa.NumeroMesa.Should().Be(viewModelEditar.NumeroMesa);
-            
+            mesa.Status.Should().Be((StatusMesa)viewModelEditar.Status);
+
         }
     }
 }
