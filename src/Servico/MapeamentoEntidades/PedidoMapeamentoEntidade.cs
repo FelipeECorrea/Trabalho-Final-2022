@@ -10,15 +10,9 @@ namespace Servico.MapeamentoEntidades
       {
           ClienteId = viewModel.ClienteId,
           MesaId = viewModel.MesaId,
-          Observacao = viewModel.Observacao,
-          ProdutosPedidos = new List<ProdutoPedido>
-          {
-          new ProdutoPedido
-          {
-              ProdutoId = viewModel.ProdutoId,
-              Quantidade = viewModel.Quantidade,
-          }
-          }
+          ProdutosPedidos = new List<ProdutoPedido>(),
+          Observacao = "Asdhasudasudhausi"
+          
       };
     }
 }
