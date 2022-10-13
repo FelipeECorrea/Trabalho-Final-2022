@@ -68,7 +68,7 @@
 //            };
 
 //            // Act
-//            _produtoMapeamentoEntidade.AtualizarCampos(Produto produto, ProdutoEditarViewModel viewModel, string caminho); ;
+//            _produtoMapeamentoEntidade.AtualizarCampos(Produto produto, ProdutoEditarViewModel viewModel, string caminho);
 
 //            // Assert
 //            produto.Valor.Should().Be(viewModelEditar.Valor);
