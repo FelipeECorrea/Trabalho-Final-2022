@@ -1,29 +1,40 @@
-﻿using NSubstitute;
+﻿
+
+using FluentAssertions;
+using NSubstitute;
+using NSubstitute.ReturnsExtensions;
+using Repositorio.Entidades;
+using Repositorio.Enums;
 using Repositorio.Repositorios;
+using Servico.MapeamentoEntidades;
+using Servico.MapeamentoViewModels;
 using Servico.Servicos;
 using Servico.ViewModels.Mesa;
 using Xunit;
-using FluentAssertions;
-using Repositorio.Entidades;
-using NSubstitute.ReturnsExtensions;
 
 namespace Testes.Unit.Servico.Servicos
 {
-    public class MesaServicoTests
+    public class MesaServiceTests
     {
         private readonly IMesaService _mesaService;
         private readonly IMesaRepositorio _mesaRepositorio;
+        private readonly IMesaMapeamentoEntidade _mapeamentoEntidade;
+        private readonly IMesaViewModelMapeamentoViewModels _mapeamentoViewModel;
 
-        public MesaServicoTests()
+        public MesaServiceTests()
         {
             // Mock: são objetos que simulam o comportamento de objetos
             // reais de forma controlada
 
             // Mock da interface que o serviço depende
             _mesaRepositorio = Substitute.For<IMesaRepositorio>();
+            _mapeamentoEntidade = Substitute.For<IMesaMapeamentoEntidade>();
+            _mapeamentoViewModel = Substitute.For<IMesaViewModelMapeamentoViewModels>();
 
             // Instancia do serviço que será testado
-           //_mesaService = new MesaService(_mesaRepositorio);
+            _mesaService = new MesaService(_mesaRepositorio,
+                _mapeamentoEntidade,
+                _mapeamentoViewModel);
         }
 
         [Fact]
@@ -49,10 +60,20 @@ namespace Testes.Unit.Servico.Servicos
             // Arrange
             var viewModel = new MesaCadastrarViewModel
             {
-                NumeroMesa = 10
-                
-                
+                NumeroMesa = 10,
+                Status = 1
             };
+
+            var mesa = new Mesa
+            {
+                NumeroMesa = 10,
+                Status = Repositorio.Enums.StatusMesa.Ocupado
+            };
+
+            _mapeamentoEntidade
+                .ConstruirCom(Arg.Is<MesaCadastrarViewModel>(
+                    x => x.NumeroMesa == viewModel.NumeroMesa && x.Status == viewModel.Status))
+                .Returns(mesa);
 
             // Act
             _mesaService.Cadastrar(viewModel);
@@ -95,10 +116,7 @@ namespace Testes.Unit.Servico.Servicos
             var mesaEsperada = new Mesa
             {
                 Id = id,
-                NumeroMesa = 1,
-                
-                
-               
+                NumeroMesa = 1
             };
 
             _mesaRepositorio.ObterPorId(Arg.Is(id))
@@ -109,7 +127,7 @@ namespace Testes.Unit.Servico.Servicos
 
             // Assert
             mesa.NumeroMesa.Should().Be(mesaEsperada.NumeroMesa);
-            
+
         }
 
         [Fact]
@@ -118,13 +136,12 @@ namespace Testes.Unit.Servico.Servicos
             // Arrange
             var viewModel = new MesaEditarViewModel
             {
-                
-                NumeroMesa = 1,
+                NumeroMesa = 1
             };
 
             var mesaParaEditar = new Mesa
             {
-                NumeroMesa = 1,
+                NumeroMesa = 1
             };
 
             _mesaRepositorio
@@ -133,11 +150,6 @@ namespace Testes.Unit.Servico.Servicos
 
             // Act
             _mesaService.Editar(viewModel);
-
-           
-
-
-
         }
 
         [Fact]
@@ -156,14 +168,12 @@ namespace Testes.Unit.Servico.Servicos
             // Act
             _mesaService.Editar(viewModel);
 
-            // Assert
-           
         }
 
         private bool ValidarMesa(Mesa mesa, MesaCadastrarViewModel viewModel)
         {
             mesa.NumeroMesa.Should().Be(viewModel.NumeroMesa);
-            //raca.Especie.Should().Be(viewModel.Especie);
+            mesa.Status.Should().Be((StatusMesa)viewModel.Status);
 
             // Informar que a validação da raça foi executada com sucesso
             return true;
@@ -174,7 +184,7 @@ namespace Testes.Unit.Servico.Servicos
             MesaEditarViewModel viewModel)
         {
             mesa.NumeroMesa.Should().Be(viewModel.NumeroMesa);
-            
+
 
             return true;
         }
