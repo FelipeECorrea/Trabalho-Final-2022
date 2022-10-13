@@ -4,6 +4,7 @@ using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
 using Servico.ViewModels;
 using Servico.ViewModels.Mesa;
+using Servico.ViewModels.Pedido;
 
 namespace Servico.Servicos
 {
@@ -12,15 +13,18 @@ namespace Servico.Servicos
         private readonly IMesaRepositorio _mesaRepositorio;
         private readonly IMesaMapeamentoEntidade _mapeamentoEntidade;
         private readonly IMesaViewModelMapeamentoViewModels _mapeamentoViewModel;
+        private readonly IPedidoService _pedidoService;
 
         public MesaService(
             IMesaRepositorio mesaRepositorio,
             IMesaMapeamentoEntidade mapeamentoEntidade,
-            IMesaViewModelMapeamentoViewModels mapeamentoViewModel)
+            IMesaViewModelMapeamentoViewModels mapeamentoViewModel,
+            IPedidoService pedidoService)
         {
             _mesaRepositorio = mesaRepositorio;
             _mapeamentoEntidade = mapeamentoEntidade;
             _mapeamentoViewModel = mapeamentoViewModel;
+            _pedidoService = pedidoService;
         }
 
         public bool Apagar(int id)
@@ -30,11 +34,11 @@ namespace Servico.Servicos
 
         public Mesa Cadastrar(MesaCadastrarViewModel viewModel)
         {
-            var produto = _mapeamentoEntidade.ConstruirCom(viewModel);
+            var mesa = _mapeamentoEntidade.ConstruirCom(viewModel);
 
-            _mesaRepositorio.Cadastrar(produto);
+            _mesaRepositorio.Cadastrar(mesa);
 
-            return produto;
+            return mesa;
         }
 
         public bool Editar(MesaEditarViewModel viewModel)
@@ -51,13 +55,21 @@ namespace Servico.Servicos
             return true;
         }
 
-        public bool MesaEscolhida(int idMesa)
+        public bool MesaEscolhida(int idMesa, int idUsuario)
         {
           var mesaEscolhida =  _mesaRepositorio.ObterMesaEscolhida(idMesa);
             if (mesaEscolhida == null)
             {
                 return false;
             }
+            var pedido = new PedidoCadastrarViewModel
+            {
+                ClienteId = idUsuario,
+                MesaId = idMesa,
+                
+            };
+            _pedidoService.Cadastrar(pedido);
+            
             return true;
         }
 

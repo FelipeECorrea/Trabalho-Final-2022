@@ -42,13 +42,7 @@ namespace Aplicacao.Areas.Clientes.Controllers
 
             return View(escolhaMesa);
         }
-        [HttpGet("mesaEscolhida")]
-        public IActionResult MesaEscolhida(int idMesa)
-        {
-            _mesaService.MesaEscolhida(idMesa);
-
-            return RedirectToAction("client", "cardapio");
-        }
+       
     }
 
 

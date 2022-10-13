@@ -10,7 +10,6 @@ namespace Servico.MapeamentoViewModels
               {
                   ClienteId = Pedido.ClienteId,
                   MesaId = Pedido.MesaId,
-                  Observacao = Pedido.Observacao
               };
 
     }
