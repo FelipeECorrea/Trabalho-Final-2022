@@ -14,7 +14,7 @@ namespace Servico.Servicos
         public PedidoService(
              IPedidoRepositorio pedidoRepositorio,
              IPedidoMapeamentoEntidade mapeamentoEntidade,
-             MapeamentoViewModels.IPedidoViewModelMapeamentoViewModels _mapeamentoViewModel)
+             MapeamentoViewModels.IPedidoServiceViewModelMapeamentoViewModels _mapeamentoViewModel)
         {
             _pedidoRepositorio = pedidoRepositorio;
             _mapeamentoEntidade = mapeamentoEntidade;

@@ -1,6 +1,4 @@
-﻿
-
-using FluentAssertions;
+﻿using FluentAssertions;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
 using Repositorio.Entidades;
@@ -17,6 +15,7 @@ namespace Testes.Unit.Servico.Servicos
     public class MesaServiceTests
     {
         private readonly IMesaService _mesaService;
+        private readonly IPedidoService _pedidoService;
         private readonly IMesaRepositorio _mesaRepositorio;
         private readonly IMesaMapeamentoEntidade _mapeamentoEntidade;
         private readonly IMesaViewModelMapeamentoViewModels _mapeamentoViewModel;
@@ -29,12 +28,12 @@ namespace Testes.Unit.Servico.Servicos
             // Mock da interface que o serviço depende
             _mesaRepositorio = Substitute.For<IMesaRepositorio>();
             _mapeamentoEntidade = Substitute.For<IMesaMapeamentoEntidade>();
-            _mapeamentoViewModel = Substitute.For<IMesaViewModelMapeamentoViewModels>();
+            _pedidoService = Substitute.For<IPedidoService>();
 
             // Instancia do serviço que será testado
             _mesaService = new MesaService(_mesaRepositorio,
                 _mapeamentoEntidade,
-                _mapeamentoViewModel);
+                _mapeamentoViewModel, _pedidoService);
         }
 
         [Fact]
