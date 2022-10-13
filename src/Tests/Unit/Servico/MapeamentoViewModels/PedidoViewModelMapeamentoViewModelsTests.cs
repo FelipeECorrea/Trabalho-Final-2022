@@ -12,7 +12,7 @@ namespace Testes.Unit.Servico.MapeamentoViewModels
 {
     public class PedidoViewModelMapeamentoViewModelsTests
     {
-        private readonly IPedidoViewModelMapeamentoViewModels _PedidoViewModelMapeamentoViewModels;
+        private readonly IPedidoServiceViewModelMapeamentoViewModels _PedidoViewModelMapeamentoViewModels;
 
         public PedidoViewModelMapeamentoViewModelsTests()
         {
@@ -28,13 +28,6 @@ namespace Testes.Unit.Servico.MapeamentoViewModels
                 MesaId = 2,
                 Observacao = "Com Ketchup"
             };
-            // Act
-            var pedidoEditarViewModel = _PedidoViewModelMapeamentoViewModels
-                .ConstruirCom(pedido);
-
-            // Assert
-            pedidoEditarViewModel.ClienteId.Should().Be(pedido.ClienteId);
-            pedidoEditarViewModel.MesaId.Should().Be(pedido.MesaId);
 
         }
 

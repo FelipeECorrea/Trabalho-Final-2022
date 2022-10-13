@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using Repositorio.Entidades;
+using Repositorio.Enums;
 using Servico.MapeamentoEntidades;
+using Servico.ViewModels.Mesa;
 using Servico.ViewModels.Pedido;
 using Xunit;
 
@@ -21,19 +23,16 @@ namespace Testes.Unit.Servico.MapeamentoEntidades
             // Arrange
             var viewModel = new PedidoCadastrarViewModel
             {
-                ClienteId = 1,
-                MesaId = 2,
-                Observacao = "Com Ketchup"
+                ClienteId= 1,
+                MesaId = 1
             };
 
             // Act
-            _pedidoMapeamentoEntidade.ConstruirCom(viewModel);
+            var pedido = _pedidoMapeamentoEntidade.ConstruirCom(viewModel);
 
             // Assert
-            viewModel.ClienteId.Should().Be(viewModel.ClienteId);
-            viewModel.MesaId.Should().Be(viewModel.MesaId);
-            viewModel.Observacao.Should().Be(viewModel.Observacao);
-
+            pedido.ClienteId.Should().Be(viewModel.ClienteId);
+            pedido.MesaId.Should().Be(viewModel.MesaId);
         }
 
     }
