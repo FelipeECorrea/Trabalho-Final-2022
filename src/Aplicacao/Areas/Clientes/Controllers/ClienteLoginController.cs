@@ -8,7 +8,7 @@ using Servico.ViewModels.LoginCliente;
 namespace Aplicacao.Areas.Clientes.Controllers
 {
     [Area("Clientes")]
-    [Route("/client/ClienteLogin")]
+    [Route("ClienteLogin")]
     public class ClienteLoginController : Controller
     {
         private readonly IClienteService _clienteService;
@@ -23,26 +23,6 @@ namespace Aplicacao.Areas.Clientes.Controllers
             var viewModel = new LoginClienteViewModel();
 
             return View(viewModel);
-        }
-
-        [HttpGet("cadastrar")]
-        public ActionResult Cadastrar()
-        {
-            return View();
-        }
-
-        [HttpPost("cadastrar")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar(ClienteCadastrarViewModel viewModel)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(viewModel);
-            }
-
-            _clienteService.Cadastrar(viewModel);
-
-            return RedirectToAction("Index");
         }
 
         [HttpGet("editar")]

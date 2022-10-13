@@ -1,10 +1,9 @@
 ﻿@model List<Produto>
 
 <p class="h3">Lista de Produtos</p>
-
 <div class="row mb-3">
     <div class="text-end">
-        <a asp-action="cadastrar" class="btn btn-danger">
+        <a asp-action="cadastrar" class="btn btn-primary">
             <i class="ft-plus-square"></i> Cadastrar
         </a>
     </div>
@@ -48,7 +47,7 @@
 
             <td>@produto.Descricao</td>
             <td>
-                <a class="btn btn-warning" asp-action="editar" asp-route-id="@produto.Id">
+                    <a class="btn btn-primary" asp-action="editar" asp-route-id="@produto.Id">
                     <i class="fa-solid ft-edit"></i>
                 </a>
                 <br></br>
@@ -60,3 +59,6 @@
     }
     </tbody>
 </table>
+@section Scripts{
+    <script src="~/js/Produto/AjusteValorProduto.js"></script>
+}

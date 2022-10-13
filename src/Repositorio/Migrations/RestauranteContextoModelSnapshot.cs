@@ -29,6 +29,10 @@ namespace Repositorio.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<byte?>("Autorizacao")
+                        .HasColumnType("TINYINT")
+                        .HasColumnName("autorizacao");
+
                     b.Property<string>("Cpf")
                         .IsRequired()
                         .HasMaxLength(11)
@@ -53,6 +57,10 @@ namespace Repositorio.Migrations
                         .HasColumnType("VARCHAR(20)")
                         .HasColumnName("senha");
 
+                    b.Property<byte?>("Status")
+                        .HasColumnType("TINYINT")
+                        .HasColumnName("statusCliente");
+
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasMaxLength(11)
@@ -71,20 +79,24 @@ namespace Repositorio.Migrations
                         new
                         {
                             Id = 1,
+                            Autorizacao = (byte)0,
                             Cpf = "10437548902",
                             Email = "cristyanalexandrino.od@gmail.com",
                             Nome = "Cristyan",
                             Senha = "admin123",
+                            Status = (byte)2,
                             Telefone = "47991392902"
                         },
                         new
                         {
                             Id = 2,
-                            Cpf = "20437548902",
-                            Email = "joao@gmail.com",
-                            Nome = "João",
+                            Autorizacao = (byte)1,
+                            Cpf = "10639142990",
+                            Email = "pessoal@gmail.com",
+                            Nome = "Felipe",
                             Senha = "admin123",
-                            Telefone = "47981392902"
+                            Status = (byte)3,
+                            Telefone = "47988278800"
                         });
                 });
 
