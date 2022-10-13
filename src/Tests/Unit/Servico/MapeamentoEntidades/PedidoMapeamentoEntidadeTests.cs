@@ -22,8 +22,7 @@ namespace Testes.Unit.Servico.MapeamentoEntidades
             var viewModel = new PedidoCadastrarViewModel
             {
                 ClienteId = 1,
-                MesaId = 2,
-                Observacao = "Com Ketchup"
+                MesaId = 2
             };
 
             // Act
@@ -32,8 +31,6 @@ namespace Testes.Unit.Servico.MapeamentoEntidades
             // Assert
             viewModel.ClienteId.Should().Be(viewModel.ClienteId);
             viewModel.MesaId.Should().Be(viewModel.MesaId);
-            viewModel.Observacao.Should().Be(viewModel.Observacao);
-
         }
 
     }

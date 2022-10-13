@@ -12,7 +12,7 @@ namespace Testes.Unit.Servico.MapeamentoViewModels
 {
     public class PedidoViewModelMapeamentoViewModelsTests
     {
-        private readonly IPedidoViewModelMapeamentoViewModels _PedidoViewModelMapeamentoViewModels;
+        private readonly IPedidoServiceViewModelMapeamentoViewModels _PedidoViewModelMapeamentoViewModels;
 
         public PedidoViewModelMapeamentoViewModelsTests()
         {
