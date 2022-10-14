@@ -4,8 +4,8 @@ namespace Aplicacao.Helpers
 {
     public interface ISessao
     {
-        void CriarSessaoDoUsuario(Cliente cliente);
-        void RemoverSessaoUsuario();
+        void CriarSessaoDoUsuario<TEntidade>(TEntidade entidadeBase) where TEntidade : Usuario;
+        void RemoverSessaoUsuario<TEntidade>() where;
         Cliente BuscarSessaoDoUsuario();
     }
 }
