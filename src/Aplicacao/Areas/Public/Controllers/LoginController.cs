@@ -48,6 +48,14 @@ namespace Aplicacao.Areas.Public.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet("sair")]
+        public IActionResult Sair()
+        {
+            _sessao.RemoverSessaoUsuario();
+
+            return RedirectToAction("Index", "Home", new {Area="Public"});
+        }
+
         [HttpPost]
         public IActionResult Entrar(LoginViewModel loginViewModel)
         {
