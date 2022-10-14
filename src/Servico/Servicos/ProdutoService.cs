@@ -48,8 +48,6 @@ namespace Servico.Servicos
             if (produto == null)
                 return false;
 
-            var caminho = SalvarArquivo(viewModel, caminhoArquivos, produto.ProdutoCaminho);
-
             _mapeamentoEntidade.AtualizarCampos(produto, viewModel, caminho);
 
             _produtoRepositorio.Editar(produto);
