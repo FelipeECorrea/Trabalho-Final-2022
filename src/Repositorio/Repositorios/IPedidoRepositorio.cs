@@ -9,5 +9,6 @@ namespace Repositorio.Repositorios
         Pedido? ObterPorId(int id);
         void Editar(Pedido pedido);
         IList<Pedido> ObterTodos();
+        Pedido? ObterPorIdCliente(int idCliente);
     }
 }

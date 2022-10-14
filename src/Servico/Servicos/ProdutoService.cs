@@ -101,6 +101,18 @@ namespace Servico.Servicos
             return viewModel;
         }
 
+        public ProdutoIndexViewModel? ObterPorIdParaIndex(int id)
+        {
+            var produto = _produtoRepositorio.ObterPorId(id);
+
+            if (produto == null)
+                return null;
+
+            var viewModel = _mapeamentoViewModel.ConstruirProdutoIndexViewModelCom(produto);
+
+            return viewModel;
+        }
+
         public IList<Produto> ObterTodos() =>
 
             _produtoRepositorio.ObterTodos();

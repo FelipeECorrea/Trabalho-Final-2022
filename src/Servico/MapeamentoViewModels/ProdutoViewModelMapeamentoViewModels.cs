@@ -13,7 +13,14 @@ namespace Servico.MapeamentoViewModels
                   Valor = produto.Valor,
                   Categoria = produto.Categoria,
                   Descricao = produto.Descricao,
-                   
+              };        
+        public ProdutoIndexViewModel ConstruirProdutoIndexViewModelCom(Produto produto) =>
+              new ProdutoIndexViewModel
+              {
+                  Id = produto.Id,
+                  Nome = produto.Nome,
+                  Valor = produto.Valor,
+                  Imagem = produto.ProdutoCaminho,
               };
 
         private IList<ProdutoViewModel> ConstruirContatosCom(IList<Produto> produtos)
