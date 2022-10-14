@@ -1,5 +1,6 @@
 ﻿@using Repositorio.Entidades
 @model List<Produto>
+<link  href="~/css/style.css" rel="stylesheet" />
 
 <section id="menu" class="menu section-bg">
     <div class="container aos-init aos-animate" data-aos="fade-up">
@@ -32,11 +33,17 @@
                 </div>
                 <div class="menu-ingredients">
                     @produto.Descricao
-                        <button class="position-absolute end-0 btn btn-danger rounded-circle">+</button>
+                        <button class="position-absolute end-0 btn btn-danger rounded-circle carrinho-adicionar-produto" data-id="@produto.Id">+</button>
                 </div>
             </div>
         }
         </div>
 
+
     </div>
 </section>
+        <partial name="ProdutoPedidoModal" />
+
+   @section Scripts{
+       <script src="~/js/Cardapio/CardapioAcoes.js"></script>
+   }

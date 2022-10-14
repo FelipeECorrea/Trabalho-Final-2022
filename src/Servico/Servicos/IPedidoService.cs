@@ -11,5 +11,7 @@ namespace Servico.Servicos
         void Apagar(int id);
         Pedido ObterPorId(int id);
         IList<SelectViewModel> ObterTodosPedidos();
+        Pedido? ObterPorIdCliente(int clienteId);
+        void Atualizar(Pedido pedido);
     }
 }

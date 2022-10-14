@@ -6,5 +6,6 @@ namespace Servico.MapeamentoViewModels
     public interface IProdutoViewModelMapeamentoViewModels
     {
         ProdutoEditarViewModel ConstruirCom(Produto produto);
+        ProdutoIndexViewModel ConstruirProdutoIndexViewModelCom(Produto produto);
     }
 }
