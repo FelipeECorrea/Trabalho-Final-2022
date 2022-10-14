@@ -6,7 +6,7 @@
 
 //namespace Testes.Unit.Servico.MapeamentoEntidades
 //{
-//    public class ProdutoMapeamentoEntidadeTests 
+//    public class ProdutoMapeamentoEntidadeTests
 //    {
 
 //        private readonly IProdutoMapeamentoEntidade _produtoMapeamentoEntidade;
@@ -27,11 +27,11 @@
 //                Categoria = "Massas",
 //                Descricao = "Massa com molho",
 //                Status = 1,
-//                Arquivo = "fav.ico"
+                
 //            };
 
 //            // Act
-//            _produtoMapeamentoEntidade.ConstruirCom(ProdutoCadastrarViewModel viewModel);
+//            var produto = _produtoMapeamentoEntidade.ConstruirCom(viewModel, caminho);
 
 //            // Assert
 //            viewModel.Nome.Should().Be(viewModel.Nome);

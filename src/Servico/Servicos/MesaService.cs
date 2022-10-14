@@ -57,11 +57,11 @@ namespace Servico.Servicos
 
         public Mesa Cadastrar(MesaCadastrarViewModel viewModel)
         {
-            var produto = _mapeamentoEntidade.ConstruirCom(viewModel);
+            var mesa = _mapeamentoEntidade.ConstruirCom(viewModel);
 
-            _mesaRepositorio.Cadastrar(produto);
+            _mesaRepositorio.Cadastrar(mesa);
 
-            return produto;
+            return mesa;
         }
 
         public bool Editar(MesaEditarViewModel viewModel)

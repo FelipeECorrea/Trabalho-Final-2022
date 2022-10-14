@@ -13,7 +13,6 @@ namespace Servico.Servicos
         private readonly IProdutoRepositorio _produtoRepositorio;
         private readonly IProdutoMapeamentoEntidade _mapeamentoEntidade;
         private readonly IProdutoViewModelMapeamentoViewModels _mapeamentoViewModel;
-        private const string PastaImagens = "pets";
 
         public ProdutoService(
             IProdutoRepositorio produtoRepositorio,
@@ -48,8 +47,6 @@ namespace Servico.Servicos
 
             if (produto == null)
                 return false;
-
-            var caminho = SalvarArquivo(viewModel, caminhoArquivos, produto.ProdutoCaminho);
 
             _mapeamentoEntidade.AtualizarCampos(produto, viewModel, caminho);
 
