@@ -8,7 +8,7 @@ using Servico.ViewModels.LoginCliente;
 namespace Aplicacao.Areas.Clientes.Controllers
 {
     [Area("Clientes")]
-    [Route("ClienteLogin")]
+    [Route("ClienteEditarLogin")]
     public class ClienteLoginController : Controller
     {
         private readonly IClienteService _clienteService;

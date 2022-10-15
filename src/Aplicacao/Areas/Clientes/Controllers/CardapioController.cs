@@ -4,6 +4,7 @@ using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.PedidoDoCliente;
 using Aplicacao.Areas.Admin.Views.Shared;
+using Repositorio.Entidades;
 
 namespace Aplicacao.Areas.Clientes.Controllers
 {
@@ -42,7 +43,7 @@ namespace Aplicacao.Areas.Clientes.Controllers
         {
             var cardapio = new PedidoDoClienteCadastrarViewModel();
 
-            var cliente = _sessao.BuscarSessaoDoUsuario();
+            var cliente = _sessao.BuscarSessaoDoUsuario<Usuario>();
             cardapio.ClienteId = cliente.Id;
 
             return View(cardapio);
@@ -66,7 +67,7 @@ namespace Aplicacao.Areas.Clientes.Controllers
         [HttpGet("mesaEscolhida")]
         public IActionResult MesaEscolhida([FromQuery]int id)
         {
-            var usuarioLogado = _sessao.BuscarSessaoDoUsuario();
+            var usuarioLogado = _sessao.BuscarSessaoDoUsuario<Usuario>();
             _mesaService.MesaEscolhida(id, usuarioLogado.Id);
 
             return RedirectToAction("client", "cardapio");

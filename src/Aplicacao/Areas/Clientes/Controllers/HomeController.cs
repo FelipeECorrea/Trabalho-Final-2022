@@ -1,5 +1,6 @@
 ﻿using Aplicacao.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using Repositorio.Entidades;
 
 namespace Aplicacao.Areas.Clientes.Controllers
 {
@@ -17,7 +18,7 @@ namespace Aplicacao.Areas.Clientes.Controllers
         [HttpPost]
         public IActionResult ObterClienteLogado()
         {
-            var clienteLogado = _sessao.BuscarSessaoDoUsuario().Nome;
+            var clienteLogado = _sessao.BuscarSessaoDoUsuario<Usuario>().Nome;
             return View(clienteLogado); 
            
         }

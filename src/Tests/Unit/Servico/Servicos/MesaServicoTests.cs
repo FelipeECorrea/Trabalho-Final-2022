@@ -20,6 +20,7 @@ namespace Testes.Unit.Servico.Servicos
         private readonly IMesaRepositorio _mesaRepositorio;
         private readonly IMesaMapeamentoEntidade _mapeamentoEntidade;
         private readonly IMesaViewModelMapeamentoViewModels _mapeamentoViewModel;
+        private readonly IPedidoService _pedidoService;
 
         public MesaServiceTests()
         {
@@ -28,13 +29,15 @@ namespace Testes.Unit.Servico.Servicos
 
             // Mock da interface que o serviço depende
             _mesaRepositorio = Substitute.For<IMesaRepositorio>();
+            _pedidoService = Substitute.For<IPedidoService>();
             _mapeamentoEntidade = Substitute.For<IMesaMapeamentoEntidade>();
             _mapeamentoViewModel = Substitute.For<IMesaViewModelMapeamentoViewModels>();
 
             // Instancia do serviço que será testado
             _mesaService = new MesaService(_mesaRepositorio,
                 _mapeamentoEntidade,
-                _mapeamentoViewModel);
+                _mapeamentoViewModel,
+                _pedidoService);
         }
 
         [Fact]
