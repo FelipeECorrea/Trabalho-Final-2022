@@ -3,7 +3,7 @@ using Servico.ViewModels.Cliente;
 
 namespace Servico.MapeamentoViewModels
 {
-    public interface IClienteViewModelMapeamentoViewModel
+    public interface IClienteMapeamentoViewModel
     {
         ClienteEditarViewModel ConstruirCom(Cliente cliente);
     }

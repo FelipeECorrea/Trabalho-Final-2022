@@ -16,6 +16,7 @@ namespace Testes.Unit.Servico.Servicos
     {
         private readonly IMesaService _mesaService;
         private readonly IPedidoService _pedidoService;
+        private readonly IProdutoService _produtoService;
         private readonly IMesaRepositorio _mesaRepositorio;
         private readonly IMesaMapeamentoEntidade _mapeamentoEntidade;
         private readonly IMesaViewModelMapeamentoViewModels _mapeamentoViewModel;
@@ -29,11 +30,16 @@ namespace Testes.Unit.Servico.Servicos
             _mesaRepositorio = Substitute.For<IMesaRepositorio>();
             _mapeamentoEntidade = Substitute.For<IMesaMapeamentoEntidade>();
             _pedidoService = Substitute.For<IPedidoService>();
+            _mesaService = Substitute.For<IMesaService>();
+            _produtoService = Substitute.For<IProdutoService>();
+
 
             // Instancia do serviço que será testado
             _mesaService = new MesaService(_mesaRepositorio,
                 _mapeamentoEntidade,
-                _mapeamentoViewModel, _pedidoService);
+                _mapeamentoViewModel,
+                _pedidoService,
+                _produtoService);
         }
 
         [Fact]
