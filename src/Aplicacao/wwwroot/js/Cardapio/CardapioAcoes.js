@@ -1,4 +1,18 @@
-﻿ 
+﻿const mudarQuantidade = () => {
+    // Ações nos botões + e - da janela modal
+    seleciona('.prodInfo--qtmais').addEventListener('click', () => {
+        quantidade++
+        seleciona('.prodInfo--qt').innerHTML = quantidade
+    })
+
+    seleciona('.prodInfo--qtmenos').addEventListener('click', () => {
+        if (quantidade > 1) {
+            quantidade--
+            seleciona('.prodInfo--qt').innerHTML = quantidade
+        }
+    })
+}
+
 $('body').on('click', 'button.carrinho-adicionar-produto', (event) => {
     let element = event.target.tagName === 'I'
         ? event.target.parentElement
@@ -34,11 +48,11 @@ let PreencherModal = (id) => {
 let produtoAdicionarNoPedido = () => {
     let produtoId = document.getElementById("produto-escolhido-id").value;
     //let quantidade = document.getElementById("campo-quantidade").value;
-    let quantidade = 1;
+    let qtd = mudarQuantidade(quantidade);
 
     let dados = new FormData();
     dados.append("produtoId", produtoId);
-    dados.append("quantidade", quantidade);
+    dados.append("quantidade", qtd);
     console.log(dados);
 
     fetch('/client/cardapio/adicionarProduto', {

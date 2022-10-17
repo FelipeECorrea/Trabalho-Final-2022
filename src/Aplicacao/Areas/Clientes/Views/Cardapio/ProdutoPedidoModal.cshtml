@@ -4,29 +4,39 @@
             <div class="modal-header" style=" background: black;>
                 <h5 class="modal-title">Menu Produto</h5>
             </div>
+
             <div class="modal-body">
-                <div class="container-fluid bd-example-row" style="color: white !important">
-
-                    <div class="row">
-                        <div class="col-md-3 ms-auto col-exemple">
-                            <img id="produto-escolhido-imagem" class="img-fluid menu-img rounded-circle" alt="" src="/uploads/produtos/X-Burguer.png">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <div class="modal-body">
+                            <img id="produto-escolhido-imagem" class="img-center img-fluid menu-img rounded-circle" alt="" src="/uploads/produtos/X-Burguer.png">
                         </div>
                     </div>
+                    <div class="col"></div>
+                </div>
 
+                <div class="modal-body" style="color: white !important">
                     <div class="row">
-                        <div class="col-md-6 ms-auto col-exemple">
+                        <div class="col-8">
                             <input type="hidden" id="produto-escolhido-id">
-                            <b><span id="produto-escolhido-nome"></span> R$ <span id="produto-escolhido-valor"></span></b>
+                            <b><span id="produto-escolhido-nome"></span></b>
+                        </div>
+                        <div class="col-4">
+                            <b>Valor:</b>
+                            <b>R$ <span id="produto-escolhido-valor"></span></b>
                         </div>
                     </div>
-
+                    <div class="prodInfo--qtarea">
+                        <button class="prodInfo--qtmenos">-</button>
+                        <div class="prodInfo--qt">1</div>
+                        <button class="prodInfo--qtmais">+</button>
+                    </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="botao-finalizar-pedido">Adicionar ao Carrinho</button>
-            </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="botao-finalizar-pedido">Adicionar ao Carrinho</button>
         </div>
-    </div>
-</div>
+        </div>
     </div>
 </div>
