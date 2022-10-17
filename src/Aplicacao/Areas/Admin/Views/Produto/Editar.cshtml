@@ -1,13 +1,11 @@
 ﻿@using Servico.Helpers
 @using Produto
 @model ProdutoEditarViewModel
-{
+@{
     var produtos = ViewBag.Produtos as List<string>;
     produtos.Add(string.Empty);
     
-    var selectDosProdutos = new SelectList(produtos, string.Empty);
-   
-                    
+    var selectDosProdutos = new SelectList(produtos, string.Empty);                  
 }
 
 

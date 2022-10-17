@@ -12,6 +12,8 @@ namespace Servico.Servicos
         ProdutoEditarViewModel? ObterPorId(int id);
         IList<Produto> ObterTodos();
         IList<SelectViewModel> ObterTodosSelect2();
+        //string ConverterParaDouble(Produto produtoValor);
     }
+
 }
 

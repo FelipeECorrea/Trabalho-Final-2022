@@ -5,6 +5,7 @@ using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
 using Servico.ViewModels;
 using Servico.ViewModels.Produto;
+using System.Globalization;
 
 namespace Servico.Servicos
 {
@@ -41,7 +42,7 @@ namespace Servico.Servicos
             return produto;
 
         }
-
+    
         public bool Editar(ProdutoEditarViewModel viewModel, string caminhoArquivos)
         {
             var produto = _produtoRepositorio.ObterPorId(viewModel.Id);
@@ -123,6 +124,13 @@ namespace Servico.Servicos
 
             return selectViewModels;
         }
+
+        //public string ConverterParaDouble(Produto produtoValor)
+        //{
+        //   var valorConvertido = produtoValor.ToString();
+
+        //    return valorConvertido;
+        //}
     }
 }
 

@@ -10,7 +10,7 @@ namespace Servico.MapeamentoViewModels
               {
                   Id = produto.Id,
                   Nome = produto.Nome,
-                  Valor = produto.Valor,
+                  Valor = (decimal)produto.Valor,
                   Categoria = produto.Categoria,
                   Descricao = produto.Descricao,
               };
@@ -24,7 +24,7 @@ namespace Servico.MapeamentoViewModels
                 viewModels.Add(new ProdutoViewModel
                 {
                     Nome = produto.Nome,
-                    Valor = produto.Valor,
+                    Valor = (decimal)produto.Valor,
                     Categoria = produto.Categoria,
                     Descricao = produto.Descricao
                 });

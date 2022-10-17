@@ -12,11 +12,12 @@ namespace Servico.ViewModels.Produto
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(4, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(200, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+
         public string Nome { get; set; }
 
         [Display(Name = "Valor")]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        [Range(0, int.MaxValue, ErrorMessage = "{0} deve conter no mínimo {1}")]
+        [Range(0.00, 999.99, ErrorMessage = "{0} deve conter no mínimo {1}")]
         public decimal? Valor { get; set; }
 
         [Display(Name = "Categoria")]
