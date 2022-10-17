@@ -12,5 +12,6 @@ namespace Repositorio.Entidades
         public string ProdutoCaminho { get; set; }
         public IList<ProdutoPedido> ProdutosPedidos { get; set; }
         public StatusProduto Status { get; set; }
+         
     }
 }

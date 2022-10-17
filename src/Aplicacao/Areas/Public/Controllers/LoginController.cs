@@ -3,6 +3,8 @@ using Aplicacao.Helpers;
 using Repositorio.Entidades;
 using Servico.Servicos;
 using Servico.ViewModels.Login;
+using Servico.ViewModels.Cliente;
+using Repositorio.Enums;
 
 namespace Aplicacao.Areas.Public.Controllers
 {
@@ -22,9 +24,28 @@ namespace Aplicacao.Areas.Public.Controllers
         public IActionResult Index()
         {
             if (_sessao.BuscarSessaoDoUsuario() != null) 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home", "Clientes");
 
             return View();
+        }
+
+        [HttpGet("cadastrar")]
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
+
+        [HttpPost("cadastrar")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Cadastrar(ClienteCadastrarViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+            _clienteService.Cadastrar(viewModel);
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -41,7 +62,7 @@ namespace Aplicacao.Areas.Public.Controllers
                         if (cliente.Senha == loginViewModel.Senha)
                         {
                             _sessao.CriarSessaoDoUsuario(cliente);
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "EscolhaMesa", new {Area="Clientes"});
                         }
 
                         TempData["MensageErro"] = $"senha inválida. Por favor, tente novamente.";

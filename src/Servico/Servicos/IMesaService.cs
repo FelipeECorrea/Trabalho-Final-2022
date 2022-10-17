@@ -1,5 +1,6 @@
 ﻿using Repositorio.Entidades;
 using Servico.ViewModels;
+using Servico.ViewModels.Cardapio;
 using Servico.ViewModels.Mesa;
 
 namespace Servico.Servicos
@@ -12,5 +13,7 @@ namespace Servico.Servicos
         Mesa? ObterPorId(int id);
         IList<Mesa> ObterTodos();
         IList<SelectViewModel> ObterTodosSelect2();
+        public bool MesaEscolhida(int idMesa, int id);
+        void AdicionarProduto(CardapioAdicionarProdutoViewModel viewModel);
     }
 }

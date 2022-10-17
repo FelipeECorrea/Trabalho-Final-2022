@@ -3,25 +3,31 @@ using Aplicacao.Helpers;
 using Repositorio.Enums;
 using Servico.Servicos;
 using Servico.ViewModels.PedidoDoCliente;
+using Aplicacao.Areas.Admin.Views.Shared;
+using Servico.ViewModels.Cardapio;
 
 namespace Aplicacao.Areas.Clientes.Controllers
 {
     [Area("Clientes")]
-    [Route("/client/pedido")]
-    public class PedidoController : Controller
+    [Route("/client/cardapio")]
+    public class CardapioController : Controller
     {
         private readonly IProdutoService _produtoService;
         private readonly ISessao _sessao;
+        private readonly IMesaService _mesaService;
 
-        public PedidoController(IProdutoService produtoService, ISessao sessao)
+        public CardapioController(IProdutoService produtoService, ISessao sessao, IMesaService mesaService)
         {
             _produtoService = produtoService;
             _sessao = sessao;
+            _mesaService = mesaService;
         }
 
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            return View();
+            var produtos = _produtoService.ObterTodos();
+
+            return View(produtos);
         }
 
         [HttpGet("abrir")]
@@ -57,6 +63,27 @@ namespace Aplicacao.Areas.Clientes.Controllers
                 .GetNames<StatusProduto>()
                 .OrderBy(x => x)
                 .ToList();
+        }
+
+        [HttpGet("mesaEscolhida")]
+        public IActionResult MesaEscolhida([FromQuery] int id)
+        {
+            var usuarioLogado = _sessao.BuscarSessaoDoUsuario();
+            _mesaService.MesaEscolhida(id, usuarioLogado.Id);
+
+            return Redirect("/client/Cardapio");
+        }
+
+        [HttpPost("adicionarProduto")]
+        public IActionResult AdicionarProduto(CardapioAdicionarProdutoViewModel viewModel)
+        {
+            var usuarioLogado = _sessao.BuscarSessaoDoUsuario();
+
+
+            viewModel.ClienteId = usuarioLogado.Id;
+            _mesaService.AdicionarProduto(viewModel);
+
+            return Ok();
         }
     }
 }

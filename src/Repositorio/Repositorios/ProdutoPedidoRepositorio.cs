@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Repositorio.BancoDados;
 using Repositorio.Entidades;
+using Repositorio.Enums;
 
 namespace Repositorio.Repositorios
 {
@@ -52,5 +53,15 @@ namespace Repositorio.Repositorios
             .Include(x => x.Produto)
             .Include(x => x.Pedido)
             .ToList();
+
+        public Produto? ObterProdutoDisponivelPorId(int id)
+        {
+            var produto = _contexto.Produtos
+               .FirstOrDefault(x => x.Id == id &&
+               x.Status == StatusProduto.Disponivel);
+
+            return produto;
+        }
+
     }
 }

@@ -15,9 +15,9 @@ namespace Servico.ViewModels.Produto
 
         public string Nome { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Valor")]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        [Range(0.00, 999.99, ErrorMessage = "{0} deve conter no mínimo {1}")]
         public decimal? Valor { get; set; }
 
         [Display(Name = "Categoria")]

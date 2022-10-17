@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Repositorio.Entidades;
-
+using Repositorio.Enums;
 
 namespace Repositorio.Mapeamentos
 {
@@ -46,6 +46,15 @@ namespace Repositorio.Mapeamentos
                 .IsRequired()
             .HasColumnName("senha");
 
+            builder.Property(x => x.Status)
+                .HasColumnType("TINYINT")
+            .HasColumnName("statusCliente");
+
+            builder.Property(x => x.Autorizacao)
+                .HasColumnType("TINYINT")
+            .HasColumnName("autorizacao");
+
+
             builder.HasData(
               new Cliente
               {
@@ -54,16 +63,20 @@ namespace Repositorio.Mapeamentos
                   Telefone = "47991392902",
                   Cpf = "10437548902",
                   Email = "cristyanalexandrino.od@gmail.com",
-                  Senha = "admin123"
+                  Senha = "admin123",
+                  Status = ClienteEmMesa.Ativo,
+                  Autorizacao = ClienteEmMesa.Admin
               },
               new Cliente
               {
                   Id = 2,
-                  Nome = "João",
-                  Telefone = "47981392902",
-                  Cpf = "20437548902",
-                  Email = "joao@gmail.com",
-                  Senha = "admin123"
+                  Nome = "Felipe",
+                  Telefone = "47988278800",
+                  Cpf = "10639142990",
+                  Email = "pessoal@gmail.com",
+                  Senha = "admin123",
+                  Status = ClienteEmMesa.Inativo,
+                  Autorizacao = ClienteEmMesa.Usuario
               });
         }
     }

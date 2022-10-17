@@ -13,7 +13,8 @@ namespace Servico.Servicos
 
         public PedidoService(
              IPedidoRepositorio pedidoRepositorio,
-             IPedidoMapeamentoEntidade mapeamentoEntidade)
+             IPedidoMapeamentoEntidade mapeamentoEntidade,
+             MapeamentoViewModels.IPedidoServiceViewModelMapeamentoViewModels _mapeamentoViewModel)
         {
             _pedidoRepositorio = pedidoRepositorio;
             _mapeamentoEntidade = mapeamentoEntidade;
@@ -32,6 +33,14 @@ namespace Servico.Servicos
 
             return pedido;
         }
+
+        public Pedido ObterPorIdCliente(int idCliente)
+        {
+            var pedido = _pedidoRepositorio.ObterPorIdCliente(idCliente);
+
+            return pedido;
+        }
+
 
         public Pedido ObterPorId(int id)
         {
@@ -59,6 +68,11 @@ namespace Servico.Servicos
                 .ToList();
 
             return selectViewModel;
+        }
+
+        public void Atualizar(Pedido pedido)
+        {
+            _pedidoRepositorio.Editar(pedido);
         }
     }
 }

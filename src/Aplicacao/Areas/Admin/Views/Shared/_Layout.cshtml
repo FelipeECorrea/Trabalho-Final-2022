@@ -48,23 +48,13 @@
 <!-- END : Head-->
 <!-- BEGIN : Body-->
 
-<body class="vertical-layout vertical-menu 2-columns  navbar-sticky" data-menu="vertical-menu" data-col="2-columns">
-
+<body class="vertical-layout vertical-menu 2-columns  navbar-sticky sidebar-sm" data-menu="vertical-menu" data-col="2-columns">
     <nav class="navbar navbar-expand-lg navbar-light header-navbar navbar-fixed">
         <div class="container-fluid navbar-wrapper">
             <div class="navbar-header d-flex">
                 <div class="navbar-toggle menu-toggle d-xl-none d-block float-left align-items-center justify-content-center" data-toggle="collapse"><i class="ft-menu font-medium-3"></i></div>
                 <ul class="navbar-nav">
                     <li class="nav-item mr-2 d-none d-lg-block"><a class="nav-link apptogglefullscreen" id="navbar-fullscreen" href="javascript:;"><i class="ft-maximize font-medium-3"></i></a></li>
-                    <li class="nav-item nav-search">
-                        <a class="nav-link nav-link-search" href="javascript:"><i class="ft-search font-medium-3"></i></a>
-                        <div class="search-input">
-                            <div class="search-input-icon"><i class="ft-search font-medium-3"></i></div>
-                            <input class="input" type="text" placeholder="Explore Apex..." tabindex="0" data-search="template-search">
-                            <div class="search-input-close"><i class="ft-x font-medium-3"></i></div>
-                            <ul class="search-list"></ul>
-                        </div>
-                    </li>
                 </ul>
             </div>
             <div class="navbar-container">
@@ -99,13 +89,13 @@
 
         <!-- main menu-->
         <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
-        <div class="app-sidebar menu-fixed" data-background-color="ibiza-sunset" data-image="../../../app-assets/img/sidebar-bg/01.jpg" data-scroll-to-active="true">
+        <div class="app-sidebar menu-fixed" data-background-color="black" data-image="../../../app-assets/img/sidebar-bg/01.jpg" data-scroll-to-active="true">
             <!-- main menu header-->
             <!-- Sidebar Header starts-->
             <div class="sidebar-header">
                 <div class="logo clearfix">
-                    <a class="logo-text float-left" href="index.html">
-                        <div ><img src="~/Tema/app-assets/img/LogoDevLanches.png" class="img-fluid" alt="Dev Lanches Logo" /></div><!--<span class="text">APEX</span>-->
+                    <a class="logo-text float-left">
+                        <div class="w-75"><img src="~/Tema/app-assets/img/DevL.png" class="img-fluid" alt="Dev Lanches Logo" /></div><!--<span class="text">APEX</span>-->
                     </a><a class="nav-toggle d-none d-lg-none d-xl-block" id="sidebarToggle" href="javascript:;"><i class="toggle-icon ft-toggle-right" data-toggle="expanded"></i></a><a class="nav-close d-block d-lg-block d-xl-none" id="sidebarClose" href="javascript:;"><i class="ft-x"></i></a>
                 </div>
             </div>
@@ -158,7 +148,7 @@
                     </div>
 
                 </div>
-            </div5
+            </div>
             <!-- END : End Main Content-->
             <!-- BEGIN : Footer-->
             <!-- End : Footer-->
@@ -410,9 +400,16 @@
     <!-- BEGIN: Custom CSS-->
     <script src="~/Tema/assets/js/scripts.js"></script>
     <!-- END: Custom CSS-->
+    @section Scripts{
+        <script src="~/js/Produto/AjustarValorProduto.js"></script>
+    }
     <partial name="~/Views/_ViewImportsJavascripts.cshtml" />
 
     @await RenderSectionAsync("Scripts", required: false)
+
+
+       
+ }
 </body>
 <!-- END : Body-->
 

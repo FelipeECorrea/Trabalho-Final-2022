@@ -20,11 +20,11 @@ namespace Servico.InjecoesDependencia
             services.AddScoped<IMesaViewModelMapeamentoViewModels, MesaViewModelMapeamentoViewModels>();
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IClienteMapeamentoEntidade, ClienteMapeamentoEntidade>();
-            services.AddScoped<IClienteViewModelMapeamentoViewModel, ClienteViewModelMapeamentoViewModel>();
+            services.AddScoped<IClienteMapeamentoViewModel, ClienteViewModelMapeamentoViewModel>();
 
             services.AddScoped<IPedidoService, PedidoService>();
             services.AddScoped<IPedidoMapeamentoEntidade, PedidoMapeamentoEntidade>();
-            services.AddScoped<IPedidoViewModelMapeamentoViewModels, PedidoViewModelMapeamentoViewModels>();
+            services.AddScoped<IPedidoServiceViewModelMapeamentoViewModels, PedidoViewModelMapeamentoViewModels>();
 
             services.AddScoped<IProdutoPedidoService, ProdutoPedidoService>();
             services.AddScoped<IProdutoPedidoMapeamentoEntidade, ProdutoPedidoMapeamentoEntidade>();

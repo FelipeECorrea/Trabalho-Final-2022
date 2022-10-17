@@ -29,9 +29,10 @@
     <!-- END Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="~/Tema/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
 </head>
 
-<body class="vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
+<body class="body-login vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
 
     @if (TempData["MensageErro"] != null)
     {
@@ -40,7 +41,7 @@
             @TempData["MensageErro"]
         </div>
     }
-    
+
     <div class="wrapper">
         <div class="main-panel">
             <div class="main-content">
@@ -55,7 +56,7 @@
                                             <div class="card-body auth-img">
                                                 <div class="row m-0">
                                                     <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
-                                                        <img src="~/Tema/app-assets/img/LogoDevLanches.png" alt="" class="img-fluid" width="300" height="230">
+                                                        <img src="~/Tema/app-assets/img/DevL.png" alt="" class="img-fluid" width="300" height="230">
                                                     </div>
                                                     <div class="col-lg-6 col-12 px-4 py-3">
                                                         <h4 class="mb-2 card-title">Login</h4>
@@ -65,7 +66,8 @@
                                                         <span asp-validation-for="Senha" class="text-danger"></span>
                                                         <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha" id="senha">
                                                         <div class="d-flex justify-content-between flex-sm-row flex-column">
-                                                            <button type="submit" class="btn btn-danger btn-block"><i class="ft-log-in"></i>  Logar</a>
+                                                            <a asp-action="Cadastrar" class="btn btn-secondary mb-2 mb-sm-0">  Registrar</a>
+                                                            <button type="submit" class="btn btn-primary"><i class="ft-log-in"></i>  Logar</button>
                                                         </div>
                                                     </div>
                                                 </div>

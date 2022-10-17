@@ -10,9 +10,11 @@ namespace Servico.Servicos
         Produto Cadastrar(ProdutoCadastrarViewModel viewModel, string caminhoArquivos);
         bool Editar(ProdutoEditarViewModel viewModel, string caminhoArquivos);
         ProdutoEditarViewModel? ObterPorId(int id);
+        ProdutoIndexViewModel? ObterPorIdParaIndex(int id);
         IList<Produto> ObterTodos();
         IList<SelectViewModel> ObterTodosSelect2();
         //string ConverterParaDouble(Produto produtoValor);
+        bool ProdutoEscolhido(int idProduto);
     }
 
 }

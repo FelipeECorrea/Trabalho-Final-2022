@@ -20,19 +20,34 @@
                         <div class="col-md-6 col-12">
                             <div class="form-group mb-2">
                                 <label asp-for="Valor"></label>
-                                <input type="text" asp-for="Valor" class="form-control">
+                                <input asp-for="Valor" class="form-control">
                                 <span asp-validation-for="Valor" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-6 col-12">
+                        @*<div class="col-md-6 col-12">
                             <div class="form-group mb-2">
                                 <label asp-for="Categoria"></label>
                                 <input type="text" asp-for="Categoria" class="form-control">
                                 <span asp-validation-for="Categoria" class="text-danger"></span>
                             </div>
+                        </div>*@
+
+                        <div class="col-md-6 col-12">
+                            <div class="form-group mb-2">
+                                <label asp-for="Categoria"></label>
+                                <select type="text" asp-for="Categoria" class="form-control">
+                                    <option value="Tradicionais">Tradicionais</option>
+                                    <option value="Massas">Massas</option>
+                                    <option value="Bebidas">Bebidas</option>
+                                    <option value="Sobremesas">Sobremesas</option>
+                                    <option value="Extras">Extras</option>
+                                </select>
+                                <span asp-validation-for="Categoria" class="text-danger"></span>
+                            </div>
                         </div>
+
                         <div class="row">
                             <div class="col-12">
                                   <label asp-for="Arquivo" class="form-label">Selecione uma imagem</label>
@@ -55,3 +70,8 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="~/js/Produto/AjusteValorProduto.js"></script>
+}
+  

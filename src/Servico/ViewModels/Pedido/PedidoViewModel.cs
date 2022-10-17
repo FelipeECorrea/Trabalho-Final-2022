@@ -17,18 +17,5 @@ namespace Servico.ViewModels.Pedido
         //[MaxLength(1, ErrorMessage = "{0} deve conter no máximo {1} cliente")]
         public int MesaId { get; set; }
 
-        [Display(Name = nameof(Produto))]
-        [Required(ErrorMessage = "{0} deve conter mesa")]
-        //[MinLength(1, ErrorMessage = "{0} deve conter no mínimo {1} mesa")]
-        //[MaxLength(1, ErrorMessage = "{0} deve conter no máximo {1} mesa")]
-        public int ProdutoId { get; set; }
-
-        [Display(Name = "Quantidade")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
-        public int Quantidade { get; set; }
-
-        [Display(Name = "Observacao")]
-        [Required(ErrorMessage = "{0} deve ser preenchido")]
-        public string Observacao { get; set; }
     }
 }
