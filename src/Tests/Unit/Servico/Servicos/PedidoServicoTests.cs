@@ -2,18 +2,11 @@
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
 using Repositorio.Entidades;
-using Repositorio.Enums;
 using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
 using Servico.Servicos;
-using Servico.ViewModels.Mesa;
 using Servico.ViewModels.Pedido;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Testes.Unit.Servico.Servicos

@@ -41,7 +41,7 @@ namespace Servico.Servicos
 
         }
 
-        public bool Editar(ProdutoEditarViewModel viewModel, string caminhoArquivos)
+        public bool Editar(ProdutoEditarViewModel viewModel, string caminho)
         {
             var produto = _produtoRepositorio.ObterPorId(viewModel.Id);
 

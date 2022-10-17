@@ -2,6 +2,7 @@
 using Repositorio.Entidades;
 using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
+using Servico.MapeamentoViewModels;
 using Servico.ViewModels;
 using Servico.ViewModels.Cliente;
 
@@ -12,13 +13,25 @@ namespace Servico.Servicos
         private readonly IClienteRepositorio _clienteRepositorio;
         private readonly IClienteMapeamentoEntidade _mapeamentoEntidade;
         private readonly RestauranteContexto _contexto;
+        private IClienteRepositorio clienteRepositorio;
+        private IClienteMapeamentoEntidade clienteMapeamentoEntidade;
+        private IClienteMapeamentoViewModel clienteMapeamentoViewModel;
 
         public ClienteService(
             IClienteRepositorio clienteRepositorio,
-            IClienteMapeamentoEntidade mapeamentoEntidade)
+            IClienteMapeamentoEntidade mapeamentoEntidade,
+            RestauranteContexto contexto)
         {
             _clienteRepositorio = clienteRepositorio;
             _mapeamentoEntidade = mapeamentoEntidade;
+            _contexto = contexto;
+        }
+
+        public ClienteService(IClienteRepositorio clienteRepositorio, IClienteMapeamentoEntidade clienteMapeamentoEntidade, IClienteMapeamentoViewModel clienteMapeamentoViewModel)
+        {
+            this.clienteRepositorio = clienteRepositorio;
+            this.clienteMapeamentoEntidade = clienteMapeamentoEntidade;
+            this.clienteMapeamentoViewModel = clienteMapeamentoViewModel;
         }
 
         public bool Apagar(int id) =>
