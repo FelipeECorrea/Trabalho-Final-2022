@@ -14,9 +14,9 @@ namespace Servico.ViewModels.Produto
         [MaxLength(200, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
         public string Nome { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Valor")]
         [Required(ErrorMessage = "{0} deve ser preenchida")]
-        [Range(0, int.MaxValue , ErrorMessage = "{0} deve conter no mínimo {1}")]
         public decimal? Valor { get; set; }
 
         [Display(Name = "Categoria")]

@@ -12,7 +12,7 @@ namespace Servico.Servicos
         private readonly IClienteRepositorio _clienteRepositorio;
         private readonly IClienteMapeamentoEntidade _mapeamentoEntidade;
         private readonly RestauranteContexto _contexto;
-
+        
         public ClienteService(
             IClienteRepositorio clienteRepositorio,
             IClienteMapeamentoEntidade mapeamentoEntidade)

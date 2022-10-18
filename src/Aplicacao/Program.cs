@@ -36,13 +36,6 @@ app.UseRequestLocalization(new RequestLocalizationOptions
     SupportedUICultures = supportedCultures
 });
 
-using (var scopo = app.Services.CreateScope())
-{
-    var contexto = scopo.ServiceProvider
-        .GetService<RestauranteContexto>();
-    contexto.Database.Migrate();
-}
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

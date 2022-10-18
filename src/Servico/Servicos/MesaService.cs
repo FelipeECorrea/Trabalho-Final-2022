@@ -3,6 +3,7 @@ using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
 using Servico.ViewModels;
+using Servico.ViewModels.Cardapio;
 using Servico.ViewModels.Mesa;
 using Servico.ViewModels.Pedido;
 
@@ -14,17 +15,39 @@ namespace Servico.Servicos
         private readonly IMesaMapeamentoEntidade _mapeamentoEntidade;
         private readonly IMesaViewModelMapeamentoViewModels _mapeamentoViewModel;
         private readonly IPedidoService _pedidoService;
+        private readonly IProdutoService _produtoService;
 
         public MesaService(
             IMesaRepositorio mesaRepositorio,
             IMesaMapeamentoEntidade mapeamentoEntidade,
             IMesaViewModelMapeamentoViewModels mapeamentoViewModel,
-            IPedidoService pedidoService)
+            IPedidoService pedidoService,
+            IProdutoService produtoService)
         {
             _mesaRepositorio = mesaRepositorio;
             _mapeamentoEntidade = mapeamentoEntidade;
             _mapeamentoViewModel = mapeamentoViewModel;
             _pedidoService = pedidoService;
+            _produtoService = produtoService;
+        }
+
+        public void AdicionarProduto(CardapioAdicionarProdutoViewModel viewModel)
+        {
+            var pedido = _pedidoService.ObterPorIdCliente(viewModel.ClienteId);
+
+            if(pedido != null)
+            {
+                var produto = _produtoService.ObterPorId(viewModel.ProdutoId);
+
+                var produtoPedido = new ProdutoPedido
+                {
+                    ProdutoId = produto.Id,
+                    Quantidade = viewModel.Quantidade,
+                    Valor = viewModel.Quantidade * produto.Valor
+                };
+                pedido.ProdutosPedidos.Add(produtoPedido);
+                _pedidoService.Atualizar(pedido);
+            }
         }
 
         public bool Apagar(int id)
