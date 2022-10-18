@@ -11,6 +11,10 @@ namespace Servico.Servicos
         private readonly IProdutoPedidoRepositorio _produtoPedidoRepositorio;
         private readonly IProdutoPedidoMapeamentoEntidade _mapeamentoEntidade;
 
+        public ProdutoPedidoService()
+        {
+        }
+
         public ProdutoPedidoService(
             IProdutoPedidoRepositorio produtoPedidoRepositorio,
             IProdutoPedidoMapeamentoEntidade produtoPedidoMapeamentoEntidade)

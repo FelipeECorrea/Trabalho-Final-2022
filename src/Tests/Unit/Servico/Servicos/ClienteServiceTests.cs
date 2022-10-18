@@ -57,6 +57,7 @@ namespace Testes.Unit.Servico.Servicos
 
         }
 
+        [Fact]
         public void Test_Editar()
         {
             var cliente = new Cliente
@@ -74,9 +75,6 @@ namespace Testes.Unit.Servico.Servicos
                 Email = "marinaasc@gmail.com",
                 Cpf = "908.909.909-07"
             };
-
-
         }
-
     }
 }
