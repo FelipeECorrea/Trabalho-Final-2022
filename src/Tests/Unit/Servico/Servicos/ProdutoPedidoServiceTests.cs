@@ -24,10 +24,9 @@ namespace Testes.Unit.Servico.Servicos
             _ProdutoPedidoMapeamentoEntidade = Substitute.For<IProdutoPedidoMapeamentoEntidade>();
             _ProdutoPedidoMapeamentoViewModels = Substitute.For<IProdutoPedidoViewModelMapeamentoViewModels>();
 
-            //// Instancia do serviço que será testado
-            //_produtoPedidoService = new ProdutoPedidoService(_produtoPedidoRepositorio,
-            //    _ProdutoPedidoMapeamentoEntidade,
-            //    _ProdutoPedidoMapeamentoViewModels);
+            _produtoPedidoService = new ProdutoPedidoService(_produtoPedidoRepositorio,
+                _ProdutoPedidoMapeamentoEntidade);
+
         }
 
         [Fact]
@@ -35,6 +34,9 @@ namespace Testes.Unit.Servico.Servicos
         {
             var viewModel = new ProdutoPedidoCadastrarViewModel()
             {
+                PedidoId = 1,
+                ProdutoId = 2,
+                Quantidade = 4,
 
             };
         }

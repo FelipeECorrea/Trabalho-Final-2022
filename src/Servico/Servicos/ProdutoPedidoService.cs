@@ -17,7 +17,8 @@ namespace Servico.Servicos
 
         public ProdutoPedidoService(
             IProdutoPedidoRepositorio produtoPedidoRepositorio,
-            IProdutoPedidoMapeamentoEntidade produtoPedidoMapeamentoEntidade)
+            IProdutoPedidoMapeamentoEntidade produtoPedidoMapeamentoEntidade
+           )
         {
             _produtoPedidoRepositorio = produtoPedidoRepositorio;
             _mapeamentoEntidade = produtoPedidoMapeamentoEntidade;
