@@ -69,7 +69,7 @@ namespace Aplicacao.Areas.Clientes.Controllers
         [HttpGet("mesaEscolhida")]
         public IActionResult MesaEscolhida([FromQuery] int id)
         {
-            var usuarioLogado = _sessao.BuscarSessaoDoUsuario<Usuario>();
+            var usuarioLogado = _sessao.BuscarSessaoDoUsuario<Cliente>();
             _mesaService.MesaEscolhida(id, usuarioLogado.Id);
 
             return Redirect("/client/Cardapio");
@@ -78,7 +78,7 @@ namespace Aplicacao.Areas.Clientes.Controllers
         [HttpPost("adicionarProduto")]
         public IActionResult AdicionarProduto(CardapioAdicionarProdutoViewModel viewModel)
         {
-            var usuarioLogado = _sessao.BuscarSessaoDoUsuario<Usuario>();
+            var usuarioLogado = _sessao.BuscarSessaoDoUsuario<Cliente>();
 
 
             viewModel.ClienteId = usuarioLogado.Id;

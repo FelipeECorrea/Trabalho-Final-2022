@@ -48,7 +48,8 @@ namespace Aplicacao.Areas.Public.Controllers
         [HttpGet("sair")]
         public IActionResult Sair()
         {
-            _sessao.RemoverSessaoUsuario<Usuario>();
+            _sessao.RemoverSessaoUsuario<Cliente>();
+            _sessao.RemoverSessaoUsuario<Administrador>();
 
             return RedirectToAction("Index", "Home", new {Area="Public"});
         }

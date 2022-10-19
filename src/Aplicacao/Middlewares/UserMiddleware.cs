@@ -14,6 +14,7 @@ namespace Aplicacao.Middlewares
 
         public async Task InvokeAsync(HttpContext httpContext, ISessao sessao)
         {
+            //var area = httpContext.GetRouteData().Values["area"]?.ToString() ?? string.Empty;
             var area = httpContext.GetRouteData().Values["area"]?.ToString() ?? string.Empty;
             var action = httpContext.GetRouteData().Values["action"]?.ToString() ?? string.Empty;
             var controller = httpContext.GetRouteData().Values["controller"]?.ToString() ?? string.Empty;
@@ -21,7 +22,7 @@ namespace Aplicacao.Middlewares
             var client = sessao.BuscarSessaoDoUsuario<Cliente>();
             var administrador = sessao.BuscarSessaoDoUsuario<Administrador>();
 
-            if (IsNotAuthenticatedAndRightAcessToArea(client, area, "Cliente") ||
+            if (IsNotAuthenticatedAndRightAcessToArea(client, area, "Clientes") ||
                IsNotAuthenticatedAndRightAcessToArea(administrador, area, "Admin"))
             {
                 httpContext.Response.Redirect("/login");
@@ -37,13 +38,13 @@ namespace Aplicacao.Middlewares
             {
                 httpContext.Response.Redirect("/client");
             }
-            
+
             if (IsAuthenticatedAndRightAccessToArea(administrador, area))
             {
                 httpContext.Response.Redirect("/admin");
             }
 
-                var usuarioLogado = sessao.BuscarSessaoDoUsuario<Usuario>();
+            var usuarioLogado = sessao.BuscarSessaoDoUsuario<Usuario>();
             if (usuarioLogado != null)
             {
                 httpContext.Items.Add("UsuarioNome", usuarioLogado.Nome);

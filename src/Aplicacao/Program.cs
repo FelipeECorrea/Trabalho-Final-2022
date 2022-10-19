@@ -56,8 +56,10 @@ app.UseStaticFiles();
 
 
 app.UseSession();
-app.UseMiddleware<UserMiddleware>();
+
 app.UseRouting();
+
+app.UseMiddleware<UserMiddleware>();
 
 app.UseAuthorization();
 
@@ -68,7 +70,7 @@ app.UseEndpoints(endpoint =>
 {
     endpoint.MapAreaControllerRoute(
         name: "AreaCliente",
-        areaName: "Cliente",
+        areaName: "Clientes",
         pattern: "client/{controller=Home}/{action=Index}/{id?}");
 
     endpoint.MapAreaControllerRoute(
