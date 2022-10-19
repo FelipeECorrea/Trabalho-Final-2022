@@ -63,7 +63,7 @@ namespace Repositorio.Mapeamentos
                   Telefone = "47991392902",
                   Cpf = "10437548902",
                   Email = "cristyanalexandrino.od@gmail.com",
-                  Senha = "admin123",
+                  Senha = "admin001",
                   Status = ClienteEmMesa.Ativo,
                   Autorizacao = ClienteEmMesa.Admin
               },
@@ -74,10 +74,44 @@ namespace Repositorio.Mapeamentos
                   Telefone = "47988278800",
                   Cpf = "10639142990",
                   Email = "pessoal@gmail.com",
-                  Senha = "admin123",
+                  Senha = "admin002",
                   Status = ClienteEmMesa.Inativo,
-                  Autorizacao = ClienteEmMesa.Usuario
+                  Autorizacao = ClienteEmMesa.Admin
+              },
+              new Cliente
+              {
+                  Id = 3,
+                  Nome = "Alan",
+                  Telefone = "47996250612",
+                  Cpf = "11073394999",
+                  Email = "alan786k@gmail.com",
+                  Senha = "admin003",
+                  Status = ClienteEmMesa.Ativo,
+                  Autorizacao = ClienteEmMesa.Admin
+              },
+              new Cliente
+              {
+                  Id = 4,
+                  Nome = "Marina",
+                  Telefone = "47991785490",
+                  Cpf = "10687634507",
+                  Email = "marina@gmail.com",
+                  Senha = "admin004",
+                  Status = ClienteEmMesa.Ativo,
+                  Autorizacao = ClienteEmMesa.Admin
+              },
+              new Cliente
+              {
+                  Id = 5,
+                  Nome = "João",
+                  Telefone = "47999674309",
+                  Cpf = "10167898534",
+                  Email = "joão@gmail.com",
+                  Senha = "admin005",
+                  Status = ClienteEmMesa.Ativo,
+                  Autorizacao = ClienteEmMesa.Admin
               });
         }
     }
 }
+
