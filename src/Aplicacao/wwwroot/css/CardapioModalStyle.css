@@ -80,7 +80,7 @@ body {
     margin-left: 50px; /* This needs to be half of the width */
 }
 
-.prodInfo--qtarea {
+.qtarea {
     display: inline-flex;
     background-color: #EEE;
     border-radius: 10px;
@@ -97,7 +97,7 @@ body {
         color: #333;
     }
 
-.prodInfo--qt {
+.qtd {
     line-height: 30px;
     font-size: 12px;
     font-weight: bold;
