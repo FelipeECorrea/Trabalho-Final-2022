@@ -1,23 +1,42 @@
-﻿
-<div class="modal left fade" id="produtoPedidoModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+﻿<div class="modal left fade" id="produtoPedidoModal" tabindex="" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="nav flex-sm-column flex-row" style="color: black !important">
+        <div class="modal-content" style=" background: black; opacity: 80%;">
+            <div class="modal-header" style=" background: black;>
+                <h5 class="modal-title">Menu Produto</h5>
+            </div>
 
-                    <div class="col-lg-6 menu-item" style="position: absolute; left: 0px; top: 0px;">
-                        <img id="produto-escolhido-imagem" class="img-fluid menu-img" alt="">
-                        <div class="menu-content">
-                            <input type="hidden" id="produto-escolhido-id" />
-                            <span id="produto-escolhido-nome"></span> R$ <span id="produto-escolhido-valor"></span>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <div class="modal-body">
+                            <img id="produto-escolhido-imagem" class="img-center img-fluid menu-img rounded-circle" alt="" src="/uploads/produtos/X-Burguer.png">
                         </div>
                     </div>
+                    <div class="col"></div>
+                </div>
 
+                <div class="modal-body" style="color: white !important">
+                    <div class="row">
+                        <div class="col-8">
+                            <input type="hidden" id="produto-escolhido-id">
+                            <b><span id="produto-escolhido-nome"></span></b>
+                        </div>
+                        <div class="col-4">
+                            <b>Valor:</b>
+                            <b>R$ <span id="produto-escolhido-valor"></span></b>
+                        </div>
+                    </div>
+                    <div class="qtarea">
+                        <button class="menos">-</button>
+                        <div class="qtd">01</div>
+                        <button class="mais">+</button>
+                    </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="botao-finalizar-pedido">Adicionar Mais Produtos</button>
-            </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="botao-finalizar-pedido">Adicionar ao Carrinho</button>
+        </div>
         </div>
     </div>
 </div>
