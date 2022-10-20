@@ -3,12 +3,6 @@ using Repositorio.Entidades;
 using Repositorio.Enums;
 using Servico.MapeamentoEntidades;
 using Servico.ViewModels.Mesa;
-using Servico.ViewModels.Pedido;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Testes.Unit.Servico.MapeamentoEntidades

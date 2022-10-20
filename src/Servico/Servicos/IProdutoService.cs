@@ -13,7 +13,9 @@ namespace Servico.Servicos
         ProdutoIndexViewModel? ObterPorIdParaIndex(int id);
         IList<Produto> ObterTodos();
         IList<SelectViewModel> ObterTodosSelect2();
+        //string ConverterParaDouble(Produto produtoValor);
         bool ProdutoEscolhido(int idProduto);
     }
+
 }
 
