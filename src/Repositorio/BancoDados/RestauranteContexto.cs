@@ -11,6 +11,7 @@ namespace Repositorio.BancoDados
         public DbSet<Mesa> Mesas { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<ProdutoPedido> ProdutosPedidos { get; set; }
+        public DbSet<Administrador> Admisitradores { get; set; }
         //dotnet ef migrations add ModificarPrecisaoColunaValorTabelaProduto --project Repositorio --startup-project Aplicacao
         public RestauranteContexto(
          DbContextOptions<RestauranteContexto> options)
