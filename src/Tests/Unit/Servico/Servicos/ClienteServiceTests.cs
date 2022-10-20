@@ -67,26 +67,3 @@
 
 //        }
 
-//        public void Test_Editar()
-//        {
-//            var cliente = new Cliente
-//            {
-//                Nome = "Marina de Lima",
-//                Telefone = "(47)98411-7425",
-//                Email = "marinalimasc@gmail.com",
-//                Cpf = "909.909.909-07"
-//            };
-
-//            var clienteEditar = new ClienteEditarViewModel()
-//            {
-//                Nome = "Nina de Lima",
-//                Telefone = "(47)98811-7425",
-//                Email = "marinaasc@gmail.com",
-//                Cpf = "908.909.909-07"
-//            };
-
-
-//        }
-
-//    }
-//}
