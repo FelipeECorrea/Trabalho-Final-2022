@@ -40,6 +40,7 @@ namespace Repositorio.BancoDados
            //.HasIndex(p => new { p.Email })
            //.IsUnique(true);
             modelBuilder.ApplyConfiguration(new ClienteMapeamento());
+            modelBuilder.ApplyConfiguration(new AdministradorMapeamento());
             modelBuilder.ApplyConfiguration(new ProdutoMapeamento());
             modelBuilder.ApplyConfiguration(new MesaMapeamento());
             modelBuilder.ApplyConfiguration(new PedidoMapeamento());
