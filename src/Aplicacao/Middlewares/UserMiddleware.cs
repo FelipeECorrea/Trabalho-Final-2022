@@ -44,7 +44,7 @@ namespace Aplicacao.Middlewares
                 httpContext.Response.Redirect("/admin");
             }
 
-            var usuarioLogado = sessao.BuscarSessaoDoUsuario<Usuario>();
+            var usuarioLogado = sessao.BuscarSessaoDoUsuario<Cliente>();
             if (usuarioLogado != null)
             {
                 httpContext.Items.Add("UsuarioNome", usuarioLogado.Nome);
