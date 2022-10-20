@@ -85,3 +85,5 @@ let gerarPedido = () => {
 
 document.getElementById("botao-finalizar-pedido")
     .addEventListener("click", produtoAdicionarNoPedido);
+
+
