@@ -1,6 +1,7 @@
 ﻿@using Repositorio.Entidades
 @model List<Produto>
-<link  href="~/css/style.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<link href="~/css/CardapioModalStyle.css" />
 
 <section id="menu" class="menu section-bg">
     <div class="container aos-init aos-animate" data-aos="fade-up">
@@ -24,26 +25,32 @@
 
         <div class="row menu-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" style="position: relative; height: 600px;">
 
-        @foreach (var produto in Model)
-        {
-            <div class="col-lg-6 menu-item filter-@produto.Categoria" style="position: absolute; left: 0px; top: 0px;">
+            @foreach (var produto in Model)
+            {
+                <div class="col-lg-6 menu-item filter-@produto.Categoria" style="position: absolute; left: 0px; top: 0px;">
                     <img src="~/Uploads/Produtos/@produto.ProdutoCaminho" class="img-fluid menu-img" alt="">
-                <div class="menu-content">
-                    <a>@produto.Nome</a><span>R$: @produto.Valor</span>
-                </div>
-                <div class="menu-ingredients">
-                    @produto.Descricao
+                    <div class="menu-content">
+                        <a>@produto.Nome</a><span>R$: @produto.Valor</span>
+                    </div>
+                    <div class="menu-ingredients">
+                        @produto.Descricao
                         <button class="position-absolute end-0 btn btn-danger rounded-circle carrinho-adicionar-produto" data-id="@produto.Id">+</button>
+                    </div>
                 </div>
-            </div>
-        }
+            }
         </div>
-
-
     </div>
 </section>
-        <partial name="ProdutoPedidoModal" />
+<div class="fab" ontouchstart="">
+    <button class="main" type="button" id="pedidoCarrinho" >
 
-   @section Scripts{
-       <script src="~/js/Cardapio/CardapioAcoes.js"></script>
+    </button>
+</div>
+
+
+<partial name="CarrinhoModal" />
+<partial name="ProdutoPedidoModal" />
+
+@section Scripts{
+    <script src="~/js/Cardapio/CardapioAcoes.js"></script>
    }
