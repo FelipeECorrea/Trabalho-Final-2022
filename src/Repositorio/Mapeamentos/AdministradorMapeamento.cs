@@ -9,9 +9,9 @@ namespace Repositorio.Mapeamentos
     {
         public void Configure(EntityTypeBuilder<Administrador> builder)
         {
-            builder.ToTable("adminitrador");
+            builder.ToTable("administrador");
 
-            builder.HasKey(x => x.Id).HasName("id");
+            builder.HasKey(x => x.Id);
 
             builder.HasIndex(p => new { p.Email })
                 .IsUnique(true);

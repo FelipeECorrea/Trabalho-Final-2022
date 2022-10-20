@@ -4,27 +4,44 @@
 
 namespace Repositorio.Migrations
 {
-    public partial class AtualizarCliente : Migration
+    public partial class GerarEstruturaBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "administrador",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    telefone = table.Column<string>(type: "VARCHAR(11)", maxLength: 11, nullable: false),
+                    cpf = table.Column<string>(type: "VARCHAR(11)", maxLength: 11, nullable: false),
+                    nome = table.Column<string>(type: "VARCHAR(40)", maxLength: 40, nullable: false),
+                    email = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    senha = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_administrador", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "clientes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nome = table.Column<string>(type: "VARCHAR(40)", maxLength: 40, nullable: false),
                     telefone = table.Column<string>(type: "VARCHAR(11)", maxLength: 11, nullable: false),
                     cpf = table.Column<string>(type: "VARCHAR(11)", maxLength: 11, nullable: false),
+                    statusCliente = table.Column<byte>(type: "TINYINT", nullable: true),
+                    autorizacao = table.Column<byte>(type: "TINYINT", nullable: true),
+                    nome = table.Column<string>(type: "VARCHAR(40)", maxLength: 40, nullable: false),
                     email = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
-                    senha = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false),
-                    statusCliente = table.Column<byte>(type: "TINYINT", nullable: false),
-                    autorizacao = table.Column<byte>(type: "TINYINT", nullable: false)
+                    senha = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("id", x => x.Id);
+                    table.PrimaryKey("PK_clientes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -115,12 +132,24 @@ namespace Repositorio.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "administrador",
+                columns: new[] { "Id", "cpf", "email", "nome", "senha", "telefone" },
+                values: new object[,]
+                {
+                    { 1, "10437548902", "admin@admin.com", "ADM", "admin123", "47991392902" },
+                    { 2, "10639142990", "joaomarti755@gmail.com", "João", "admin123", "47988278800" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "clientes",
                 columns: new[] { "Id", "autorizacao", "cpf", "email", "nome", "senha", "statusCliente", "telefone" },
                 values: new object[,]
                 {
-                    { 1, (byte)0, "10437548902", "cristyanalexandrino.od@gmail.com", "Cristyan", "admin123", (byte)2, "47991392902" },
-                    { 2, (byte)1, "10639142990", "pessoal@gmail.com", "Felipe", "admin123", (byte)3, "47988278800" }
+                    { 1, (byte)0, "10437548902", "cristyanalexandrino.od@gmail.com", "Cristyan", "admin001", (byte)2, "47991392902" },
+                    { 2, (byte)0, "10639142990", "pessoal@gmail.com", "Felipe", "admin002", (byte)3, "47988278800" },
+                    { 3, (byte)0, "11073394999", "alan786k@gmail.com", "Alan", "admin003", (byte)2, "47996250612" },
+                    { 4, (byte)0, "10687634507", "marina@gmail.com", "Marina", "admin004", (byte)2, "47991785490" },
+                    { 5, (byte)0, "10167898534", "joão@gmail.com", "João", "admin005", (byte)2, "47999674309" }
                 });
 
             migrationBuilder.InsertData(
@@ -141,8 +170,17 @@ namespace Repositorio.Migrations
                 columns: new[] { "Id", "categoria", "descricao", "nome", "produto_caminho", "statusProduto", "valor" },
                 values: new object[,]
                 {
-                    { 1, "Massas", "Yakissoba de frango e legumes", "Yakissoba", "favicon.ico", (byte)1, 20.00m },
-                    { 2, "Bebidas", "Coca-cola 600ml", "Coca-cola 600ml", "favicon.ico", (byte)1, 6.00m }
+                    { 1, "Tradicionais", "X-Salada Tradicional da Casa", "X-Salada Tradicional", "X-Burguer.png", (byte)1, 19.50m },
+                    { 2, "Massas", "Yakissoba Tradicional", "Yakissoba", "yakisoba.jpg", (byte)1, 21.63m },
+                    { 3, "Sobremesas", "Pudim de Leite 400g", "Pudim de Leite", "pudim.jpg", (byte)1, 8.60m },
+                    { 4, "Extras", "Batata Rústica com Alecrim", "Batata Rústica com Alecrim", "batata-rustica.jpg", (byte)1, 14.80m },
+                    { 5, "Extras", "Batata Rústica com Alecrim", "Batata Rústica com Alecrim", "batata-rustica.jpg", (byte)1, 14.80m },
+                    { 6, "Extras", "Batata Frita - Porção Grande", "Batata Frita Grande", "batata-frita-porcao.jpg", (byte)1, 25.90m },
+                    { 7, "Tradicional", "Feijoada completa", "Feijoada", "feijoada.jpg", (byte)1, 28.90m },
+                    { 8, "Bebidas", "Pepsi Twist 600ml", "Pepsi Twist 200ml", "pepsi.jpg", (byte)1, 6.00m },
+                    { 9, "Tradicional", "Salpicão de frango", "Salpicão de Frango", "salpicao.jpg", (byte)1, 19.90m },
+                    { 10, "Tradicional", "Torta de morango - Fatia", "Torta de Morango", "torta-morango.jpg", (byte)1, 19.90m },
+                    { 11, "Bebidas", "Cerveja Stella Artois Longneck - 375ml", "Cerveja Stella Artois Longneck", "stella.jpg", (byte)1, 19.90m }
                 });
 
             migrationBuilder.InsertData(
@@ -154,6 +192,12 @@ namespace Repositorio.Migrations
                 table: "pedidos",
                 columns: new[] { "Id", "id_cliente", "id_mesa", "observacao" },
                 values: new object[] { 2, 2, 2, "Bem quente" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_administrador_email",
+                table: "administrador",
+                column: "email",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_clientes_email",
@@ -184,6 +228,9 @@ namespace Repositorio.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "administrador");
+
             migrationBuilder.DropTable(
                 name: "produtos_pedidos");
 

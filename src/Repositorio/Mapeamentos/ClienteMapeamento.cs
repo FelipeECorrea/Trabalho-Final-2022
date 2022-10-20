@@ -11,7 +11,7 @@ namespace Repositorio.Mapeamentos
         {
             builder.ToTable("clientes");
 
-            builder.HasKey(x => x.Id).HasName("id");
+            builder.HasKey(x => x.Id);
 
             builder.HasIndex(p => new { p.Email })
                 .IsUnique(true);
