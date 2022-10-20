@@ -72,12 +72,22 @@ namespace Repositorio.Mapeamentos
 
                new Produto
                {
-                   Id = 4,
+                   Id = 3,
                    Valor = 8.60m,
                    Nome = "Pudim de Leite",
                    Categoria = "Sobremesas",
                    Descricao = "Pudim de Leite 400g",
                    ProdutoCaminho = "pudim.jpg",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 4,
+                   Valor = 14.80m,
+                   Nome = "Batata Rústica com Alecrim",
+                   Categoria = "Extras",
+                   Descricao = "Batata Rústica com Alecrim",
+                   ProdutoCaminho = "batata-rustica.jpg",
                    Status = StatusProduto.Disponivel
                },
                new Produto
@@ -93,16 +103,6 @@ namespace Repositorio.Mapeamentos
                new Produto
                {
                    Id = 6,
-                   Valor = 14.80m,
-                   Nome = "Batata Rústica com Alecrim",
-                   Categoria = "Extras",
-                   Descricao = "Batata Rústica com Alecrim",
-                   ProdutoCaminho = "batata-rustica.jpg",
-                   Status = StatusProduto.Disponivel
-               },
-               new Produto
-               {
-                   Id = 7,
                    Valor = 25.90m,
                    Nome = "Batata Frita Grande",
                    Categoria = "Extras",
@@ -112,7 +112,7 @@ namespace Repositorio.Mapeamentos
                },
                 new Produto
                 {
-                    Id = 8,
+                    Id = 7,
                     Valor = 28.90m,
                     Nome = "Feijoada",
                     Categoria = "Tradicional",
@@ -123,7 +123,7 @@ namespace Repositorio.Mapeamentos
                 new Produto
                 {
 
-                    Id = 9,
+                    Id = 8,
                     Valor = 6.00m,
                     Nome = "Pepsi Twist 200ml",
                     Categoria = "Bebidas",
@@ -134,7 +134,7 @@ namespace Repositorio.Mapeamentos
                 new Produto
                 {
 
-                    Id = 10,
+                    Id = 9,
                     Valor = 19.90m,
                     Nome = "Salpicão de Frango",
                     Categoria = "Tradicional",
@@ -145,18 +145,7 @@ namespace Repositorio.Mapeamentos
                 new Produto
                 {
 
-                    Id = 11,
-                    Valor = 19.90m,
-                    Nome = "Torta de Morango",
-                    Categoria = "Tradicional",
-                    Descricao = "Torta de morango - Fatia",
-                    ProdutoCaminho = "torta-morango.jpg",
-                    Status = StatusProduto.Disponivel
-                },
-                new Produto
-                {
-
-                    Id = 11,
+                    Id = 10,
                     Valor = 19.90m,
                     Nome = "Torta de Morango",
                     Categoria = "Tradicional",
@@ -167,7 +156,7 @@ namespace Repositorio.Mapeamentos
                  new Produto
                  {
 
-                     Id = 12,
+                     Id = 11,
                      Valor = 19.90m,
                      Nome = "Cerveja Stella Artois Longneck",
                      Categoria = "Bebidas",
