@@ -3,7 +3,7 @@ using Servico.ViewModels.ProdutoPedido;
 
 namespace Servico.MapeamentoViewModels
 {
-    internal class ProdutoPedidoViewModelMapeamentoViewModels : IProdutoPedidoViewModelMapeamentoViewModels
+    public class ProdutoPedidoViewModelMapeamentoViewModels : IProdutoPedidoViewModelMapeamentoViewModels
     {
         public ProdutoPedidoViewModel ConstruirCom(ProdutoPedido produtoPedido) =>
             new ProdutoPedidoCadastrarViewModel

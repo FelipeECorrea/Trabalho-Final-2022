@@ -5,6 +5,7 @@ using Servico.MapeamentoEntidades;
 using Servico.MapeamentoViewModels;
 using Servico.ViewModels;
 using Servico.ViewModels.Produto;
+using System.Globalization;
 
 namespace Servico.Servicos
 {
@@ -135,13 +136,7 @@ namespace Servico.Servicos
 
         public bool ProdutoEscolhido(int idProduto)
         {
-            var produtoEscolhido = _produtoRepositorio.ObterPorId(idProduto);
-            if (idProduto == null)
-            {
-                return false;
-            }
-            return true;
-
+            throw new NotImplementedException();
         }
     }
 }

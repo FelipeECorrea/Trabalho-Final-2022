@@ -11,8 +11,8 @@ using Repositorio.BancoDados;
 namespace Repositorio.Migrations
 {
     [DbContext(typeof(RestauranteContexto))]
-    [Migration("20221008000431_AtualizandoProdutos")]
-    partial class AtualizandoProdutos
+    [Migration("20221020232321_AdicionarProdutos")]
+    partial class AdicionarProdutos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,6 +22,72 @@ namespace Repositorio.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Repositorio.Entidades.Administrador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("VARCHAR(11)")
+                        .HasColumnName("cpf");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR(50)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("VARCHAR(40)")
+                        .HasColumnName("nome");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("VARCHAR(20)")
+                        .HasColumnName("senha");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("VARCHAR(11)")
+                        .HasColumnName("telefone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("administrador", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Cpf = "10437548902",
+                            Email = "admin@admin.com",
+                            Nome = "ADM",
+                            Senha = "admin123",
+                            Telefone = "47991392902"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Cpf = "10639142990",
+                            Email = "joaomarti755@gmail.com",
+                            Nome = "João",
+                            Senha = "admin123",
+                            Telefone = "47988278800"
+                        });
+                });
 
             modelBuilder.Entity("Repositorio.Entidades.Cliente", b =>
                 {
@@ -69,8 +135,7 @@ namespace Repositorio.Migrations
                         .HasColumnType("VARCHAR(11)")
                         .HasColumnName("telefone");
 
-                    b.HasKey("Id")
-                        .HasName("id");
+                    b.HasKey("Id");
 
                     b.HasIndex("Email")
                         .IsUnique();
@@ -85,20 +150,53 @@ namespace Repositorio.Migrations
                             Cpf = "10437548902",
                             Email = "cristyanalexandrino.od@gmail.com",
                             Nome = "Cristyan",
-                            Senha = "admin123",
+                            Senha = "admin001",
                             Status = (byte)2,
                             Telefone = "47991392902"
                         },
                         new
                         {
                             Id = 2,
-                            Autorizacao = (byte)1,
+                            Autorizacao = (byte)0,
                             Cpf = "10639142990",
                             Email = "pessoal@gmail.com",
                             Nome = "Felipe",
-                            Senha = "admin123",
+                            Senha = "admin002",
                             Status = (byte)3,
                             Telefone = "47988278800"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Autorizacao = (byte)0,
+                            Cpf = "11073394999",
+                            Email = "alan786k@gmail.com",
+                            Nome = "Alan",
+                            Senha = "admin003",
+                            Status = (byte)2,
+                            Telefone = "47996250612"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Autorizacao = (byte)0,
+                            Cpf = "10687634507",
+                            Email = "marina@gmail.com",
+                            Nome = "Marina",
+                            Senha = "admin004",
+                            Status = (byte)2,
+                            Telefone = "47991785490"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Autorizacao = (byte)0,
+                            Cpf = "10167898534",
+                            Email = "joão@gmail.com",
+                            Nome = "João",
+                            Senha = "admin005",
+                            Status = (byte)2,
+                            Telefone = "47999674309"
                         });
                 });
 
@@ -277,16 +375,6 @@ namespace Repositorio.Migrations
                         new
                         {
                             Id = 3,
-                            Categoria = "Bebidas",
-                            Descricao = "Coca-Cola 600ml",
-                            Nome = "Coca-Cola 600ml",
-                            ProdutoCaminho = "Coca-Cola600ml.jpg",
-                            Status = (byte)1,
-                            Valor = 6.99m
-                        },
-                        new
-                        {
-                            Id = 4,
                             Categoria = "Sobremesas",
                             Descricao = "Pudim de Leite 400g",
                             Nome = "Pudim de Leite",
@@ -296,13 +384,93 @@ namespace Repositorio.Migrations
                         },
                         new
                         {
-                            Id = 5,
+                            Id = 4,
                             Categoria = "Extras",
                             Descricao = "Batata Rústica com Alecrim",
                             Nome = "Batata Rústica com Alecrim",
                             ProdutoCaminho = "batata-rustica.jpg",
                             Status = (byte)1,
+                            Valor = 12.50m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Categoria = "Extras",
+                            Descricao = "Batata Frita - Porção Media",
+                            Nome = "Batata Frita Media",
+                            ProdutoCaminho = "BatataFritaM.png",
+                            Status = (byte)1,
                             Valor = 14.80m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Categoria = "Extras",
+                            Descricao = "Batata Frita - Porção Grande",
+                            Nome = "Batata Frita Grande",
+                            ProdutoCaminho = "BatataFritaG.png",
+                            Status = (byte)1,
+                            Valor = 25.90m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Categoria = "Tradicionais",
+                            Descricao = "Feijoada Brasileirinha, Porção para 2 pessoas.",
+                            Nome = "Feijoada Brasileira",
+                            ProdutoCaminho = "FeijoadaBrasileira.png",
+                            Status = (byte)1,
+                            Valor = 28.90m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Categoria = "Bebidas",
+                            Descricao = "Pepsi Twist 200ml",
+                            Nome = "Pepsi Twist 200ml",
+                            ProdutoCaminho = "PepsiTwistLata.png",
+                            Status = (byte)1,
+                            Valor = 6.00m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Categoria = "Tradicionais",
+                            Descricao = "Salpicão de Frango",
+                            Nome = "Salpicão de Frango",
+                            ProdutoCaminho = "Salpicao-Frango.png",
+                            Status = (byte)1,
+                            Valor = 19.90m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Categoria = "Sobremesas",
+                            Descricao = "Torta de morango - Fatia",
+                            Nome = "Torta de Morango",
+                            ProdutoCaminho = "TortaMorango.png",
+                            Status = (byte)1,
+                            Valor = 14.99m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Categoria = "Bebidas",
+                            Descricao = "Pina Coloda c/ Vodka e Laranja",
+                            Nome = "Pina Coloda c/ Vodka",
+                            ProdutoCaminho = "PinaColada.png",
+                            Status = (byte)1,
+                            Valor = 16.50m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Categoria = "Bebidas",
+                            Descricao = "Cerveja Capivara Pilsen 400ml",
+                            Nome = "Cerveja Capivara Pilsen 400ml",
+                            ProdutoCaminho = "CervejaBlumenau.png",
+                            Status = (byte)1,
+                            Valor = 12.50m
                         });
                 });
 

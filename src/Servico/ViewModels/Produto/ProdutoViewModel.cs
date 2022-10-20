@@ -12,6 +12,7 @@ namespace Servico.ViewModels.Produto
         [Required(ErrorMessage = "{0} deve ser preenchido")]
         [MinLength(4, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         [MaxLength(200, ErrorMessage = "{0} deve conter no máximo {1} caracteres")]
+
         public string Nome { get; set; }
 
         [DataType(DataType.Currency)]
