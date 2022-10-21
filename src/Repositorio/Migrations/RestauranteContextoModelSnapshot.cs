@@ -388,15 +388,15 @@ namespace Repositorio.Migrations
                             Nome = "Batata Rústica com Alecrim",
                             ProdutoCaminho = "batata-rustica.jpg",
                             Status = (byte)1,
-                            Valor = 14.80m
+                            Valor = 12.50m
                         },
                         new
                         {
                             Id = 5,
                             Categoria = "Extras",
-                            Descricao = "Batata Rústica com Alecrim",
-                            Nome = "Batata Rústica com Alecrim",
-                            ProdutoCaminho = "batata-rustica.jpg",
+                            Descricao = "Batata Frita - Porção Media",
+                            Nome = "Batata Frita Media",
+                            ProdutoCaminho = "BatataFritaM.png",
                             Status = (byte)1,
                             Valor = 14.80m
                         },
@@ -406,17 +406,17 @@ namespace Repositorio.Migrations
                             Categoria = "Extras",
                             Descricao = "Batata Frita - Porção Grande",
                             Nome = "Batata Frita Grande",
-                            ProdutoCaminho = "batata-frita-porcao.jpg",
+                            ProdutoCaminho = "BatataFritaG.png",
                             Status = (byte)1,
                             Valor = 25.90m
                         },
                         new
                         {
                             Id = 7,
-                            Categoria = "Tradicional",
-                            Descricao = "Feijoada completa",
-                            Nome = "Feijoada",
-                            ProdutoCaminho = "feijoada.jpg",
+                            Categoria = "Tradicionais",
+                            Descricao = "Feijoada Brasileirinha, Porção para 2 pessoas.",
+                            Nome = "Feijoada Brasileira",
+                            ProdutoCaminho = "FeijoadaBrasileira.png",
                             Status = (byte)1,
                             Valor = 28.90m
                         },
@@ -424,41 +424,51 @@ namespace Repositorio.Migrations
                         {
                             Id = 8,
                             Categoria = "Bebidas",
-                            Descricao = "Pepsi Twist 600ml",
+                            Descricao = "Pepsi Twist 200ml",
                             Nome = "Pepsi Twist 200ml",
-                            ProdutoCaminho = "pepsi.jpg",
+                            ProdutoCaminho = "PepsiTwistLata.png",
                             Status = (byte)1,
                             Valor = 6.00m
                         },
                         new
                         {
                             Id = 9,
-                            Categoria = "Tradicional",
-                            Descricao = "Salpicão de frango",
+                            Categoria = "Tradicionais",
+                            Descricao = "Salpicão de Frango",
                             Nome = "Salpicão de Frango",
-                            ProdutoCaminho = "salpicao.jpg",
+                            ProdutoCaminho = "Salpicao-Frango.png",
                             Status = (byte)1,
                             Valor = 19.90m
                         },
                         new
                         {
                             Id = 10,
-                            Categoria = "Tradicional",
+                            Categoria = "Sobremesas",
                             Descricao = "Torta de morango - Fatia",
                             Nome = "Torta de Morango",
-                            ProdutoCaminho = "torta-morango.jpg",
+                            ProdutoCaminho = "TortaMorango.png",
                             Status = (byte)1,
-                            Valor = 19.90m
+                            Valor = 14.99m
                         },
                         new
                         {
                             Id = 11,
                             Categoria = "Bebidas",
-                            Descricao = "Cerveja Stella Artois Longneck - 375ml",
-                            Nome = "Cerveja Stella Artois Longneck",
-                            ProdutoCaminho = "stella.jpg",
+                            Descricao = "Pina Coloda c/ Vodka e Laranja",
+                            Nome = "Pina Coloda c/ Vodka",
+                            ProdutoCaminho = "PinaColada.png",
                             Status = (byte)1,
-                            Valor = 19.90m
+                            Valor = 16.50m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Categoria = "Bebidas",
+                            Descricao = "Cerveja Capivara Pilsen 400ml",
+                            Nome = "Cerveja Capivara Pilsen 400ml",
+                            ProdutoCaminho = "CervejaBlumenau.png",
+                            Status = (byte)1,
+                            Valor = 12.50m
                         });
                 });
 

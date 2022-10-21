@@ -69,7 +69,6 @@ namespace Repositorio.Mapeamentos
                    ProdutoCaminho = "yakisoba.jpg",
                    Status = StatusProduto.Disponivel
                },
-
                new Produto
                {
                    Id = 3,
@@ -83,7 +82,7 @@ namespace Repositorio.Mapeamentos
                new Produto
                {
                    Id = 4,
-                   Valor = 14.80m,
+                   Valor = 12.50m,
                    Nome = "Batata Rústica com Alecrim",
                    Categoria = "Extras",
                    Descricao = "Batata Rústica com Alecrim",
@@ -94,10 +93,10 @@ namespace Repositorio.Mapeamentos
                {
                    Id = 5,
                    Valor = 14.80m,
-                   Nome = "Batata Rústica com Alecrim",
+                   Nome = "Batata Frita Media",
                    Categoria = "Extras",
-                   Descricao = "Batata Rústica com Alecrim",
-                   ProdutoCaminho = "batata-rustica.jpg",
+                   Descricao = "Batata Frita - Porção Media",
+                   ProdutoCaminho = "BatataFritaM.png",
                    Status = StatusProduto.Disponivel
                },
                new Produto
@@ -107,64 +106,69 @@ namespace Repositorio.Mapeamentos
                    Nome = "Batata Frita Grande",
                    Categoria = "Extras",
                    Descricao = "Batata Frita - Porção Grande",
-                   ProdutoCaminho = "batata-frita-porcao.jpg",
+                   ProdutoCaminho = "BatataFritaG.png",
                    Status = StatusProduto.Disponivel
                },
-                new Produto
-                {
-                    Id = 7,
-                    Valor = 28.90m,
-                    Nome = "Feijoada",
-                    Categoria = "Tradicional",
-                    Descricao = "Feijoada completa",
-                    ProdutoCaminho = "feijoada.jpg",
-                    Status = StatusProduto.Disponivel
-                },
-                new Produto
-                {
-
-                    Id = 8,
-                    Valor = 6.00m,
-                    Nome = "Pepsi Twist 200ml",
-                    Categoria = "Bebidas",
-                    Descricao = "Pepsi Twist 600ml",
-                    ProdutoCaminho = "pepsi.jpg",
-                    Status = StatusProduto.Disponivel
-                },
-                new Produto
-                {
-
-                    Id = 9,
-                    Valor = 19.90m,
-                    Nome = "Salpicão de Frango",
-                    Categoria = "Tradicional",
-                    Descricao = "Salpicão de frango",
-                    ProdutoCaminho = "salpicao.jpg",
-                    Status = StatusProduto.Disponivel
-                },
-                new Produto
-                {
-
-                    Id = 10,
-                    Valor = 19.90m,
-                    Nome = "Torta de Morango",
-                    Categoria = "Tradicional",
-                    Descricao = "Torta de morango - Fatia",
-                    ProdutoCaminho = "torta-morango.jpg",
-                    Status = StatusProduto.Disponivel
-                },
-                 new Produto
-                 {
-
-                     Id = 11,
-                     Valor = 19.90m,
-                     Nome = "Cerveja Stella Artois Longneck",
-                     Categoria = "Bebidas",
-                     Descricao = "Cerveja Stella Artois Longneck - 375ml",
-                     ProdutoCaminho = "stella.jpg",
-                     Status = StatusProduto.Disponivel
-                 }
-               );
+               new Produto
+               {
+                   Id = 7,
+                   Valor = 28.90m,
+                   Nome = "Feijoada Brasileira",
+                   Categoria = "Tradicionais",
+                   Descricao = "Feijoada Brasileirinha, Porção para 2 pessoas.",
+                   ProdutoCaminho = "FeijoadaBrasileira.png",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 8,
+                   Valor = 6.00m,
+                   Nome = "Pepsi Twist 200ml",
+                   Categoria = "Bebidas",
+                   Descricao = "Pepsi Twist 200ml",
+                   ProdutoCaminho = "PepsiTwistLata.png",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 9,
+                   Valor = 19.90m,
+                   Nome = "Salpicão de Frango",
+                   Categoria = "Tradicionais",
+                   Descricao = "Salpicão de Frango",
+                   ProdutoCaminho = "Salpicao-Frango.png",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 10,
+                   Valor = 14.99m,
+                   Nome = "Torta de Morango",
+                   Categoria = "Sobremesas",
+                   Descricao = "Torta de morango - Fatia",
+                   ProdutoCaminho = "TortaMorango.png",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 11,
+                   Valor = 16.50m,
+                   Nome = "Pina Coloda c/ Vodka",
+                   Categoria = "Bebidas",
+                   Descricao = "Pina Coloda c/ Vodka e Laranja",
+                   ProdutoCaminho = "PinaColada.png",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 12,
+                   Valor = 12.50m,
+                   Nome = "Cerveja Capivara Pilsen 400ml",
+                   Categoria = "Bebidas",
+                   Descricao = "Cerveja Capivara Pilsen 400ml",
+                   ProdutoCaminho = "CervejaBlumenau.png",
+                   Status = StatusProduto.Disponivel
+               });
         }
     }
 }

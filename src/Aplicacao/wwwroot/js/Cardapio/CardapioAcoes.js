@@ -77,6 +77,13 @@ let produtoAdicionarNoPedido = () => {
             toastr.error("Não foi possível finalizar seu pedido")
     });
 }
+let gerarPedido = () => {
+    let produtoId = document.getElementById("listar-produtos-escolhidos").value;
+
+
+}
 
 document.getElementById("botao-finalizar-pedido")
     .addEventListener("click", produtoAdicionarNoPedido);
+
+
