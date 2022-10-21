@@ -9,4 +9,4 @@ namespace Servico.ViewModels.Cliente
         [MinLength(6, ErrorMessage = "{0} deve conter no mínimo {1} caracteres")]
         public string? Senha { get; set; }
     }
-}
+}   

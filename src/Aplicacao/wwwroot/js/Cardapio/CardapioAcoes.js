@@ -52,12 +52,11 @@ let PreencherModal = (id) => {
 
 let produtoAdicionarNoPedido = () => {
     let produtoId = document.getElementById("produto-escolhido-id").value;
-    //let quantidade = document.getElementById("campo-quantidade").value;
-    let qtd = mudarQuantidade(quantidade);
-
+    //let quantidade = document.getElementById("quantidade").value;
+    let quantidade = document.getElementById("quantidade").innerText;
     let dados = new FormData();
     dados.append("produtoId", produtoId);
-    dados.append("quantidade", qtd);
+    dados.append("quantidade", quantidade);
     console.log(dados);
 
     fetch('/client/cardapio/adicionarProduto', {
@@ -77,6 +76,13 @@ let produtoAdicionarNoPedido = () => {
             toastr.error("Não foi possível finalizar seu pedido")
     });
 }
+let gerarPedido = () => {
+    let produtoId = document.getElementById("listar-produtos-escolhidos").value;
+
+
+}
 
 document.getElementById("botao-finalizar-pedido")
     .addEventListener("click", produtoAdicionarNoPedido);
+
+

@@ -29,6 +29,7 @@
 
     <!-- Template Main CSS File -->
     <link href="~/TemaPublic/assets/css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
 
     <!-- =======================================================
     * Template Name: Restaurantly - v3.9.0
@@ -71,13 +72,8 @@
 
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-info">
-                            <h3>Restaurantly</h3>
-                            <p>
-                                A108 Adam Street <br>
-                                NY 535022, USA<br><br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
-                            </p>
+                            <h3>Dev Lanches</h3>
+                            <img src="~/Tema/app-assets/img/qr-code.png" class="img-fluid" />
                             <div class="social-links mt-3">
                                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -138,7 +134,7 @@
     </footer><!-- End Footer -->
 
     <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    @*<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>*@
 
     <!-- Vendor JS Files -->
     <script src="~/TemaPublic/assets/vendor/aos/aos.js"></script>
@@ -151,6 +147,9 @@
 
     <!-- Template Main JS File -->
     <script src="~/TemaPublic/assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="~/js/toastr-configure.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
