@@ -29,6 +29,10 @@ namespace Servico.InjecoesDependencia
             services.AddScoped<IProdutoPedidoService, ProdutoPedidoService>();
             services.AddScoped<IProdutoPedidoMapeamentoEntidade, ProdutoPedidoMapeamentoEntidade>();
             services.AddScoped<IProdutoPedidoViewModelMapeamentoViewModels, ProdutoPedidoViewModelMapeamentoViewModels>();
+            
+            services.AddScoped<IAdministradorService, AdministradorService>();
+            services.AddScoped<IAdministradorMapeamentoEntidade, AdministradorMapeamentoEntidade>();
+            services.AddScoped<IAdministradorViewModelMapeamentoViewModels, AdministradorViewModelMapeamentoViewModels>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

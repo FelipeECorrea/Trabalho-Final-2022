@@ -14,7 +14,6 @@ namespace Aplicacao.Middlewares
 
         public async Task InvokeAsync(HttpContext httpContext, ISessao sessao)
         {
-            //var area = httpContext.GetRouteData().Values["area"]?.ToString() ?? string.Empty;
             var area = httpContext.GetRouteData().Values["area"]?.ToString() ?? string.Empty;
             var action = httpContext.GetRouteData().Values["action"]?.ToString() ?? string.Empty;
             var controller = httpContext.GetRouteData().Values["controller"]?.ToString() ?? string.Empty;
@@ -48,6 +47,12 @@ namespace Aplicacao.Middlewares
             if (usuarioLogado != null)
             {
                 httpContext.Items.Add("UsuarioNome", usuarioLogado.Nome);
+            }
+
+            var adminLogado = sessao.BuscarSessaoDoUsuario<Administrador>();
+            if (adminLogado != null)
+            {
+                httpContext.Items.Add("AdminLogado", adminLogado.Nome);
             }
 
             await _next(httpContext);

@@ -9,15 +9,21 @@ using Repositorio.Enums;
 namespace Aplicacao.Areas.Public.Controllers
 {
     [Area("Public")]
+    
     [Route("/login")]
     public class LoginController : Controller
     {
         private readonly IClienteService _clienteService;
+        private readonly IAdministradorService _administradorService;
         private readonly ISessao _sessao;
 
-        public LoginController(IClienteService clienteService, ISessao sessao)
+        public LoginController(
+            IClienteService clienteService, 
+            IAdministradorService administradorService, 
+            ISessao sessao)
         {
             _clienteService = clienteService;
+            _administradorService = administradorService;
             _sessao = sessao;
         }
 
@@ -61,22 +67,40 @@ namespace Aplicacao.Areas.Public.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Cliente cliente = _clienteService.ObterPorEmail(loginViewModel.Email);
+                    var usuario = _clienteService.ObterPorEmail(loginViewModel.Email);
 
-                    if (cliente != null)
+                    if (usuario != null)
                     {
-                        if (cliente.Senha == loginViewModel.Senha)
+                        if (usuario.Senha == loginViewModel.Senha)
                         {
-                            _sessao.CriarSessaoDoUsuario(cliente);
-                            return RedirectToAction("Index", "EscolhaMesa", new {Area="Clientes"});
+                            _sessao.CriarSessaoDoUsuario(usuario);
+                            return RedirectToAction("Index", "EscolhaMesa", new { Area = "Clientes" });
                         }
 
                         TempData["MensageErro"] = $"senha inválida. Por favor, tente novamente.";
-                    }
 
-                    TempData["MensageErro"] = $"Usuário e/ou senha inválido(s). Por favor, tente novamente.";
+                        TempData["MensageErro"] = $"Usuário e/ou senha inválido(s). Por favor, tente novamente.";
+
+                        return View("Index");
+                    }
+                    var admin = _administradorService.ObterPorEmail(loginViewModel.Email);
+
+                    if (admin != null)
+                    {
+                        if (admin.Senha == loginViewModel.Senha)
+                        {
+                            _sessao.CriarSessaoDoUsuario(admin);
+                            return RedirectToAction("Index", "Home", new { Area = "Admin" });
+                        }
+
+                        TempData["MensageErro"] = $"senha inválida. Por favor, tente novamente.";
+
+                        TempData["MensageErro"] = $"Usuário e/ou senha inválido(s). Por favor, tente novamente.";
+
+                        return View("Index");
+                    }
                 }
-                return View("Index");
+                return null;
             }
             catch (Exception erro)
             {
