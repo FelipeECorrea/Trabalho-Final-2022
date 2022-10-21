@@ -32,6 +32,7 @@ namespace Testes.Unit.Servico.Servicos
             _pedidoService = Substitute.For<IPedidoService>();
             _mesaService = Substitute.For<IMesaService>();
             _produtoService = Substitute.For<IProdutoService>();
+            _mapeamentoViewModel = Substitute.For<IMesaViewModelMapeamentoViewModels>();
 
 
             // Instancia do serviço que será testado

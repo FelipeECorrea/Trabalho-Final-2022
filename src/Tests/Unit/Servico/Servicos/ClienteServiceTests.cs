@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using NSubstitute;
+using NSubstitute.ReturnsExtensions;
 using Repositorio.Entidades;
 using Repositorio.Repositorios;
 using Servico.MapeamentoEntidades;
@@ -57,6 +58,7 @@ namespace Testes.Unit.Servico.Servicos
 
         }
 
+        [Fact]
         public void Test_Editar()
         {
             var cliente = new Cliente
@@ -78,5 +80,117 @@ namespace Testes.Unit.Servico.Servicos
 
         }
 
+        [Fact]
+        public void Test_Apagar()
+        {
+            var id = 2;
+
+            _clienteService.Apagar(id);
+            _clienteRepositorio
+
+
+            .Received()
+            .Apagar(Arg.Is(2));
+        }
+
+        [Fact]
+        public void Test_ObterPorId_Cliente_Nao_Encontrado()
+        {
+            var id = 30;
+
+            _clienteRepositorio
+                .ObterPorId(Arg.Is(30))
+                .ReturnsNull();
+
+            var cliente = _clienteService.ObterPorId(id);
+
+            // Assert
+            cliente.Should().BeNull();
+
+            _clienteRepositorio
+                .Received(1)
+                .ObterPorId(Arg.Is(30));
+
+        }
+
+        [Fact]
+        public void Test_ObterPorId_Cliente_Encontrado()
+        {
+            // Arrange
+            var id = 30;
+
+            var clienteEsperado = new Cliente
+            {
+                Nome = "Marina",
+                Telefone = "(47)98411-7425",
+                Email = "marinalimasc@gmail.com",
+                Cpf = "112.428.779-82"
+
+            };
+
+            _clienteRepositorio.ObterPorId(Arg.Is(id))
+                .Returns(clienteEsperado);
+
+            // Act
+            var cliente = _clienteService.ObterPorId(id);
+
+            // Assert
+            cliente.Nome.Should().Be(clienteEsperado.Nome);
+            cliente.Telefone.Should().Be(clienteEsperado.Telefone);
+            cliente.Email.Should().Be(clienteEsperado.Email);
+            cliente.Cpf.Should().Be(clienteEsperado.Cpf);
+
+        }
+
+        [Fact]
+        public void Test_Editar_Com_Cliente_Encontrado()
+        {
+            // Arrange
+            var viewModel = new ClienteEditarViewModel
+            {
+                Nome = "Marina",
+                Telefone = "(47)98411-7425",
+                Email = "marinalimasc@gmail.com",
+                Cpf = "112.428.779-82"
+            };
+
+            var clienteParaEditar = new Cliente
+            {
+                Nome = "Marina",
+                Telefone = "(47)98411-7425",
+                Email = "marinalimasc@gmail.com",
+                Cpf = "112.428.779-82"
+            };
+
+            _clienteRepositorio
+                .ObterPorId(Arg.Is(viewModel.Id))
+                .Returns(clienteParaEditar);
+
+            // Act
+            _clienteService.Editar(viewModel);
+        }
+
+        [Fact]
+        public void Test_Editar_Sem_Cliente_Encontrado()
+        {
+            // Arrange
+            var viewModel = new ClienteEditarViewModel
+            {
+                Nome = "Marina",
+                Telefone = "(47)98411-7425",
+                Email = "marinalimasc@gmail.com",
+                Cpf = "112.428.779-82"
+            };
+
+            _clienteRepositorio
+                .ObterPorId(Arg.Is(viewModel.Id))
+                .ReturnsNull();
+
+            // Act
+            _clienteService.Editar(viewModel);
+
+        }
     }
 }
+
+
