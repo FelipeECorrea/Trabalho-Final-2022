@@ -12,7 +12,7 @@ namespace Servico.Servicos
         Administrador? ObterPorId(int id);
         IList<Administrador> Cadastrar();
         IList<SelectViewModel> ObterPorSelect2();
-        public Administrador ObterPorEmail(string Email);
+        Administrador? ObterPorEmail(string Email);
         bool SenhaValida(string senha);
     }
 }

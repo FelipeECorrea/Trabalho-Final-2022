@@ -47,7 +47,7 @@ namespace Servico.Servicos
             return true;
         }
 
-        public Administrador ObterPorEmail(string Email)
+        public Administrador? ObterPorEmail(string Email)
         {
             Administrador administrador = _administradorRepositorio.ObterPorEmail(Email);
 
