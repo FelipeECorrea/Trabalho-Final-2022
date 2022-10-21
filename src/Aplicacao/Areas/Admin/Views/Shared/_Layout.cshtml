@@ -62,18 +62,11 @@
                     <ul class="navbar-nav">
                         <li class="dropdown nav-item mr-1">
                             <a class="nav-link dropdown-toggle user-dropdown d-flex align-items-end" id="dropdownBasic2" href="javascript:;" data-toggle="dropdown">
-                                <div class="user d-md-flex d-none mr-2"><span class="text-right">John Doe</span><span class="text-right text-muted font-small-3">Available</span></div><img class="avatar" src="~/Tema/app-assets/img/portrait/small/avatar-s-1.png" alt="avatar" height="35" width="35">
+                                <div class="user d-md-flex d-none mr-2"><span class="text-right">@Context.Items["AdminLogado"]</span></div><img class="avatar" src="~/Tema/app-assets/img/portrait/small/user.jpg" alt="avatar" height="35" width="35">
                             </a>
                             <div class="dropdown-menu text-left dropdown-menu-right m-0 pb-0" aria-labelledby="dropdownBasic2">
-                                <a class="dropdown-item" href="app-chat.html">
-                                    <div class="d-flex align-items-center"><i class="ft-message-square mr-2"></i><span>Chat</span></div>
-                                </a><a class="dropdown-item" href="page-user-profile.html">
-                                    <div class="d-flex align-items-center"><i class="ft-edit mr-2"></i><span>Edit Profile</span></div>
-                                </a><a class="dropdown-item" href="app-email.html">
-                                    <div class="d-flex align-items-center"><i class="ft-mail mr-2"></i><span>My Inbox</span></div>
-                                </a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login.html">
-                                    <div class="d-flex align-items-center"><i class="ft-power mr-2"></i><span>Logout</span></div>
+                                <div class="dropdown-divider"></div><a asp-area="public" asp-controller="login" asp-action="sair" class="dropdown-item">
+                                    <div class="d-flex align-items-center"><i class="ft-power mr-2"></i><span>Sair</span></div>
                                 </a>
                             </div>
                         </li>
@@ -95,7 +88,7 @@
             <div class="sidebar-header">
                 <div class="logo clearfix">
                     <a class="logo-text float-left">
-                        <div class="w-75"><img src="~/Tema/app-assets/img/DevL.png" class="img-fluid" alt="Dev Lanches Logo" /></div><!--<span class="text">APEX</span>-->
+                        <div class="w-75"><img src="~/Tema/app-assets/img/LogoSemFundo.png" class="img-fluid" alt="Dev Lanches Logo" /></div><!--<span class="text">APEX</span>-->
                     </a><a class="nav-toggle d-none d-lg-none d-xl-block" id="sidebarToggle" href="javascript:;"><i class="toggle-icon ft-toggle-right" data-toggle="expanded"></i></a><a class="nav-close d-block d-lg-block d-xl-none" id="sidebarClose" href="javascript:;"><i class="ft-x"></i></a>
                 </div>
             </div>

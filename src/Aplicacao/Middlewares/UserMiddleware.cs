@@ -49,6 +49,12 @@ namespace Aplicacao.Middlewares
                 httpContext.Items.Add("UsuarioNome", usuarioLogado.Nome);
             }
 
+            var adminLogado = sessao.BuscarSessaoDoUsuario<Administrador>();
+            if (adminLogado != null)
+            {
+                httpContext.Items.Add("AdminLogado", adminLogado.Nome);
+            }
+
             await _next(httpContext);
         }
         private bool IsNotAuthenticatedAndRightAcessToArea(Usuario usuario, string area, string areaDesejada)
