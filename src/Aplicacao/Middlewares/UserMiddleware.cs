@@ -1,5 +1,5 @@
 ﻿using Aplicacao.Helpers;
-using System.Globalization;
+using Repositorio.Entidades;
 
 namespace Aplicacao.Middlewares
 {
@@ -12,16 +12,54 @@ namespace Aplicacao.Middlewares
             _next = next;
         }
 
-        public async Task InvokeAsync(HttpContext context , ISessao sessao)
+        public async Task InvokeAsync(HttpContext httpContext, ISessao sessao)
         {
-            var usuarioLogado = sessao.BuscarSessaoDoUsuario();
-            if (usuarioLogado != null)
+            //var area = httpContext.GetRouteData().Values["area"]?.ToString() ?? string.Empty;
+            var area = httpContext.GetRouteData().Values["area"]?.ToString() ?? string.Empty;
+            var action = httpContext.GetRouteData().Values["action"]?.ToString() ?? string.Empty;
+            var controller = httpContext.GetRouteData().Values["controller"]?.ToString() ?? string.Empty;
+
+            var client = sessao.BuscarSessaoDoUsuario<Cliente>();
+            var administrador = sessao.BuscarSessaoDoUsuario<Administrador>();
+
+            if (IsNotAuthenticatedAndRightAcessToArea(client, area, "Clientes") ||
+               IsNotAuthenticatedAndRightAcessToArea(administrador, area, "Admin"))
             {
-                context.Items.Add("UsuarioNome", usuarioLogado.Nome);
+                httpContext.Response.Redirect("/login");
+                return;
             }
 
-            // Call the next delegate/middleware in the pipeline
-            await _next(context);
+            if (area == "Public" && controller == "Login" && action == "Sair")
+            {
+                await _next(httpContext);
+            }
+
+            if (IsAuthenticatedAndRightAccessToArea(client, area))
+            {
+                httpContext.Response.Redirect("/client");
+            }
+
+            if (IsAuthenticatedAndRightAccessToArea(administrador, area))
+            {
+                httpContext.Response.Redirect("/admin");
+            }
+
+            var usuarioLogado = sessao.BuscarSessaoDoUsuario<Usuario>();
+            if (usuarioLogado != null)
+            {
+                httpContext.Items.Add("UsuarioNome", usuarioLogado.Nome);
+            }
+
+            await _next(httpContext);
+        }
+        private bool IsNotAuthenticatedAndRightAcessToArea(Usuario usuario, string area, string areaDesejada)
+        {
+            return usuario == null && area == areaDesejada;
+        }
+
+        private bool IsAuthenticatedAndRightAccessToArea(Usuario usuario, string area)
+        {
+            return usuario != null && area == "Public";
         }
     }
 }

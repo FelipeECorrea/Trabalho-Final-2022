@@ -1,6 +1,7 @@
 ﻿using Aplicacao.Areas.Clientes.Views.Cardapio;
 using Aplicacao.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using Repositorio.Entidades;
 using Servico.Servicos;
 using Servico.ViewModels.Mesa;
 using Servico.ViewModels.PedidoDoCliente;
@@ -37,7 +38,7 @@ namespace Aplicacao.Areas.Clientes.Controllers
         {
             var escolhaMesa = new MesaViewModel();
 
-            var cliente = _sessao.BuscarSessaoDoUsuario();
+            var cliente = _sessao.BuscarSessaoDoUsuario<Usuario>();
             escolhaMesa.NumeroMesa = cliente.Id;
 
             return View(escolhaMesa);

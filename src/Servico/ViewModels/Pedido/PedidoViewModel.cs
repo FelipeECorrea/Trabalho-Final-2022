@@ -17,5 +17,8 @@ namespace Servico.ViewModels.Pedido
         //[MaxLength(1, ErrorMessage = "{0} deve conter no máximo {1} cliente")]
         public int MesaId { get; set; }
 
+        [Display(Name = nameof(Observacao))]
+        public string Observacao { get; set; }
+
     }
 }

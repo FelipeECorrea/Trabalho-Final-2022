@@ -15,7 +15,7 @@ namespace Repositorio.Mapeamentos
 
             builder.Property(x => x.Valor)
                .HasColumnType("DECIMAL")
-               .HasPrecision(5,2)
+               .HasPrecision(5, 2)
                .IsRequired()
                .HasColumnName("valor");
 
@@ -50,14 +50,14 @@ namespace Repositorio.Mapeamentos
 
             builder.HasData(
                new Produto
-                {
-                    Id = 1,
-                    Valor = 19.50m,
-                    Nome = "X-Salada Tradicional",
-                    Categoria = "Tradicionais",
-                    Descricao = "X-Salada Tradicional da Casa",
-                    ProdutoCaminho = "X-Burguer.png",
-                    Status = StatusProduto.Disponivel
+               {
+                   Id = 1,
+                   Valor = 19.50m,
+                   Nome = "X-Salada Tradicional",
+                   Categoria = "Tradicionais",
+                   Descricao = "X-Salada Tradicional da Casa",
+                   ProdutoCaminho = "X-Burguer.png",
+                   Status = StatusProduto.Disponivel
                },
                new Produto
                {
@@ -69,16 +69,7 @@ namespace Repositorio.Mapeamentos
                    ProdutoCaminho = "yakisoba.jpg",
                    Status = StatusProduto.Disponivel
                },
-               new Produto
-               {
-                   Id = 3,
-                   Valor = 6.99m,
-                   Nome = "Coca-Cola 600ml",
-                   Categoria = "Bebidas",
-                   Descricao = "Coca-Cola 600ml",
-                   ProdutoCaminho = "Coca-Cola600ml.jpg",
-                   Status = StatusProduto.Disponivel
-               },
+
                new Produto
                {
                    Id = 4,
@@ -98,7 +89,92 @@ namespace Repositorio.Mapeamentos
                    Descricao = "Batata Rústica com Alecrim",
                    ProdutoCaminho = "batata-rustica.jpg",
                    Status = StatusProduto.Disponivel
-               }
+               },
+               new Produto
+               {
+                   Id = 6,
+                   Valor = 14.80m,
+                   Nome = "Batata Rústica com Alecrim",
+                   Categoria = "Extras",
+                   Descricao = "Batata Rústica com Alecrim",
+                   ProdutoCaminho = "batata-rustica.jpg",
+                   Status = StatusProduto.Disponivel
+               },
+               new Produto
+               {
+                   Id = 7,
+                   Valor = 25.90m,
+                   Nome = "Batata Frita Grande",
+                   Categoria = "Extras",
+                   Descricao = "Batata Frita - Porção Grande",
+                   ProdutoCaminho = "batata-frita-porcao.jpg",
+                   Status = StatusProduto.Disponivel
+               },
+                new Produto
+                {
+                    Id = 8,
+                    Valor = 28.90m,
+                    Nome = "Feijoada",
+                    Categoria = "Tradicional",
+                    Descricao = "Feijoada completa",
+                    ProdutoCaminho = "feijoada.jpg",
+                    Status = StatusProduto.Disponivel
+                },
+                new Produto
+                {
+
+                    Id = 9,
+                    Valor = 6.00m,
+                    Nome = "Pepsi Twist 200ml",
+                    Categoria = "Bebidas",
+                    Descricao = "Pepsi Twist 600ml",
+                    ProdutoCaminho = "pepsi.jpg",
+                    Status = StatusProduto.Disponivel
+                },
+                new Produto
+                {
+
+                    Id = 10,
+                    Valor = 19.90m,
+                    Nome = "Salpicão de Frango",
+                    Categoria = "Tradicional",
+                    Descricao = "Salpicão de frango",
+                    ProdutoCaminho = "salpicao.jpg",
+                    Status = StatusProduto.Disponivel
+                },
+                new Produto
+                {
+
+                    Id = 11,
+                    Valor = 19.90m,
+                    Nome = "Torta de Morango",
+                    Categoria = "Tradicional",
+                    Descricao = "Torta de morango - Fatia",
+                    ProdutoCaminho = "torta-morango.jpg",
+                    Status = StatusProduto.Disponivel
+                },
+                new Produto
+                {
+
+                    Id = 11,
+                    Valor = 19.90m,
+                    Nome = "Torta de Morango",
+                    Categoria = "Tradicional",
+                    Descricao = "Torta de morango - Fatia",
+                    ProdutoCaminho = "torta-morango.jpg",
+                    Status = StatusProduto.Disponivel
+                },
+                 new Produto
+                 {
+
+                     Id = 12,
+                     Valor = 19.90m,
+                     Nome = "Cerveja Stella Artois Longneck",
+                     Categoria = "Bebidas",
+                     Descricao = "Cerveja Stella Artois Longneck - 375ml",
+                     ProdutoCaminho = "stella.jpg",
+                     Status = StatusProduto.Disponivel
+                 }
                );
         }
     }

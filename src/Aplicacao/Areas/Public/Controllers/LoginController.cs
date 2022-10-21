@@ -23,9 +23,6 @@ namespace Aplicacao.Areas.Public.Controllers
 
         public IActionResult Index()
         {
-            if (_sessao.BuscarSessaoDoUsuario() != null) 
-                return RedirectToAction("Index", "Home", "Clientes");
-
             return View();
         }
 
@@ -46,6 +43,15 @@ namespace Aplicacao.Areas.Public.Controllers
             _clienteService.Cadastrar(viewModel);
 
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet("sair")]
+        public IActionResult Sair()
+        {
+            _sessao.RemoverSessaoUsuario<Cliente>();
+            _sessao.RemoverSessaoUsuario<Administrador>();
+
+            return RedirectToAction("Index", "Home", new {Area="Public"});
         }
 
         [HttpPost]
