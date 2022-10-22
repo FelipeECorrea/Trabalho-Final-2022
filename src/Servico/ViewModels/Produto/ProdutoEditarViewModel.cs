@@ -6,7 +6,7 @@ namespace Servico.ViewModels.Produto
     {
         [Display(Name = "Id")]
         [Required(ErrorMessage = "{0} deve ser preenchido")]
-        public int Id { get; set; }
+        public int Id { get; set; } = default!;
         public decimal Valor { get; set; }
         public string Categoria { get; set; }
         public string Descricao { get; set; }

@@ -134,10 +134,6 @@ namespace Servico.Servicos
             return selectViewModels;
         }
 
-        public bool ProdutoEscolhido(int idProduto)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 
