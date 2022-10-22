@@ -4,9 +4,9 @@
 
 <div class="row mb-3">
     <div class="text-end">
-        <a asp-action="cadastrar" class="btn btn-primary">
+@*        <a asp-action="cadastrar" class="btn btn-primary">
             <i class="fa-solid fa-plus"></i> Cadastrar
-        </a>
+        </a>*@
     </div>
 </div>
 
@@ -19,6 +19,7 @@
         <th>Telefone</th>
         <th>Cpf</th>
         <th>Email</th>
+        <th>Ação</th>
     </tr>
     </thead>
     <tbody>
@@ -32,11 +33,11 @@
             <td>@cliente.Cpf</td>
             <td>@cliente.Email</td>
             <td>
-                <a class="btn btn-primary" asp-action="editar" asp-route-id="@cliente.Id">
-                    <i class="fa-solid fa-pencil"></i> Editar
-                </a>
                 <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@cliente.Id">
                     <i class="fa-solid fa-trash"></i> Apagar
+                </a>
+                <a class="btn btn-warning" asp-action="editar" asp-route-id="@cliente.Id">
+                    <i class="fa-solid fa-pencil"></i> Editar
                 </a>
             </td>
         </tr>

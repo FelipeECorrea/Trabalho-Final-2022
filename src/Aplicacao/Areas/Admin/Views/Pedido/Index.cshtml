@@ -2,14 +2,6 @@
 
 <p class="h3">Lista de Pedidos</p>
 
-<div class="row mb-3">
-    <div class="text-end">
-        <a asp-action="abrir" class="btn btn-primary">
-            <i class="ft-plus-square"></i> Cadastrar
-        </a>
-    </div>
-</div>
-
 <table class="table table-striped table-bordered">
     <thead>
         <!-- Cabeçalho da tabela-->
@@ -29,9 +21,8 @@
                 <td>@pedido.ClienteId</td> <!-- Coluna específica para body-->
                 <td>@pedido.Observacao</td> <!-- Coluna específica para body-->
                 <td>
-                    <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@pedido.Id">
-                        <i class="fa-solid ft-trash"></i> Apagar
-                    </a>
+                    <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@pedido.Id">Finalizar Pedido</a>
+                    @*// Fazer Método finalizar pedido//*@
                 </td>
             </tr>
         }
