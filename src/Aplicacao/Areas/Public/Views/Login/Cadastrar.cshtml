@@ -51,10 +51,10 @@
                                         <input type="text" asp-for="Nome" class="form-control mb-2" placeholder="Nome">
                                         <label class ="tamanho-label">Telefone:</label>
                                         <span asp-validation-for="Telefone" class="text-danger"></span>
-                                        <input type="tel" asp-for="Telefone" class="form-control mb-2" placeholder="Telefone">
+                                        <input type="tel" asp-for="Telefone" id="phone_with_ddd" class="form-control mb-2" placeholder="Telefone">
                                         <label class="tamanho-label">CPF:</label>
                                         <span asp-validation-for="Cpf" class="text-danger"></span>
-                                        <input type="tel" asp-for="Cpf" class="form-control mb-2" placeholder="Cpf">
+                                        <input type="text" name="cpf" asp-for="Cpf" class="form-control mb-2" placeholder="Cpf">
                                         <label class="tamanho-label">Email:</label>
                                         <span asp-validation-for="Email" class="text-danger"></span>
                                         <input type="email" asp-for="Email" class="form-control mb-2" placeholder="Email">
@@ -76,4 +76,8 @@
             </div>
         </section>
     </form>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/jquery.mask.js"></script>
+    <script src="~/js/Mascaras/MaskCpf.js"></script>
+    <script src="~/js/Mascaras/MaskTelefone.js"></script>
 </body>
