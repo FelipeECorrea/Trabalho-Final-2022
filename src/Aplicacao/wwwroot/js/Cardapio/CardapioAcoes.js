@@ -27,6 +27,10 @@ $('body').on('click', 'button.carrinho-adicionar-produto', (event) => {
     PreencherModal(id);
 });
 
+document.getElementById("pedido-carrinho").addEventListener("click", () => {
+    PreencherModalCarrinho();
+})
+
 let PreencherModal = (id) => {
     fetch('/client/produto/obterPorId?id=' + id, {
         method: 'GET',
@@ -44,11 +48,54 @@ let PreencherModal = (id) => {
             $("#produtoPedidoModal").modal('show');
         })
         .catch((error) => {
-            toaster.error("Não foi possível carregar as informações do produto")
+            toastr.error("Não foi possível carregar as informações do produto")
             console.log(error);
         });
 
 }
+
+// PARTE DO CARRINHO
+
+let PreencherModalCarrinho = () => {
+    fetch('/client/pedido/atual', {
+        method: 'GET',
+    })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            data.forEach(function (item, index) {
+                var itemHtml = `<div class="row">
+                    <div class="col">
+                        <div class="modal-body">
+                            <img id="produto-escolhido-imagem" class="img-center img-fluid menu-img rounded-circle" alt="" src="/uploads/produtos/X-Burguer.png">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <input type="hidden" id="produto-escolhido-id">
+                        <b><span id="pedido-id-nome">${item.nome}</span></b>
+                    </div>
+                    <div class="col">
+                        <b>Valor:</b>
+                        <b>R$ <span id="produto-escolhido-valor"></span></b>
+                    </div>
+                </div>`
+                document.getElementById("carrinho-produtos").innerHTML += itemHtml;
+            });
+            //document.getElementById("pedido-id").value = data.id
+            //document.getElementById("produto-escolhido-nome").innerText = data.nome
+            //document.getElementById("produto-escolhido-valor").innerText = data.valor
+            //document.getElementById("produto-escolhido-imagem").src = "/uploads/produtos/" + data.imagem;
+            $("#PedidoModal").modal('show');
+        })
+        .catch((error) => {
+            toastr.error("Não foi possível carregar as informações os produto")
+            console.log(error);
+        });
+
+}
+
+// PARTE DO CARRINHO
 
 let produtoAdicionarNoPedido = () => {
     let produtoId = document.getElementById("produto-escolhido-id").value;
