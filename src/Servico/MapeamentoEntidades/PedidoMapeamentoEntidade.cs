@@ -11,7 +11,7 @@ namespace Servico.MapeamentoEntidades
           ClienteId = viewModel.ClienteId,
           MesaId = viewModel.MesaId,
           ProdutosPedidos = new List<ProdutoPedido>(),
-          Observacao = "Asdhasudasudhausi"
+          Observacao = "Novo Pedido"
           
       };
     }

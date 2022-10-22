@@ -14,7 +14,7 @@
     <!-- Cabeçalho da tabela-->
     <tr>
         <!-- Linha da tabela-->
-        <th>Imagens</th> <!-- Coluna específica do cabeçalho-->
+        <th>Imagem</th> <!-- Coluna específica do cabeçalho-->
         <th>Nome</th> <!-- Coluna específica do cabeçalho-->
         <th>Valor</th>
         <th>Status</th>
@@ -38,7 +38,6 @@
                 @if (produto.Status == Repositorio.Enums.StatusProduto.Disponivel)
                 {
                     <td><span class="badge badge-success">@produto.Status</span></td>
-
                 }
                 else
                 {
@@ -47,12 +46,11 @@
 
             <td>@produto.Descricao</td>
             <td>
-                    <a class="btn btn-primary" asp-action="editar" asp-route-id="@produto.Id">
-                    <i class="fa-solid ft-edit"></i>
-                </a>
-                <br></br>
-                <a class="btn btn-danger" asp-action="apagar" asp-route-id="@produto.Id">
+                <a class="btn btn-outline-danger" asp-action="apagar" asp-route-id="@produto.Id">
                     <i class="fa-solid ft-trash"></i>
+                </a>
+                    <a class="btn btn-warning" asp-action="editar" asp-route-id="@produto.Id">
+                    <i class="fa-solid ft-edit"></i>
                 </a>
             </td>
         </tr>

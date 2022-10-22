@@ -68,7 +68,7 @@ let PreencherModalCarrinho = () => {
                 var itemHtml = `<div class="row">
                     <div class="col">
                         <div class="modal-body">
-                            <img id="produto-escolhido-imagem" class="img-center img-fluid menu-img rounded-circle" alt="" src="/uploads/produtos/X-Burguer.png">
+                            <img id="produto-escolhido-imagem" class="img-centerCarrinho img-fluid menu-img rounded-circle" alt="" src="/uploads/produtos/${item.imagem}">
                         </div>
                     </div>
                     <div class="col">
@@ -77,15 +77,11 @@ let PreencherModalCarrinho = () => {
                     </div>
                     <div class="col">
                         <b>Valor:</b>
-                        <b>R$ <span id="produto-escolhido-valor"></span></b>
+                        <b>R$ <span id="produto-escolhido-valor">${item.valor}</span></b>
                     </div>
                 </div>`
                 document.getElementById("carrinho-produtos").innerHTML += itemHtml;
             });
-            //document.getElementById("pedido-id").value = data.id
-            //document.getElementById("produto-escolhido-nome").innerText = data.nome
-            //document.getElementById("produto-escolhido-valor").innerText = data.valor
-            //document.getElementById("produto-escolhido-imagem").src = "/uploads/produtos/" + data.imagem;
             $("#PedidoModal").modal('show');
         })
         .catch((error) => {

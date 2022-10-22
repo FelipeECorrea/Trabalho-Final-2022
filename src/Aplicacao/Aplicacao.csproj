@@ -6,10 +6,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Aplicacao</RootNamespace>
   </PropertyGroup>
-	
+
   <ItemGroup>
-    <Folder Include="InjecoesDependencia\" />
-    <Folder Include="TagHelpers\" />
+    <Compile Remove="InjecoesDependencia\**" />
+    <Compile Remove="TagHelpers\**" />
+    <Content Remove="InjecoesDependencia\**" />
+    <Content Remove="TagHelpers\**" />
+    <EmbeddedResource Remove="InjecoesDependencia\**" />
+    <EmbeddedResource Remove="TagHelpers\**" />
+    <None Remove="InjecoesDependencia\**" />
+    <None Remove="TagHelpers\**" />
   </ItemGroup>
   
 	<PropertyGroup>
@@ -29,11 +35,6 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
 		<PackageReference Include="Font.Awesome" Version="5.15.4" />
 		<PackageReference Include="toastr" Version="2.1.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="InjecoesDependencia\" />
-		<Folder Include="TagHelpers\" />
 	</ItemGroup>
 
 	<ItemGroup>
