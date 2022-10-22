@@ -74,5 +74,20 @@ namespace Servico.Servicos
         {
             _pedidoRepositorio.Editar(pedido);
         }
+
+        public List<PedidoItemViewModel> ObterPedidoAtual(int id)
+        {
+            var pedido = _pedidoRepositorio.ObterPorIdCliente(id);
+
+            return pedido.ProdutosPedidos
+                .Select(x => new PedidoItemViewModel
+                {
+                    Imagem = x.Produto.ProdutoCaminho,
+                    Nome = x.Produto.Nome,
+                    Quantidade = x.Quantidade,
+                    Valor = x.Valor
+                })
+                .ToList();
+        }
     }
 }

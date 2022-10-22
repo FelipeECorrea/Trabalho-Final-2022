@@ -50,6 +50,8 @@ namespace Repositorio.Repositorios
         public Pedido? ObterPorIdCliente(int idCliente) =>
             _contexto.Pedidos
             .Include(x => x.ProdutosPedidos)
+            .ThenInclude(x => x.Produto)
+            .OrderByDescending(x => x.Id)
             .FirstOrDefault(x => x.ClienteId == idCliente);
     }
 }
