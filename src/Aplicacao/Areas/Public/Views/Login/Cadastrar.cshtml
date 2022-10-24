@@ -31,51 +31,54 @@
 
 <body class="body-login" >
     <div class="limiter">
-        <div class="body-login" style="background-image: url('Tema/app-assets/img/fundo.jpg');"
-    <form asp-area="Public" asp-controller="Login" asp-action="Cadastrar" method="POST">
-        <section id="regestration" class="auth-height">
-            <div class="row full-height-vh m-0">
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    <div class="card overflow-hidden">
-                        <div class="card-content">
-                            <div class="card-body auth-img">
-                                <div class="row m-0">
-                                    <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center text-center auth-img-bg py-2">
-                                        <img src="~/Tema/app-assets/img/gallery/register.png" alt="" class="img-fluid" width="350" height="230">
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 px-4 py-3">
-                                        <h4 class="card-title mb-2">Criar Conta</h4>
-                                        <p>Não tem uma conta? Cadastre-se.</p>
-                                        <label class="tamanho-label">Nome:</label>
-                                        <span asp-validation-for="Nome" class="text-danger"></span>
-                                        <input type="text" asp-for="Nome" class="form-control mb-2" placeholder="Nome">
-                                        <label class ="tamanho-label">Telefone:</label>
-                                        <span asp-validation-for="Telefone" class="text-danger"></span>
-                                        <input type="tel" asp-for="Telefone" id="phone_with_ddd" class="form-control mb-2" placeholder="Telefone">
-                                        <label class="tamanho-label">CPF:</label>
-                                        <span asp-validation-for="Cpf" class="text-danger"></span>
-                                        <input type="text" name="cpf" asp-for="Cpf" class="form-control mb-2" placeholder="Cpf">
-                                        <label class="tamanho-label">Email:</label>
-                                        <span asp-validation-for="Email" class="text-danger"></span>
-                                        <input type="email" asp-for="Email" class="form-control mb-2" placeholder="Email">
-                                        <label class="tamanho-label">Senha:</label>
-                                        <span asp-validation-for="Senha" class="text-danger"></span>
-                                        <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha">
-                                        <label class="tamanho-label">Confirme sua senha:</label>
-                                        <input type="password" class="form-control mb-2" placeholder="Confirmar Senha">
-                                        <div class="d-flex justify-content-between flex-sm-row flex-column">
-                                            <a asp-action="Index" type="button" class="btn btn-secondary mb-2 mb-sm-0"><i class="ft-check-square mr-1"></i>Voltar para Login</a>
-                                            <button type="submit" class="btn btn-primary"><i class="ft-x mr-1"></i>Registrar</button>
+        <div class="body-login" style="background-image: url('Tema/app-assets/img/fundo.jpg');">
+            <form asp-area="Public" asp-controller="Login" asp-action="Cadastrar" method="POST">
+                <section id="regestration" class="auth-height">
+                    <div class="row full-height-vh m-0">
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+                            <div class="card overflow-hidden">
+                                <div class="card-content">
+                                    <div class="card-body auth-img">
+                                        <div class="row m-0">
+                                            <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center text-center auth-img-bg py-2">
+                                                <img src="~/Tema/app-assets/img/gallery/register.png" alt="" class="img-fluid" width="350" height="230">
+                                            </div>
+                                            <div class="col-lg-6 col-md-12 px-4 py-3">
+                                                <h4 class="card-title mb-2">Criar Conta</h4>
+                                                <p>Não tem uma conta? Cadastre-se.</p>
+                                                <label class="tamanho-label">Nome:</label>
+                                                <span asp-validation-for="Nome" class="text-danger"></span>
+                                                <input type="text" asp-for="Nome" class="form-control mb-2" placeholder="Nome">
+                                                <label class ="tamanho-label">Telefone:</label>
+                                                <span asp-validation-for="Telefone" class="text-danger"></span>
+                                                <input type="text" asp-for="Telefone" id="phone_with_ddd" class="form-control mb-2" placeholder="Telefone"> 
+                                                <label class="tamanho-label">CPF:</label>
+                                                <span asp-validation-for="Cpf" class="text-danger"></span>
+                                                <input type="text" asp-for="Cpf"  id="Cpf" class="form-control mb-2" placeholder="Cpf">
+                                                <label class="tamanho-label">Email:</label>
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                                <input type="email" asp-for="Email" class="form-control mb-2" placeholder="Email">
+                                                <label class="tamanho-label">Senha:</label>
+                                                <span asp-validation-for="Senha" class="text-danger"></span>
+                                                <input type="password" asp-for="Senha" class="form-control mb-2" placeholder="Senha">
+                                                <label class="tamanho-label">Confirme sua senha:</label>
+                                                <input type="password" class="form-control mb-2" placeholder="Confirmar Senha">
+                                                <div class="d-flex justify-content-between flex-sm-row flex-column">
+                                                    <a asp-action="Index" class="btn btn-secondary mb-2 mb-sm-0"><i class="ft-check-square mr-1"></i>Voltar para Login</a>
+                                                    <button type="submit" class="btn btn-primary"><i class="ft-x mr-1"></i>Registrar</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </form>
+                </section>
+            </form>
+        </div>
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/jquery.mask.js"></script>
     <script src="~/js/Mascaras/MaskCpf.js"></script>

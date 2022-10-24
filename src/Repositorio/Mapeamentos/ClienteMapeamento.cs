@@ -24,13 +24,13 @@ namespace Repositorio.Mapeamentos
 
             builder.Property(x => x.Telefone)
                 .HasColumnType("VARCHAR")
-                .HasMaxLength(11)
+                .HasMaxLength(14)
                 .IsRequired()
                 .HasColumnName("telefone");
 
             builder.Property(x => x.Cpf)
                 .HasColumnType("VARCHAR")
-                .HasMaxLength(11)
+                .HasMaxLength(14)
                 .IsRequired()
                 .HasColumnName("cpf");
 
