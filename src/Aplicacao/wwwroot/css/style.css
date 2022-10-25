@@ -49,20 +49,11 @@
 }
 
 .body-login {
-    width: 100%;
-    min-height: 100vh;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+    background-image: url("/TemaPublic/assets/img/fundo-food.jpg");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover
+    background-size: cover;
+
+
 }
 
 .limiter{
