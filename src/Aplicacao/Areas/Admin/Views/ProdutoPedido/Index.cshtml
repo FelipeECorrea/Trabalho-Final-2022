@@ -7,6 +7,7 @@
         <tr>
             <th>Imagen</th>
             <th>Pedido</th>
+            <th>Mesa</th>
             <th>Produto</th>
             <th>Quantidade</th>
             <th>Valor</th>
@@ -21,6 +22,7 @@
 
                 <td><img src="~/Uploads/Produtos/@produtoPedido.Produto.ProdutoCaminho" alt="product" style="height: 75px;"></td>
                 <td>@produtoPedido.PedidoId</td>
+                <td>@produtoPedido.Pedido.MesaId</td>
                 <td>@produtoPedido.Produto.Nome</td>
                 <td>@produtoPedido.Quantidade</td>
                 <td>@produtoPedido.Valor</td>
