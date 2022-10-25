@@ -48,11 +48,11 @@
         {
             @if (mesa.Status == Repositorio.Enums.StatusMesa.Desocupado)
             {
-                <div class="col-lg-3 p-3 menu-item filter-starters">
+                <div class="col-lg-3 p-3 menu-item filter-starters border-0">
                     <div>
-                        <a class="btn btn-success" asp-controller="Cardapio" asp-action="MesaEscolhida" asp-route-id="@mesa.Id">
+                        <a class="btn btn-success border-0" asp-controller="Cardapio" asp-action="MesaEscolhida" asp-route-id="@mesa.Id">
 
-                            <div class="card card-inverse bg-success">
+                            <div class="card card-inverse bg-success border-0">
                                                     <div class="card-content">
                                               <div class="card-body">
                                          <div class="media">
@@ -70,17 +70,17 @@
             }
             else
             {
-                <div class="p-3">
+                <div class="p-3 border-0">
                     <div>
-                        <div class="card card-inverse bg-danger">
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <div class="media">
-                                        <div class="media-body text-left">
+                        <div class="card card-inverse bg-danger border-0">
+                            <div class="card-content border-0">
+                                <div class="card-body border-0">
+                                    <div class="media border-0">
+                                        <div class="media-body text-left border-0">
                                             <h3 class="card-text">@mesa.NumeroMesa</h3>
                                             <span>@mesa.Status</span>
                                         </div>
-                                        <div class="media-right align-self-center">
+                                        <div class="media-right align-self-center border-0">
                                             <i class="icon-cup font-large-2 float-right"></i>
                                         </div>
                                     </div>
