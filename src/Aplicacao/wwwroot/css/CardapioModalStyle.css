@@ -127,7 +127,7 @@ body {
         width: 55px;
         height: 52px;
         border-radius: 30px;
-        background-color: #cb60b3;
+        background-color: #dc3545;
         border: none;
         box-shadow: 0 1px 5px rgba(0,0,0,.4);
         font-size: 24px;
@@ -142,7 +142,7 @@ body {
             width: 60px;
             height: 60px;
             border-radius: 30px;
-            background-color: #5b19b7;
+            background-color: #dc3545;
             right: 0;
             bottom: 0;
             z-index: 20;
@@ -198,7 +198,7 @@ body {
     .fab button.main:active,
     .fab button.main:focus {
         outline: none;
-        background-color: #7716ff;
+        background-color: #FF7300;
         box-shadow: 0 3px 8px rgba(0,0,0,.5);
     }
 
